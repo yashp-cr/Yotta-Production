@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_TP_Model_is_Allowed_for_same</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(POC__c,&apos;No&apos;),	
+ISCHANGED(Partner_Commision_Model__c),
+OR(
+AND(ISPICKVAL(PrimarySource__c , &apos;YIC Partner&apos;), PartnerPrimary__c == AccountId),
+AND(ISPICKVAL(SecondarySource__c , &apos;YIC Partner&apos;), PartnerSecondary__c == AccountId),
+AND(ISPICKVAL(TertiarySource__c , &apos;YIC Partner&apos;), PartnerTertiary__c == AccountId))
+,ISPICKVAL(Partner_Commision_Model__c , &apos;TP&apos;))</errorConditionFormula>
+    <errorMessage>Only TP Commission Model can be Selected for the given Source for Same Partner</errorMessage>
+</ValidationRule>

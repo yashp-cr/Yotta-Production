@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>It_Managed_Services_IT_Admin_Monitoring__c</fullName>
+    <externalId>false</externalId>
+    <label>It Managed Services (ITAdmin/Monitoring)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Inhouse</fullName>
+                <default>false</default>
+                <label>Inhouse</label>
+            </value>
+            <value>
+                <fullName>Outsourced</fullName>
+                <default>false</default>
+                <label>Outsourced</label>
+            </value>
+            <value>
+                <fullName>Hybrid</fullName>
+                <default>false</default>
+                <label>Hybrid</label>
+            </value>
+            <value>
+                <fullName>Cloud Managed Services (AWS/Azure/GCP)</fullName>
+                <default>false</default>
+                <label>Cloud Managed Services (AWS/Azure/GCP)</label>
+            </value>
+            <value>
+                <fullName>Yotta</fullName>
+                <default>false</default>
+                <label>Yotta</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Edit_Renewal_Quote_Auto</fullName>
+    <active>true</active>
+    <description>Cannot Change SCF Type for Renewal Quote where Contract is marked as Auto</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(SBQQ__Opportunity2__r.SBQQ__RenewedContract__r.Renewal_Type__c , &apos;Auto&apos;),
+ISCHANGED(SCF_Type__c),
+ISPICKVAL(SBQQ__Type__c , &apos;Renewal&apos;)
+)</errorConditionFormula>
+    <errorMessage>Cannot Change SCF Type for Auto Renewal Quote</errorMessage>
+</ValidationRule>

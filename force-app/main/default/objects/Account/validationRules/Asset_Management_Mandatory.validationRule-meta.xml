@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_Management_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL(    Asset_Management_Platform_HardCat_IBM_M__c , &apos;Yes&apos;),
+ISBLANK(    asset_management_tool_yes__c )
+)</errorConditionFormula>
+    <errorDisplayField>asset_management_tool_yes__c</errorDisplayField>
+    <errorMessage>Please Enter Asset Management Tool Details</errorMessage>
+</ValidationRule>

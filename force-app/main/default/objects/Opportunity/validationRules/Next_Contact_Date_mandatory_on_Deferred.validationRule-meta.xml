@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Contact_Date_mandatory_on_Deferred</fullName>
+    <active>false</active>
+    <description>Next Contact Date is mandatory for Deferred Opportunities and should be at least 20 days later.</description>
+    <errorConditionFormula>AND(
+ ISPICKVAL( ClosedReason__c , &apos;Deferred&apos;),
+ IF( ISBLANK( Next_Contact_Date__c ),
+   True,
+   Next_Contact_Date__c &lt; TODAY()+20
+ )
+)</errorConditionFormula>
+    <errorMessage>Next Contact Date is mandatory for Deferred Opportunities and should be at least 20 days later.</errorMessage>
+</ValidationRule>

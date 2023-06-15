@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_Model_B_is_Allowed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+ISPICKVAL(POC__c,&apos;No&apos;),	
+				ISCHANGED(Partner_Commision_Model__c),
+				OR(OR(ISPICKVAL(PrimarySource__c , &apos;Consultant Partner&apos;),ISPICKVAL(PrimarySource__c , &apos;Alliance Partner - Commission&apos;)),
+ OR(ISPICKVAL(SecondarySource__c , &apos;Consultant Partner&apos;),ISPICKVAL(SecondarySource__c , &apos;Alliance Partner - Commission&apos;)),
+ OR(ISPICKVAL(TertiarySource__c , &apos;Consultant Partner&apos;),ISPICKVAL(TertiarySource__c , &apos;Alliance Partner - Commission&apos;))),
+    NOT(ISPICKVAL(Partner_Commision_Model__c ,&apos;Model B&apos;)))</errorConditionFormula>
+    <errorMessage>Only Model B Can be Selected for the given Source</errorMessage>
+</ValidationRule>

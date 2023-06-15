@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_modify_Solution_during_comm_TnC_app</fullName>
+    <active>true</active>
+    <description>Can&apos;t modify the solution while quote is in Commercial or T&amp;C approval.</description>
+    <errorConditionFormula>AND(
+ ISPICKVAL(Technical_Approval_Status__c, &quot;Approval Required&quot;),
+ OR(
+  ISPICKVAL(Commercial_Approval_Status__c, &quot;Submitted for Approval&quot;),
+  ISPICKVAL(Term_Condition_Approval_Status__c, &quot;Submitted for Approval&quot;)
+ )
+)</errorConditionFormula>
+    <errorMessage>Can&apos;t modify Solution now, please reject the quote and do the modifications.</errorMessage>
+</ValidationRule>

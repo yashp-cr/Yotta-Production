@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Owner_Can_Create_Opportunities</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+ ISNEW(),
+ $User.Id &lt;&gt;  Account.OwnerId,
+ NOT(Converted_Opportunity__c),
+ NOT( CONTAINS( $Profile.Name, &quot;Admin&quot;))
+)</errorConditionFormula>
+    <errorMessage>Only Account Owner can create Opportunities.</errorMessage>
+</ValidationRule>

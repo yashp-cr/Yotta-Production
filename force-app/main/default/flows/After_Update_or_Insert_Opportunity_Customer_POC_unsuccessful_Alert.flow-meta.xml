@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Customer_POC_unsuccessful_Alert</name>
+        <label>Customer POC unsuccessful Alert</label>
+        <locationX>540</locationX>
+        <locationY>616</locationY>
+        <actionName>Opportunity.POC_unsuccessful_Customer_POC</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Customer_POC_unsuccessful_Decision</name>
+        <label>Customer POC unsuccessful Decision</label>
+        <locationX>536</locationX>
+        <locationY>383</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Customer_POC_unsuccessful</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ClosedReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>POC Unsuccessful</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.POC_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer POC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Customer_POC_unsuccessful_Alert</targetReference>
+            </connector>
+            <label>Customer POC unsuccessful</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>formula</name>
+        <dataType>Boolean</dataType>
+        <expression>!ISBLANK(TEXT({!$Record.StageName})) &amp;&amp; 
+     ISPICKVAL({!$Record.StageName}, &apos;Closed Lost&apos;) &amp;&amp;
+     ISPICKVAL({!$Record.ClosedReason__c}, &apos;POC Unsuccessful&apos;) &amp;&amp;   
+    {!$Record.POC_Type__c} = &apos;Customer POC&apos; &amp;&amp; 
+     ISCHANGED({!$Record.StageName})</expression>
+    </formulas>
+    <interviewLabel>After Update or Insert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>After Update or Insert Opportunity : Customer POC unsuccessful Alert</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>410</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Customer_POC_unsuccessful_Decision</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Duration_cant_be_Greater_than_5</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+    (
+        IF( Contract_Tenure_Year__c &gt; 0, Contract_Tenure_Year__c * 12 , 0) +
+        IF( Contract_Tenure_Month__c &gt; 0, Contract_Tenure_Month__c , 0) +
+        IF( Contract_Tenure_Days__c &gt; 0, Contract_Tenure_Days__c / 30 , 0)
+    ) &gt; 60,
+    TRUE,
+    FALSE
+)</errorConditionFormula>
+    <errorMessage>Contract Tenure cannot be greater than 5 Years</errorMessage>
+</ValidationRule>

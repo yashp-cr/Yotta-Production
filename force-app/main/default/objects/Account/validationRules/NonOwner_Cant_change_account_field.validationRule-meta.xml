@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NonOwner_Cant_change_account_field</fullName>
+    <active>true</active>
+    <description>Some field can only be updated by the Owner</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+OR(
+NOT(ISBLANK(PRIORVALUE(Phone))) &amp;&amp; ISCHANGED(Phone),
+NOT(ISBLANK(TEXT(PRIORVALUE(Industry)))) &amp;&amp; ISCHANGED(Industry),
+NOT(ISBLANK(TEXT(PRIORVALUE(YottaIndustry__c)))) &amp;&amp; ISCHANGED(YottaIndustry__c),
+NOT(ISBLANK(PRIORVALUE(PartnerType__c))) &amp;&amp; ISCHANGED(PartnerType__c),
+NOT(ISBLANK(PRIORVALUE(Services__c))) &amp;&amp; ISCHANGED(Services__c),
+NOT(ISBLANK(PRIORVALUE(AnnualRevenue))) &amp;&amp; ISCHANGED(AnnualRevenue),
+NOT(ISBLANK(PRIORVALUE(NumberOfEmployees))) &amp;&amp; ISCHANGED(NumberOfEmployees),
+NOT(ISBLANK(PRIORVALUE(PAN__c))) &amp;&amp; ISCHANGED(PAN__c),
+NOT(ISBLANK(PRIORVALUE(TAN__c))) &amp;&amp; ISCHANGED(TAN__c),
+NOT(ISBLANK(PRIORVALUE(DUNS__c))) &amp;&amp; ISCHANGED(DUNS__c),
+NOT(ISBLANK(PRIORVALUE(MSANumber__c))) &amp;&amp; ISCHANGED(MSANumber__c),
+NOT(ISBLANK(PRIORVALUE(Description))) &amp;&amp; ISCHANGED(Description),
+NOT(ISBLANK(PRIORVALUE(Website))) &amp;&amp; ISCHANGED(Website),
+NOT(ISBLANK(PRIORVALUE(ParentId))) &amp;&amp; ISCHANGED(ParentId)
+),
+$User.Id &lt;&gt; OwnerId,
+$UserRole.DeveloperName &lt;&gt; &apos;Sales_Coordinator&apos;,
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+$Profile.Name &lt;&gt; &apos;Yotta Order Management&apos;
+)</errorConditionFormula>
+    <errorMessage>Please contact Owner for doing any Account Updates</errorMessage>
+</ValidationRule>

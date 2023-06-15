@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Replacement_Contact_Same_Account</fullName>
+    <active>true</active>
+    <description>Replacement Contact must be from the same Account</description>
+    <errorConditionFormula>NOT(ISBLANK(Replacement_Contact__c)) &amp;&amp; AccountId &lt;&gt;  Replacement_Contact__r.AccountId</errorConditionFormula>
+    <errorDisplayField>Replacement_Contact__c</errorDisplayField>
+    <errorMessage>Replacement Contact must belong to the same Account</errorMessage>
+</ValidationRule>

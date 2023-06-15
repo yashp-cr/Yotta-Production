@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Need_TechnicalContact_in_SupportorBillto</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+ Submit_for_OMT_Approval__c ,
+				 ISCHANGED(Submit_for_OMT_Approval__c) ,
+				AND(
+				 Support_To_Account__r.Count_Of_Technical_Contact__c &lt; 1,
+				Account.Count_Of_Technical_Contact__c &lt; 1)
+)</errorConditionFormula>
+    <errorMessage>Please add a Technical Contact to Support To Account to continue.</errorMessage>
+</ValidationRule>

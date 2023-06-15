@@ -1,0 +1,849 @@
+<apex:page renderAs="pdf" standardController="SBQQ__Quote__c"  extensions="SalesforcePropsalTemplateExtension" action="{!getProposalDeatils}" applyBodyTag="false" applyHtmlTag="false" showHeader="false">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+        <style type="text/css">
+            
+            @page {
+                margin-top: 3cm;
+                margin-bottom: 3cm;
+                size:A4;
+                
+                @top-center {
+                    content: element(header);
+                }
+                @bottom-left {
+                    content: element(footer);
+                }
+            }
+            @page :first { 
+                @top-center {}
+                @bottom-left {}
+                
+                background-image:URL('https://yotta--cpqdev--c.visualforce.com/resource/1628855597000/PDF_Background_Image');
+                background-repeat: no-repeat !important; 
+                background-position: center center !important;
+                background-size:2050px;
+                position: absolute !important;
+                background-origin:content-box;
+            }
+            
+            .firstPage {
+            }
+            
+            div.header {   
+            padding: 0px;
+            position: running(header);
+            }
+            div.footer {
+            display: block;
+            position: running(footer);
+            }
+            .pagenumber:before {
+            content: counter(page);
+            }
+            .pagecount:before {
+            content: counter(pages);
+            }
+            
+            body{
+                font-family: sans-serif;
+            }
+            
+            .borderClass table, .borderClass td, .borderClass th, .borderClass tr{
+            border: 0.5px solid  !important; 
+            border-collapse: collapse;
+            }
+           
+            .image-stack__item--left {
+            grid-column: 1 / span 8;
+            grid-row: 1; // must be on the same row as the other image
+            // padding-top: 20%; // this pushes the image down, and keeps it proportional as it resizes
+            // make this image render on top of the bottom
+            }
+            .image-stack__item--center{
+            grid-column: 1 / span 8;
+            grid-row: 1; // must be on the same row as the other image
+            padding-top: 20%; // this pushes the image down, and keeps it proportional as it resizes
+            z-index: 1; // make this image render on top of the bottom
+            }
+            .background-image {
+            Height: 100%;
+            weight: 100%;
+            
+            }
+            
+            .documentClass table, .documentClass td, .documentClass th, .documentClass tr{
+            border-bottom: 0.5px solid black !important; 
+            border-collapse: collapse;
+            }
+        </style>
+    </head>
+    
+    <div class="header">
+        <div class="image-stack">
+            
+            
+            <div class="image-stack__item image-stack__item--left">
+                
+                <img style="margin-left: -50px; margin-top: -15px; float: left; width: 80%; HEIGHT: 100px; border:0px" src='{!URLFOR($Resource.PDFHeader)}' title="logo" align="left" /> 
+            </div>
+            <div class="image-stack__item image-stack__item--center">
+                <img style="width: 140px; HEIGHT: 90px; border:0px;" src='{!URLFOR($Resource.Yotta_Logo)}' title="logo" align="center"  />
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer" >
+        <div style="font-size: 10px; font-family: sans-serif; color:#696969;">
+            <hr/>
+            <apex:outputText >Proprietary and Confidential</apex:outputText>
+        </div> 
+        <div style="float:right; font-size: 10px; font-family: sans-serif; color:#696969;">Page <span class="pagenumber"/> of <span class="pagecount"/></div>
+    </div>
+    
+    
+    <body style="font-family: sans-serif;text-align:left;height: 100%;width: 100%" class="firstPage">  
+        
+        <div style="text-align:left;;height: 100%; "
+             sidebar="false" >  
+            <div   style="text-align:center;" >
+                
+                
+                <br/><br/><br/>
+                <img width="200px" height ="200px"  style="width:200px; height: 120px; border:0px; background:transparent;"  src='{!URLFOR($Resource.YottaWhiteLogo)}' title="logo" align="center"  />
+                <br/><br/><br/>
+                <div style="text-align: center;"> 
+                    <span style="font-size: 24px; font-family:sans-serif; font-weight: bold;color:#ffffff">Proposal for</span> 
+                    <span style="color:#1d3f81; font-family:sans-serif; font-size:24px; font-weight: bold;color:#f4a142" >{!SBQQ__Quote__c.SBQQ__Opportunity2__r.name}</span>   
+                </div><br/><br/>
+                <span style="font-size: 24px; color:#ffffff">Submitted To</span><br/><br/>
+                <span style="font-size: 24px; color:#696969;font-size:20px; text-align: center;color:#f4a142 " ><b>{!SBQQ__Quote__c.SBQQ__Account__r.Name}</b><br/><br/></span>
+                <span style="font-size: 24px; color:#ffffff">Submitted By</span><br/><br/>
+                <span style="font-size: 24px; color:#ffffff;font-size:20px; text-align: center; " ><b>Yotta Data Services Private Limited</b></span><br/>
+            </div>
+            <br/><br/><br/><br/><br/>
+            <br/><br/> 
+            
+            
+            
+            <span style="font-size: 9px; color:#ffffff; text-align:left;">                  
+                <apex:outputText >
+                    <b>Confidentiality &amp; General Conditions Notice</b><br/>
+                    This document contains proprietary trade secret and confidential information to be used solely for evaluating Yotta
+                    Data Services Private Limited (“Yotta”). The information contained herein is to be considered confidential. Customer, by
+                    accepting this document, agrees that neither this document nor the information disclosed herein, nor any part thereof,
+                    shall be reproduced or transferred to other documents, or used or disclosed to others for any purpose except as
+                    specifically authorised in writing by Yotta Data Services Private Limited.
+                </apex:outputText>
+            </span>  
+        </div>
+    </body>
+    <!-- first page ends-->
+    
+    <div style="page-break-after: always"/>
+    <body style="font-family: sans-serif;">
+        <table class="borderClass" width="100%" cellpadding="5" border="0.5" style=";border-collapse: collapse; font-family:sans-serif; font-size: 12px; ">
+            
+            <tr style="font-size:12px;">
+                <td style="font-weight: bold;background-color:#DCDCDC" width="50%">Document Name</td>
+                <td>{!SBQQ__Quote__c.Name}</td>
+            </tr>
+            <tr style="font-size:12px;">
+                <td style="font-weight: bold;background-color:#DCDCDC">Date</td>
+                <td>
+                    <apex:outputText value="{0, date, dd-MM-yyyy}">
+                        <apex:param value="{!NOW()}" />
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr style="font-size:12px;">
+                <td style="background-color:#DCDCDC;font-weight: bold;">Version</td>
+                <td>V.{!quote.Version__c}</td>
+            </tr>
+        </table>
+        
+        <!-- Second page ends -->
+        <div style="page-break-after: always"/>
+        <!-- <span style="font-size:20px; " ><b>Table of Contents </b></span>   <br/> <br/> -->
+        <table width="90%" cellpadding="15" style="border-collapse: collapse; font-family:sans-serif; font-size: 11px; border: none; border-spacing: 15px;">
+            <tr width="100%">
+                <td style="font-size: 15px; font-weight: bold;" colspan="2">Contents</td>
+            </tr>
+            <!-- <apex:outputPanel rendered="{!renderIndexMap['About Yotta']}"> -->
+            <tr width="100%">
+                <td width="5%">{!indexMap['About Yotta']}</td>
+                <td width="95%">About Yotta.</td>
+            </tr>
+            <!-- </apex:outputPanel>  -->
+            
+            <!-- <apex:outputPanel rendered="{!renderIndexMap['Yotta’s Products and Services']}"> -->
+            <tr width="100%" style="{!if(renderIndexMap['Yotta’s Products and Services'], 'display: contents', 'display: none')}">
+                <!-- style="{!if(renderIndexMap['Yotta’s Products and Services'], 'display: contents', 'display: none')}" -->
+                <!-- <tr style="display: none;"> -->
+                
+                <td style="{!if(renderIndexMap['Yotta’s Products and Services'], 'display: contents', 'display: none')}" width="5%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Yotta’s Products and Services']}">
+                        {!indexMap['Yotta’s Products and Services']}.
+                    </apex:outputPanel>
+                </td>
+                <td style="{!if(renderIndexMap['Yotta’s Products and Services'], 'display: contents', 'display: none')}" width="95%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Yotta’s Products and Services']}">
+                        Yotta’s Products and Services
+                    </apex:outputPanel>
+                </td>
+            </tr>
+            <tr width="100%" style="{!if(renderIndexMap['Yotta’s Certifications'], 'display: contents', 'display: none')}">
+                <!-- style="{!if(renderIndexMap['Yotta’s Certifications'], 'display: contents', 'display: none')}" -->
+                <!-- <tr style="display: none;"> -->
+                
+                <td style="{!if(renderIndexMap['Yotta’s Certifications'], 'display: contents', 'display: none')}" width="5%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Yotta’s Certifications']}">
+                        {!indexMap['Yotta’s Certifications']}.
+                    </apex:outputPanel>
+                </td>
+                <td style="{!if(renderIndexMap['Yotta’s Certifications'], 'display: contents', 'display: none')}" width="95%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Yotta’s Certifications']}">
+                        Yotta’s Certifications
+                    </apex:outputPanel>
+                </td>
+            </tr>
+            
+            <tr width="100%" style="{!if(renderIndexMap['Yotta’s Customers'], 'display: contents', 'display: none')}">
+                <!-- style="{!if(renderIndexMap['Yotta’s Customers'], 'display: contents', 'display: none')}" -->
+                <!-- <tr style="display: none;"> -->
+                
+                <td style="{!if(renderIndexMap['Yotta’s Customers'], 'display: contents', 'display: none')}" width="5%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Yotta’s Customers']}">
+                        {!indexMap['Yotta’s Customers']}.
+                    </apex:outputPanel>
+                </td>
+                <td style="{!if(renderIndexMap['Yotta’s Customers'], 'display: contents', 'display: none')}" width="95%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Yotta’s Customers']}">
+                        Yotta’s Customers
+                    </apex:outputPanel>
+                </td>
+            </tr>
+            
+            <tr width="100%" style="{!if(renderIndexMap['Scope of Work'], 'display: contents', 'display: none')}">
+                <td style="{!if(renderIndexMap['Scope of Work'], 'display: contents', 'display: none')}" width="5%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Scope of Work']}">
+                        {!indexMap['Scope of Work']}.
+                    </apex:outputPanel>
+                </td>
+                <td style="{!if(renderIndexMap['Scope of Work'], 'display: contents', 'display: none')}" width="95%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Scope of Work']}">
+                        Scope of Work
+                    </apex:outputPanel>
+                </td>
+            </tr>
+            
+            <tr width="100%" style="{!if(renderIndexMap['Unpriced BOQ'], 'display: contents', 'display: none')}">
+                <td style="{!if(renderIndexMap['Unpriced BOQ'], 'display: contents', 'display: none')}" width="5%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Unpriced BOQ']}">
+                        {!indexMap['Unpriced BOQ']}.
+                    </apex:outputPanel>
+                </td>
+                <td style="{!if(renderIndexMap['Unpriced BOQ'], 'display: contents', 'display: none')}" width="95%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Unpriced BOQ']}">
+                        Unpriced BOQ
+                    </apex:outputPanel>
+                </td>
+            </tr>
+            
+            <tr width="100%" style="{!if(renderIndexMap['Assumptions and Exclusions'], 'display: contents', 'display: none')}">
+                <td style="{!if(renderIndexMap['Assumptions and Exclusions'], 'display: contents', 'display: none')}" width="5%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Assumptions and Exclusions']}">
+                        {!indexMap['Assumptions and Exclusions']}.
+                    </apex:outputPanel>
+                </td>
+                <td style="{!if(renderIndexMap['Assumptions and Exclusions'], 'display: contents', 'display: none')}" width="95%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Assumptions and Exclusions']}">
+                        Assumptions and Exclusions
+                    </apex:outputPanel>
+                </td>
+            </tr>
+            
+            <tr width="100%" style="{!if(renderIndexMap['Commercials'], 'display: contents', 'display: none')}">
+                <td style="{!if(renderIndexMap['Commercials'], 'display: contents', 'display: none')}" width="5%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Commercials']}">
+                        {!indexMap['Commercials']}.
+                    </apex:outputPanel>
+                </td>
+                <td style="{!if(renderIndexMap['Commercials'], 'display: contents', 'display: none')}" width="95%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Commercials']}">
+                        Commercials
+                    </apex:outputPanel>
+                </td>
+            </tr>
+            
+            <tr width="100%" style="{!if(renderIndexMap['Expected Usage Summary'], 'display: contents', 'display: none')}">
+                <td style="{!if(renderIndexMap['Expected Usage Summary'], 'display: contents', 'display: none')}" width="5%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Expected Usage Summary']}">
+                        {!indexMap['Expected Usage Summary']}.
+                    </apex:outputPanel>
+                </td>
+                <td style="{!if(renderIndexMap['Expected Usage Summary'], 'display: contents', 'display: none')}" width="95%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Expected Usage Summary']}">
+                        Expected Usage Summary
+                    </apex:outputPanel>
+                </td>
+            </tr>
+            
+            <tr width="100%" style="{!if(renderIndexMap['Terms & Conditions'], 'display: contents', 'display: none')}">
+                <td style="{!if(renderIndexMap['Terms & Conditions'], 'display: contents', 'display: none')}" width="5%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Terms & Conditions']}">
+                        {!indexMap['Terms & Conditions']}.
+                    </apex:outputPanel>
+                </td>
+                <td style="{!if(renderIndexMap['Terms & Conditions'], 'display: contents', 'display: none')}" width="95%">
+                    <apex:outputPanel rendered="{!renderIndexMap['Terms & Conditions']}">
+                        Terms &amp; Conditions
+                    </apex:outputPanel>
+                </td>
+            </tr>
+            
+           
+            <apex:variable value="{!0}" var="index"/>
+            <apex:variable value="{!indexMap['Terms & Conditions'] +1}" var="anexno"/> 
+            <apex:repeat value="{!annexureList}" var="key">  
+                <tr style="display:{!If(SBQQ__Quote__c.Product_s_Annexure_Required__c == 'Yes', '', 'None')}" width="100%">
+                    <td width="5%">{!anexno}.</td>
+                    <td width="95%">Annexure - {!annexureList[index].Sub_Type__c}</td>
+                    <apex:variable var="index" value="{!index+1}"/>
+                    <apex:variable value="{!anexno+1}" var="anexno"/> 
+                </tr>                    
+            </apex:repeat>     
+        </table>
+        <!-- third page ends -->
+        
+        <div style="page-break-after: always;"/>
+        
+        <apex:outputText style="font-family:sans-serif;" rendered="{!If(SBQQ__Quote__c.About_Yotta_Summary_Type__c != null,True,False)}" escape="false" value="{!aboutYotta}"> 
+            <apex:outputPanel rendered="{!renderIndexMap['About Yotta']}"> 
+                <span style="font-weight: bold; font-size: 16px;color:#f4a142">{!indexMap['About Yotta']}. &nbsp;&nbsp;&nbsp;&nbsp; About Yotta </span>
+            </apex:outputPanel> 
+        </apex:outputText>
+        
+        <apex:outputText style="font-size: 12px;font-family:sans-serif;" rendered="{!If(SBQQ__Quote__c.Yotta_s_Products_and_Services_Required__c == 'Yes',True,False)}"> 
+            <div style="page-break-before: always;"/>
+            <apex:outputPanel rendered="{!renderIndexMap['Yotta’s Products and Services']}"> 
+                <span style="font-weight: bold; font-size: 16px;color:#f4a142" >{!indexMap['Yotta’s Products and Services']}. &nbsp;&nbsp;&nbsp;&nbsp;  Yotta’s Products and Services </span> 
+            </apex:outputPanel> 
+            <br/><br/>
+            {!yottaProductandService}
+        </apex:outputText><br/>
+        
+        <apex:outputText style="font-size: 12px;font-family:sans-serif;" rendered="{!If(SBQQ__Quote__c.Yotta_s_Certifications_Required__c == 'Yes',True,False)}">
+            <div style="page-break-before: always;"/>
+            <apex:outputPanel rendered="{!renderIndexMap['Yotta’s Certifications']}"> 
+                <span style="font-weight: bold; font-size: 16px;color:#f4a142" >{!indexMap['Yotta’s Certifications']}. &nbsp;&nbsp;&nbsp;&nbsp;  Yotta’s Certifications </span>
+            </apex:outputPanel>
+            
+            <div style="text-align:center;">
+                <span style="color:#696969; text-align:center" >
+                    <apex:outputText escape="false" value="{!certificates}" />
+                </span>
+            </div>
+        </apex:outputText><br/>
+        
+        <apex:outputText style="font-size: 12px;font-family:sans-serif;" rendered="{!If(SBQQ__Quote__c.Yotta_s_Customers_Required__c == 'Yes',True,False)}">
+            <div style="page-break-before: always;"/>
+            <apex:outputPanel rendered="{!renderIndexMap['Yotta’s Customers']}"> 
+                <span style="font-weight: bold; font-size: 16px;color:#f4a142" >{!indexMap['Yotta’s Customers']}. &nbsp;&nbsp;&nbsp;&nbsp;  Yotta’s Customers</span>
+            </apex:outputPanel> <br/><br/>
+            {!customers}
+        </apex:outputText><br/><br/>
+        
+        <apex:outputText style="font-size: 12px;font-family:sans-serif;" rendered="{!If(SBQQ__Quote__c.Scope_of_Work__c != null,True,False)}">
+            <div style="page-break-before: always;"/>
+            <apex:outputPanel rendered="{!renderIndexMap['Scope of Work']}"> 
+                <span style="font-weight: bold; font-size: 16px;color:#f4a142" >{!indexMap['Scope of Work']}. &nbsp;&nbsp;&nbsp;&nbsp;  Scope of Work</span>
+            </apex:outputPanel> <br/>
+            <apex:outputText style="font-size: 12px;" escape="false" value="{!SBQQ__Quote__c.Scope_of_Work__c}"/>
+        </apex:outputText>
+        <!-- page ends -->
+        
+        <div style="page-break-after: always"/>
+        <apex:outputPanel rendered="{!renderIndexMap['Unpriced BOQ']}"> 
+            <span style="font-weight: bold; font-size: 16px; font-family:sans-serif;color:#f4a142" >{!indexMap['Unpriced BOQ']}. &nbsp;&nbsp;&nbsp;&nbsp;  Unpriced BOQ</span>
+        </apex:outputPanel> <br/><br/>
+        
+        <table class="borderClass" width="100%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size: 9.5px; ">
+            <tr style="background-color:#DCDCDC; font-weigth: bold;">
+                <th>Ref.</th>
+                <th>Product Family and Description</th>
+                <th>Qty</th>
+                <th>UoM</th>
+                <th>Delivery</th>
+            </tr>
+            
+            <apex:variable var="index" value="{!1}"/>
+            <apex:repeat value="{!allProductList}" var="allProduct">
+                <tr >
+                    <td>
+                        <apex:outputText value="{!index}"/>
+                    </td>
+                    
+                    <td>     
+                        <apex:outputText escape="false" value="<b>{!allProduct.Family}</b><br/>
+                                                               <b>{!allProduct.bundleName}</b><br/>"/>
+                        <apex:outputText value="{!allProduct.productDescription}<br/>" escape="false"/>
+                    </td >
+                    <td>{!allProduct.qty}</td>
+                    <td>{!allProduct.uom}</td>
+                    <td>{!allProduct.delivery}</td>
+                    <apex:variable var="index" value="{!index+1}"/>
+                </tr>
+            </apex:repeat>
+        </table>
+        <br/><br/>
+        
+       <apex:outputPanel rendered="{!renderIndexMap['Assumptions and Exclusions']}"> 
+            <span style="font-weight: bold; font-size: 16px; font-family:sans-serif;color:#f4a142" >{!indexMap['Assumptions and Exclusions']}. &nbsp;&nbsp;&nbsp;&nbsp;  Assumptions and Exclusions</span>
+            <br/>
+            <apex:outputText style="font-size: 10px; font-family:sans-serif;" escape="false" value="{!SBQQ__Quote__c.Assumptions_and_Exclusions__c}"/>
+        </apex:outputPanel>         
+        
+        <apex:outputPanel rendered="{!renderIndexMap['Commercials']}"> 
+            <span style="font-weight: bold; font-size: 16px; font-family:sans-serif;color:#f4a142" >{!indexMap['Commercials']}. &nbsp;&nbsp;&nbsp;&nbsp;  Commercials</span>
+            <br/><br/>
+        </apex:outputPanel> 
+        
+        <table class="borderClass" width="100%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size: 10px;">
+            <tr style="font-size:10px; font-family:sans-serif;">
+                <th width="20%"></th>
+                <th style="background-color:#DCDCDC;" width="40%">Bill To Customer</th>
+                <th style="background-color:#DCDCDC;" colspan="2" width="40%">Support To Customer</th>
+            </tr>
+            <tr style = "font-size:10px; font-family:sans-serif;">
+                <td width="20%" style=" font-weight: bold;background-color:#DCDCDC;">ID</td>
+                <td>{!SBQQ__Quote__c.SBQQ__Account__r.Account_Number__c}</td>
+                <td colspan= "2">{!SBQQ__Quote__c.Support_To_Customer__r.Account_Number__c}</td>
+            </tr>
+            <tr style = "font-size:10px; font-family:sans-serif;">
+                <td width="20%" style=" font-weight: bold;background-color:#DCDCDC;" >Name</td>
+                <td>{!SBQQ__Quote__c.SBQQ__Account__r.Name}</td>
+                <td colspan="2">{!SBQQ__Quote__c.Support_To_Customer__r.Name}</td>
+            </tr>
+            <tr style = "font-size:10px; font-family:sans-serif;">
+                <td width="20%" style=" border:1px solid black; font-weight: bold;background-color:#DCDCDC;" >Contract</td>
+                <td width="40%">{!ROUND(SBQQ__Quote__c.Contract_Tenure_Year__c,0)} Years, {!ROUND(SBQQ__Quote__c.Contract_Tenure_Month__c,0)} Months, 
+                    {!ROUND(SBQQ__Quote__c.Contract_Tenure_Days__c,0)} Days</td>
+                <td width="20%" style="background-color:#DCDCDC; font-weight: bold;" >Currency</td>
+                <td width="20%">{!SBQQ__Quote__c.Contract_Currency__c}</td>
+            </tr>
+        </table>
+        <!-- page ends -->
+        
+        <div style="page-break-after: always"/>
+        <!-- table start -->  
+        <span style="color:#f4a142;font-size: 12px; font-family:sans-serif;"><b>Pricing Summary for Services</b></span><br/><br/>
+        
+        
+        
+        <table class="borderClass" width="100%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size: 9.5px;">
+            
+            <tr style="background-color:#DCDCDC;font-size: 9.5px; font-family:sans-serif;">
+                <th width="20%">Charge Type</th>
+                <th width="20%">Product Family</th>
+                <apex:variable value="{!1}" var="yearno"/>
+                <apex:repeat value="{!yearLabelKeySet}" var="key">
+                    <th>{!key} Charges</th>
+                </apex:repeat>
+                <th>Total</th>
+            </tr>
+            <apex:repeat var="group" value="{!groupValues}">
+                <apex:repeat value="{!groupValues[group].chargeWrapperList}" var="c">
+                    <apex:repeat value="{!c.familyWrapperMap}" var="d">                            
+                        <tr style = "font-size: 9.5px; font-family:sans-serif;">
+                            <td>{!c.typeOfCharge}</td>                                
+                            <td>{!d}</td>
+                            
+                            <apex:repeat value="{!c.familyWrapperMap[d].yearWrapperMap}" var="e">
+                                <td align="right">  
+                                    <apex:outputText value="{0, number, ###,##0}" >
+                                        <apex:param value="{!c.familyWrapperMap[d].yearWrapperMap[e].amount}"/>
+                                    </apex:outputText>
+                                </td>
+                            </apex:repeat>
+                            <td align="right">  
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!c.familyWrapperMap[d].productFamilyTotal}"/>
+                                </apex:outputText>                                     
+                            </td>                                
+                        </tr>
+                    </apex:repeat>
+                    
+                    
+                </apex:repeat>
+            </apex:repeat>
+            <apex:repeat var="group" value="{!groupValues}">
+            </apex:repeat>
+            <tr style="background-color:#696969;color:#ffffff;font-size: 9.5px; font-family:sans-serif;">
+                <td style="font-weight: bold;">Total</td>
+                <td align="right">  
+                </td>
+                <apex:repeat value="{!yearLabelKeySet}" var="key">
+                    <apex:repeat value="{!pricingSummaryTotalMap[key]}" var="val">
+                        <td align="right">
+                            <apex:outputText style="font-weight: bold;" value="{0, number, ###,##0}" >
+                                <apex:param value="{!val}"/>
+                                
+                            </apex:outputText>
+                        </td>
+                        
+                    </apex:repeat>
+                </apex:repeat>
+                <td align="right">
+                    <apex:outputText style="font-weight: bold;" value="{0, number, ###,##0}" >
+                        <apex:param value="{!totalPricing}"/></apex:outputText></td>
+                
+                
+                
+            </tr>
+            
+            
+            
+            
+            
+            
+            
+        </table>
+        
+        
+        <span style="font-size: 8px;">OTC – One Time Charges   |   ARC - Annual Recurring Charges</span>
+        <br/>
+        <br/>
+        
+        <apex:outputText style="font-size: 12px; font-family:sans-serif;" rendered="{!groupMapOptionalCheck}">   
+            <span style="color:#f4a142;font-size: 12px;font-family:sans-serif;"><b>Pricing Summary for Optional services</b></span>
+        </apex:outputText> 
+        
+        <apex:repeat var="group" value="{!groupMapOptional}">
+            <span style="{!IF(groupMapOptional[group].grpName == null, 'display: none', 'display:block; color:#F8A843;font-size: 12px; font-family:sans-serif')}">
+                <b> {!groupMapOptional[group].grpName}</b>
+            </span><br/>
+            <br/>
+            <table class="borderClass" width="100%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif;">
+                <tr style="background-color:#DCDCDC; font-size: 9.5px; font-family:sans-serif;">
+                    <td rowspan="2"><b>Product Family</b></td>
+                    <td rowspan="2"><b>Qty</b></td>
+                    <td rowspan="2"><b>UoM</b></td>
+                    <td rowspan="2"><b>OTC</b></td>
+                    <apex:repeat value="{!yearSet}" var="year">
+                        <td align="center"><b>Recurring Charge</b></td>
+                    </apex:repeat>
+                </tr>
+                
+                <tr style="background-color:#DCDCDC;font-size: 9.5px; font-family:sans-serif">
+                    <apex:variable value="{!1}" var="yearno"/>
+                    <apex:repeat value="{!yearSet}" var="year">
+                        <td  align="center"><b>Year {!yearno}</b></td>
+                        <apex:variable value="{!yearno +1}" var="yearno"/>
+                    </apex:repeat>
+                </tr>
+                
+                <apex:repeat value="{!groupMapOptional[group].optionalFamMap}" var="fam">
+                    <apex:repeat value="{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap}" var="Product">
+                    <tr style = "font-size: 9.5px; font-family:sans-serif;">
+                        <td>
+                            <apex:outputText style="font-size: 8px;" escape="false" value="<b>{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].family}</b><br/>
+                                                                                           <b>{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].bundleName}</b><br/>" />
+                            <apex:outputText style="font-size: 8px;" value="{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].description}" escape="false"/>
+                        </td>
+                        <td>{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].qty}</td>
+                        <td>{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].uom}</td>
+                        <td align="right"> 
+                            <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].famWrapYearOtc}"/>
+                            </apex:outputText>                             
+                        </td>
+                        
+                        <apex:repeat value="{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].famYearMap}" var="yrMRC">
+                            <td align="right">
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].famYearMap[yrMRC].famWrapYearReccuring}"/>
+                                </apex:outputText>
+                            </td>                            
+                        </apex:repeat>
+                    </tr>
+                    </apex:repeat>
+                </apex:repeat>
+            </table>
+        </apex:repeat>
+        <!-- page ends -->
+        
+        <div style="page-break-after: always"/>
+        <!--table starts -->
+        <span style="color:#F8A843; font-size: 14px; font-family: sans-serif;"><b>Service Configuration year wise in {!SBQQ__Quote__c.Contract_Currency__c} currency</b></span><br/><br/>
+        <apex:repeat value="{!QuoteLines}" var="bpw">
+            <span style="color:#F8A843; font-size: 12px;"><b>Year #{!QuoteLines[bpw].refNo} </b></span><br/><br/>             
+            <apex:variable var="index" value="{!1}"/>
+            <apex:repeat value="{!QuoteLines[bpw].groupWrapMap}" var="gwm">
+                <span style="{!IF(QuoteLines[bpw].groupWrapMap[gwm].groupName == null, 'display: none', 'display:block; color:#F8A843; font-size: 11px;')}">
+                    <b>{!QuoteLines[bpw].groupWrapMap[gwm].groupName}</b> <br/><br/>
+                </span>
+                
+                <table class="borderClass" width="100%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size: 8px;">
+                    <tr style="background-color:#DCDCDC; font-weight: bold;">
+                        <td rowspan="2">Ref No</td>
+                        <td rowspan="2" >Product Family &amp; Description</td>
+                        <td rowspan="2">QTY</td>
+                        <td rowspan="2">UOM</td>
+                        <td rowspan="2">Delivery Location</td>
+                        <td colspan="2">One Time Charges</td>
+                        <td colspan="2">Monthly Recurring Charge</td>
+                        <td rowspan="2">Variable Charges</td>
+                    </tr>
+                    <tr style="background-color:#DCDCDC; font-weight: bold;">
+                        <td>Unit</td>
+                        <td>Total</td>
+                        <td>Unit</td>
+                        <td>Total</td>
+                    </tr>
+                    <apex:variable var="index" value="{!1}"/>
+                    <apex:repeat value="{!QuoteLines[bpw].groupWrapMap[gwm].prodWrapKeySet }" var="key">
+                        <tr style="background-color:#DCDCDC"><td colspan="10">{!key}</td></tr>
+                        <apex:repeat value="{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key]}" var="prodWrap">                      
+                            <tr >
+                                <td>{!index}</td>
+                                <td>
+                                    <apex:outputText style="color: #000000;" escape="false" value="<b>{!prodWrap.productFamily}</b><br/>
+                                                                                                   {!prodWrap.productBundleName}<br/>" > </apex:outputText>
+                                    <apex:outputText value="{!prodWrap.productDescription}" escape="false"/>
+                                    <br/>
+                                    Remarks:
+                                    <apex:outputText value="{!prodWrap.remarks}" escape="false"/>
+                                </td>
+                                <td>{!prodWrap.qty}</td>
+                                <td>{!prodWrap.UOM}</td>
+                                <td>{!prodWrap.deliveryLocation}</td>
+                                <td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!prodWrap.otcUnit}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!prodWrap.otcTotal}"/>
+                                    </apex:outputText> 
+                                </td>
+                                <td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!prodWrap.mrcUnit}"/>
+                                    </apex:outputText> 
+                                </td>
+                                <td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!prodWrap.mrcTotal}"/>
+                                    </apex:outputText> 
+                                </td>
+                                <td align="right">  <apex:outputText value="{0, number, ###,##0.00}" >
+                                    <apex:param value="{!prodWrap.vrcCharge}"/>
+                                    </apex:outputText> 
+                                </td>
+                                <apex:variable var="index" value="{!index+1}"/>
+                            </tr>
+                            
+                        </apex:repeat>
+                        <apex:repeat value="{!QuoteLines[bpw].groupWrapMap[gwm].otcTotalMap[key]}" var="otcTotal">
+                            <apex:repeat value="{!QuoteLines[bpw].groupWrapMap[gwm].recTotalMap[key]}" var="mrcTotal">
+                                <tr><td colspan="2"><b>Total</b></td><td></td><td></td><td></td><td></td><td align="right"> 
+                                    <apex:outputText value="{0, number, ###,##0}" ><apex:param value="{!otcTotal}" /></apex:outputText>
+                                    </td><td></td>
+                                    <td align="right"> <apex:outputText value="{0, number, ###,##0}" >
+                                        <apex:param value="{!mrcTotal}"/></apex:outputText></td><td></td>
+                                </tr>
+                            </apex:repeat>
+                        </apex:repeat>
+                    </apex:repeat>
+                </table>
+                    <!-- <apex:repeat value="{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap}" var="key">
+<tr>
+<td>{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].serialNumber}</td>
+<td>
+<apex:outputText escape="false" value="<b>{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].productFamily}</b><br/>
+<b>{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].productBundleName}</b><br/>" > </apex:outputText>
+<apex:outputText value="{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].productDescription}" escape="false"/>
+
+</td>
+<td>{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].qty}</td>
+<td>{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].UOM}</td>
+<td>{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].deliveryLocation}</td>
+<td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+<apex:param value="{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].otcUnit}"/>
+</apex:outputText> 
+
+</td>
+<td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+<apex:param value="{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].otcTotal}"/>
+</apex:outputText> 
+
+</td>
+<td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+<apex:param value="{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].mrcUnit}"/>
+</apex:outputText> 
+
+</td>
+<td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+<apex:param value="{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].mrcTotal}"/>
+</apex:outputText> 
+
+</td>
+<td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+<apex:param value="{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].vrcCharge}"/>
+</apex:outputText> 
+
+</td>
+
+<td>{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key].vrcUOM}</td>
+<apex:variable var="index" value="{!index+1}"/>
+</tr>
+</apex:repeat> -->
+
+                <br/>
+            </apex:repeat>
+        </apex:repeat>
+        <!-- page ends -->
+        <div style="page-break-after: always"/>
+        <apex:outputPanel rendered="{!renderIndexMap['Expected Usage Summary']}"> 
+            
+            <span style="font-weight: bold; font-size: 16px;color:#F8A843" >{!indexMap['Expected Usage Summary']}. &nbsp;&nbsp;&nbsp;&nbsp;  Expected Usage Summary</span>
+            <br/><br/>
+        </apex:outputPanel> 
+        
+        <apex:outputPanel rendered="{!numberOfDaysAndMonthCheck}"> 
+        <table class="borderClass" width="100%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size:9.5px;">
+            
+            
+            <tr style="font-weight: bold">
+                <td rowspan="2" width="55%" style="background-color:#DCDCDC;text-align:center">Bandwidth Usage Assumption</td>
+                <td colspan="1" style="text-align:center;background-color:#DCDCDC">Per Day Hrs</td>
+                <td colspan="1" style="text-align:center;background-color:#DCDCDC" >No of Days per Months</td>
+                <td colspan="1" style="text-align:center;background-color:#DCDCDC">Total Hours per Month</td>
+            </tr>
+            <tr>
+                <td style="text-align:center">{!ROUND(SBQQ__Quote__c.No_of_hours_per_month__c,0)}</td>
+                <td style="text-align:center">{!ROUND(SBQQ__Quote__c.No_of_days_per_month__c,0)}</td>
+                <td style="text-align:center">{!daysandhours}</td>
+            </tr>
+        </table>
+            <br/>
+        </apex:outputPanel>
+            
+        
+        <apex:repeat value="{!yearLabelKeySet}" var="key">
+            <br/>    
+            <span style="color:#F8A843; font-size: 12px;"><b>{!key} </b></span><br/>       
+            
+            <br/> 
+            
+
+            <table class="borderClass" width="100%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size:9.5px;">
+                
+                <tr style="background-color:#DCDCDC;font-weight: bold">
+                    <td>Bundle</td>
+                    <td>Family</td>
+                    <td style="display:{!IF(key=='Year  1', 'OTC', 'none')}">OTC</td>
+                    
+                    <apex:repeat value="{!monthNameMap[key]}" var="month">
+                        <td>{!month}</td>
+                    </apex:repeat>
+                    <td>Start Month</td>
+                </tr>
+                <apex:repeat value="{!summarymap[key]}" var="b">
+                    <tr> 
+                        
+                        <td align="left">  
+                            {!b.bundleName}
+                        </td>
+                        <td align="left">  
+                            {!b.Family}
+                        </td>
+                        
+                        <td style="display:{!IF(key=='Year  1', 'OTC', 'none')}" align="right">  
+                            <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!b.otc}"/>
+                            </apex:outputText>
+                        </td>
+                        <apex:repeat value="{!b.amount}" var="x">
+                            <td align="right">  
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!b.amount[x]}"/>
+                                </apex:outputText>
+                            </td>
+                        </apex:repeat>
+                        <td align="right">  
+                            {!b.month}
+                        </td>
+                        
+                    </tr>
+                </apex:repeat>
+                
+                <tr style="background-color:#696969;color:#FFFFFF">
+                    
+                    
+                    <td colspan="2">Total Monthly charges</td>
+                    <td style="display:{!IF(key=='Year  1', 'OTC', 'none')}" align="right" >
+                        <apex:outputText value="{0, number, ###,##0}" >
+                            <apex:param value="{!amtTotal}"/>
+                            
+                        </apex:outputText>
+                    </td>
+                    
+                    
+                    <apex:repeat value="{!totalMap[key]}" var="c">  
+                        <td align="right">
+                            <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!c}"/>
+                            </apex:outputText>  
+                        </td>
+                    </apex:repeat>
+                    <td></td>
+                </tr> 
+                
+                
+            </table>
+            
+        </apex:repeat>
+        <span style="font-size: 8px;">For the variable/usage-based products, the cost will be based on actuals. Above table represents your approximate monthly charges for the services.</span>
+        
+        <div style="page-break-after: always"/>
+        
+        <apex:outputPanel rendered="{!renderIndexMap['Terms & Conditions']}"> 
+            <span style="font-weight: bold; font-size: 15px;color:#f4a142" >{!indexMap['Terms & Conditions']}. &nbsp;&nbsp;&nbsp;&nbsp;  Terms &amp; Conditions</span>
+        </apex:outputPanel> 
+        
+        <apex:repeat value="{!termNameSet}" var="key" >
+            <br/><br/>
+            <span style="color:#f4a142; font-size: 12px; font-weight: bold;" >
+                <apex:outputText value="{!key}"/>
+            </span>
+            
+            <!-- <apex:repeat value="{!TnC[key]}" var="value">
+<br/><br/>
+<apex:outputText style="margin-top:0px; margin-bottom:0px; font-size:10px; font-family:sans-serif;" value="{!value}" escape="false"/>
+</apex:repeat> -->
+            
+            <apex:repeat value="{!termsMap[key]}" var="value">
+                <br/><br/>
+                <apex:outputText style="font-size:10px; font-family:sans-serif;" value="{!SUBSTITUTE(JSENCODE(value.Term_Condition_Description__c),'\r\n','<br/>    ')}" escape="false"/>
+            </apex:repeat>
+        </apex:repeat>
+        
+        <br/><br/>
+        <apex:variable value="{!0}" var="index"/>
+        <apex:variable value="{!indexMap['Terms & Conditions'] +1}" var="anexno"/>
+        <apex:outputPanel rendered="{!If(SBQQ__Quote__c.Product_s_Annexure_Required__c == 'Yes', True, False)}"> 
+            <apex:repeat value="{!annexureList}" var="key">
+                
+                <span style="font-family:sans-serif;font-weight: bold; font-size: 15px;color:#f4a142" >{!anexno}. &nbsp;&nbsp;&nbsp;&nbsp; Annexure - {!annexureList[index].Sub_Type__c}</span>
+                <br/><br/>
+                <apex:outputText style="color:#696969; font-size:12px;font-family:sans-serif" escape="false" value="{!annexureList[index].Term_Description__c}"/>
+                <br/>
+                <br/>
+                
+                <apex:variable var="index" value="{!index+1}"/>
+                <apex:variable var="anexno" value="{!anexno+1}" />
+                
+            </apex:repeat> 
+        </apex:outputPanel>
+    </body>
+</apex:page>

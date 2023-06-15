@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OEM_details_r_required_if_Source_is_OEM</fullName>
+    <active>true</active>
+    <description>OEM Company Name &amp; OEM entered by are mandatory if one of the primary, Secondary &amp; Tertiary sources is OEM</description>
+    <errorConditionFormula>AND(
+ ISPICKVAL( PrimarySource__c, &quot;OEM&quot;),
+ OR(
+  ISBLANK( TEXT( OEM_Company_Name__c )),
+  ISBLANK( OEM_Lead_Shared_By__c )
+ )
+)</errorConditionFormula>
+    <errorMessage>OEM Details are mandatory if the source is OEM</errorMessage>
+</ValidationRule>

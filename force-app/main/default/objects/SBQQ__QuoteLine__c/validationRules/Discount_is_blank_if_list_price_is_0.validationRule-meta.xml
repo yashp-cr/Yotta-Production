@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_is_blank_if_list_price_is_0</fullName>
+    <active>false</active>
+    <errorConditionFormula>SBQQ__PriceEditable__c &amp;&amp;  (!ISBLANK( Discount_Amt__c ) || (  SBQQ__AdditionalDiscount__c != 0))</errorConditionFormula>
+    <errorDisplayField>SBQQ__Discount__c</errorDisplayField>
+    <errorMessage>Discount cannot be edited if List Price is 0.</errorMessage>
+</ValidationRule>

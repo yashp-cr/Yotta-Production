@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X02_Colocation_Support_with_components</fullName>
+    <columns>Product_Code__c</columns>
+    <columns>SAP_Product__c</columns>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>Model_Name__c</columns>
+    <columns>Product_Line__c</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>Billing_to_be_done_Online__c</columns>
+    <columns>SBQQ__Component__c</columns>
+    <columns>CI_Mapping_Required__c</columns>
+    <columns>PRODUCT2.ACTIVE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Product_Line__c</field>
+        <operation>equals</operation>
+        <value>10200</value>
+    </filters>
+    <label>02. Colocation Support (with components)</label>
+</ListView>

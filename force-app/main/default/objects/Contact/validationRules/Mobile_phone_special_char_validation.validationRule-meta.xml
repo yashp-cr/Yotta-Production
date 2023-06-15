@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobile_phone_special_char_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(AND(NOT(ISBLANK(MobilePhone )), NOT(REGEX( MobilePhone , &quot;\\D*?(\\d\\D*?){10}&quot;))),AND(NOT(ISBLANK(Phone )), NOT(REGEX( Phone , &quot;\\D*?(\\d\\D*?){10}&quot;))))</errorConditionFormula>
+    <errorMessage>Please Enter the Correct 10 digit Mobile Number.</errorMessage>
+</ValidationRule>

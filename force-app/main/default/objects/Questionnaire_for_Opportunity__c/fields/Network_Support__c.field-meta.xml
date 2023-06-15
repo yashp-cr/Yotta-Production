@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Network_Support__c</fullName>
+    <externalId>false</externalId>
+    <label>Network Support</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Single mode Fibre Cable</fullName>
+                <default>false</default>
+                <label>Single mode Fibre Cable</label>
+            </value>
+            <value>
+                <fullName>Double mode Fibre Cable</fullName>
+                <default>false</default>
+                <label>Double mode Fibre Cable</label>
+            </value>
+            <value>
+                <fullName>UTP Copper Cable</fullName>
+                <default>false</default>
+                <label>UTP Copper Cable</label>
+            </value>
+            <value>
+                <fullName>FTP Copper Cable</fullName>
+                <default>false</default>
+                <label>FTP Copper Cable</label>
+            </value>
+            <value>
+                <fullName>Cross Connect</fullName>
+                <default>false</default>
+                <label>Cross Connect</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

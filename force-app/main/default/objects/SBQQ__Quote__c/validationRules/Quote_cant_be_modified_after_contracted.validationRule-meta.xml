@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_cant_be_modified_after_contracted</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ Contracted__c,
+	SBQQ__Opportunity2__r.SBQQ__Contracted__c ,
+ PRIORVALUE(Contracted__c),
+ NOT(ISCHANGED(Signed_SCF_Uploaded__c)),
+ IF(ISCHANGED(OwnerId),
+   $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+   True
+ ),
+ $Profile.Name &lt;&gt; &quot;System Administrator&quot;
+)</errorConditionFormula>
+    <errorMessage>Quote cannot be modified as contract is already generated</errorMessage>
+</ValidationRule>

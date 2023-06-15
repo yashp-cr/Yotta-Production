@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_shud_Partner_if_Partner_is_tagged</fullName>
+    <active>true</active>
+    <description>Previous Name: Prim_Sec_Tert_Partner_to_Source</description>
+    <errorConditionFormula>OR(
+  AND(
+    NOT(ISBLANK( Partner_Primary__c )),
+    OR(
+      ISBLANK( Text ( PrimarySource__c ) ),
+      NOT(CONTAINS( Text( PrimarySource__c ), &apos;Partner&apos;))
+    )
+  ),
+  AND(
+    NOT(ISBLANK( Partner_Secondary__c )),
+    OR(
+      ISBLANK( Text ( SecondarySource__c ) ),
+      NOT(CONTAINS( Text( SecondarySource__c ), &apos;Partner&apos;))
+    )
+  ),
+  AND(
+    NOT(ISBLANK( Partner_Tertiary__c )),
+    OR(
+      ISBLANK( Text ( TertiarySource__c ) ),
+      NOT(CONTAINS( Text( TertiarySource__c ), &apos;Partner&apos;))
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>Source should be Partner when Partner is associated</errorMessage>
+</ValidationRule>

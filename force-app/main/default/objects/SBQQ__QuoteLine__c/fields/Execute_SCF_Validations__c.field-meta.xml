@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Execute_SCF_Validations__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Execute SCF Validations will be updated as TRUE by Custom Script. All the SCF related validations will be executed once this is set as TRUE</description>
+    <externalId>false</externalId>
+    <label>Execute SCF Validations</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

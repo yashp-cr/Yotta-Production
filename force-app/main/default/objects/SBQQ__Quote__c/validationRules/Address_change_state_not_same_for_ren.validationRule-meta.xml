@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address_change_state_not_same_for_ren</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL( SBQQ__Type__c, &quot;Renewal&quot;),
+ISPICKVAL( SCF_Type__c, &quot;Address Change&quot;),
+ New_Bill_To_Address__r.State2__c !=  Bill_To_Address__r.State2__c 
+)</errorConditionFormula>
+    <errorMessage>You can only perform Address Change within same state on Renewal SCF.</errorMessage>
+</ValidationRule>

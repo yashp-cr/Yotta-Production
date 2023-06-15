@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recurring_Charges_Third_Party__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>For Services provided by Yotta that have third party element 
+• &lt;OTC&gt; of Onetime charges of contract period  
+• &lt;RC&gt; of Recurring charges of contract period</inlineHelpText>
+    <label>Recurring Charges Third Party</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>100%</fullName>
+                <default>true</default>
+                <label>100%</label>
+            </value>
+            <value>
+                <fullName>75%</fullName>
+                <default>false</default>
+                <label>75%</label>
+            </value>
+            <value>
+                <fullName>50%</fullName>
+                <default>false</default>
+                <label>50%</label>
+            </value>
+            <value>
+                <fullName>25%</fullName>
+                <default>false</default>
+                <label>25%</label>
+            </value>
+            <value>
+                <fullName>0%</fullName>
+                <default>false</default>
+                <label>0%</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

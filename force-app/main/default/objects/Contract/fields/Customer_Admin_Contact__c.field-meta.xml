@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Admin_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>2bDel as per EMAIL Yotta - Contact Deactivation Flow on 22-July</description>
+    <externalId>false</externalId>
+    <label>2bDel_Customer Admin Contact</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Value does not exist or does not match filter criteria- 2bDel_Customer Admin</errorMessage>
+        <filterItems>
+            <field>Contact.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.AccountId</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Contracts (Customer Admin Contact)</relationshipLabel>
+    <relationshipName>Contracts2</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Required_for_which_Stakeholder</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Promoter_s_Support_Required__c, &apos;Yes&apos;),
+OR(
+ISBLANK(Which_Stakeholders_Support_is_Required__c ),
+ISBLANK( Support_Required_Remark__c )),
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;
+)</errorConditionFormula>
+    <errorMessage>Please Select Which Stakeholders Support is Required and Remarks.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category_Type__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Category Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Colocation</fullName>
+                <default>true</default>
+                <label>Colocation</label>
+            </value>
+            <value>
+                <fullName>Colocation One Time Fit Out Services(Cage, Rack Cost, CCTV)</fullName>
+                <default>false</default>
+                <label>Colocation One Time Fit Out Services(Cage, Rack Cost, CCTV)</label>
+            </value>
+            <value>
+                <fullName>Bandwidth</fullName>
+                <default>false</default>
+                <label>Bandwidth</label>
+            </value>
+            <value>
+                <fullName>Equipment One time Sale</fullName>
+                <default>false</default>
+                <label>Equipment One time Sale</label>
+            </value>
+            <value>
+                <fullName>Dedicated Hosting on OPEX(Hardware as a Service)</fullName>
+                <default>false</default>
+                <label>Dedicated Hosting on OPEX(Hardware as a Service)</label>
+            </value>
+            <value>
+                <fullName>IT Managed Services</fullName>
+                <default>false</default>
+                <label>IT Managed Services</label>
+            </value>
+            <value>
+                <fullName>Yotta Cloud Services(Including Compute/Backup/ Storage)</fullName>
+                <default>false</default>
+                <label>Yotta Cloud Services(Including Compute/Backup/ Storage)</label>
+            </value>
+            <value>
+                <fullName>3rd Party Cloud Services</fullName>
+                <default>false</default>
+                <label>3rd Party Cloud Services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

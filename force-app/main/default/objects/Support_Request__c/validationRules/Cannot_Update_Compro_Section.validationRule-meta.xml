@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Update_Compro_Section</fullName>
+    <active>true</active>
+    <description>Other People cannot Update Compro Section.</description>
+    <errorConditionFormula>AND(
+ Not(Owner:User.FirstName = &apos;Compro&apos;),
+ $Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+ OR(
+  ISCHANGED( Actual_Efforts_In_Days2__c ),
+  ISCHANGED( SR_Efforts_Count__c ),
+  ISCHANGED( Estimated_Efforts_In_Days__c ),
+  ISCHANGED( Comments__c ),
+  ISCHANGED( Assigned_Person__c )
+ )
+)</errorConditionFormula>
+    <errorMessage>Cannot modify Compro Section!</errorMessage>
+</ValidationRule>

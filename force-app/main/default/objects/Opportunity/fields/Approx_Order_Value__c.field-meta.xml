@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approx_Order_Value__c</fullName>
+    <externalId>false</externalId>
+    <label>Approx Order Value</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0-5L</fullName>
+                <default>false</default>
+                <label>0-5L</label>
+            </value>
+            <value>
+                <fullName>5-10L</fullName>
+                <default>false</default>
+                <label>5-10L</label>
+            </value>
+            <value>
+                <fullName>10-25L</fullName>
+                <default>false</default>
+                <label>10-25L</label>
+            </value>
+            <value>
+                <fullName>25-50L</fullName>
+                <default>false</default>
+                <label>25-50L</label>
+            </value>
+            <value>
+                <fullName>50-1Cr</fullName>
+                <default>false</default>
+                <label>50-1Cr</label>
+            </value>
+            <value>
+                <fullName>Above 1Cr</fullName>
+                <default>false</default>
+                <label>Above 1Cr</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

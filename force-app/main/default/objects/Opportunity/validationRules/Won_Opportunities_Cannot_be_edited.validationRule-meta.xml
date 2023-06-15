@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Won_Opportunities_Cannot_be_edited</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+PRIORVALUE(IsClosed),
+!Exclude_from_Validation__c ,
+OR(
+AND(
+NOT(ISPICKVAL(StageName, &apos;Closed Cancelled&apos;)),
+NOT(ISPICKVAL( PriorValue(StageName), &apos;Closed Cancelled&apos;)),
+OR(
+ISBLANK(SBQQ__PrimaryQuote__c),
+ISPICKVAL(SBQQ__PrimaryQuote__r.SBQQ__Type__c, &quot;Quote&quot;)
+)
+),
+AND(
+NOT(ISBLANK(SBQQ__PrimaryQuote__c)),
+NOT(ISPICKVAL(SBQQ__PrimaryQuote__r.SBQQ__Type__c, &quot;Quote&quot;)),
+IF(OR(AND(
+ISPICKVAL(StageName, &apos;Closed Lost&apos;),
+ISPICKVAL( PriorValue(StageName), &apos;Closed Lost&apos;)
+),
+AND(
+ISPICKVAL(StageName, &apos;Closed Cancelled&apos;),
+ISPICKVAL( PriorValue(StageName), &apos;Closed Cancelled&apos;)
+)),
+AND(
+NOT(ISCHANGED(SBQQ__RenewedContract__c)),
+NOT(ISCHANGED(SBQQ__AmendedContract__c))
+),
+PRIORVALUE(IsClosed)
+)
+)
+),
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+$UserRole.Name &lt;&gt; &apos;Sales Coordinator&apos;
+)</errorConditionFormula>
+    <errorMessage>Opportunity cannot be Edited once it is marked as Closed Won/Lost</errorMessage>
+</ValidationRule>

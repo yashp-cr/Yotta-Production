@@ -1,0 +1,562 @@
+<apex:page renderAs="pdf" standardController="SBQQ__Quote__c" extensions="CombinedSCFController" action="{!getSCFDetails}" showHeader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false">
+    
+  <head>                
+        <style type="text/css">                 
+            @page {
+                margin-top: 3cm;
+                margin-bottom: 3cm;
+                
+                @top-center {
+                    content: element(header);
+                }
+                @bottom-left {
+                    content: element(footer);
+                }
+                @bottom-right {
+                    content: "Page " counter() " of " counter(pages);
+                }
+            }
+            
+            div.header {
+                padding: 0px;
+                position: running(header);
+            }
+            div.footer {
+                display: block;
+                padding: 5px;
+                position: running(footer);
+            }
+            .pagenumber:before {
+                content: counter(page);
+            }
+            .pagecount:before {
+                content: counter(pages);
+            }
+            div.content {
+                float: left;
+                width: 100%;
+            } 
+            body{
+               font-family: sans-serif;
+            }
+            .borderClass table, .borderClass td, .borderClass th, .borderClass tr{
+                border: 0.5px solid #8BA9E5 !important; 
+                border-collapse: collapse;
+            }
+        </style>             
+    </head> 
+    <body style="margin:0px; width: 95%">
+        <div class="header">
+            <img style="margin-left: -50px; margin-top: -15px; float: left; width: 80%; HEIGHT: 100px; border:0px" src='{!URLFOR($Resource.PDFHeader)}' title="logo" align="left" />           
+            <img style="width: 140px; HEIGHT: 90px; border:0px" src='{!URLFOR($Resource.Yotta_Logo)}' title="logo" align="right"  />
+        </div>
+        
+        <div class="footer" style="font-family:sans-serif; font-size: 8px;">
+            <apex:outputText rendered="{!IF(SBQQ__Quote__c.SBQQ__MasterContract__r.Business_Unit__c == 'IN20',true,false)}">
+               
+            <c:SOFFooter />
+            </apex:outputText>
+            <apex:outputText rendered="{!IF(SBQQ__Quote__c.SBQQ__MasterContract__r.Business_Unit__c == 'IN10',true,false)}">
+
+            <c:SOFFooterInfra />
+            </apex:outputText>
+            
+            <div style="float:right; font-size: 9px;">Page <span class="pagenumber"/> of <span class="pagecount"/></div>
+        </div>  
+        
+        
+        
+        <div style="text-align: center;">
+            <span style="font-size:20px; font-family:sans-serif; font-weight: bold;" >Service Change Form (SCF): </span>
+                <span style="color:#1d3f81; font-family:sans-serif; font-size:20px; font-weight: bold;">{!SBQQ__Quote__c.Name} </span>   <br/>
+        </div>
+        
+        <span style="color:#f4a142; font-family:sans-serif; font-weight: bold; font-size:12px;"><apex:outputText >
+           <b>Contract Details</b></apex:outputText>
+            <br/>
+        </span>
+        <br/>
+        <table width="100%" cellpadding="5" style="border-collapse: collapse;  font-size:15px; ">
+            
+            <tr style="background-color:#1d3f81; color:#FFFFFF;font-size:11px;text-align: center;">
+                <th style="border:1px solid black;"></th>
+                <th style="border:1px solid black;">Bill To Customer</th>
+                <th style="border:1px solid black;">Support To Customer</th>
+            </tr>
+            <tr style = "font-size:10px; font-family:sans-serif;">
+                <td width="25%" style="color:#1d3f81;border:1px solid black;font-size:10px;">ID</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.SBQQ__Account__r.Account_Number__c}</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.SBQQ__MasterContract__r.Support_To_Account__r.Account_Number__c}</td>
+            </tr>
+            <tr style = "font-size:10px; font-family:sans-serif;">
+                <td width="25%" style="color:#1d3f81;border:1px solid black;font-size:10px" >Name</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.SBQQ__Account__r.Name}</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.SBQQ__MasterContract__r.Support_To_Account__r.Name}</td>
+            </tr>
+            <tr style = "font-size:10px; font-family:sans-serif;">
+                <td width="25%" style="color:#1d3f81;border:1px solid black;font-size:10px">Billing Address</td>
+                <td colspan="2" style="border:1px solid black;">
+                    <apex:outputText value="{!SBQQ__Quote__c.Bill_To_Address__r.AddressLine1__c}, " rendered="{!IF(SBQQ__Quote__c.Bill_To_Address__r.AddressLine1__c != null,true,false)}"/>
+                    <apex:outputText value="{!SBQQ__Quote__c.Bill_To_Address__r.AddressLine2__c}, " rendered="{!IF(SBQQ__Quote__c.Bill_To_Address__r.AddressLine2__c != null,true,false)}"/>
+                    <apex:outputText value="{!SBQQ__Quote__c.Bill_To_Address__r.City__c}, " rendered="{!IF(SBQQ__Quote__c.Bill_To_Address__r.City__c != null,true,false)}"/>
+                    <apex:outputText value="{!SBQQ__Quote__c.Bill_To_Address__r.PostalCode__c}"/>
+                </td>
+                
+            </tr>
+        </table>
+        <br/>
+        
+        <table width="100%" cellpadding="5" style="border-collapse: collapse; ">
+            <tr style = "font-size:10px; font-family:sans-serif;">
+                <td width="25%" style="color:#1d3f81;border:1px solid black;font-size:10px" >Contract No</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.SBQQ__MasterContract__r.Contract_Number__c}</td>
+                <td width="25%" style="color:#1d3f81; border:1px solid black;font-size:10px">SCF Effective Date</td>
+                <td style="border:1px solid black;">
+                    <apex:outputText value="{0,date,dd'-'MM'-'yyyy}" > 
+                        <apex:param value="{!SBQQ__Quote__c.SBQQ__MasterContract__r.SBQQ__AmendmentStartDate__c}"/>
+                    </apex:outputText>                    
+                </td>
+            </tr>
+            <tr style = "font-size:10px; font-family:sans-serif;">
+                <td width="25%" style="color:#1d3f81;border:1px solid black;font-size:10px">Contract Term</td>
+                <td style="border:1px solid black;">
+                    {!ROUND(quote.SBQQ__MasterContract__r.SBQQ__Quote__r.Contract_Tenure_Year__c, 0)} Years, {!ROUND(quote.SBQQ__MasterContract__r.SBQQ__Quote__r.Contract_Tenure_Month__c, 0)} Months, 
+                    {!ROUND(quote.SBQQ__MasterContract__r.SBQQ__Quote__r.Contract_Tenure_Days__c, 0)} Days
+                </td>
+                <td width="25%" style="color:#1d3f81;border:1px solid black;font-size:10px">Remaining Contract Term</td>
+                <td style="border:1px solid black;">{!ROUND(SBQQ__Quote__c.Contract_Tenure_Year__c,0)} Years, {!ROUND(SBQQ__Quote__c.Contract_Tenure_Month__c,0)} Months, {!ROUND(SBQQ__Quote__c.Contract_Tenure_Days__c,0)} Days</td>
+               
+            </tr>
+            <tr style = "font-size:10px; font-family:sans-serif;">
+                <td width="25%" style="color:#1d3f81;border:1px solid black;font-size:10px">Contract Currency</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.Contract_Currency__c}</td>
+                <td width="25%" style="color:#1d3f81;border:1px solid black;font-size:10px">Billing Currency</td>
+                <apex:outputText rendered="{!IF(SBQQ__Quote__c.SBQQ__MasterContract__r.Business_Unit__c != 'IN20',true,false)}">
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Billing_Currency__c}</td></apex:outputText>
+                <apex:outputText rendered="{!IF(SBQQ__Quote__c.SBQQ__MasterContract__r.Business_Unit__c == 'IN20',true,false)}">
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Contract_Currency__c}</td></apex:outputText>
+
+            </tr>
+        </table>
+        
+        <br/>
+        <br/>
+        
+        <apex:outputPanel rendered="{!if(commercialSummaryList != null, true,false)}">
+            <apex:outputPanel rendered="{!!renderIndexMap['deactivationList']}">
+            <span style="color:#f4a142; font-family:sans-serif; font-weight: bold; font-size:12px;"><apex:outputText ><b>Commercial Summary</b></apex:outputText></span><br/><br/>
+            <table width="100%" cellpadding="5" style="border-collapse: collapse;">
+                <tr style="background-color:#1d3f81; color:#FFFFFF;font-size:11px;text-align: center;text-align: center;">
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Year</td>
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">One Time Charges</td>
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;" colspan="2">Remaining Contract Recurring Charges</td>
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Differential</td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;"></td>
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;"></td>
+                    <td style="border:1px solid black;font-size:11px; font-family:sans-serif;"><b>Existing Contract</b></td>
+                    <td style="border:1px solid black;font-size:11px; font-family:sans-serif;"><b>Revised Contract</b></td>
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;"></td>
+                </tr>
+                <apex:variable value="{!1}" var="index"/>
+                <apex:repeat value="{!commercialSummaryList}" var="csList">
+                    <tr style = "font-size:10px; font-family:sans-serif;">
+                        <td style="border:1px solid black;">Year {!csList.year}</td>
+                        <td style="border:1px solid black;">
+                            <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!csList.otc}"/>
+                            </apex:outputText>
+                        </td>
+                        <td style="border:1px solid black;">
+                            <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!csList.exisContract}"/>
+                            </apex:outputText>
+                        </td>
+                        <td style="border:1px solid black;">
+                            <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!csList.revContract}"/>
+                            </apex:outputText>
+                        </td>
+                        <td style="border:1px solid black;">
+                            <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!csList.diff}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <apex:variable value="{!index+1}" var="index"/>
+                </apex:repeat>
+            </table>
+            <span style="font-size:7pt;">* - Year from which the change will be effective. | Variable Charges Applicable - Yes/No: {!VariableCharge}
+            </span>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        <br/>
+        <br/>
+        
+        <div style="page-break-after: always">
+            <span style="color:#f4a142; font-family:sans-serif; font-weight: bold; font-size:12px;"><apex:outputText ><b>Contact Details</b></apex:outputText></span>
+            <br/>
+            <br/>
+            <table border="1px solid black" width="100%" cellpadding="5" style="border-collapse: collapse; ">
+                <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                    <th style="border:1px solid black;"></th>
+                    <th style="border:1px solid black;font-size:10px; font-family:sans-serif;">Customer SPoC*</th>
+                    <th style="border:1px solid black;font-size:10px; font-family:sans-serif;">Customer Billing Contact</th>
+                    <th style="border:1px solid black;font-size:10px; font-family:sans-serif;">Service Provider Account Manager#</th>
+                </tr>
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td width="18%" style="color:#1d3f81;border:1px solid black;">Name</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_SPoC__r.Name}</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Billing_Contact__r.Name}</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Owner.Name}</td>
+                </tr>
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td width="18%" style="color:#1d3f81;border:1px solid black;">Email ID</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_SPoC__r.Email}</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Billing_Contact__r.Email}</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Owner.Email}</td>
+                </tr>
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td width="18%" style="color:#1d3f81;border:1px solid black;">Contact No.</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_SPoC__r.MobilePhone}</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Billing_Contact__r.MobilePhone}</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Owner.Phone}</td>
+                </tr>
+                
+            </table>
+            <span style="font-size:7pt;">SPoC* oversee the order execution from Customer Organization | Service Provider Account Manager# Service provider’s point of contact
+            </span>
+        </div>
+
+        <div style="page-break-after: always">
+            <span style="font-size:7pt;">The Undersigned signatory is aware and agrees to abide by and be bound by the provisions of this SOF, the MSA and/or any other documents like SOW/SLA agreed between the two parties. The signatory deems to be authorized
+            </span>
+            <table border="1px solid black" width="100%" cellpadding="5" style="border-collapse: collapse; ">
+                <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                    <th style="border:1px solid black;"></th>
+                    <th style="border:1px solid black;font-size:10px; font-family:sans-serif;">Customer Signature and Stamp</th>
+                    <th style="border:1px solid black;font-size:10px; font-family:sans-serif;">Service Provider Signature and Stamp</th>
+                </tr>
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td style="color:#1d3f81;border:1px solid black;">Signature</td>
+                    <td style="border:1px solid black;"></td>
+                    <td style="border:1px solid black;"></td>
+                </tr>
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td style="color:#1d3f81;border:1px solid black;">Name of Signatory</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.SBQQ__MasterContract__r.Customer_Authorised_Signatory__r.Name}</td>
+                    <td style="border:1px solid black;"></td>
+                </tr >
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td style="color:#1d3f81;border:1px solid black;">Designation</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.SBQQ__MasterContract__r.Customer_Authorised_Signatory__r.Title}</td>
+                    <td style="border:1px solid black;"></td>
+                </tr>
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td style="color:#1d3f81;border:1px solid black;">Mobile Number</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.SBQQ__MasterContract__r.Customer_Authorised_Signatory__r.MobilePhone}</td>
+                    <td style="border:1px solid black;"></td>
+                </tr>
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td style="color:#1d3f81;border:1px solid black;">Email ID</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.SBQQ__MasterContract__r.Customer_Authorised_Signatory__r.Email}</td>
+                    <td style="border:1px solid black;"></td>
+                </tr>
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td style="color:#1d3f81;border:1px solid black;">Date</td>
+                    <td style="border:1px solid black;"></td>
+                    <td style="border:1px solid black;"></td>
+                </tr>                
+            </table>            
+        </div>
+        
+        <div style="page-break-after: always">            
+            <apex:outputPanel rendered="{!renderIndexMap['upgrade']}">
+                <span style="font-size: 12px; font-family:sans-serif;" >Annexure #{!indexMap['upgrade']} </span>
+                 <span style="color:#1d3f81; font-family:sans-serif; font-size: 12px; font-weight: bold;">Details of Upgrade/Downgrade, Price Change &amp; Facility Change</span><br/>
+                <br/>
+                <table border="1px solid black" width="100%" cellpadding="3" style="border-collapse: collapse; font-size:10px; font-family:sans-serif;">
+                    <tr style="background-color:#1d3f81;color:#FFFFFF">
+                        <td style="border:1px solid black;"></td>
+                        <td style="border:1px solid black;"></td>
+                        <td style="border:1px solid black;"></td>
+                        <td style="border:1px solid black;"></td>
+                        <td colspan="4" style="border:1px solid black;font-size:10px; font-family:sans-serif;text-align:center">Current</td>
+                        <td colspan="4" style="border:1px solid black;font-size:10px; font-family:sans-serif;text-align:center">Revised</td>
+                    </tr>
+                    <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Line #</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">SCF Type</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Service Name</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Qty</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">OTC</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">MRC</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">VAR</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Location</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">OTC</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">MRC</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">VAR</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Location</td>
+                    </tr>
+                    <apex:variable value="{!1}" var="index"/>
+                    <apex:repeat value="{!parentBundeWrapMap}" var="pbm">   
+                        <tr style = "font-size:10px; font-family:sans-serif;">
+                            <td style="border:1px solid black;">{!index}</td>
+                            <td style="border:1px solid black;">{!parentBundeWrapMap[pbm].scfType}</td>
+                            <td style="border:1px solid black;">
+                                <apex:outputText escape="false" value="{!parentBundeWrapMap[pbm].serviceName}"/>
+                            </td>
+                            <td style="border:1px solid black;">{!Round(parentBundeWrapMap[pbm].qty,0)}</td>
+                            <td style="border:1px solid black;">
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!parentBundeWrapMap[pbm].existingOtc}"/>
+                                </apex:outputText> 
+                            </td>
+                            <td style="border:1px solid black;">
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!parentBundeWrapMap[pbm].existingMrc}"/>
+                                </apex:outputText>
+                            </td>
+                            <td style="border:1px solid black;">
+                                <apex:outputText value="{0, number, ###,##0.00}" >
+                                    <apex:param value="{!parentBundeWrapMap[pbm].existingvar}"/>
+                                </apex:outputText>
+                            </td>
+                            <td style="border:1px solid black;">{!parentBundeWrapMap[pbm].existingLocation}</td>
+                            <td style="border:1px solid black;">
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!parentBundeWrapMap[pbm].revisedOtc}"/>
+                                </apex:outputText>
+                            </td>
+                            <td style="border:1px solid black;">
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!parentBundeWrapMap[pbm].revisedMrc}"/>
+                                </apex:outputText>
+                            </td>
+                            <td style="border:1px solid black;">
+                                <apex:outputText value="{0, number, ###,##0.00}" >
+                                    <apex:param value="{!parentBundeWrapMap[pbm].revisedvar}"/>
+                                </apex:outputText>
+                            </td>
+                            <td style="border:1px solid black;">{!parentBundeWrapMap[pbm].revisedLocation}</td>
+                        </tr>
+                        <apex:variable value="{!index+1}" var="index"/>
+                    </apex:repeat>
+                </table>
+                <br/><br/>
+            </apex:outputPanel> 
+            
+            <apex:outputPanel rendered="{!renderIndexMap['deactivationList']}">
+                <span style="font-size: 12px; font-family:sans-serif;" >Annexure #{!indexMap['deactivationList']}</span>
+                 <span style="color:#1d3f81; font-family:sans-serif; font-size: 12px; font-weight: bold;">Service wise deactivation details – Deactivation, Cancellation</span><br/>
+                <br/>
+                <table border="1px solid black" width="100%" cellpadding="5" style="border-collapse: collapse; font-size:10px; font-family:sans-serif;">
+                    <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Ref No</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">SCF Type</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Service Name</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Qty</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Delivery Location</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">SCF Effective date</td>
+                    </tr>
+                    <apex:variable value="{!1}" var="index"/>
+                    <apex:repeat value="{!deactivationList}" var="dList">  
+                        <tr style = "font-size:10px; font-family:sans-serif;">
+                            <td style="border:1px solid black;">{!index}</td>
+                            <td style="border:1px solid black;">{!dList.scfType}</td>
+                            <td style="border:1px solid black;">{!dList.productName}</td>
+                            <td style="border:1px solid black;">{!Round(dList.quantity,0)}</td>
+                            <td style="border:1px solid black;">{!dList.location}</td>
+                            <td style="border:1px solid black;">
+                                <apex:outputText value="{0,date,dd'-'MM'-'yyyy}" > 
+                                    <apex:param value="{!dList.billStartDate}"/>
+                                </apex:outputText> 
+                                
+                            </td>
+                        </tr>
+                        <apex:variable value="{!index+1}" var="index"/>
+                    </apex:repeat>  
+                </table>
+                <br/><br/>
+            </apex:outputPanel>
+            
+            <apex:outputPanel rendered="{!renderIndexMap['newLineMap']}">
+                <span style="font-size: 12px; font-family:sans-serif;" >Annexure #{!indexMap['newLineMap']}</span>
+                 <span style="color:#1d3f81; font-family:sans-serif; font-size: 12px; font-weight: bold;">Service wise Configuration, Charges and Delivery Location – New Line</span><br/>
+                <br/>
+                <table border="1px solid black" width="100%" cellpadding="5" style="border-collapse: collapse; font-size:10px; font-family:sans-serif;">
+                    <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Ref No</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Service Name</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Qty</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Delivery Location</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">OTC</td>
+                        <!-- <apex:variable value="{!1}" var="yearno"/> -->
+                        <apex:repeat value="{!yearSet}" var="year">
+                            <td style="border:1px solid black;">Year {!year} - MRC</td><!--change Year {count} with MRC -->
+                            <!-- <apex:variable value="{!yearno+1}" var="yearno"/> -->
+                        </apex:repeat>
+                        <td style="border:1px solid black;">Variable charge</td>
+                        <td style="border:1px solid black;">UOM</td>
+                    </tr>
+                    <apex:variable value="{!1}" var="index"/>
+                    <apex:repeat value="{!newLineMap}" var="nlm">
+                        <tr style = "font-size:10px; font-family:sans-serif;">
+                            <td style="border:1px solid black;">{!index}</td>
+                            <td style="border:1px solid black;">{!newLineMap[nlm].serviceName}</td>
+                            <td style="border:1px solid black;">{!Round(newLineMap[nlm].qty,0)}</td>
+                            <td style="border:1px solid black;">{!newLineMap[nlm].deliveryLocation}</td>
+                            <td style="border:1px solid black;">
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!newLineMap[nlm].otc}"/>
+                                </apex:outputText>
+                                </td>
+                            <apex:repeat value="{!newLineMap[nlm].bundleYearMap}" var="by">
+                                <td style="border:1px solid black;">
+                                    <apex:outputText value="{0, number, ###,##0}" >
+                                        <apex:param value="{!newLineMap[nlm].bundleYearMap[by].mrc}"/>
+                                    </apex:outputText>
+                                </td>
+                            </apex:repeat>
+                            <td style="border:1px solid black;">
+                                <apex:outputText value="{0, number, ###,##0.00}" >
+                                    <apex:param value="{!newLineMap[nlm].vCharge}"/>
+                                </apex:outputText>
+                            </td>
+                            <td style="border:1px solid black;">{!newLineMap[nlm].uom}</td>
+                        </tr>
+                        <apex:variable value="{!index+1}" var="index"/>
+                    </apex:repeat>
+                </table>    
+                <br/><br/>
+            </apex:outputPanel>    
+            
+            <apex:outputPanel rendered="{!renderIndexMap['upgradeDescriptionList']}">
+                <span style="font-size: 12px; font-family:sans-serif;">Annexure #{!indexMap['upgradeDescriptionList']}</span>
+                 <span style="color:#1d3f81; font-family:sans-serif; font-size: 12px; font-weight: bold;">Detailed Service Configuration – Upgrade/Downgrade</span><br/>
+                <br/>
+                <table border="1px solid black" width="100%" cellpadding="5" style="border-collapse: collapse;font-size:10px; font-family:sans-serif;">
+                    <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Ref No</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Orignal Contract No</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Service Identifier</td>
+                        <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Product Name</td>
+                        <td width = "20%" style="border:1px solid black;font-size:10px; font-family:sans-serif;">Existing Configuration</td>
+                        <td width = "20%" style="border:1px solid black;font-size:10px; font-family:sans-serif;">New Configuration</td>
+                    </tr>
+                    <apex:variable value="{!1}" var="index"/>
+                    <apex:repeat value="{!upgradeDescriptionList}" var="udl">
+                        <tr style = "font-size:10px; font-family:sans-serif;">
+                            <td style="border:1px solid black;">{!index}</td>
+                            <td style="border:1px solid black;">{!udl.orgContract}</td>
+                            <td style="border:1px solid black;">{!udl.serviceIdentifier}</td>
+                            <td style="border:1px solid black;">{!udl.productName}</td>
+                            <td style="border:1px solid black;">
+                                <!-- <apex:outputText value="{!SUBSTITUTE(JSENCODE(udl.existingConfig),'\n','<br/>')}"  escape="false"/> -->
+                                <apex:outputText escape="false" value="{!udl.existingConfig}" />
+                            </td>
+                            <td style="border:1px solid black;">
+                                <apex:outputText value="{!udl.newConfig}" escape="false"/>
+                            </td>
+                        </tr>
+                        <apex:variable value="{!index+1}" var="index"/>
+                    </apex:repeat>
+                </table>
+                <br/><br/>
+            </apex:outputPanel>
+        </div>
+        <!-- new page starts -->
+        
+        <apex:outputPanel rendered="{!renderIndexMap['descriptionList']}">
+            <span style="font-size: 12px; font-family:sans-serif;" >Annexure #{!indexMap['descriptionList']} </span>
+             <span style="color:#1d3f81; font-family:sans-serif; font-size: 12px; font-weight: bold;">Detailed Service Configuration – Price Change, Deactivation, Cancellation, New Line, Facility Change</span><br/>
+            <br/>
+            <table border="1px solid black" width="100%" cellpadding="5" style="border-collapse: collapse; font-size:10px; font-family:sans-serif;">
+                <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Ref No.</td>
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Original Contract Line No.</td>
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Service Identifier</td>
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Product Name</td>
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Product Description</td>
+                </tr>
+                
+                <apex:variable value="{!1}" var="index"/>
+                <apex:repeat value="{!descriptionList}" var="dl">
+                    <tr style = "font-size:10px; font-family:sans-serif;">
+                        <td style="border:1px solid black;">{!index}</td>
+                        <td style="border:1px solid black;">{!dl.orgContract}</td>
+                        <td style="border:1px solid black;">{!dl.serviceIdentifier}</td>
+                        <td style="border:1px solid black;">{!dl.productName}</td>
+                        <td style="border:1px solid black;">
+                            <apex:outputText value="{!dl.prodDescription}" escape="false"/>
+                            <br/>
+                            Remarks:
+                            <apex:outputText value="{!dl.remarks}" escape="false"/>
+                        </td>
+                    </tr>
+                    <apex:variable value="{!index+1}" var="index"/>
+                </apex:repeat>
+            </table>
+            <br/><br/>
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!renderIndexMap['AddressLocationMap']}">
+            <span style="font-size: 12px; font-family:sans-serif;" >Annexure #{!indexMap['AddressLocationMap']} </span>
+             <span style="color:#1d3f81; font-family:sans-serif; font-size: 12px; font-weight: bold;">Address Reference Details</span><br/>
+            <br/>
+            <table border="1px solid black" width="100%" cellpadding="5" style="border-collapse: collapse; font-size:10px; font-family:sans-serif;">
+                <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Address Id</td>
+                    <td style="border:1px solid black;font-size:10px; font-family:sans-serif;">Address Details</td>
+                </tr>
+                
+                <apex:repeat value="{!AddressLocationMap}" var="key">
+                    <tr style = "font-size:10px; font-family:sans-serif;">
+                        <td style="border:1px solid black;">{!key}</td>
+                        <td style="border:1px solid black;">{!AddressLocationMap[key]}</td>
+                    </tr> 
+                    
+                </apex:repeat>
+            </table>
+            <br/><br/>
+
+        </apex:outputPanel>
+        
+        <!--External Remark-->
+        <apex:outputText rendered="{!IF(SBQQ__Quote__c.External_Remarks__c != null,true,false)}">
+                <apex:outputText >
+                    <span style="font-family:sans-serif; font-size: 12px !important; font-weight: bold;"> Remarks </span>
+                </apex:outputText>
+                <br/>
+                <apex:outputText style="font-size:10px !important; font-family:sans-serif;" value="{!SUBSTITUTE((SBQQ__Quote__c.External_Remarks__c),'\r\n','<br/>')}" escape="false"/>
+        </apex:outputText><br/><br/>
+
+        <span style="font-size: 12px; font-family:sans-serif;" >Annexure #{!indexMap['terms']}</span>
+         <span style="color:#1d3f81; font-family:sans-serif; font-size: 12px; font-weight: bold;">Terms &amp; Conditions</span><br/>
+        
+        <br/>
+        <span style="font-size:10px; font-family:sans-serif;"> Terms and conditions<br/>
+            1.  All Terms &amp; Conditions will be same as mentioned in the original SOF. 
+            <apex:outputPanel rendered="{!SizeOfMap > 0}" > additionally the following terms shall apply
+            </apex:outputPanel>
+            <br/>
+            <apex:outputText rendered="{! If(isNewLine ,true,false) }">
+                2.  The customer understands that facility change may result into change in taxation.<br/>
+            </apex:outputText>
+        </span>
+          <apex:repeat value="{!termNameSet}" var="key" >
+            <br/><br/>
+            <span style="color:#f4a142; font-size: 12px; font-weight: bold;" >
+                <apex:outputText value="{!key}"/>
+            </span>
+       
+         <apex:repeat value="{!termsMap[key]}" var="value">
+                <br/><br/>
+                <apex:outputText style="font-size:10px; font-family:sans-serif;" value="{!SUBSTITUTE(JSENCODE(value.Term_Condition_Description__c),'\r\n','<br/>    ')}" escape="false"/>
+            </apex:repeat>
+        </apex:repeat>
+        
+        
+    </body>  
+</apex:page>

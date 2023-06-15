@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>YIS TN1 - Data Center</label>
+    <protected>false</protected>
+    <values>
+        <field>Address__c</field>
+        <value xsi:type="xsd:string">THRIVENI ACADEMY, THRIVENI NAGAR,
+VEDAKAPATTU VILLAGE, SINGAPARUMALKOIL,
+Kanchipuram,
+Tamil Nadu,
+India</value>
+    </values>
+    <values>
+        <field>DeliveryLocation__c</field>
+        <value xsi:type="xsd:string">YIS TN1 - Data Center</value>
+    </values>
+    <values>
+        <field>State__c</field>
+        <value xsi:type="xsd:string">Tamil Nadu</value>
+    </values>
+</CustomMetadata>

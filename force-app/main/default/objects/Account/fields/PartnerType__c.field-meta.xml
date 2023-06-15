@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PartnerType__c</fullName>
+    <externalId>false</externalId>
+    <label>Partner Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alliance Partner</fullName>
+                <default>false</default>
+                <label>Alliance Partner</label>
+            </value>
+            <value>
+                <fullName>Reseller Partner</fullName>
+                <default>false</default>
+                <label>Reseller Partner</label>
+            </value>
+            <value>
+                <fullName>Technology Partner</fullName>
+                <default>false</default>
+                <label>Technology Partner</label>
+            </value>
+            <value>
+                <fullName>Consultant Partner</fullName>
+                <default>false</default>
+                <label>Consultant Partner</label>
+            </value>
+            <value>
+                <fullName>Distributor Partner-Commission</fullName>
+                <default>false</default>
+                <label>Distributor Partner-Commission</label>
+            </value>
+            <value>
+                <fullName>Distributor Partner-TP</fullName>
+                <default>false</default>
+                <label>Distributor Partner-TP</label>
+            </value>
+            <value>
+                <fullName>Business Partner</fullName>
+                <default>false</default>
+                <label>Business Partner</label>
+            </value>
+            <value>
+                <fullName>ERP Partner-TP</fullName>
+                <default>false</default>
+                <label>ERP Partner-TP</label>
+            </value>
+            <value>
+                <fullName>ERP Partner-Commission</fullName>
+                <default>false</default>
+                <label>ERP Partner-Commission</label>
+            </value>
+            <value>
+                <fullName>ERP Technology Partner B2B</fullName>
+                <default>false</default>
+                <label>ERP Technology Partner B2B</label>
+            </value>
+            <value>
+                <fullName>YIC Partner</fullName>
+                <default>false</default>
+                <label>YIC Partner</label>
+            </value>
+            <value>
+                <fullName>Inactive Partner</fullName>
+                <default>false</default>
+                <label>Inactive Partner</label>
+            </value>
+            <value>
+                <fullName>Government Partner - TP</fullName>
+                <default>false</default>
+                <label>Government Partner - TP</label>
+            </value>
+            <value>
+                <fullName>Government Partner - Commission</fullName>
+                <default>false</default>
+                <label>Government Partner - Commission</label>
+            </value>
+            <value>
+                <fullName>Government Partner - Technology B2B</fullName>
+                <default>false</default>
+                <label>Government Partner - Technology B2B</label>
+            </value>
+            <value>
+                <fullName>Deboarded</fullName>
+                <default>false</default>
+                <label>Deboarded</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

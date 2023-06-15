@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Address_of_Support_To_Customer</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+
+ISPICKVAL( Location__c, &apos;Customer Site&apos;),
+
+NOT(ISBLANK( Shipping_Address__c )),
+
+Shipping_Address__r.Account__c != SBQQ__Quote__r.Support_To_Customer__c
+
+)</errorConditionFormula>
+    <errorMessage>Shipping Address should belong to Support To Customer</errorMessage>
+</ValidationRule>

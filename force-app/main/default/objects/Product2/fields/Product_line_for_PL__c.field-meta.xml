@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_line_for_PL__c</fullName>
+    <externalId>false</externalId>
+    <label>Product line for PL</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Backup_Recovery_Archival_Service</fullName>
+                <default>false</default>
+                <label>Backup, Recovery and Archival Service</label>
+            </value>
+            <value>
+                <fullName>Bank in BOX</fullName>
+                <default>false</default>
+                <label>Bank in BOX</label>
+            </value>
+            <value>
+                <fullName>DC Build</fullName>
+                <default>false</default>
+                <label>DC Build</label>
+            </value>
+            <value>
+                <fullName>Federated Cloud</fullName>
+                <default>false</default>
+                <label>Federated Cloud</label>
+            </value>
+            <value>
+                <fullName>Firewall &amp; UTM As A Service</fullName>
+                <default>false</default>
+                <label>Firewall &amp; UTM As A Service</label>
+            </value>
+            <value>
+                <fullName>Global Cloud Konnect</fullName>
+                <default>false</default>
+                <label>Global Cloud Konnect</label>
+            </value>
+            <value>
+                <fullName>GWS</fullName>
+                <default>false</default>
+                <label>GWS</label>
+            </value>
+            <value>
+                <fullName>Hosted Internet Bandwidth</fullName>
+                <default>false</default>
+                <label>Hosted Internet Bandwidth</label>
+            </value>
+            <value>
+                <fullName>HPC</fullName>
+                <default>false</default>
+                <label>HPC</label>
+            </value>
+            <value>
+                <fullName>IBM Compute</fullName>
+                <default>false</default>
+                <label>IBM Compute</label>
+            </value>
+            <value>
+                <fullName>In-Building Ducting (IBD)</fullName>
+                <default>false</default>
+                <label>In-Building Ducting (IBD)</label>
+            </value>
+            <value>
+                <fullName>Internet Leased Line</fullName>
+                <default>false</default>
+                <label>Internet Leased Line</label>
+            </value>
+            <value>
+                <fullName>IP Address</fullName>
+                <default>false</default>
+                <label>IP Address</label>
+            </value>
+            <value>
+                <fullName>IPLC</fullName>
+                <default>false</default>
+                <label>IPLC</label>
+            </value>
+            <value>
+                <fullName>IT Administration</fullName>
+                <default>false</default>
+                <label>IT Administration</label>
+            </value>
+            <value>
+                <fullName>IT Monitoring</fullName>
+                <default>false</default>
+                <label>IT Monitoring</label>
+            </value>
+            <value>
+                <fullName>IT Professional</fullName>
+                <default>false</default>
+                <label>IT Professional</label>
+            </value>
+            <value>
+                <fullName>ITSM As A Service</fullName>
+                <default>false</default>
+                <label>ITSM As A Service</label>
+            </value>
+            <value>
+                <fullName>License</fullName>
+                <default>false</default>
+                <label>License</label>
+            </value>
+            <value>
+                <fullName>Load Balancer As A Service</fullName>
+                <default>false</default>
+                <label>Load Balancer As A Service</label>
+            </value>
+            <value>
+                <fullName>Managed DDOS</fullName>
+                <default>false</default>
+                <label>Managed DDOS</label>
+            </value>
+            <value>
+                <fullName>Managed IDPS</fullName>
+                <default>false</default>
+                <label>Managed IDPS</label>
+            </value>
+            <value>
+                <fullName>Managed WAF</fullName>
+                <default>false</default>
+                <label>Managed WAF</label>
+            </value>
+            <value>
+                <fullName>Nutanix VM</fullName>
+                <default>false</default>
+                <label>Nutanix VM</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Private Cloud - Backup</fullName>
+                <default>false</default>
+                <label>Private Cloud - Backup</label>
+            </value>
+            <value>
+                <fullName>PRIVATE CLOUD - COMPUTE</fullName>
+                <default>false</default>
+                <label>Private Cloud - Compute</label>
+            </value>
+            <value>
+                <fullName>PRIVATE CLOUD - NETWORK</fullName>
+                <default>false</default>
+                <label>Private Cloud - Network</label>
+            </value>
+            <value>
+                <fullName>PRIVATE CLOUD - SECURITY</fullName>
+                <default>false</default>
+                <label>Private Cloud - Security</label>
+            </value>
+            <value>
+                <fullName>PRIVATE CLOUD - SOFTWARE</fullName>
+                <default>false</default>
+                <label>Private Cloud - Software</label>
+            </value>
+            <value>
+                <fullName>PRIVATE CLOUD - STORAGE</fullName>
+                <default>false</default>
+                <label>Private Cloud - Storage</label>
+            </value>
+            <value>
+                <fullName>Privileged Access Management (PAM)</fullName>
+                <default>false</default>
+                <label>Privileged Access Management (PAM)</label>
+            </value>
+            <value>
+                <fullName>Rack Power</fullName>
+                <default>false</default>
+                <label>Rack Power</label>
+            </value>
+            <value>
+                <fullName>Rack Space</fullName>
+                <default>false</default>
+                <label>Rack Space</label>
+            </value>
+            <value>
+                <fullName>RESILIENCY ASSURANCE SERVICE</fullName>
+                <default>false</default>
+                <label>Resiliency Assurance Service</label>
+            </value>
+            <value>
+                <fullName>SAP Compute</fullName>
+                <default>false</default>
+                <label>SAP Compute</label>
+            </value>
+            <value>
+                <fullName>SDWAN SERVICE</fullName>
+                <default>false</default>
+                <label>SDWAN Service</label>
+            </value>
+            <value>
+                <fullName>Storage</fullName>
+                <default>false</default>
+                <label>Storage</label>
+            </value>
+            <value>
+                <fullName>Traded Goods</fullName>
+                <default>false</default>
+                <label>Traded Goods</label>
+            </value>
+            <value>
+                <fullName>UNIVERSITY MANAGEMENT</fullName>
+                <default>false</default>
+                <label>University Management</label>
+            </value>
+            <value>
+                <fullName>VDI</fullName>
+                <default>false</default>
+                <label>VDI</label>
+            </value>
+            <value>
+                <fullName>VM</fullName>
+                <default>false</default>
+                <label>VM</label>
+            </value>
+            <value>
+                <fullName>Yotta Safe</fullName>
+                <default>false</default>
+                <label>Yotta Safe</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

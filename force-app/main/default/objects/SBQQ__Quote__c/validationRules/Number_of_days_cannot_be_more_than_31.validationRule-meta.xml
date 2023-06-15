@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_days_cannot_be_more_than_31</fullName>
+    <active>true</active>
+    <errorConditionFormula>No_of_days_per_month__c &gt; 31 || No_of_days_per_month__c =0</errorConditionFormula>
+    <errorMessage>The number of days cannot be more than 31.</errorMessage>
+</ValidationRule>

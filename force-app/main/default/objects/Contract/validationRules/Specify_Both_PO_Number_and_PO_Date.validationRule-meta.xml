@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specify_Both_PO_Number_and_PO_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL( PO_Status__c ,&quot;PO Issued&quot;),
+ISPICKVAL( Status , &quot;Approved&quot;),
+OR(ISCHANGED(PO_StartDate__c),
+ISCHANGED(PO_EndDate__c),
+ISCHANGED(Customer_PO_Date__c),
+ISCHANGED(Customer_PO__c)
+
+),
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+$Profile.Name &lt;&gt; &apos;Yotta Order Management&apos;)</errorConditionFormula>
+    <errorMessage>Please specify both PO Number and PO Date</errorMessage>
+</ValidationRule>

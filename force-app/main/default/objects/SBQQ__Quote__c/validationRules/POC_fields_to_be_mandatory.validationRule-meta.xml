@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POC_fields_to_be_mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+POC__c =&apos;Yes&apos;,
+Or(
+!ISPICKVAL( SBQQ__Status__c , &apos;Draft&apos;),
+ Submit_for_Approval__c ),
+OR(
+ISBLANK(  POC_Purpose__c ),
+ISBLANK(  POC_Success_Criteria__c ),
+ISBLANK(  Application_details__c ),
+ISBLANK(  User_connectivity_details__c ),
+ISBLANK(  Customer_scope_of_work__c )
+)
+)</errorConditionFormula>
+    <errorMessage>POC details are mandatory for POC Record.</errorMessage>
+</ValidationRule>

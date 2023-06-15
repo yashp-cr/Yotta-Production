@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_To_And_Lookup_IS_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ RecordType.DeveloperName =&apos;Regular_Lead&apos;,
+ NOT( BillToSameasSupportTo__c ),
+ ISBLANK( Support_To__c ),
+ ISBLANK( SupporttoCustomerName__c ) 
+)</errorConditionFormula>
+    <errorMessage>Please enter Support To details</errorMessage>
+</ValidationRule>

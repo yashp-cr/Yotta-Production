@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ship_Loc_change_allowed_4_Facility_SCF</fullName>
+    <active>true</active>
+    <description>Shipping Address can only be changed for Facility Change SCF New record</description>
+    <errorConditionFormula>AND ( ISPICKVAL(SBQQ__Quote__r.SBQQ__Type__c,&quot;Amendment&quot;) ,OR(
+ AND(
+  TEXT(SCF_Type__c) &lt;&gt; &quot;Facility Change&quot;,
+  ISCHANGED( Shipping_Address__c )
+ ),
+ AND(
+  TEXT(SCF_Type__c) = &quot;Facility Change&quot;,
+  SBQQ__Quantity__c = 0,
+  ISCHANGED( Shipping_Address__c )
+ ))
+)</errorConditionFormula>
+    <errorMessage>Shipping Address can only be changed with Facility Change SCF new record</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Amt_cant_be_greater_than_Price</fullName>
+    <active>true</active>
+    <description>Discount Amt cannot be greater than List Price</description>
+    <errorConditionFormula>Discount_Amt__c &gt; SBQQ__ListPrice__c</errorConditionFormula>
+    <errorMessage>Discount Amt cannot be greater than List Price</errorMessage>
+</ValidationRule>

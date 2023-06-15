@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>IT &amp; ITES Executive</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>2bdel_IT &amp; ITES Executive</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>IT_ITES_Head</parentRole>
+</Role>

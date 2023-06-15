@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Contract Subscription Bundle</label>
+    <protected>false</protected>
+    <values>
+        <field>All_Fields__c</field>
+        <value xsi:type="xsd:string">id,s_no__c,line_sr_no__c,cancellation_date__c,sbqq__contract__c,name,service_id__c,bundle_description__c,delivery_location_address__c,bill_start_date__c,bill_end_date__c,technical_start_date__c,technical_end_date__c,sbqq__terminateddate__c,partner_commission__c,sales_rep_commission__c,distributor_partner_commission__c,status__c,final_net_price__c,sbqq__quoteline__c,original_line_sr_no__c,sbqq__originalquoteline__c,ir_number__c,dr_number__c,dr_status__c,ir_status__c,scf_type__c,sbqq__quoteline__r.name,line_item_id__c,sub_external_id__c,bill_from__c,billing_currency__c,location__c,sbqq__product__c,billing_to_be_done_online__c,Remarks__c</value>
+    </values>
+    <values>
+        <field>Fields_to_Trigger_Integration__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Json_Field_Names__c</field>
+        <value xsi:type="xsd:string">id,s_no__c,line_sr_no__c,cancellation_date__c,sbqq__contract__c,name,service_id__c,bundle_description__c,delivery_location_address__c,billstartdate,billenddate,technical_start_date__c,technical_end_date__c,sbqq__terminateddate__c,partner_commission__c,sales_rep_commission__c,distributor_partner_commission__c,status__c,final_net_price__c,sbqq__quoteline__c,original_line_sr_no__c,sbqq__originalquoteline__c,ir_number__c,dr_number__c,dr_status__c,ir_status__c,scf_type__c,quotelinename,line_item_id__c,sub_external_id__c,bill_from__c,billing_currency__c,location__c,sbqq__product__c,billing_to_be_done_online__c,Remarks__c</value>
+    </values>
+    <values>
+        <field>Object_Type__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Operation__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Query_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Request_Envelope__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>SOQL_Query__c</field>
+        <value xsi:type="xsd:string">Select sbqq__quoteline__r.name,id,s_no__c,sbqq__product__c,cancellation_date__c,line_sr_no__c,partner_commission__c,sales_rep_commission__c,distributor_partner_commission__c,sbqq__contract__c,name,service_id__c,bundle_description__c,delivery_location_address__c,sbqq__subscriptionstartdate__c,sbqq__subscriptionenddate__c,technical_start_date__c,technical_end_date__c,sbqq__terminateddate__c,status__c,final_net_price__c,sbqq__quantity__c,sbqq__quoteline__c,original_line_sr_no__c,sbqq__originalquoteline__c,ir_number__c,dr_number__c,dr_status__c,ir_status__c,bill_start_date__c,bill_end_date__c, scf_type__c,line_item_id__c,sub_external_id__c,bill_from__c,billing_currency__c,location__c,Billing_to_be_done_Online__c,Remarks__c from SBQQ__Subscription__c</value>
+    </values>
+    <values>
+        <field>Static_JSON_Data__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

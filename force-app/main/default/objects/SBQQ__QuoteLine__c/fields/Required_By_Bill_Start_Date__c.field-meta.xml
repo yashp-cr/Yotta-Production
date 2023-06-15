@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_By_Bill_Start_Date__c</fullName>
+    <description>Used for Price Rule. Component Bill Start Date gets removed in Up/Dn, hence bundle&apos;s date is being used</description>
+    <externalId>false</externalId>
+    <formula>SBQQ__RequiredBy__r.Subscription_Bill_Start_Date__c</formula>
+    <label>Required By Bill Start Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

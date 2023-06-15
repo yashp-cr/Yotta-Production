@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Replace_inactive_product</fullName>
+    <active>true</active>
+    <errorConditionFormula>SBQQ__Quote__r.SBQQ__EndDate__c &gt;  SBQQ__Product__r.Sales_End_Date__c &amp;&amp;  ISPICKVAL(SBQQ__Quote__r.SBQQ__Type__c, &apos;Renewal&apos;)</errorConditionFormula>
+    <errorMessage>Please replace the inactive product.</errorMessage>
+</ValidationRule>

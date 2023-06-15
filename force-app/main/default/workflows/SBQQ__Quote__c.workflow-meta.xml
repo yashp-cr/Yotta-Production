@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_to_Partner_Manager_on_Approval</fullName>
+        <description>Email to Partner Manager on Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Primary_Partner_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Secondary_Partner_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Tertiary_Partner_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_Approval_Success</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_Partner_Rep_on_Quote_Approval</fullName>
+        <description>Email to Partner Rep on Quote Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Partner_Sales_Rep__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_Approval_Success</template>
+    </alerts>
+    <alerts>
+        <fullName>Owner_email_alert_on_Quote_Approval</fullName>
+        <description>Owner email alert on Quote Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_Approval_Success</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_email_alert_on_Quote_Approval</fullName>
+        <description>Partner email alert on Quote Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Oppty_Partner_Primary_Acc_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Oppty_Partner_Sec_Acc_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Oppty_Partner_Ter_Acc_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Partner_Oppty_Notifications</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_Approval_for_SCF</fullName>
+        <description>Quote Approval for SCF</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_Approval_Success</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_Commercial_Approval_Rejection_to_Owner</fullName>
+        <description>Quote Commercial Approval Rejection to Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_Commercial_Approval_Reject</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_Rejection_for_SCF</fullName>
+        <description>Quote Rejection for SCF</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_SCF_Approval_Reject</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_T_C_Approval_Rejection_to_Owner</fullName>
+        <description>Quote T&amp;C Approval Rejection to Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_T_C_Approval_Reject</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_Technical_Approval_Rejection_to_Owner</fullName>
+        <description>Quote Technical Approval Rejection to Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_Technical_Approval_Reject</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_to_Secondary_Partner_on_Quote_Approval</fullName>
+        <description>Send email to Secondary Partner on Quote Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Oppty_Partner_Sec_Acc_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Partner_Oppty_Notifications</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_to_Tertiary_Partner_on_Quote_Approval</fullName>
+        <description>Send email to Tertiary Partner on Quote Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Oppty_Partner_Ter_Acc_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Partner_Oppty_Notifications</template>
+    </alerts>
+    <alerts>
+        <fullName>Sending_Email_to_SE_For_Getting_Assigned_To_A_Quote</fullName>
+        <description>Sending Email to SE For Getting Assigned To A Quote</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Solution_Engineer__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Template_Solution_Engineer_Assignment_On_Quote</template>
+    </alerts>
+    <alerts>
+        <fullName>Sending_Mail_To_Quote_Owner_SE_after_sending_quote_for_approval</fullName>
+        <description>Sending Mail To Quote Owner,SE after sending quote for approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Solution_Engineer__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Template_Solution_Engineer_Approval_Template</template>
+    </alerts>
+    <rules>
+        <fullName>Quote Approval mail to partner sales rep</fullName>
+        <actions>
+            <name>Email_to_Partner_Rep_on_Quote_Approval</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.SBQQ__Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Partner_Sales_Rep__c</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Commercial status</fullName>
+        <actions>
+            <name>Update_Commercial_status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>!ISBLANK(Approval_Level__c) &amp;&amp; (Approval_Level__c&gt;0) &amp;&amp; ISCHANGED(Approval_Level__c) &amp;&amp; NOT(ISPICKVAL( Commercial_Approval_Status__c, &apos;Submitted for Approval&apos;)) &amp;&amp; IF(ISPICKVAL(SBQQ__Type__c, &apos;Amendment&apos;) &amp;&amp; ISBLANK(TEXT(SCF_Type__c)), FALSE, TRUE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Commercial status - Not Required%28Migrated%29</fullName>
+        <actions>
+            <name>Update_Commercial_status_Not_Required</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>ISCHANGED(Approval_Level__c) &amp;&amp; ISPICKVAL( Commercial_Approval_Status__c, &apos;Approval Required&apos;) &amp;&amp; ( ISBLANK(Approval_Level__c) ||   Approval_Level__c = 0 )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Generate Term as FALSE%28Migrated%29</fullName>
+        <actions>
+            <name>Generate_Term_as_FALSE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND(     Generated_Terms__c,     OR(         ISCHANGED( One_Time_Charges_Third_Party__c ),         ISCHANGED( One_Time_Charges_Other_Services__c ),         ISCHANGED( Late_Payment_Invoice_Interest__c ),         ISCHANGED( Termination_Fee_Initial_Contract__c ),         ISCHANGED( Adv_Written_Notice_Period_Initial_Cntrct__c ),         ISCHANGED( Recurring_Charges_Third_Party__c ),         ISCHANGED( Recurring_Charges_Other_Party__c ),         ISCHANGED( Equipment_Sale_Value__c ),         ISCHANGED( Termination_Fee_Renewal_renewal__c ),         ISCHANGED( Adv_Written_Notice_Period_Renewal_Cntrct__c )     ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Quote Name%28Migrated%29</fullName>
+        <actions>
+            <name>Update_Quote_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Quote_Name__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Stamp Opty Name if Quote Name is blank</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Quote Start Date%28Migrated%29</fullName>
+        <actions>
+            <name>Update_Quote_Start_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.SBQQ__Type__c</field>
+            <operation>equals</operation>
+            <value>Quote</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Quote Status as Approved2%28Migrated%29</fullName>
+        <actions>
+            <name>Owner_email_alert_on_Quote_Approval</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Quote_Status_as_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>6 AND 1 AND (2 OR 4) AND (3 OR 5)</booleanFilter>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Technical_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Commercial_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Term_Condition_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Commercial_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Not Required</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Term_Condition_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Not Required</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.SBQQ__Status__c</field>
+            <operation>equals</operation>
+            <value>Draft,In Review</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Quote Status as Draft%28Migrated%29</fullName>
+        <actions>
+            <name>Update_Quote_Status_as_Draft2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Validate_Commission_Model</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>4 AND 5 AND 6 AND (1 OR 2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Technical_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approval Required</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Commercial_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approval Required</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Term_Condition_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approval Required</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Commercial_Approval_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Submitted for Approval</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Term_Condition_Approval_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Submitted for Approval</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Technical_Approval_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Submitted for Approval</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Quote Subscription Term%28Migrated%29</fullName>
+        <actions>
+            <name>Update_Subscription_Term</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND(     ISPICKVAL( SBQQ__Type__c, &quot;Quote&quot;),     OR(         ISCHANGED( Contract_Tenure_Year__c ),         ISCHANGED( Contract_Tenure_Month__c ),         ISCHANGED( Contract_Tenure_Days__c )     ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Status Tech%28Migrated%29</fullName>
+        <actions>
+            <name>Generate_Term_as_FALSE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Status_Tech</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>NOT(ISNEW()) &amp;&amp;
+ISCHANGED(SBQQ__LineItemCount__c) &amp;&amp;
+NOT(ISPICKVAL( Technical_Approval_Status__c , &apos;Submitted for Approval&apos;)) &amp;&amp;
+NOT(Full_Quote_Cancellation_Deactivation__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

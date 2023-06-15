@@ -1,0 +1,14 @@
+<apex:component >
+    <apex:attribute name="scfNo" description="This is the value for the component" type="String" required="true"/>
+    <apex:attribute name="scfDate" description="This is the value for the component" type="Date" required="true"/>
+    <apex:attribute name="custId" description="This is the value for the component" type="String" required="true"/>
+    
+    <apex:panelGrid columns="2" width="100%" style="font-size:13px;">
+        <apex:outputText value="Customer Signature: ________________" id="theFirst"/>
+        <apex:outputText value="Service Provider Signature:_______________" id="theSecond" style="float: right;"/>
+        <apex:outputText value="* Referred herein as ‘Service Provider’" id="theThird"/>
+        <apex:outputText value="SCF NO : {!scfNo} , SCF Date : {0, date, MMMM d','  yyyy}, Customer Id :  {!custId}" id="theFourth" style="float: right;">
+            <apex:param value="{!scfDate}" />
+        </apex:outputText>
+    </apex:panelGrid> 
+</apex:component>

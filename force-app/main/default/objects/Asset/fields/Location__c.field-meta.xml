@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location__c</fullName>
+    <externalId>false</externalId>
+    <label>Location</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Site</fullName>
+                <default>false</default>
+                <label>Customer Site</label>
+            </value>
+            <value>
+                <fullName>IN14</fullName>
+                <default>false</default>
+                <label>YIS AP1 - Data Center</label>
+            </value>
+            <value>
+                <fullName>IN15</fullName>
+                <default>false</default>
+                <label>YIS KA1 - Data Center</label>
+            </value>
+            <value>
+                <fullName>IN11</fullName>
+                <default>false</default>
+                <label>YIS Mumbai – HO</label>
+            </value>
+            <value>
+                <fullName>IN12</fullName>
+                <default>false</default>
+                <label>YIS NM1 - Data Center</label>
+            </value>
+            <value>
+                <fullName>IN16</fullName>
+                <default>false</default>
+                <label>YIS TB1 - Data Center</label>
+            </value>
+            <value>
+                <fullName>IN18</fullName>
+                <default>false</default>
+                <label>YIS D1 - Data Center</label>
+            </value>
+            <value>
+                <fullName>IN19</fullName>
+                <default>false</default>
+                <label>YIS AS1 - Office</label>
+            </value>
+            <value>
+                <fullName>I101</fullName>
+                <default>false</default>
+                <label>YIS TN1 - Data Center</label>
+            </value>
+            <value>
+                <fullName>I102</fullName>
+                <default>false</default>
+                <label>YIS TB2 - Data Center</label>
+            </value>
+            <value>
+                <fullName>IN26</fullName>
+                <default>false</default>
+                <label>YIS G1 - Office</label>
+            </value>
+            <value>
+                <fullName>IN29</fullName>
+                <default>false</default>
+                <label>YIS TS - Office</label>
+            </value>
+            <value>
+                <fullName>CDC1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CDC1</label>
+            </value>
+            <value>
+                <fullName>IN13</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Navi Mumbai – DC2</label>
+            </value>
+            <value>
+                <fullName>IN22</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>YNS AP1 - Data Center</label>
+            </value>
+            <value>
+                <fullName>IN25</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>YNS D1 - Data Center</label>
+            </value>
+            <value>
+                <fullName>IN23</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>YNS KA1 - Data Center</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

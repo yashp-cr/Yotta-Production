@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_contract_if_SCF_not_approved</fullName>
+    <active>true</active>
+    <errorConditionFormula>!ISPICKVAL( SBQQ__Type__c , &apos;Quote&apos;) &amp;&amp;  
+!ISPICKVAL(SCF_Approval_Status__c  , &apos;Approved&apos;) &amp;&amp;  
+Contracted__c</errorConditionFormula>
+    <errorMessage>Please get OMT Approval to generate the contract</errorMessage>
+</ValidationRule>

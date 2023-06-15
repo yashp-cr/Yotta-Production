@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Account_Topic</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account_Topic</shortDescription>
+        <value>Account_Topic</value>
+    </labels>
+    <labels>
+        <fullName>Address_Topic</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Address_Topic</shortDescription>
+        <value>Address_Topic</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Group</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kafka Integration Billing Group</shortDescription>
+        <value>http://api.yotta.com/midos/kafka/publish?topic=vbBillingGroupDetails</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Group_Response</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Group Response</shortDescription>
+        <value>http://api.yotta.com/midos/kafka/publish?topic=vbSOFDetails</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Topic</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact_Topic</shortDescription>
+        <value>Contact_Topic</value>
+    </labels>
+    <labels>
+        <fullName>Integration_Account_Metadata</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Integration Account Metadata</shortDescription>
+        <value>Account_Topic</value>
+    </labels>
+    <labels>
+        <fullName>Integration_Address_Metadata</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Integration Address Metadata</shortDescription>
+        <value>Address_Topic</value>
+    </labels>
+    <labels>
+        <fullName>Integration_Contact_Metadata</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Integration Contact Metadata</shortDescription>
+        <value>Contact_Topic</value>
+    </labels>
+    <labels>
+        <fullName>Integration_Contract_Metadata</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Integration Contract Metadata</shortDescription>
+        <value>Contract_Topic</value>
+    </labels>
+    <labels>
+        <fullName>Integration_Product_Metadata</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Integration Product Metadata</shortDescription>
+        <value>Product_Topic</value>
+    </labels>
+    <labels>
+        <fullName>Kafka_Integration_Billing_Authorization</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kafka Integration Billing Authorization</shortDescription>
+        <value>Kafka_AWS</value>
+    </labels>
+    <labels>
+        <fullName>Kafka_Integration_Document_Authorization</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kafka Integration Document Authorization</shortDescription>
+        <value>Kafka_AWS</value>
+    </labels>
+    <labels>
+        <fullName>Kafka_Integration_Document_Topic</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kafka Integration Document Topic</shortDescription>
+        <value>http://api.yotta.com/midos/kafka/publish?topic=document</value>
+    </labels>
+    <labels>
+        <fullName>Kafka_Integration_PowerandBackupJson_Authorization</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kafka Integration PowerandBackupJson Authorization</shortDescription>
+        <value>Kafka_AWS</value>
+    </labels>
+    <labels>
+        <fullName>Max_Integration_Retrial_Count</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Max_Integration_Retrial_Count</shortDescription>
+        <value>4</value>
+    </labels>
+    <labels>
+        <fullName>PowerAndBackupIntegration</fullName>
+        <categories>Kafka Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PowerAndBackupIntegration</shortDescription>
+        <value>http://api.yotta.com/midos/kafka/publish?topic=vbBackUpPowerSOFs</value>
+    </labels>
+    <labels>
+        <fullName>Product_Topic</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product_Topic</shortDescription>
+        <value>Product_Topic</value>
+    </labels>
+</CustomLabels>

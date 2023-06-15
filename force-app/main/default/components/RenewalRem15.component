@@ -1,0 +1,10 @@
+<apex:component controller="RenReminder60Controller" access="global">
+    <apex:attribute name="contractId" type="String" description="This is the Id of the contract" assignTo="{!conId}" access="global" />
+    <div style="font-family:Calibri;font-size:16px;"> 
+          <p>
+            Please revert to us in writing to renewals@yotta.com before &nbsp; <apex:outputText value="{0,date,dd-MM-YYYY}"> <apex:param value="{!endDate65}" /> </apex:outputText> to get  
+            <br/>
+            the same effective date in our system, as the invoices are raised in advance.
+        </p>
+    </div>
+</apex:component>

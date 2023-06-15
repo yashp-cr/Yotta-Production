@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Commercial_Status_change_on_quantity_value</name>
+        <label>Commercial Status change on quantity value</label>
+        <locationX>517</locationX>
+        <locationY>141</locationY>
+        <defaultConnector>
+            <targetReference>Update_Technical_Status_value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Commercial_Status_change_on_quantity</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>commercialStatusFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>commercialFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Commercial_Approval_Status</targetReference>
+            </connector>
+            <label>Commercial Status change on quantity</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_Technical_Status_value</name>
+        <label>Update Technical Status value</label>
+        <locationX>832</locationX>
+        <locationY>136</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Technical_Status</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>updateTechnicalStatusFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>optionalProductFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Technical_Status_record</targetReference>
+            </connector>
+            <label>Update Technical Status</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>commercialFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>!ISBLANK({!$Record.Approval_level__c} ) &amp;&amp;
+({!$Record.Approval_level__c}&gt; 0 &amp;&amp;{!$Record.Final_Unit_Price__c} &lt;&gt;{!$Record.Approved_Unit_Price__c}) &amp;&amp;
+NOT(ISPICKVAL( {!$Record.SBQQ__Quote__r.Commercial_Approval_Status__c} , &apos;Submitted for Approval&apos;)) &amp;&amp;
+IF(({!$Record.Quote_Type__c}= &apos;Amendment&apos; ||{!$Record.Quote_Type__c} = &apos;Renewal&apos;) &amp;&amp; ISBLANK( TEXT( {!$Record.SBQQ__Quote__r.SCF_Type__c} )), FALSE, TRUE) &amp;&amp;
+(
+ISPICKVAL( {!$Record.SBQQ__Quote__r.Commercial_Approval_Status__c} , &apos;Not Required&apos; ) ||
+(
+( ISPICKVAL( {!$Record.SBQQ__Quote__r.Commercial_Approval_Status__c} , &apos;Approved&apos; ) ||
+ISPICKVAL( {!$Record.SBQQ__Quote__r.Commercial_Approval_Status__c} , &apos;Rejected&apos; )
+) &amp;&amp;
+( ISNEW() ||
+ISCHANGED({!$Record.Final_Unit_Price__c} )
+) &amp;&amp;{!$Record.Final_Unit_Price__c} &lt;&gt;{!$Record.Approved_Unit_Price__c}
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>commercialStatusFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>( ISPICKVAL({!$Record.SBQQ__Quote__r.Commercial_Approval_Status__c} , &apos;Approved&apos;) ||  
+  ISPICKVAL({!$Record.SBQQ__Quote__r.Commercial_Approval_Status__c} , &apos;Rejected&apos;) 
+) &amp;&amp;   
+ISCHANGED({!$Record.SBQQ__Quantity__c}) &amp;&amp;
+IF(({!$Record.Quote_Type__c} = &apos;Amendment&apos; || {!$Record.Quote_Type__c} = &apos;Renewal&apos;) &amp;&amp; ISBLANK( TEXT( {!$Record.SBQQ__Quote__r.SCF_Type__c} )), FALSE, TRUE) &amp;&amp;
+(
+  IF( ({!$Record.Quote_Type__c} = &apos;Amendment&apos; || {!$Record.Quote_Type__c} = &apos;Renewal&apos;),
+    (
+      ( {!$Record.SBQQ__Bundle__c} &amp;&amp; 
+        NOT(ISBLANK(TEXT( {!$Record.SCF_Type__c}))) &amp;&amp;
+        NOT(ISPICKVAL({!$Record.SCF_Type__c} , &apos;Cancellation&apos;)) &amp;&amp;
+        NOT(ISPICKVAL({!$Record.SCF_Type__c} , &apos;Deactivation&apos;)) &amp;&amp;
+        ISBLANK( {!$Record.SBQQ__UpgradedSubscription__c }) &amp;&amp;
+        ISBLANK( {!$Record.SBQQ__UpgradedAsset__c )} &amp;&amp;
+        ISBLANK( {!$Record.SBQQ__RenewedSubscription__c} ) &amp;&amp;
+        ISBLANK( {!$Record.SBQQ__RenewedAsset__c} )
+      ) ||
+      ( !{!$Record.SBQQ__Bundle__c} &amp;&amp;
+        NOT(ISBLANK({!$Record.Required_By_SCF_Type__c})) &amp;&amp;
+        {!$Record.Required_By_SCF_Type__c} &lt;&gt; &apos;Cancellation&apos; &amp;&amp;
+        {!$Record.Required_By_SCF_Type__c} &lt;&gt; &apos;Deactivation&apos; &amp;&amp;
+        ISBLANK( {!$Record.SBQQ__UpgradedSubscription__c} ) &amp;&amp;
+        ISBLANK( {!$Record.SBQQ__UpgradedAsset__c} ) &amp;&amp;
+        ISBLANK( {!$Record.SBQQ__RenewedSubscription__c )} &amp;&amp;
+        ISBLANK( {!$Record.SBQQ__RenewedAsset__c} )
+      )
+    ), 
+    TRUE
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>optionalProductFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISCHANGED({!$Record.SBQQ__Optional__c} )</expression>
+    </formulas>
+    <formulas>
+        <name>updateCommercialStatusFormula</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.Allowable_Sales_Price__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>updateTechnicalStatusFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>( ISCHANGED({!$Record.SBQQ__Product__c} ) ||
+(ISCHANGED({!$Record.SBQQ__Quantity__c}) &amp;&amp; NOT({!$Record.SBQQ__Quote__r.Full_Quote_Cancellation_Deactivation__c}))||
+ISCHANGED({!$Record.SBQQ__Optional__c} ) ||
+ISCHANGED({!$Record.Location__c} ) ||
+ISCHANGED({!$Record.Shipping_Address__c} ) ||
+
+ISNEW()
+) &amp;&amp;
+( IF( (ISPICKVAL({!$Record.SBQQ__Quote__r.SBQQ__Type__c},&quot;Amendment&quot;) || ISPICKVAL({!$Record.SBQQ__Quote__r.SBQQ__Type__c},&quot;Renewal&quot;)),
+( {!$Record.SBQQ__Bundle__c} &amp;&amp;
+NOT(ISBLANK(TEXT( {!$Record.SCF_Type__c}))) &amp;&amp;
+NOT(ISPICKVAL({!$Record.SCF_Type__c} , &apos;Price Change&apos;))
+),
+TRUE
+)
+
+) &amp;&amp;
+NOT(ISPICKVAL( {!$Record.SBQQ__Quote__r.Technical_Approval_Status__c}, &apos;Submitted for Approval&apos;))</expression>
+    </formulas>
+    <interviewLabel>After update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>After Update Insert Quote Line</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Commercial_Approval_Status</name>
+        <label>Update Commercial Approval Status</label>
+        <locationX>533</locationX>
+        <locationY>614</locationY>
+        <connector>
+            <targetReference>Update_Technical_Status_value</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SBQQ__Quote__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Commercial_Approval_Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Approval Required</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Commercial_Approval_Status__c</field>
+            <value>
+                <stringValue>Approval Required</stringValue>
+            </value>
+        </inputAssignments>
+        <object>SBQQ__Quote__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update Generate Term as FALSE</description>
+        <name>Update_Technical_Status_record</name>
+        <label>Update Technical Status record</label>
+        <locationX>850</locationX>
+        <locationY>614</locationY>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SBQQ__Quote__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Technical_Approval_Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Approval Required</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Generated_Terms__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Generated_Terms__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Technical_Approval_Status__c</field>
+            <value>
+                <stringValue>Approval Required</stringValue>
+            </value>
+        </inputAssignments>
+        <object>SBQQ__Quote__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>106</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Commercial_Status_change_on_quantity_value</targetReference>
+        </connector>
+        <object>SBQQ__QuoteLine__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

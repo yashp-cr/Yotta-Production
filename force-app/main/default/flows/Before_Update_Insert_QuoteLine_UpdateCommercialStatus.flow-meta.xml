@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>Assign_Commercial_Status</name>
+        <label>Assign Commercial Status</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Approved_Unit_Price__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>updateCommercialStatusFormula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Update_Commercial_Status_value</name>
+        <label>Update Commercial Status value</label>
+        <locationX>182</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Commercial_Status</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>commercialStatusFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Commercial_Status</targetReference>
+            </connector>
+            <label>Update Commercial Status</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>commercialStatusFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>!ISBLANK({!$Record.Approval_level__c} ) &amp;&amp;
+({!$Record.Approval_level__c}&gt; 0 &amp;&amp;{!$Record.Final_Unit_Price__c} &lt;&gt;{!$Record.Approved_Unit_Price__c}) &amp;&amp;
+NOT(ISPICKVAL( {!$Record.SBQQ__Quote__r.Commercial_Approval_Status__c} , &apos;Submitted for Approval&apos;)) &amp;&amp;
+IF((TEXT( {!$Record.SBQQ__Quote__r.SBQQ__Type__c})
+= &apos;Amendment&apos; ||TEXT( {!$Record.SBQQ__Quote__r.SBQQ__Type__c})
+= &apos;Renewal&apos;) &amp;&amp; ISBLANK( TEXT( {!$Record.SBQQ__Quote__r.SCF_Type__c} )), FALSE, TRUE) &amp;&amp;
+(
+ISPICKVAL( {!$Record.SBQQ__Quote__r.Commercial_Approval_Status__c} , &apos;Not Required&apos; ) ||
+(
+( ISPICKVAL( {!$Record.SBQQ__Quote__r.Commercial_Approval_Status__c} , &apos;Approved&apos; ) ||
+ISPICKVAL( {!$Record.SBQQ__Quote__r.Commercial_Approval_Status__c} , &apos;Rejected&apos; )
+) &amp;&amp;
+( ISNEW() ||
+ISCHANGED({!$Record.Final_Unit_Price__c} )
+) &amp;&amp;{!$Record.Final_Unit_Price__c} &lt;&gt;{!$Record.Approved_Unit_Price__c}
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>updateCommercialStatusFormula</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.SBQQ__Dimension__r.Sales_Price__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Before {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Before Update or Insert QuoteLine : UpdateCommercialStatus</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Commercial_Status_value</targetReference>
+        </connector>
+        <object>SBQQ__QuoteLine__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

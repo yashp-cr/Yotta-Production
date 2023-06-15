@@ -1,0 +1,47 @@
+<table>
+	<tr>
+		{{#each ContractHeader}}
+			<th> {{this}} </th>
+		{{/each}}
+	</tr>
+	{{#each subscriptionData}}
+	<tr>
+		{{#if this.col1.renderCol}}
+			<td rowspan="{{this.col1.renderCol}}"> {{this.objSubs.SBQQ__Account__r.Account_Number__c}} </td>
+            <td rowspan="{{this.col1.renderCol}}"> {{this.objSubs.SBQQ__Account__r.Name}} </td>
+		{{/if}}
+		{{#if this.col2.renderCol}}
+			<td rowspan="{{this.col2.renderCol}}"> {{this.objSubs.Contract_Number__c}} </td>
+    	{{/if}}
+    	{{#if this.col3.renderCol}}
+			<td rowspan="{{this.col3.renderCol}}"> {{this.objSubs.SBQQ__RequiredById__c}} </td>
+    	{{/if}}
+    	{{#if this.col4.renderCol}}
+			<td rowspan="{{this.col4.renderCol}}"> {{this.objSubs.SBQQ__ProductName__c}} </td>
+    	{{/if}}
+    	{{#if this.col5.renderCol}}
+			<td rowspan="{{this.col5.renderCol}}"> {{this.objSubs.SBQQ__SegmentLabel__c}} </td>
+    	{{/if}}
+    	<td> {{row.objSubs.Id}} </td>
+	</tr>
+	{{/each}}
+	<!--<tr>
+		{{#if (isObjectNotEmpty col1)}}
+			<td rowspan="{{col1.colSize}}"> {{objSubs.SBQQ__Account__r.Account_Number__c}} </td>
+			<td rowspan="{{col1.colSize}}"> {{objSubs.SBQQ__Account__r.Name}} </td>
+		{{/if}}
+		{{#if (isObjectNotEmpty col2)}}
+			<td rowspan="{{col2.colSize}}"> {{objSubs.Contract_Number__c}} </td>
+		{{/if}}
+		{{#if (isObjectNotEmpty col3)}}
+			<td rowspan="{{col3.colSize}}"> {{objBundle.SBQQ__ProductName__c}} </td>
+		{{/if}}
+		{{#if (isObjectNotEmpty col4)}}
+			<td rowspan="{{col4.colSize}}"> {{objSubs.SBQQ__ProductName__c}} </td>
+		{{/if}}
+		{{#if (isObjectNotEmpty col5)}}
+			<td rowspan="{{col5.colSize}}"> {{objSubs.SBQQ__SegmentLabel__c}} </td>
+		{{/if}}
+			<td> {{objSubs.Id}} </td>
+	</tr>-->
+</table>

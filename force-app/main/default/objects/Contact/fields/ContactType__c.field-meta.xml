@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContactType__c</fullName>
+    <externalId>false</externalId>
+    <label>Contact Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Primary</fullName>
+                <default>true</default>
+                <label>Primary</label>
+            </value>
+            <value>
+                <fullName>Business Contact</fullName>
+                <default>false</default>
+                <label>Business Contact</label>
+            </value>
+            <value>
+                <fullName>Billing Contact</fullName>
+                <default>false</default>
+                <label>Billing Contact</label>
+            </value>
+            <value>
+                <fullName>Legal Contact</fullName>
+                <default>false</default>
+                <label>Legal Contact</label>
+            </value>
+            <value>
+                <fullName>IT Management</fullName>
+                <default>false</default>
+                <label>IT Management</label>
+            </value>
+            <value>
+                <fullName>IT Operations</fullName>
+                <default>false</default>
+                <label>IT Operations</label>
+            </value>
+            <value>
+                <fullName>Technical</fullName>
+                <default>false</default>
+                <label>Technical Contact</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>YottaIndustry__c</fullName>
+    <externalId>false</externalId>
+    <label>Industry</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Industry</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Industry</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Services</controllingFieldValue>
+            <valueName>Cargo &amp; Logistics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Services</controllingFieldValue>
+            <valueName>Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Services</controllingFieldValue>
+            <valueName>Electricity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Services</controllingFieldValue>
+            <valueName>Healthcare</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Services</controllingFieldValue>
+            <valueName>Hospitality</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Services</controllingFieldValue>
+            <valueName>NGO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Services</controllingFieldValue>
+            <valueName>Research and consultancy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Services</controllingFieldValue>
+            <valueName>Retail &amp; Distribution (physical)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Services</controllingFieldValue>
+            <valueName>Retail Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Services</controllingFieldValue>
+            <valueName>Transport</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Services</controllingFieldValue>
+            <valueName>Travel and Tourism</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Manufacturing</controllingFieldValue>
+            <valueName>Apparel &amp; Fashion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Manufacturing</controllingFieldValue>
+            <valueName>Automotive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Manufacturing</controllingFieldValue>
+            <valueName>Chemicals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Manufacturing</controllingFieldValue>
+            <valueName>Consumer Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Manufacturing</controllingFieldValue>
+            <valueName>Engineering and Construction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Manufacturing</controllingFieldValue>
+            <valueName>Hi-tech and electronic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Manufacturing</controllingFieldValue>
+            <valueName>Pharma</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media and entertainment</controllingFieldValue>
+            <valueName>Broadcast (TV, Radio, etc)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media and entertainment</controllingFieldValue>
+            <valueName>Content Creation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media and entertainment</controllingFieldValue>
+            <valueName>Content Distribution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media and entertainment</controllingFieldValue>
+            <valueName>Content Processing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media and entertainment</controllingFieldValue>
+            <valueName>Gaming</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media and entertainment</controllingFieldValue>
+            <valueName>Print</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media and entertainment</controllingFieldValue>
+            <valueName>VFX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BFSI</controllingFieldValue>
+            <valueName>Fintech</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BFSI</controllingFieldValue>
+            <controllingFieldValue>Hyperscalers</controllingFieldValue>
+            <valueName>Global BFSI centers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BFSI</controllingFieldValue>
+            <valueName>Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BFSI</controllingFieldValue>
+            <valueName>Mobile Banking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BFSI</controllingFieldValue>
+            <valueName>Other Financial Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BFSI</controllingFieldValue>
+            <valueName>Payment Gateways</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BFSI</controllingFieldValue>
+            <valueName>Security stock trader / Broker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BFSI</controllingFieldValue>
+            <valueName>Stock Exchanges</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Govt &amp; PSU</controllingFieldValue>
+            <valueName>Central Government</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Govt &amp; PSU</controllingFieldValue>
+            <valueName>Defence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Govt &amp; PSU</controllingFieldValue>
+            <valueName>Public Sector Units</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Govt &amp; PSU</controllingFieldValue>
+            <valueName>State Government</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Conglomerate</controllingFieldValue>
+            <valueName>Conglomerate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <valueName>E-Commerce</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <controllingFieldValue>Hyperscalers</controllingFieldValue>
+            <valueName>Global CDN Players</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <controllingFieldValue>Hyperscalers</controllingFieldValue>
+            <valueName>Global DC Players</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <controllingFieldValue>Hyperscalers</controllingFieldValue>
+            <valueName>Global Internet Exchanges</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <controllingFieldValue>Hyperscalers</controllingFieldValue>
+            <valueName>Global ISP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <controllingFieldValue>Hyperscalers</controllingFieldValue>
+            <valueName>Global TSP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <valueName>Hoster &amp; Local DC Players</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <valueName>Hyperscalers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <valueName>Independent Software Vendor (ISV)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <valueName>Info Tech Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <valueName>ITES/BPO/KPO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <valueName>Local Internet Exchange/ CDN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <valueName>Local ISP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <valueName>Local TSP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <valueName>Mobile OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IT&amp;ITES</controllingFieldValue>
+            <valueName>Online Portals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hyperscalers</controllingFieldValue>
+            <valueName>Global Cloud Players</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hyperscalers</controllingFieldValue>
+            <valueName>OTT</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

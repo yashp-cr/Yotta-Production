@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prim_Sec_Tert_Partners_cannot_be_same</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+ AND(
+   NOT(ISBLANK( PartnerPrimary__c )),
+   NOT(ISBLANK( PartnerSecondary__c )),
+   PartnerPrimary__c = PartnerSecondary__c     
+ ),
+ AND(
+   NOT(ISBLANK( PartnerPrimary__c )),
+   NOT(ISBLANK( PartnerTertiary__c  )),
+   PartnerPrimary__c = PartnerTertiary__c     
+ ),
+ AND(
+   NOT(ISBLANK( PartnerTertiary__c )),
+   NOT(ISBLANK( PartnerSecondary__c )),
+   PartnerSecondary__c = PartnerTertiary__c    
+ )
+)</errorConditionFormula>
+    <errorMessage>Primary, Secondary and Tertiary Partners cannot be same</errorMessage>
+</ValidationRule>

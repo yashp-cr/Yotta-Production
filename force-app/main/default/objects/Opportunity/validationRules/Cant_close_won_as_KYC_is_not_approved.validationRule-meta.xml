@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_close_won_as_KYC_is_not_approved</fullName>
+    <active>true</active>
+    <errorConditionFormula>IsWon &amp;&amp;
+NOT(ISPICKVAL(Account.KYC_Approval_Status__c , &quot;Approved&quot;))</errorConditionFormula>
+    <errorMessage>Account KYC is Not Approved, kindly upload KYC documents under the accounts.</errorMessage>
+</ValidationRule>

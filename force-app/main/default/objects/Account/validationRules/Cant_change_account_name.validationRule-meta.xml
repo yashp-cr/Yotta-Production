@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_change_account_name</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+AND(
+NOT(ISNEW()),
+ISCHANGED(Name),
+NOT(ISPICKVAL(KYC_Approval_Status__c, &apos;Approved&apos;)),
+$Profile.Name &lt;&gt; &apos;Yotta Order Management&apos;,
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+$UserRole.Name &lt;&gt; &apos;Sales Coordinator&apos;
+),
+AND(
+ISNEW(),
+Converted_Account__c,
+NOT(ISPICKVAL(Type, &apos;End User&apos;)),
+Lead_Company_Name__c &lt;&gt; Name
+)
+)</errorConditionFormula>
+    <errorMessage>Account Name modifications are not allowed!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SOE_Milestone_Formula__c</fullName>
+    <description>Used to sum the SOE Milestone fields. This is used for the validation to check that the total milestone % is equal to 100</description>
+    <externalId>false</externalId>
+    <formula>Advance_along_with_PO_SOF__c + Intimation_of_Readiness_of_Dispatch__c + Delivery__c + Installation_Commissioning__c + UAT__c + Post_UAT__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SOE Milestone Formula</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

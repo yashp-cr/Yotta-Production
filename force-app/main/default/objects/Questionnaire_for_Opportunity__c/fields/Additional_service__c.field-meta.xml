@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_service__c</fullName>
+    <externalId>false</externalId>
+    <label>Additional service</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Office space</fullName>
+                <default>false</default>
+                <label>Office space</label>
+            </value>
+            <value>
+                <fullName>Meeting room</fullName>
+                <default>false</default>
+                <label>Meeting room</label>
+            </value>
+            <value>
+                <fullName>Storeroom</fullName>
+                <default>false</default>
+                <label>Storeroom</label>
+            </value>
+            <value>
+                <fullName>Parking Space</fullName>
+                <default>false</default>
+                <label>Parking Space</label>
+            </value>
+            <value>
+                <fullName>Rooftop Space</fullName>
+                <default>false</default>
+                <label>Rooftop Space</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

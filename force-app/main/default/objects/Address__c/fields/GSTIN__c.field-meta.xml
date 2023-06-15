@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GSTIN__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Total Length 15 without Space.
+2 numbers, 5 alphabets, 4 numbers, 1 alphabet, 1 Number, 1 alphabet, 1 alphanumeric character</inlineHelpText>
+    <label>GSTIN</label>
+    <length>15</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

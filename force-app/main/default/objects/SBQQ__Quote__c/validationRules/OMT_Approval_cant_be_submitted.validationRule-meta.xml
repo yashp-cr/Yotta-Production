@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OMT_Approval_cant_be_submitted</fullName>
+    <active>true</active>
+    <errorConditionFormula>!ISPICKVAL( SBQQ__Type__c , &apos;Quote&apos;) &amp;&amp;
+ ( ISPICKVAL( SBQQ__Status__c , &apos;Approved&apos;) ||  ISPICKVAL( SBQQ__Status__c , &apos;Presented&apos;) )&amp;&amp;
+  Submit_for_Approval__c</errorConditionFormula>
+    <errorMessage>SCF cannot be submitted for approval before customer acceptance.</errorMessage>
+</ValidationRule>

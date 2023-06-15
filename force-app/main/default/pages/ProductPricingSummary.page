@@ -1,0 +1,177 @@
+<apex:page renderAs="pdf" standardController="SBQQ__Quote__c"  extensions="SalesforcePropsalTemplateExtension" action="{!getProposalDeatils}" applyBodyTag="false">
+    <apex:stylesheet value="{!$Resource.PDFCss}" />
+    <div class="ModalWidth" ></div>
+    <apex:outputPanel rendered="{!IF(quote.SBQQ__Type__c == 'Quote', true, false)}" >
+   <div style="font-family: Arial; visibility: {!IF(quote.SBQQ__Type__c == 'Quote', 'block', 'none')};"> 
+        <div style="page-break-after: always">
+            <!-- table start -->
+            <apex:outputText rendered="{!If(groupMapOptional != null,True,False)}">
+                <span style="color:#4270C4;"><b>Pricing Summary for Optional services</b></span>
+            </apex:outputText>
+            <br/><br/>
+            <apex:repeat var="group" value="{!groupMapOptional}">
+                <span style="color:#F8A843;"><b> {!groupMapOptional[group].grpName}</b></span><br/><br/>
+
+                <table border="1px solid black" width="95%" cellpadding="3" style="border-collapse: collapse; font-family:arial; font-size:12px;">
+                    <tr style="background-color:#4270C4;color:#FFFFFF">
+                        <td rowspan="2">Product Family</td>
+                        <td rowspan="2">Qty</td>
+                        <td rowspan="2">UoM</td>
+                        <td rowspan="2">OTC</td>
+                        <apex:repeat value="{!yearSet}" var="year">
+                            <td>Recuring Charges</td>
+                        </apex:repeat>
+                    </tr>
+
+                    <tr style="background-color:#4270C4;color:#FFFFFF">
+                        <apex:variable value="{!1}" var="yearno"/>
+                        <apex:repeat value="{!yearSet}" var="year">
+                            <td>Year {!yearno}</td>
+                            <apex:variable value="{!yearno +1}" var="yearno"/>
+                        </apex:repeat>
+                    </tr>
+
+                    <apex:repeat value="{!groupMapOptional[group].optionalFamMap}" var="fam">
+                        <apex:repeat value="{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap}" var="Product">
+                            <tr style = "font-size: 9.5px; font-family:sans-serif;">
+                                <td>
+                                    <apex:outputText style="font-size: 8px;" escape="false" value="<b>{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].family}</b><br/>
+                                                                                           <b>{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].bundleName}</b><br/>" />
+                                    <apex:outputText style="font-size: 8px;" value="{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].description}" escape="false"/>
+                                </td>
+                                <td>{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].qty}</td>
+                                <td>{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].uom}</td>
+                                <td align="right">
+                                    <apex:outputText value="{0, number, ###,##0}" >
+                                        <apex:param value="{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].famWrapYearOtc}"/>
+                                    </apex:outputText>
+                                </td>
+
+                                <apex:repeat value="{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].famYearMap}" var="yrMRC">
+                                    <td align="right">
+                                        <apex:outputText value="{0, number, ###,##0}" >
+                                            <apex:param value="{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].famYearMap[yrMRC].famWrapYearReccuring}"/>
+                                        </apex:outputText>
+                                    </td>
+                                </apex:repeat>
+                            </tr>
+                        </apex:repeat>
+                    </apex:repeat>
+                </table>
+            </apex:repeat>
+            <br/>
+            <br/>
+        </div>
+        <!-- page ends -->
+        
+        <!--table starts -->
+        <span style="color:#F8A843;"><b>Service Configuration year wise</b></span><br/><br/>
+        <apex:repeat value="{!QuoteLines}" var="bpw">
+            <span style="color:#4270C4;"><b>Year #{!QuoteLines[bpw].refNo} </b></span><br/><br/>
+            <apex:variable var="index" value="{!1}"/>
+            <apex:repeat value="{!QuoteLines[bpw].groupWrapMap}" var="gwm">
+                <span style="color:#F8A843;"><b>{!QuoteLines[bpw].groupWrapMap[gwm].groupName}</b></span>
+                <br/><br/>
+
+                <table border="1px solid black" width="95%" cellpadding="3" style="border-collapse: collapse; font-family:arial; font-size:12px;">
+                    <tr style="background-color:#4270C4;color:#FFFFFF">
+                        <td rowspan="2">Ref No</td>
+                        <td rowspan="2">Product Family &amp; Description</td>
+                        <td rowspan="2">QTY</td>
+                        <td rowspan="2">UOM</td>
+                        <td rowspan="2">Delivery Location</td>
+                        <td colspan="2">One Time Charges</td>
+                        <td colspan="2">Recurring Charges</td>
+                        <td rowspan="2">Variable Charges</td>
+                        <td rowspan="2">Remarks</td>
+                    </tr>
+                    <tr style="background-color:#4270C4;color:#FFFFFF">
+                        <td >Unit</td>
+                        <td >Total</td>
+                        <td >Unit</td>
+                        <td >Total</td>
+                    </tr>
+                    <apex:repeat value="{!QuoteLines[bpw].groupWrapMap[gwm].prodWrapKeySet }" var="key">
+                    <tr style="background-color:#DCDCDC"><td colspan="12">{!key}</td></tr>
+                    <apex:repeat value="{!QuoteLines[bpw].groupWrapMap[gwm].bundleProductWrapperMap[key]}" var="prodWrap">
+                        <tr >
+                            <td>{!index}</td>
+                            <td>
+                                <apex:outputText style="color: #000000;" escape="false" value="<b>{!prodWrap.productFamily}</b><br/>
+                                                                                                   {!prodWrap.productBundleName}<br/>" > </apex:outputText>
+                                <apex:outputText value="{!prodWrap.productDescription}" escape="false"/>
+                                <br/>
+                            </td>
+                            <td>{!prodWrap.qty}</td>
+                            <td>{!prodWrap.UOM}</td>
+                            <td>{!prodWrap.deliveryLocation}</td>
+                            <td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!prodWrap.otcUnit}"/>
+                            </apex:outputText>
+                            </td>
+                            <td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!prodWrap.otcTotal}"/>
+                            </apex:outputText>
+                            </td>
+                            <td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!prodWrap.mrcUnit}"/>
+                            </apex:outputText>
+                            </td>
+                            <td align="right">  <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!prodWrap.mrcTotal}"/>
+                            </apex:outputText>
+                            </td>
+                            <td align="right">  <apex:outputText value="{0, number, ###,##0.00}" >
+                                <apex:param value="{!prodWrap.vrcCharge}"/>
+                            </apex:outputText>
+                            </td>
+                            <td><apex:outputText value="{!prodWrap.remarks}" escape="false"/></td>
+                            <apex:variable var="index" value="{!index+1}"/>
+                        </tr>
+
+                    </apex:repeat>
+                    <apex:repeat value="{!QuoteLines[bpw].groupWrapMap[gwm].otcTotalMap[key]}" var="otcTotal">
+                        <apex:repeat value="{!QuoteLines[bpw].groupWrapMap[gwm].recTotalMap[key]}" var="mrcTotal">
+                            <tr><td colspan="2"><b>Total</b></td><td></td><td></td><td></td><td></td><td align="right">
+                                <apex:outputText value="{0, number, ###,##0}" ><apex:param value="{!otcTotal}" /></apex:outputText>
+                            </td><td></td>
+                                <td align="right"> <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!mrcTotal}"/></apex:outputText></td><td></td><td></td>
+                            </tr>
+                        </apex:repeat>
+                    </apex:repeat>
+                </apex:repeat>
+                </table>
+                <br/>
+            </apex:repeat>
+        </apex:repeat>
+    </div>
+    </apex:outputPanel>    
+  <div style="visibility: {!IF(quote.SBQQ__Type__c == 'Amendment', 'block', 'none')};">
+     
+       <apex:outputPanel rendered="{!IF(quote.SCF_Type__c == 'Contract Line SCF', true, false)}" >
+       <apex:include pageName="SCFproductPricingSummary">
+        </apex:include>
+       
+        </apex:outputPanel> 
+        <apex:outputPanel rendered="{!IF(quote.SCF_Type__c == 'Address Change',  true, false)}" >
+       <apex:include pageName="SCFAddressChangePricingPreview">
+        </apex:include>
+      </apex:outputPanel>
+           <apex:outputPanel rendered="{!IF(quote.SCF_Type__c == 'Bill Cycle Change',  true, false)}" >
+       <apex:include pageName="SCFBillCycleChangePricingPreview">
+        </apex:include>
+      </apex:outputPanel>
+            <apex:outputPanel rendered="{!IF(quote.SCF_Type__c == 'Transfer of Service',  true, false)}" >
+       <apex:include pageName="SCFTransferofServicePricingPreview">
+        </apex:include>
+      </apex:outputPanel>
+             
+      </div> 
+      <div style="visibility: {!IF(quote.SBQQ__Type__c == 'Renewal', 'block', 'none')};">
+           <apex:outputPanel rendered="{!IF(quote.SBQQ__Type__c == 'Renewal', true, false)}" >
+       <apex:include pageName="RenewalPricingPreview">
+        </apex:include>
+          </apex:outputPanel>
+    </div>
+</apex:page>

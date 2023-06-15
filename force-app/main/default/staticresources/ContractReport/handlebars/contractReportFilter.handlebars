@@ -1,0 +1,116 @@
+<div class="slds-grid">
+<div class="slds-size_1-of-1">
+<div class="slds-grid slds-gutters">
+    <div class="slds-col">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="text-input-id-1">
+                Account Number
+            </label>
+            <div class="slds-form-element__control">
+                <input type="text" html-filter="true" class="slds-input numberField" style="width: 160px;" html-filter-field="SBQQ__Account__r.Account_Number__c" />
+            </div>
+        </div>
+    </div>
+    <div class="slds-col">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="select-01">Select Contract Status</label>
+            <div>
+                <select id="select-01" multiple="true" class="setWidth pickheight" html-filter-field="SBQQ__Contract__r.Status" html-filter="true">
+                    {{#each data.Status}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="slds-col">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="select-01">Select Vertical</label>
+            <div>
+                <select id="select-01" multiple="true" class="setWidth pickheight" html-filter-field="SBQQ__Contract__r.SBQQ__Opportunity__r.Vertical__c" html-filter="true">
+                    {{#each data.Vertical__c}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="slds-col">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="select-01" >Select Primary Status</label>
+            <div>
+                <select id="select-01" multiple="true" class="setWidth pickheight" html-filter-field="SBQQ__Contract__r.SBQQ__Opportunity__r.PrimarySource__c" html-filter="true">
+                    {{#each data.PrimarySource__c}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="slds-col">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-1">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">
+                        Contract Start Date From
+                    </label>
+                    <div class="slds-form-element__control">
+                        <input type="text" html-filter="true" class="slds-input filter-date" html-filter-field="SBQQ__Contract__r.StartDate" html-cond=">="/>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-size_1-of-1">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">
+                        Contract Start Date To
+                    </label>
+                    <div class="slds-form-element__control">
+                        <input type="text" html-filter="true" class="slds-input filter-date" html-filter-field="SBQQ__Contract__r.StartDate" html-cond="<="/>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="slds-col">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-1">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">
+                        Contract End Date From
+                    </label>
+                    <div class="slds-form-element__control">
+                        <input type="text" html-filter="true" class="slds-input filter-date" html-filter-field="SBQQ__Contract__r.EndDate" html-cond=">="/>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-size_1-of-1">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">
+                        Contract End Date To
+                    </label>
+                    <div class="slds-form-element__control">
+                        <input type="text" html-filter="true" class="slds-input filter-date" html-filter-field="SBQQ__Contract__r.EndDate" html-cond="<="/>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="slds-col">
+        <span class="buttonSpan">
+            <div class="slds-media__body buttonmargin" style="font-weight: bold">
+                <button class="slds-button slds-button_brand" html-event="applyFilter">Apply Filters</button>
+            </div>
+            <div class="slds-media__body buttonmargin" style="font-weight: bold">
+                <button class="slds-button slds-button_brand" html-event="downloadCsv">Export</button>
+            </div>
+            <div class="slds-media__body buttonmargin" style="font-weight: bold">
+                <span>
+                <button class="slds-button slds-button_neutral prevButton pagingCtrl">&lt;&lt;</button>
+                <button class="slds-button slds-button_neutral nextButton pagingCtrl">&gt;&gt;</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

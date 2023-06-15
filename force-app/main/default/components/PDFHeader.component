@@ -1,0 +1,13 @@
+<apex:component >
+    
+    <apex:panelGrid columns="1" width="100%" style="font-size:13px;">
+        <apex:outputText style="color:#1d3f81" value="Yotta Data Services Private Limited *" id="theFirst"/>
+        <apex:outputText value="Registered Office: 5th Floor, Scorpio Building, Hiranandani Gardens Powai, Mumbai - 400 076" id="theSecond"/>
+        <apex:outputText value=" Telephone +91 12345 22224, +91 12345 44445, +91 12345 55558" id="theThird"/>
+        <apex:outputText style="color:#1d3f81" value="Email-test@yotta.com" id="theFourth"/>
+        <!-- <img src="{!$Resource.YottaLogo}" width="80px" height="80px" align="right"/> -->
+        
+    </apex:panelGrid> 
+    
+    
+</apex:component>

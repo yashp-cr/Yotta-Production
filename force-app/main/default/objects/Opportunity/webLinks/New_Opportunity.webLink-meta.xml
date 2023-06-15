@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Opportunity</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>New Opportunity</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/lightning/o/Opportunity/new?
+
+defaultFieldValues=
+
+PrimarySource__c={!Account.Partner_Source__c},
+SecondarySource__c={!Account.Secondary_Source__c},
+TertiarySource__c={!Account.Tertiary_Source__c},
+Primary_Campaign_Source__c={!Account.Primary_Campaign_Id__c},
+SecondaryCampaignSource__c={!Account.Secondary_Campaign_Id__c},
+TertiaryCampaignSource__c={!Account.Tertiary_Campaign_Id__c},
+PartnerPrimary__c={!Account.Partner_Primary_Id__c},
+PartnerSecondary__c={!Account.Partner_Secondary_Id__c},
+PartnerTertiary__c={!Account.Partner_Tertiary_Id__c},
+Vertical__c={!Account.Industry},
+YottaIndustry__c={!Account.YottaIndustry__c},
+AccountId={!Account.Id}</url>
+</WebLink>

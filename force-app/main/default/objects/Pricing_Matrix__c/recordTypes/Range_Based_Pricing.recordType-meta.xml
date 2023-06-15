@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Range_Based_Pricing</fullName>
+    <active>true</active>
+    <label>Range Based Pricing</label>
+    <picklistValues>
+        <picklist>Location__c</picklist>
+        <values>
+            <fullName>IN11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN18</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN21</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN26</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,20 @@
+<apex:page Controller="CommissionModelController" showHeader="false" sidebar="false">
+    <div class="header" style="margin-left:10px;margin-top:10px;">
+        <img style=" HEIGHT: 30px;border:0px" alt='image' border='none' src='{!URLFOR($Resource.YottaHeaderLogo)}' title="logo" align="left"  />               
+    </div>
+    <br/><br/>
+    <br/><br/>
+    <div style="margin-left:10px;margin-top:10px;">
+        <span style="font-size:20px">
+            <b>Congratulations, Lead has been created!</b><br/>
+        </span> 
+        <br/><br/>
+        <div style="font-size:15px; margin-left:10px">
+          Name: {!lead.salutation} {!lead.firstName} {!lead.lastName}<br/>        
+          Company: {!lead.company}<br/>       
+          Company Type: {!lead.Company_Type__c}<br/>        
+          Email: {!lead.email}<br/>       
+          Mobile: {!lead.MobilePhone}<br/>
+        </div>
+    </div>
+</apex:page>

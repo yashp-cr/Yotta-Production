@@ -1,0 +1,318 @@
+<apex:page renderAs="PDF" applyBodyTag="false" standardController="SBQQ__Quote__c" extensions="SCFTransferOfServiceController">
+    <head>                
+        <style type="text/css" media="print">                 
+            @page {
+                margin-top: 3cm;
+                margin-bottom: 3cm;
+            
+                @top-center {
+                    content: element(header);
+                }
+                @bottom-left {
+                    content: element(footer);
+                }
+                @bottom-right {
+                    content: "Page " counter() " of " counter(pages);
+                }
+            }
+            
+            div.header {
+                padding: 0px;
+                position: running(header);
+            }
+            div.footer {
+                display: block;
+                padding: 5px;
+                position: running(footer);
+            }
+            .pagenumber:before {
+                content: counter(page);
+            }
+            .pagecount:before {
+                content: counter(pages);
+            }
+            div.content {
+                float: left;
+                width: 100%;
+            } 
+            body{
+               font-family: sans-serif;
+            }
+            .borderClass table, .borderClass td, .borderClass th, .borderClass tr{
+                border: 0.5px solid #8BA9E5 !important; 
+                border-collapse: collapse;
+            }
+        </style>             
+    </head> 
+   
+    <div class="header">
+        <img style="margin-left: -50px; margin-top: -15px; float: left; width: 80%; HEIGHT: 100px; border:0px" src='{!URLFOR($Resource.PDFHeader)}' title="logo" align="left" />           
+        <img style="width: 140px; HEIGHT: 90px; border:0px" src='{!URLFOR($Resource.Yotta_Logo)}' title="logo" align="right"  />
+    </div>
+    
+    <div class="footer" style="font-family:sans-serif; font-size: 8px;">
+        <apex:outputText rendered="{!IF(originalContract.Business_Unit__c == 'Yotta Network Services Private Limited', true, false)}">
+        <c:SOFFooter />
+        </apex:outputText>
+        <apex:outputText rendered="{!IF(originalContract.Business_Unit__c == 'Yotta Data Services Private Limited', true, false)}">
+        <c:SOFFooterInfra />
+        </apex:outputText>
+        
+        <div style="float:right; font-size: 9px;">Page <span class="pagenumber"/> of <span class="pagecount"/></div>
+    </div>  
+    
+    
+        <div style="text-align: center;">
+            <span style="font-size:20px;" >Service Change Form (SCF)<!--: {!SBQQ__Quote__c.Name}--> | Transfer of Service: </span>
+            <span style="color:#1d3f81; font-family:sans-serif; font-size:20px; font-weight: bold;">{!SBQQ__Quote__c.Name} </span>   <br/>
+        </div><br/>
+        <span style="color:#1d3f81;font-family:sans-serif; font-size: 12px;">
+            <apex:outputText ><b>Contract Details</b></apex:outputText>
+            <br/>
+        </span>
+        <br/>
+        <table class="borderClass" width="100%" cellpadding="5" style="border-collapse: collapse; font-size:10px; ">
+            
+            <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                <th style="border:1px solid black;"></th>
+                <th style="border:1px solid black;font-family:sans-serif; font-size: 11px;">Bill To Customer</th>
+                <th style="border:1px solid black;">Support To Customer</th>
+            </tr>
+            <tr >
+                <td width="25%" style="color:#1d3f81;border:1px solid black;font-family:sans-serif; font-size: 11px;">ID</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.SBQQ__Account__r.Account_Number__c}</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.Support_To_Customer__r.Account_Number__c}</td>
+            </tr>
+            <tr>
+                <td width="25%" style="color:#1d3f81;border:1px solid black;" >Name</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.SBQQ__Account__r.Name}</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.Support_To_Customer__r.Name}</td>
+            </tr>
+            <tr>
+                <td width="25%" style="color:#1d3f81;border:1px solid black;">Billing Address</td>
+                <td colspan="2" style="border:1px solid black;">{!SBQQ__Quote__c.Bill_To_Address__r.AddressLine1__c},
+                    {!SBQQ__Quote__c.Bill_To_Address__r.AddressLine2__c},
+                    {!SBQQ__Quote__c.Bill_To_Address__r.City__c},
+                    {!SBQQ__Quote__c.Bill_To_Address__r.PostalCode__c}
+                </td>
+                
+            </tr>
+        </table>
+        <br/>
+        
+        <table class="borderClass" width="100%" cellpadding="5" style="border-collapse: collapse; font-size:10px;font-family:sans-serif; ">
+            <tr >
+                <td width="25%" style="color:#1d3f81;border:1px solid black;" >Contract No</td>
+                <td style="border:1px solid black;">{!originalContract.Contract_Number__c}</td>
+                <td width="25%" style="color:#1d3f81; border:1px solid black;">SCF Effective Date</td>
+                <td style="border:1px solid black;">
+                    <apex:outputText value="{0,date,dd'-'MM'-'yyyy}" > 
+                        <apex:param value="{!quote.SBQQ__StartDate__c}"/>
+                    </apex:outputText>                    
+                </td>
+            </tr>
+            <tr >
+                <td width="25%" style="color:#1d3f81;border:1px solid black;">Contract Term</td>
+                <td style="border:1px solid black;">{!ROUND(originalContract.Contract_Tenure_Years__c,0)} Years, {!ROUND(originalContract.Contract_Tenure_Months__c,0)} Months, {!ROUND(originalContract.Contract_Tenure_Days__c,0)} Days</td>
+                <td width="25%" style="color:#1d3f81;border:1px solid black;font-size:10px">Remaining Contract Term</td>
+                <td style="border:1px solid black;">{!ROUND(SBQQ__Quote__c.Contract_Tenure_Year__c,0)} Years, {!ROUND(SBQQ__Quote__c.Contract_Tenure_Month__c,0)} Months, {!ROUND(SBQQ__Quote__c.Contract_Tenure_Days__c,0)} Days </td>
+               
+            </tr>
+            <tr style = "font-size:10px; font-family:sans-serif;"> 
+                <td width="25%" style="color:#1d3f81;border:1px solid black;font-size:10px">Contract Currency</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.Contract_Currency__c}</td>
+                <td width="25%" style="color:#1d3f81;border:1px solid black;font-size:10px">Billing Currency</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.Billing_Currency__c}</td>
+                
+            </tr>
+    </table>
+        
+        <br/>
+        
+        <div style="page-break-after: always">
+            <span style="color:#1d3f81;font-family:sans-serif; font-size: 12px;"><b>Contact Details</b></span>
+            <br/>
+            <br/>
+            <table class="borderClass" width="100%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size: 10px;">
+                <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                    <th style="border:1px solid black;"></th>
+                    <th style="border:1px solid black;">Customer SPoC*</th>
+                    <th style="border:1px solid black;">Customer Billing Contact</th>
+                    <th style="border:1px solid black;">Service Provider Account Manager#</th>
+                </tr>
+                <tr >
+                    <td width="18%" style="color:#1d3f81;border:1px solid black;">Name</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_SPoC__r.Name}</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Billing_Contact__r.Name}</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Owner.Name}</td>
+                </tr>
+                <tr>
+                    <td width="18%" style="color:#1d3f81;border:1px solid black;">Email ID</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_SPoC__r.Email}</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Billing_Contact__r.Email}</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Owner.Email}</td>
+                </tr>
+                <tr>
+                    <td width="18%" style="color:#1d3f81;border:1px solid black;">Contact No.</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_SPoC__r.MobilePhone}</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Billing_Contact__r.MobilePhone}</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Owner.Phone}</td>
+                </tr>
+                
+            </table>
+            <span style="font-size:7pt;">SPoC* oversee the order execution from Customer Organization | Service Provider Account Manager# Service provider’s point of contact
+            </span>
+            <br/>
+            <br/>
+            <span style="font-size:7pt;">The Undersigned signatory is aware and agrees to abide by and be bound by the provisions of this SOF, the MSA and/or any other documents like SOW/SLA agreed between the two parties. The signatory deems to be authorized
+            </span> <br/><br/>
+            <table class="borderClass" width="100%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size: 10px;">
+                <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                    <th style="border:1px solid black;"></th>
+                    <th style="border:1px solid black;">Customer Signature and Stamp</th>
+                    <th style="border:1px solid black;">Service Provider Signature and Stamp</th>
+                </tr>
+                <tr>
+                    <td style="color:#1d3f81;border:1px solid black;">Signature</td>
+                    <td style="border:1px solid black;"></td>
+                    <td style="border:1px solid black;"></td>
+                </tr>
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td style="color:#1d3f81;border:1px solid black;">Name of Signatory</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Authorised_Signatory__r.Name}</td>
+                    <td style="border:1px solid black;"></td>
+                </tr >
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td style="color:#1d3f81;border:1px solid black;">Designation</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Authorised_Signatory__r.Title}</td>
+                    <td style="border:1px solid black;"></td>
+                </tr>
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td style="color:#1d3f81;border:1px solid black;">Mobile Number</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Authorised_Signatory__r.MobilePhone}</td>
+                    <td style="border:1px solid black;"></td>
+                </tr>
+                <tr style = "font-size:10px; font-family:sans-serif;">
+                    <td style="color:#1d3f81;border:1px solid black;">Email ID</td>
+                    <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Authorised_Signatory__r.Email}</td>
+                    <td style="border:1px solid black;"></td>
+                </tr>
+                <tr>
+                    <td style="color:#1d3f81;border:1px solid black;">Date</td>
+                    <td style="border:1px solid black;"></td>
+                    <td style="border:1px solid black;"></td>
+                </tr>
+                
+            </table>
+            <span style="font-size:7pt;">* - Year from which the change will be effective. | Variable Charges Applicable - Yes/No: {!VariableCharge}
+            </span>            
+        </div>
+    
+    <div style="page-break-after: always">
+       <span style="color:#1d3f81;font-family:sans-serif; font-size: 12px;"> Annexure #1 Transfer of service details</span> <br/>  
+        <span style = "font-family:sans-serif; font-size: 10px;">
+        
+            Please enclose the below mentioned documents (as applicable) for initiating transfer of services.            
+        </span><br/>
+        
+         <span style = "font-family:sans-serif; font-size: 10px;">
+          <apex:outputText rendered="{!If(SBQQ__Quote__c.Reason_For_Transfer__c = 'Amalgamation or Merger',True,False)}">            
+            1. A certificate true copy of order passed by Hon’able, High Court at ___________, authorizing such Amalgamation / Merger and form filed with Ministry of Corporate Affairs, Government of India.            
+            <br/>
+        </apex:outputText>
+
+        <apex:outputText rendered="{!If(SBQQ__Quote__c.Reason_For_Transfer__c = 'Business Transfer',True,False)}">            
+            1. A Business Transfer Agreement (relevant pages) along with the board resolution authorizing such business transfer.     
+            <br/>       
+        </apex:outputText>
+
+        <apex:outputText rendered="{!If(SBQQ__Quote__c.Reason_For_Transfer__c = 'Voluntary Transfer',True,False)}">            
+            1. A board resolution authorizing such transfer of services to the new entity            
+            <br/>
+        </apex:outputText>
+        </span>
+
+        <br/>
+        <span style = "font-family:sans-serif; font-size: 10px;">
+            We shall honor all the liabilities and obligations as per the said MSA till the effective date of transfer and also confirm that such new entity shall execute all such documents including a fresh Master services agreement with {!originalContract.Business_Unit__c} for receiving the said services.  
+        </span><br/> <br/>
+        <span style = "font-family:sans-serif; font-size: 10px;">
+            Details of the services are as mentioned below:
+        </span><br/><br/>
+        <table class="borderClass" width="100%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size: 10px;">
+            <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                <td style="border:1px solid black;">Existing Billing Address</td>
+                <td style="border:1px solid black;">Reference SOF/SCF #</td>
+                <td style="border:1px solid black;">Code &amp; Description</td>
+                <td style="border:1px solid black;">Location</td>
+                <td style="border:1px solid black;">Quantity</td>
+                <!-- <td style="border:1px solid black;">Transfer Date</td> -->
+                <td style="border:1px solid black;">Bill Start Date</td>
+            </tr>
+            <apex:repeat value="{!bundleProductList}" var="bpl">
+                <tr>
+                    <td style="border:1px solid black;">{!bpl.billingAddress}</td> 
+                    <td style="border:1px solid black;">{!bpl.refSOF}</td> 
+                    <td style="border:1px solid black;">
+                        <apex:outputText escape="false" value="{!bpl.bundleName} <br/> {!bpl.description}"/>
+                    </td> 
+                    <td style="border:1px solid black;">{!bpl.location}</td> 
+                    <td style="border:1px solid black;">{!bpl.qty}</td> 
+                    <!-- <td style="border:1px solid black;">{!bpl.transferDate}</td>  -->
+                    <td style="border:1px solid black;">
+                        <apex:outputText value="{0,date,dd'-'MM'-'yyyy}" > 
+                            <apex:param value="{!bpl.billStartDate}"/>
+                        </apex:outputText>
+                    </td> 
+                </tr>
+            </apex:repeat>
+        </table>
+        
+        <br/><br/>
+   
+        <span style="font-size:7pt;">The Undersigned signatory is aware and agrees to abide by and be bound by the provisions of this SOF, the MSA and/or any other documents like SOW/SLA agreed between the two parties. The signatory deems to be authorized
+        </span><br/><br/> 
+         <table border="1px solid black" width="100%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size: 10px;;">
+            <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                <th style="border:1px solid black;"></th>
+                <th style="border:1px solid black;">Transfer from Customer's Signature and Stamp</th>
+                <th style="border:1px solid black;">Transfer to Customer's Signature and Stamp</th>
+            </tr>
+            <tr>
+                <td style="color:#1d3f81;border:1px solid black;">Signature</td>
+                <td style="border:1px solid black;"></td>
+                <td style="border:1px solid black;"></td>
+            </tr>
+            <tr>
+                <td style="color:#1d3f81;border:1px solid black;">Name of Signatory</td>
+                <td style="border:1px solid black;">{!originalContract.Customer_Authorised_Signatory__r.Name}</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Authorised_Signatory__r.Name}</td>
+            </tr>
+            <tr>
+                <td style="color:#1d3f81;border:1px solid black;">Designation</td>
+                <td style="border:1px solid black;">{!originalContract.Customer_Authorised_Signatory__r.Title}</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Authorised_Signatory__r.Title}</td>
+            </tr>
+            <tr>
+                <td style="color:#1d3f81;border:1px solid black;">Mobile Number</td>
+                <td style="border:1px solid black;">{!originalContract.Customer_Authorised_Signatory__r.MobilePhone}</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Authorised_Signatory__r.MobilePhone}</td>
+            </tr>
+            <tr>
+                <td style="color:#1d3f81;border:1px solid black;">Email ID</td>
+                <td style="border:1px solid black;">{!originalContract.Customer_Authorised_Signatory__r.Email}</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Authorised_Signatory__r.Email}</td>
+            </tr>
+            <tr>
+                <td style="color:#1d3f81;border:1px solid black;">Date</td>
+                <td style="border:1px solid black;"></td>
+                <td style="border:1px solid black;"></td>
+            </tr>
+                
+        </table> 
+    </div>
+   
+    <span style="color:#1d3f81;font-family:sans-serif; font-size: 12px;"><b>Annexure #2 Terms and Conditions</b></span><br/>
+    <span style="font-family:sans-serif; font-size: 10px;">1. All Terms &amp; Conditions will be same as mentioned in the original SOF.</span>
+
+</apex:page>

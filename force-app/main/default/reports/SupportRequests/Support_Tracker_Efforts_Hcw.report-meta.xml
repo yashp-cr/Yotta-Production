@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SR_Effort__c.Date__c</field>
+    </columns>
+    <columns>
+        <field>SR_Effort__c.Activity__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Support_Request__c.Subject__c</field>
+    </columns>
+    <columns>
+        <field>SR_Effort__c.Comments__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SR_Effort__c.Efforts_in_Person_Days__c</field>
+    </columns>
+    <currency>INR</currency>
+    <description>****Do Not Modify****
+Month Wise Efforts Sheet in the Support Tracker Dec&apos;20 - Nov&apos;21</description>
+    <format>Tabular</format>
+    <name>Support Tracker - Efforts</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Support_Request__c$SR_Effort__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>SR_Effort__c.Date__c</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,412 @@
+<apex:page renderAs="pdf" controller="TariffCardController" showHeader="false" applyHtmlTag="false" applyBodyTag="false"
+       standardStylesheets="false">
+<head>
+    <style type="text/css">
+    @page {
+    margin-top: 3cm;
+    margin-bottom: 3cm;
+    size: 19in 9in;
+
+    @top-center {
+    content: element(header);
+    }
+    @bottom-left {
+    content: element(footer);
+    }
+    table{
+        -fs-table-paginate: paginate;
+    }
+    <!-- @bottom-right {
+content: "Page " counter(page) " of " counter(pages);
+} -->
+    }
+    div.header {
+    padding: 0px;
+    position: running(header);
+    }
+    div.footer {
+    display: block;
+    padding: 5px;
+    position: running(footer);
+    }
+    div.content {
+    float: left;
+    width: 100%;
+    }
+    .pagenumber:before {
+    content: counter(page);
+    }
+    .pagecount:before {
+    content: counter(pages);
+    }
+
+
+
+
+
+
+
+    </style>
+</head>
+<body style="margin:0px; width: 100%;font-family:Helvetica;">
+<div class="header" style="text-align:center;">
+
+    <img style="width: 180px; HEIGHT: 120px; border:0px" src='{!URLFOR($Resource.Yotta_Logo)}' title="logo"/>
+</div>
+<div class="footer" style="font-family:Helvetica; font-size: 10px;">
+    <p>Proprietary and Confidential</p>
+    <apex:outputText value="{!CurrentDatetime}"/>
+    <div style="float:right;">Page <span class="pagenumber"/> of <span class="pagecount"/></div>
+</div>
+<div class="page 1">
+
+
+    <div class='Yotta Head' style="text-align:center;color:#000080">
+        <h2>
+            Yotta Data Services Private Limited
+        </h2></div>
+
+    <h4>
+        Error &amp; Omission
+    </h4>
+    <p>
+        This information could include unintentional inaccuracies or typographical errors.
+        Changes are periodically made to the information herein; these changes will be incorporated in new editions
+        of the publication.
+        YOTTA may make improvements and/or changes in the product(s) and/or the program(s) described in this
+        publication at any time without notice.
+        Any references in this information to non-YOTTA Web sites are provided for convenience only and do not in
+        any manner serve as an endorsement of those Web sites.
+        The materials at those Web sites are not part of the materials for this YOTTA product and use of those Web
+        sites is at your own risk.
+        Further any kind of suggestions will help us to increase product acceptance and client satisfaction and
+        please do write to us DL-product@yotta.com.
+    </p>
+    <h4>
+        Copyright
+    </h4>
+    <p>
+        Copyright © 2019 Yotta Data Services Private Limited, all rights reserved.
+        No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or
+        by any means, electronic, mechanical, photocopying and recording or otherwise without the prior written
+        permission of the document approvers as listed.
+        This document is the property of Yotta and may not be disclosed to a 3rd party or copied without consent.
+    </p>
+    <apex:outputPanel rendered="{!SalesDisclamer}">
+        <p>
+        <h4>Disclamer</h4>
+        It must be noted that price sheets are updated on a periodic basis and disseminated among the sales team.
+        Sales representatives must always refer to the same and quote the latest prices to prospective customers.
+        The management will not be responsible for any miscommunication with prospective customers due to negligence
+        to follow this practice. The purpose of this document is to help sales representatives stay updated with the
+        latest prices and quote the same to prospective customers. Resharing this document, or parts of it, outside
+        Yotta is strictly prohibited.
+        </p>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!PartnerDisclamer}">
+        <p>
+        <h3>Disclamer</h3>
+        The information contained in this document is proprietary and confidential and is intended for consumption
+        by partner personnel only. Circulation or reproduction of this document or parts of it, in any form, outside
+        of the partner organization is not permitted. If you are not the intended recipient of this document, please
+        ignore it and do not use or circulate any information from the same; doing so may invite legal action.
+        </p>
+    </apex:outputPanel>
+
+</div>
+
+<apex:outputPanel rendered="{!SalesProfile}">
+    <div class="SalesProfile">
+        <apex:repeat value="{!mapOfProductFamily}" var="MapProductfamily">
+            <div style="page-break-before: always"/>
+            <table border="3" cellspacing="0px" style="-fs-table-paginate: paginate;font-family:Helvetica ;font-size:12px;" width="100%">
+                <thead>
+                <tr>
+                    <th rowspan="2" width="10%">Product Family</th>
+                    <th rowspan="2" width="10%">Product Line</th>
+                    <th rowspan="2" width="15%">Product Name</th>
+                    <!--  <th rowspan="2">Product Bundle</th> -->
+                    <th rowspan="2" width="26%">Product Description</th>
+                    <th rowspan="2" width="5%">UOM</th>
+                    <th colspan="3" width="17%" align="center">List Price</th>
+                    <th colspan="3" width="17%" align="center">Sales Price</th>
+                </tr>
+                <tr>
+                    <th align="center">OTC</th>
+                    <th align="center">MRC</th>
+                    <th align="center">VAR</th>
+                    <th align="center">OTC</th>
+                    <th align="center">MRC</th>
+                    <th align="center">VAR</th>
+                </tr>
+                </thead>
+                <tbody>
+                <apex:repeat value="{!mapOfProductFamily[MapProductfamily]}" var="BundleName">
+                    <tr>
+                        <td colspan="12"
+                            style="background-color:#DCDCDC;padding-top:3px;padding-bottom:3px;font-weight:600;font-size:18px;">
+                            <apex:outputText value="{!BundleName}"></apex:outputText>
+                        </td>
+                    </tr>
+                    <apex:repeat value="{!mapOfProductWrap[BundleName]}" var="pw">
+                        <tr>
+                            <td>
+                                <apex:outputText value="{!pw.productFamily}"></apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!pw.productLine}"></apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!pw.Name}"></apex:outputText>
+                            </td>
+                            <!--   <td>
+                                   <apex:outputText value="{!pw.productBundleName}"></apex:outputText>
+                               </td> -->
+                            <td>
+                                <apex:outputText value="{!pw.productDescription}"></apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!pw.UOM}"></apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.UPrice.OTC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.UPrice.MRC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.UPrice.VRC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.SPrice.OTC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.SPrice.MRC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.SPrice.VRC}"/>
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </apex:repeat>
+                </tbody>
+            </table>
+
+        </apex:repeat>
+
+    </div>
+</apex:outputPanel>
+<apex:outputPanel rendered="{!PartnerProfile}">
+    <div class="PartnerProfile">
+
+
+        <apex:repeat value="{!mapOfProductFamily}" var="MapProductfamily">
+            <div style="page-break-before: always"/>
+            <table border="3" cellspacing="0px" style="-fs-table-paginate: paginate;font-family:Helvetica ;font-size:12px;" width="100%">
+                <tr>
+                    <th rowspan="2" width="10%">Product Family</th>
+                    <th rowspan="2" width="10%">Product Line</th>
+                    <th rowspan="2" width="15%">Product Name</th>
+                    <!--  <th rowspan="2">Product Bundle</th> -->
+                    <th rowspan="2" width="26%">Product Description</th>
+                    <th rowspan="2" width="5%">UOM</th>
+                    <th colspan="3" width="17%" align="center">Unit Price</th>
+                    <th colspan="3" width="17%" align="center">Partner Price</th>
+                </tr>
+                <tr>
+                    <th align="center">OTC</th>
+                    <th align="center">MRC</th>
+                    <th align="center">VAR</th>
+                    <th align="center">OTC</th>
+                    <th align="center">MRC</th>
+                    <th align="center">VAR</th>
+                </tr>
+                <apex:repeat value="{!mapOfProductFamily[MapProductfamily]}" var="BundleName">
+                    <tr>
+                        <td colspan="12"
+                            style="background-color:#DCDCDC;padding-top:8px;padding-bottom:8px;font-weight:600;font-size:18px;">
+                            <apex:outputText value="{!BundleName}"></apex:outputText>
+                        </td>
+                    </tr>
+                    <apex:repeat value="{!mapOfProductWrap[BundleName]}" var="pw">
+                        <tr>
+                            <td>
+                                <apex:outputText value="{!pw.productFamily}"></apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!pw.productLine}"></apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!pw.Name}"></apex:outputText>
+                            </td>
+                            <!--   <td>
+                                   <apex:outputText value="{!pw.productBundleName}"></apex:outputText>
+                               </td> -->
+                            <td>
+                                <apex:outputText value="{!pw.productDescription}"></apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!pw.UOM}"></apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.UPrice.OTC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.UPrice.MRC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.UPrice.VRC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.PPrice.OTC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.PPrice.MRC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.PPrice.VRC}"/>
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </apex:repeat>
+            </table>
+        </apex:repeat>
+
+    </div>
+</apex:outputPanel>
+<apex:outputPanel rendered="{!DistributorPartnerProfile}">
+    <div class="DistributorPartnerProfile">
+
+
+        <apex:repeat value="{!mapOfProductFamily}" var="MapProductfamily">
+            <div style="page-break-before: always"/>
+            <table border="3" cellspacing="0px" style="-fs-table-paginate: paginate;font-family:Helvetica ;font-size:12px;" width="100%">
+                <tr>
+                    <th rowspan="2" width="10%">Product Family</th>
+                    <th rowspan="2" width="10%">Product Line</th>
+                    <th rowspan="2" width="15%">Product Name</th>
+                    <!--  <th rowspan="2">Product Bundle</th> -->
+                    <th rowspan="2" width="24%">Product Description</th>
+                    <th rowspan="2" width="5%">UOM</th>
+                    <th colspan="3" width="12%" align="center">Unit Price</th>
+                    <th colspan="3" width="12%" align="center">Partner Price</th>
+                    <th colspan="3" width="12%" align="center">Distributor Price</th>
+                </tr>
+                <tr>
+                    <th align="center">OTC</th>
+                    <th align="center">MRC</th>
+                    <th align="center">VAR</th>
+                    <th align="center">OTC</th>
+                    <th align="center">MRC</th>
+                    <th align="center">VAR</th>
+                    <th align="center">OTC</th>
+                    <th align="center">MRC</th>
+                    <th align="center">VAR</th>
+                </tr>
+                <apex:repeat value="{!mapOfProductFamily[MapProductfamily]}" var="BundleName">
+                    <tr>
+                        <td colspan="14"
+                            style="background-color:#DCDCDC;padding-top:8px;padding-bottom:8px;font-weight:600;font-size:18px;">
+                            <apex:outputText value="{!BundleName}"></apex:outputText>
+                        </td>
+                    </tr>
+                    <apex:repeat value="{!mapOfProductWrap[BundleName]}" var="pw">
+                        <tr>
+                            <td>
+                                <apex:outputText value="{!pw.productFamily}"></apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!pw.productLine}"></apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!pw.Name}"></apex:outputText>
+                            </td>
+                            <!--   <td>
+                            <apex:outputText value="{!pw.productBundleName}"></apex:outputText>
+                        </td> -->
+                            <td>
+                                <apex:outputText value="{!pw.productDescription}"></apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!pw.UOM}"></apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.UPrice.OTC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.UPrice.MRC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.UPrice.VRC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.PPrice.OTC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.PPrice.MRC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.PPrice.VRC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                            <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!pw.DPrice.OTC}"/>
+                            </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.DPrice.MRC}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!pw.DPrice.VRC}"/>
+                                </apex:outputText>
+                            </td>
+
+                        </tr>
+                    </apex:repeat>
+                </apex:repeat>
+            </table>
+        </apex:repeat>
+
+    </div>
+</apex:outputPanel>
+</body>
+</apex:page>

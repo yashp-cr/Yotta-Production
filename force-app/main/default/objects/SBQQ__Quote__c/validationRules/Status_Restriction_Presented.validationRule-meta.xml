@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Restriction_Presented</fullName>
+    <active>true</active>
+    <description>User are not able to select the status as Presented if the Quote Status is not Approved</description>
+    <errorConditionFormula>AND( 
+ ISPICKVAL( SBQQ__Status__c, &quot;Presented&quot;),
+ NOT( ISPICKVAL( PRIORVALUE( SBQQ__Status__c ), &quot;Approved&quot;)),
+ ISCHANGED( SBQQ__Status__c )
+)</errorConditionFormula>
+    <errorDisplayField>SBQQ__Status__c</errorDisplayField>
+    <errorMessage>Only Approved Quotes can be Presented to Customer.</errorMessage>
+</ValidationRule>

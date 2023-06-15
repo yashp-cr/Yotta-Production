@@ -1,0 +1,38 @@
+<apex:component >
+    <span style="color:#1d3f81">
+        <apex:outputText ><b>Commercial Summary</b></apex:outputText></span><br/><br/>
+    <table border="1px solid black" width="95%" cellpadding="10" style="border-collapse: collapse; font-family:arial; font-size:15px;">
+   <tr style="background-color:#1d3f81; color:#FFFFFF">
+       <td>Year</td>
+       <td>One Time Charges</td>
+       <td>Monthly Recurring Charges</td>
+        </tr>
+        <tr>
+            <td>Year 1</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Year 2</td>
+            <td>-</td>
+            <td></td>
+        </tr><tr>
+            <td>Year 3</td>
+            <td>-</td>
+            <td></td>
+        </tr><tr>
+            <td>Year 4</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+        <tr style="color:#1d3f81">
+            <td>Total</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+    </table>
+     <span style="font-size:9pt;">* - Year from which the change will be effective. | Variable Charges Applicable - Yes/No: No
+    </span>
+    <br/>
+</apex:component>

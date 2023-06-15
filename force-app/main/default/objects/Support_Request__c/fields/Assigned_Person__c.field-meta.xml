@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_Person__c</fullName>
+    <externalId>false</externalId>
+    <label>Assigned Person</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yash Parasiya</fullName>
+                <default>false</default>
+                <label>Yash Parasiya</label>
+            </value>
+            <value>
+                <fullName>Meet Badani</fullName>
+                <default>false</default>
+                <label>Meet Badani</label>
+            </value>
+            <value>
+                <fullName>Vijay Patra</fullName>
+                <default>false</default>
+                <label>Vijay Patra</label>
+            </value>
+            <value>
+                <fullName>Swati Kannaujiya</fullName>
+                <default>false</default>
+                <label>Swati Kannaujiya</label>
+            </value>
+            <value>
+                <fullName>Godfrey Gonsalves</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Godfrey Gonsalves</label>
+            </value>
+            <value>
+                <fullName>Himanshu Maheshwari</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Himanshu Maheshwari</label>
+            </value>
+            <value>
+                <fullName>Nandish Shenoy</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Nandish Shenoy</label>
+            </value>
+            <value>
+                <fullName>Riya Sharma</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Riya Sharma</label>
+            </value>
+            <value>
+                <fullName>Rohan Kapoor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rohan Kapoor</label>
+            </value>
+            <value>
+                <fullName>Sumeet Gholap</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sumeet Gholap</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

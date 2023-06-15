@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ITSM_Used_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL(    ITSM_used_ServiceNow_Remedy_etc__c , &apos;Yes&apos;),
+ISBLANK(    ITSM_yes__c )
+)</errorConditionFormula>
+    <errorDisplayField>ITSM_yes__c</errorDisplayField>
+    <errorMessage>Please Specify the Tool for ITSM Used</errorMessage>
+</ValidationRule>

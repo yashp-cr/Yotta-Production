@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Expired</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL( PRIORVALUE(Status) ,&apos;Expired&apos;) ,
+ISPICKVAL( PRIORVALUE(Status) ,&apos;Renewed&apos;), 
+ISPICKVAL( PRIORVALUE(Status) ,&apos;Cancelled&apos;),
+ISPICKVAL(PRIORVALUE(Status) ,&apos;Deactivated&apos;)),
+NOT(ISPICKVAL(Status, &apos;Renewed&apos;)), 
+ISCHANGED(Status),
+NOT($Profile.Name = &quot;System Administrator&quot;))</errorConditionFormula>
+    <errorMessage>Cannot Change Status</errorMessage>
+</ValidationRule>

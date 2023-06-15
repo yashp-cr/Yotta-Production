@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Document__c</fullName>
+    <externalId>false</externalId>
+    <label>Document</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Document_Category__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Aadhar</fullName>
+                <default>false</default>
+                <label>Aadhar</label>
+            </value>
+            <value>
+                <fullName>Advance Payment</fullName>
+                <default>false</default>
+                <label>Advance Payment</label>
+            </value>
+            <value>
+                <fullName>Authority Letter / Resolution authorising the signatory to sign the Contract</fullName>
+                <default>false</default>
+                <label>Authority Letter / Resolution authorising the signatory to sign the Contract</label>
+            </value>
+            <value>
+                <fullName>Authority Letter (supported by Board Resolution)</fullName>
+                <default>false</default>
+                <label>Authority Letter (supported by Board Resolution)</label>
+            </value>
+            <value>
+                <fullName>Board Resolution</fullName>
+                <default>false</default>
+                <label>Board Resolution</label>
+            </value>
+            <value>
+                <fullName>BOM</fullName>
+                <default>false</default>
+                <label>BOM</label>
+            </value>
+            <value>
+                <fullName>Business Commencement Certificate</fullName>
+                <default>false</default>
+                <label>Business Commencement Certificate</label>
+            </value>
+            <value>
+                <fullName>Certificate of Commencement of Business (for public limited companies)</fullName>
+                <default>false</default>
+                <label>Certificate of Commencement of Business (for public limited companies)</label>
+            </value>
+            <value>
+                <fullName>Certificate of registration</fullName>
+                <default>false</default>
+                <label>Certificate of registration</label>
+            </value>
+            <value>
+                <fullName>Current registered lease or licence Agreement along with Utility bill(s)</fullName>
+                <default>false</default>
+                <label>Current registered lease or licence Agreement along with Utility bill(s)</label>
+            </value>
+            <value>
+                <fullName>Current Shareholding Pattern</fullName>
+                <default>false</default>
+                <label>Current Shareholding Pattern</label>
+            </value>
+            <value>
+                <fullName>Declaration enlisting name anddetailsofcurrent Trustees/Chairman/President/Karta</fullName>
+                <default>false</default>
+                <label>Declaration enlisting name anddetailsofcurrent Trustees/Chairman/President/Karta</label>
+            </value>
+            <value>
+                <fullName>Declaration enlisting name and other details of current existing Partners</fullName>
+                <default>false</default>
+                <label>Declaration enlisting name and other details of current existing Partners</label>
+            </value>
+            <value>
+                <fullName>Declaration on Letterhead enlisting all partners names with their inclusion date</fullName>
+                <default>false</default>
+                <label>Declaration on Letterhead enlisting all partners names with their inclusion date</label>
+            </value>
+            <value>
+                <fullName>Design Document</fullName>
+                <default>false</default>
+                <label>Design Document</label>
+            </value>
+            <value>
+                <fullName>Documents described basis kind of the legal entity forming JVs/SPVs/consortium</fullName>
+                <default>false</default>
+                <label>Documents described basis kind of the legal entity forming JVs/SPVs/consortium</label>
+            </value>
+            <value>
+                <fullName>Domicile certificate with address issued by a municipal corporation</fullName>
+                <default>false</default>
+                <label>Domicile certificate with address issued by a municipal corporation</label>
+            </value>
+            <value>
+                <fullName>Driving License</fullName>
+                <default>false</default>
+                <label>Driving License</label>
+            </value>
+            <value>
+                <fullName>Duly executed Partnership Deed (as amended and updated up to date)</fullName>
+                <default>false</default>
+                <label>Duly executed Partnership Deed (as amended and updated up to date)</label>
+            </value>
+            <value>
+                <fullName>Electricity bill</fullName>
+                <default>false</default>
+                <label>Electricity bill</label>
+            </value>
+            <value>
+                <fullName>Financial Statement(s) filed on RoC</fullName>
+                <default>false</default>
+                <label>Financial Statement(s) filed on RoC</label>
+            </value>
+            <value>
+                <fullName>GST registration certificate</fullName>
+                <default>false</default>
+                <label>GST registration certificate</label>
+            </value>
+            <value>
+                <fullName>Importer Exporter Code Number certificate</fullName>
+                <default>false</default>
+                <label>Importer Exporter Code Number certificate</label>
+            </value>
+            <value>
+                <fullName>List of present Director(s)</fullName>
+                <default>false</default>
+                <label>List of present Director(s)</label>
+            </value>
+            <value>
+                <fullName>Master Service Level Agreement (MSA)</fullName>
+                <default>false</default>
+                <label>Master Service Level Agreement (MSA)</label>
+            </value>
+            <value>
+                <fullName>MoA / AoA</fullName>
+                <default>false</default>
+                <label>MoA / AoA</label>
+            </value>
+            <value>
+                <fullName>MSA</fullName>
+                <default>false</default>
+                <label>MSA</label>
+            </value>
+            <value>
+                <fullName>MSME Certificate (if registered)</fullName>
+                <default>false</default>
+                <label>MSME Certificate (if registered)</label>
+            </value>
+            <value>
+                <fullName>MSME Declaration (if not registered)</fullName>
+                <default>false</default>
+                <label>MSME Declaration (if not registered)</label>
+            </value>
+            <value>
+                <fullName>MTNL-BSNL phone line bill</fullName>
+                <default>false</default>
+                <label>MTNL-BSNL phone line bill</label>
+            </value>
+            <value>
+                <fullName>NUV Forms</fullName>
+                <default>false</default>
+                <label>NUV Forms</label>
+            </value>
+            <value>
+                <fullName>PAN Card</fullName>
+                <default>false</default>
+                <label>PAN Card</label>
+            </value>
+            <value>
+                <fullName>Passport</fullName>
+                <default>false</default>
+                <label>Passport</label>
+            </value>
+            <value>
+                <fullName>PO</fullName>
+                <default>false</default>
+                <label>PO</label>
+            </value>
+            <value>
+                <fullName>Power of Attorney (supported by Board Resolution)</fullName>
+                <default>false</default>
+                <label>Power of Attorney (supported by Board Resolution)</label>
+            </value>
+            <value>
+                <fullName>Property Tax bill</fullName>
+                <default>false</default>
+                <label>Property Tax bill</label>
+            </value>
+            <value>
+                <fullName>Registered Deed (as amended and updated up to date)</fullName>
+                <default>false</default>
+                <label>Registered Deed (as amended and updated up to date)</label>
+            </value>
+            <value>
+                <fullName>Registration Certificate</fullName>
+                <default>false</default>
+                <label>Registration Certificate</label>
+            </value>
+            <value>
+                <fullName>Registration Certificate; Registered Deed (as amended and updated up to date)</fullName>
+                <default>false</default>
+                <label>Registration Certificate; Registered Deed (as amended and updated up to date)</label>
+            </value>
+            <value>
+                <fullName>Registration Certificate/Notification/Circular/Gazette for institution formation</fullName>
+                <default>false</default>
+                <label>Registration Certificate/Notification/Circular/Gazette for institution formation</label>
+            </value>
+            <value>
+                <fullName>Registration Certificate (if any) under Banking Companies Act 1949</fullName>
+                <default>false</default>
+                <label>Registration Certificate (if any) under Banking Companies Act 1949</label>
+            </value>
+            <value>
+                <fullName>RoC issued CIN</fullName>
+                <default>false</default>
+                <label>RoC issued CIN</label>
+            </value>
+            <value>
+                <fullName>SEBI registration certificate</fullName>
+                <default>false</default>
+                <label>SEBI registration certificate</label>
+            </value>
+            <value>
+                <fullName>Shops &amp; Establishment Certificate</fullName>
+                <default>false</default>
+                <label>Shops &amp; Establishment Certificate</label>
+            </value>
+            <value>
+                <fullName>Shops &amp; Establishment Certificate issued by Local self Govt</fullName>
+                <default>false</default>
+                <label>Shops &amp; Establishment Certificate issued by Local self Govt</label>
+            </value>
+            <value>
+                <fullName>Signed Contract</fullName>
+                <default>false</default>
+                <label>Signed Contract</label>
+            </value>
+            <value>
+                <fullName>Signed SCF</fullName>
+                <default>false</default>
+                <label>Signed SCF</label>
+            </value>
+            <value>
+                <fullName>SOW</fullName>
+                <default>false</default>
+                <label>SOW</label>
+            </value>
+            <value>
+                <fullName>Voter Id</fullName>
+                <default>false</default>
+                <label>Voter Id</label>
+            </value>
+            <value>
+                <fullName>Water bill</fullName>
+                <default>false</default>
+                <label>Water bill</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Aadhar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Business Commencement Certificate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Certificate of registration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Declaration on Letterhead enlisting all partners names with their inclusion date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Domicile certificate with address issued by a municipal corporation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Driving License</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Duly executed Partnership Deed (as amended and updated up to date)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <controllingFieldValue>Address Proof</controllingFieldValue>
+            <controllingFieldValue>SCF</controllingFieldValue>
+            <valueName>GST registration certificate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>MSME Certificate (if registered)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>PAN Card</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Passport</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Registered Deed (as amended and updated up to date)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Registration Certificate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Registration Certificate; Registered Deed (as amended and updated up to date)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Registration Certificate/Notification/Circular/Gazette for institution formation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Registration Certificate (if any) under Banking Companies Act 1949</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>RoC issued CIN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>SEBI registration certificate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Shops &amp; Establishment Certificate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Shops &amp; Establishment Certificate issued by Local self Govt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Identity Proof</controllingFieldValue>
+            <valueName>Voter Id</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Address Proof</controllingFieldValue>
+            <valueName>Current registered lease or licence Agreement along with Utility bill(s)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Address Proof</controllingFieldValue>
+            <valueName>Electricity bill</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Address Proof</controllingFieldValue>
+            <valueName>MTNL-BSNL phone line bill</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Address Proof</controllingFieldValue>
+            <valueName>Property Tax bill</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Address Proof</controllingFieldValue>
+            <valueName>Water bill</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Authority Letter / Resolution authorising the signatory to sign the Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Authority Letter (supported by Board Resolution)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Board Resolution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Certificate of Commencement of Business (for public limited companies)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Current Shareholding Pattern</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Declaration enlisting name anddetailsofcurrent Trustees/Chairman/President/Karta</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Declaration enlisting name and other details of current existing Partners</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Documents described basis kind of the legal entity forming JVs/SPVs/consortium</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Financial Statement(s) filed on RoC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Importer Exporter Code Number certificate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>List of present Director(s)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Master Service Level Agreement (MSA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>MoA / AoA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>MSME Declaration (if not registered)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional/Optional Documents</controllingFieldValue>
+            <valueName>Power of Attorney (supported by Board Resolution)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contract</controllingFieldValue>
+            <valueName>Advance Payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contract</controllingFieldValue>
+            <valueName>MSA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contract</controllingFieldValue>
+            <valueName>NUV Forms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contract</controllingFieldValue>
+            <valueName>PO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contract</controllingFieldValue>
+            <valueName>Signed Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Contract</controllingFieldValue>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>SOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>BOM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Design Document</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SCF</controllingFieldValue>
+            <valueName>Signed SCF</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

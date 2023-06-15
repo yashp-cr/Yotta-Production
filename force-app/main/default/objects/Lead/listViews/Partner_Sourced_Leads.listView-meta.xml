@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Sourced_Leads</fullName>
+    <booleanFilter>(1 OR 2 OR 3)</booleanFilter>
+    <columns>Lead_Id__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>End_Customer_Project__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Partner_Primary__c</columns>
+    <columns>PrimarySource__c</columns>
+    <columns>Partner_Secondary__c</columns>
+    <columns>Partner_Tertiary__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>ProductFamily__c</columns>
+    <columns>LEAD.EMAIL</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PrimarySource__c</field>
+        <operation>equals</operation>
+        <value>Alliance Partner,Reseller Partner,Technology Partner,Consultant Partner,Distributor Partner-Commission,Distributor Partner-TP</value>
+    </filters>
+    <filters>
+        <field>SecondarySource__c</field>
+        <operation>equals</operation>
+        <value>Alliance Partner,Reseller Partner,Technology Partner,Consultant Partner,Distributor Partner-Commission,Distributor Partner-TP</value>
+    </filters>
+    <filters>
+        <field>TertiarySource__c</field>
+        <operation>equals</operation>
+        <value>Alliance Partner,Reseller Partner,Technology Partner,Consultant Partner,Distributor Partner-Commission,Distributor Partner-TP</value>
+    </filters>
+    <label>Partner Sourced Leads</label>
+    <sharedTo>
+        <allPartnerUsers></allPartnerUsers>
+        <group>Admins</group>
+        <roleAndSubordinates>Yotta_Partner_Head</roleAndSubordinates>
+    </sharedTo>
+</ListView>

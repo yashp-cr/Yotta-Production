@@ -1,0 +1,1720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distributor_Partner_Name__c</fullName>
+    <externalId>false</externalId>
+    <label>Distributor Partner Name</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>3C IT SOLUTIONS &amp; TELECOMS INDIA PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>3C IT SOLUTIONS &amp; TELECOMS INDIA PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>4Dcompass Infosolutions Private Limited</fullName>
+                <default>false</default>
+                <label>4Dcompass Infosolutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>64 Network Security Private Limited</fullName>
+                <default>false</default>
+                <label>64 Network Security Private limited</label>
+            </value>
+            <value>
+                <fullName>7Array Solutions Private Limited</fullName>
+                <default>false</default>
+                <label>7Array Solutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>A2P2 Technologies</fullName>
+                <default>false</default>
+                <label>A2P2 Technologies</label>
+            </value>
+            <value>
+                <fullName>A3A Infotech Pvt Ltd</fullName>
+                <default>false</default>
+                <label>A3A Infotech Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Aadhion Digital Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Aadhion Digital Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Aaptteknous</fullName>
+                <default>false</default>
+                <label>Aaptteknous</label>
+            </value>
+            <value>
+                <fullName>Aaraventure Technologies</fullName>
+                <default>false</default>
+                <label>Aaraventure Technologies</label>
+            </value>
+            <value>
+                <fullName>Aarkay Techno Consultants P Ltd</fullName>
+                <default>false</default>
+                <label>Aarkay Techno Consultants P Ltd</label>
+            </value>
+            <value>
+                <fullName>Abm Micro</fullName>
+                <default>false</default>
+                <label>ABM Micro</label>
+            </value>
+            <value>
+                <fullName>Accel It Services</fullName>
+                <default>false</default>
+                <label>Accel It Services</label>
+            </value>
+            <value>
+                <fullName>ACCUTECH TECHNOLOGIES PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>ACCUTECH TECHNOLOGIES PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Accveil Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Accveil Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>ACP IT SOLUTIONS PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>ACP IT SOLUTIONS PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Adroit Infoways</fullName>
+                <default>false</default>
+                <label>Adroit Infoways</label>
+            </value>
+            <value>
+                <fullName>Adtech Solutions</fullName>
+                <default>false</default>
+                <label>Adtech Solutions</label>
+            </value>
+            <value>
+                <fullName>Aforeserve</fullName>
+                <default>false</default>
+                <label>Aforeserve</label>
+            </value>
+            <value>
+                <fullName>Agility Technology Solutions</fullName>
+                <default>false</default>
+                <label>Agility Technology Solutions</label>
+            </value>
+            <value>
+                <fullName>Agray Infosolutions Private Limited</fullName>
+                <default>false</default>
+                <label>Agray Infosolutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>Alchemist Softwares Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Alchemist Softwares Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Alekas Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Alekas Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Allatone Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Allatone Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>ALLIANCE PRO IT PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>ALLIANCE PRO IT PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Alpha Network And Systems</fullName>
+                <default>false</default>
+                <label>ALPHA NETWORK AND SYSTEMS</label>
+            </value>
+            <value>
+                <fullName>Ampran Technologies Pvt. Ltd</fullName>
+                <default>false</default>
+                <label>Ampran Technologies Pvt. Ltd</label>
+            </value>
+            <value>
+                <fullName>AMSYS INFOCOM PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>AMSYS INFOCOM PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>APEX INFOCOM TECHNOLOGY PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>APEX INFOCOM TECHNOLOGY PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Appmac Infotech</fullName>
+                <default>false</default>
+                <label>AppMac InfoTech</label>
+            </value>
+            <value>
+                <fullName>Appolo Computers Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Appolo Computers Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Apricot Business Systems</fullName>
+                <default>false</default>
+                <label>Apricot Business Systems</label>
+            </value>
+            <value>
+                <fullName>Aquilaclouds India Pvt. Ltd</fullName>
+                <default>false</default>
+                <label>Aquilaclouds India Pvt. Ltd</label>
+            </value>
+            <value>
+                <fullName>Arin Computer</fullName>
+                <default>false</default>
+                <label>Arin Computer</label>
+            </value>
+            <value>
+                <fullName>ARRCS PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>ARRCS PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Arrow Pc Network Private Limited</fullName>
+                <default>false</default>
+                <label>Arrow Pc Network Private Limited</label>
+            </value>
+            <value>
+                <fullName>Arton  Solutions</fullName>
+                <default>false</default>
+                <label>Arton  Solutions</label>
+            </value>
+            <value>
+                <fullName>Aurionpro Solutions Limited</fullName>
+                <default>false</default>
+                <label>Aurionpro Solutions Limited</label>
+            </value>
+            <value>
+                <fullName>Ausilio Technology Solution Llp</fullName>
+                <default>false</default>
+                <label>Ausilio Technology Solution Llp</label>
+            </value>
+            <value>
+                <fullName>Avanish Solutions</fullName>
+                <default>false</default>
+                <label>Avanish Solutions</label>
+            </value>
+            <value>
+                <fullName>Axis Computech &amp; Peripherals Private Limited</fullName>
+                <default>false</default>
+                <label>Axis Computech &amp; Peripherals Private limited</label>
+            </value>
+            <value>
+                <fullName>Balaji Computers</fullName>
+                <default>false</default>
+                <label>Balaji computers</label>
+            </value>
+            <value>
+                <fullName>Bavista Software India Private Limited</fullName>
+                <default>false</default>
+                <label>Bavista Software India Private Limited</label>
+            </value>
+            <value>
+                <fullName>Binary Global Limited</fullName>
+                <default>false</default>
+                <label>Binary Global Limited</label>
+            </value>
+            <value>
+                <fullName>Bloom Smc</fullName>
+                <default>false</default>
+                <label>Bloom Smc</label>
+            </value>
+            <value>
+                <fullName>BOLT INDIA PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>BOLT INDIA PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Bosontech It Services Private Limited</fullName>
+                <default>false</default>
+                <label>Bosontech IT Services Private Limited</label>
+            </value>
+            <value>
+                <fullName>Bridge It Solutions</fullName>
+                <default>false</default>
+                <label>Bridge It Solutions</label>
+            </value>
+            <value>
+                <fullName>Brightstone Systems</fullName>
+                <default>false</default>
+                <label>Brightstone Systems</label>
+            </value>
+            <value>
+                <fullName>Brisk Technovsion Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Brisk Technovsion Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Business Softwares &amp; Solutions</fullName>
+                <default>false</default>
+                <label>BUSINESS SOFTWARES &amp; SOLUTIONS</label>
+            </value>
+            <value>
+                <fullName>Capstech Network Private Limited</fullName>
+                <default>false</default>
+                <label>Capstech Network Private Limited</label>
+            </value>
+            <value>
+                <fullName>C-DOT Systems Private Limited</fullName>
+                <default>false</default>
+                <label>C-DOT Systems Private Limited</label>
+            </value>
+            <value>
+                <fullName>Cdp India Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Cdp India Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Chromatic Group Of Companies</fullName>
+                <default>false</default>
+                <label>Chromatic Group of Companies</label>
+            </value>
+            <value>
+                <fullName>Citiuscloud Services Llp</fullName>
+                <default>false</default>
+                <label>CitiusCloud Services LLP</label>
+            </value>
+            <value>
+                <fullName>Cloudace Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>Cloudace Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>Cloudlink Solutions</fullName>
+                <default>false</default>
+                <label>Cloudlink Solutions</label>
+            </value>
+            <value>
+                <fullName>Computech Associate</fullName>
+                <default>false</default>
+                <label>Computech Associate</label>
+            </value>
+            <value>
+                <fullName>Computer &amp; Network Services</fullName>
+                <default>false</default>
+                <label>Computer &amp; Network services</label>
+            </value>
+            <value>
+                <fullName>Computer Concern</fullName>
+                <default>false</default>
+                <label>Computer concern</label>
+            </value>
+            <value>
+                <fullName>Computer Infotecch</fullName>
+                <default>false</default>
+                <label>Computer Infotecch</label>
+            </value>
+            <value>
+                <fullName>Computer Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>Computer Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>Comsec Infosolutions Private Limited</fullName>
+                <default>false</default>
+                <label>Comsec Infosolutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>Comtech Computers</fullName>
+                <default>false</default>
+                <label>Comtech Computers</label>
+            </value>
+            <value>
+                <fullName>Concept Information Technologies India Private Limited</fullName>
+                <default>false</default>
+                <label>Concept Information Technologies India Private Limited</label>
+            </value>
+            <value>
+                <fullName>Conjoin Network Private Limited</fullName>
+                <default>false</default>
+                <label>Conjoin Network Private Limited</label>
+            </value>
+            <value>
+                <fullName>Connect Infosol</fullName>
+                <default>false</default>
+                <label>Connect Infosol</label>
+            </value>
+            <value>
+                <fullName>Connectivity It Services Private Limited</fullName>
+                <default>false</default>
+                <label>Connectivity It Services Private Limited</label>
+            </value>
+            <value>
+                <fullName>Cosmogenic It Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Cosmogenic It Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>C R G Solutions Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>C R G Solutions Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Crystal Technologies System Private Limited</fullName>
+                <default>false</default>
+                <label>Crystal Technologies System Private Limited</label>
+            </value>
+            <value>
+                <fullName>Dataformatics Infotech</fullName>
+                <default>false</default>
+                <label>Dataformatics infotech</label>
+            </value>
+            <value>
+                <fullName>Datasoft Network Solutions Pvt. Ltd</fullName>
+                <default>false</default>
+                <label>Datasoft Network Solutions Pvt. Ltd</label>
+            </value>
+            <value>
+                <fullName>Delphi Info Services</fullName>
+                <default>false</default>
+                <label>Delphi Info Services</label>
+            </value>
+            <value>
+                <fullName>DELTA IT NETWORK PVT LTD</fullName>
+                <default>false</default>
+                <label>DELTA IT NETWORK PVT LTD</label>
+            </value>
+            <value>
+                <fullName>Deltakraft Solutions Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Deltakraft Solutions Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Diamond Infotech Private Limited</fullName>
+                <default>false</default>
+                <label>Diamond Infotech Private Limited</label>
+            </value>
+            <value>
+                <fullName>Digipearl Software Technologies Llp</fullName>
+                <default>false</default>
+                <label>Digipearl Software Technologies Llp</label>
+            </value>
+            <value>
+                <fullName>DIGITAL360SHOP PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>DIGITAL360SHOP PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Digital Electro Systems</fullName>
+                <default>false</default>
+                <label>Digital Electro Systems</label>
+            </value>
+            <value>
+                <fullName>Digitaltrack Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Digitaltrack Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Digitekh It-Infra Services Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Digitekh It-Infra Services Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Dixit Infotech Services Private Limited</fullName>
+                <default>false</default>
+                <label>Dixit Infotech Services Private Limited</label>
+            </value>
+            <value>
+                <fullName>Dolphin Computers</fullName>
+                <default>false</default>
+                <label>Dolphin Computers</label>
+            </value>
+            <value>
+                <fullName>DotCad</fullName>
+                <default>false</default>
+                <label>DotCad</label>
+            </value>
+            <value>
+                <fullName>Dual Systech</fullName>
+                <default>false</default>
+                <label>Dual Systech</label>
+            </value>
+            <value>
+                <fullName>Echelon Edge Private Limited</fullName>
+                <default>false</default>
+                <label>Echelon Edge Private Limited</label>
+            </value>
+            <value>
+                <fullName>Emade Infoteq Private Limited</fullName>
+                <default>false</default>
+                <label>Emade Infoteq Private Limited</label>
+            </value>
+            <value>
+                <fullName>e-Matrix Crop</fullName>
+                <default>false</default>
+                <label>e-Matrix Crop</label>
+            </value>
+            <value>
+                <fullName>Esnp Technologies</fullName>
+                <default>false</default>
+                <label>Esnp Technologies</label>
+            </value>
+            <value>
+                <fullName>E Square Consulting</fullName>
+                <default>false</default>
+                <label>E Square Consulting</label>
+            </value>
+            <value>
+                <fullName>Evaluable Infoserve Pvt Ltd.</fullName>
+                <default>false</default>
+                <label>Evaluable Infoserve Pvt Ltd.</label>
+            </value>
+            <value>
+                <fullName>Evenor Info Solutions Private Limited</fullName>
+                <default>false</default>
+                <label>Evenor Info Solutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>Evoke Global</fullName>
+                <default>false</default>
+                <label>Evoke Global</label>
+            </value>
+            <value>
+                <fullName>Excel Informatics Pvt. Ltd</fullName>
+                <default>false</default>
+                <label>Excel Informatics Pvt. Ltd</label>
+            </value>
+            <value>
+                <fullName>Eyeq Technologies</fullName>
+                <default>false</default>
+                <label>Eyeq Technologies</label>
+            </value>
+            <value>
+                <fullName>Finecons Private Limited</fullName>
+                <default>false</default>
+                <label>Finecons Private Limited</label>
+            </value>
+            <value>
+                <fullName>Flair Network Systems Private Limited</fullName>
+                <default>false</default>
+                <label>Flair Network Systems Private Limited</label>
+            </value>
+            <value>
+                <fullName>Foli Network</fullName>
+                <default>false</default>
+                <label>Foli Network</label>
+            </value>
+            <value>
+                <fullName>Foxbat Infotech Solutions Llp</fullName>
+                <default>false</default>
+                <label>Foxbat Infotech Solutions LLP</label>
+            </value>
+            <value>
+                <fullName>Future Businesstech India Pvt. Ltd</fullName>
+                <default>false</default>
+                <label>Future Businesstech India Pvt. Ltd</label>
+            </value>
+            <value>
+                <fullName>Future Communications</fullName>
+                <default>false</default>
+                <label>Future Communications</label>
+            </value>
+            <value>
+                <fullName>Galaxy Infoserv Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Galaxy Infoserv Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Galiocas Technologies Llp</fullName>
+                <default>false</default>
+                <label>Galiocas Technologies LLP</label>
+            </value>
+            <value>
+                <fullName>Garius Technology Solution</fullName>
+                <default>false</default>
+                <label>Garius Technology Solution</label>
+            </value>
+            <value>
+                <fullName>Gbappa Projects And Services</fullName>
+                <default>false</default>
+                <label>Gbappa Projects And Services</label>
+            </value>
+            <value>
+                <fullName>General Technologies India Private Limited</fullName>
+                <default>false</default>
+                <label>General Technologies India Private Limited</label>
+            </value>
+            <value>
+                <fullName>Generic Computer Solutions</fullName>
+                <default>false</default>
+                <label>Generic Computer Solutions</label>
+            </value>
+            <value>
+                <fullName>GIGABIT TECHNOLOGIES PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>GIGABIT TECHNOLOGIES PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Global Technology</fullName>
+                <default>false</default>
+                <label>Global Technology</label>
+            </value>
+            <value>
+                <fullName>Gl Solutions</fullName>
+                <default>false</default>
+                <label>Gl Solutions</label>
+            </value>
+            <value>
+                <fullName>Gocloudme Solutions</fullName>
+                <default>false</default>
+                <label>Gocloudme Solutions</label>
+            </value>
+            <value>
+                <fullName>Grinfranet Services Pvt. Ltd</fullName>
+                <default>false</default>
+                <label>Grinfranet Services Pvt. Ltd</label>
+            </value>
+            <value>
+                <fullName>Gts Technosoft Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Gts Technosoft Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Gunship Technologies Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Gunship Technologies Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Gurusons Communications Private Limited</fullName>
+                <default>false</default>
+                <label>Gurusons Communications Private Limited</label>
+            </value>
+            <value>
+                <fullName>Gvb Geomatics Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Gvb Geomatics Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Harikrushna Computing</fullName>
+                <default>false</default>
+                <label>Harikrushna Computing</label>
+            </value>
+            <value>
+                <fullName>Hazel Systems Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Hazel Systems Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Hem Infotech</fullName>
+                <default>false</default>
+                <label>Hem Infotech</label>
+            </value>
+            <value>
+                <fullName>Host Systems</fullName>
+                <default>false</default>
+                <label>Host Systems</label>
+            </value>
+            <value>
+                <fullName>HRM Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>HRM Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>IBN Technologies Limited</fullName>
+                <default>false</default>
+                <label>IBN Technologies Limited</label>
+            </value>
+            <value>
+                <fullName>Indus Systems And Services Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Indus Systems And Services Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Infobahn Private Limited</fullName>
+                <default>false</default>
+                <label>Infobahn Private Limited</label>
+            </value>
+            <value>
+                <fullName>Infonet Solutions</fullName>
+                <default>false</default>
+                <label>Infonet Solutions</label>
+            </value>
+            <value>
+                <fullName>Infosoft Consultants</fullName>
+                <default>false</default>
+                <label>Infosoft Consultants</label>
+            </value>
+            <value>
+                <fullName>Innovative Techhub</fullName>
+                <default>false</default>
+                <label>Innovative Techhub</label>
+            </value>
+            <value>
+                <fullName>Innovinc Global Systems Pvt. Ltd</fullName>
+                <default>false</default>
+                <label>Innovinc Global Systems Pvt. Ltd</label>
+            </value>
+            <value>
+                <fullName>Insat Digital</fullName>
+                <default>false</default>
+                <label>Insat Digital</label>
+            </value>
+            <value>
+                <fullName>Insight Business Machines Pvt, Ltd.</fullName>
+                <default>false</default>
+                <label>Insight Business Machines Pvt, Ltd.</label>
+            </value>
+            <value>
+                <fullName>Insiza Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>Insiza Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>Interface Techno System</fullName>
+                <default>false</default>
+                <label>Interface Techno System</label>
+            </value>
+            <value>
+                <fullName>I Prime Services Pvt Ltd</fullName>
+                <default>false</default>
+                <label>I Prime Services Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Itcg Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Itcg Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>i-tek Logics Private Limited</fullName>
+                <default>false</default>
+                <label>i-tek Logics Private Limited</label>
+            </value>
+            <value>
+                <fullName>Kalyx Networks Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Kalyx Networks Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Kapstech Inc</fullName>
+                <default>false</default>
+                <label>Kapstech Inc</label>
+            </value>
+            <value>
+                <fullName>Kap Technosoft Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Kap Technosoft Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Karman Infotech</fullName>
+                <default>false</default>
+                <label>Karman Infotech</label>
+            </value>
+            <value>
+                <fullName>Kaspen It Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Kaspen It Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Kjm Group</fullName>
+                <default>false</default>
+                <label>Kjm Group</label>
+            </value>
+            <value>
+                <fullName>Knowledge Solutions</fullName>
+                <default>false</default>
+                <label>Knowledge Solutions</label>
+            </value>
+            <value>
+                <fullName>KPlus Infotech Private Limited</fullName>
+                <default>false</default>
+                <label>KPlus Infotech Private Limited</label>
+            </value>
+            <value>
+                <fullName>Kritasutra Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Kritasutra Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Krystal Integrated Services Private Limited</fullName>
+                <default>false</default>
+                <label>Krystal Integrated Services Private Limited</label>
+            </value>
+            <value>
+                <fullName>Lanwin IT Solution</fullName>
+                <default>false</default>
+                <label>Lanwin IT Solution</label>
+            </value>
+            <value>
+                <fullName>Larioax Business Machines Llp</fullName>
+                <default>false</default>
+                <label>Larioax Business Machines Llp</label>
+            </value>
+            <value>
+                <fullName>La Technologies Pvt Ltd</fullName>
+                <default>false</default>
+                <label>La Technologies Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Lds Infotech Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Lds Infotech Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Levantine Infotech</fullName>
+                <default>false</default>
+                <label>Levantine Infotech</label>
+            </value>
+            <value>
+                <fullName>Logarhythm Consultancy Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Logarhythm Consultancy Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Logicnsk</fullName>
+                <default>false</default>
+                <label>Logicnsk</label>
+            </value>
+            <value>
+                <fullName>Lrs Services Private Limited</fullName>
+                <default>false</default>
+                <label>Lrs Services Private Limited</label>
+            </value>
+            <value>
+                <fullName>M/S Kenosis It Support</fullName>
+                <default>false</default>
+                <label>M/S Kenosis It Support</label>
+            </value>
+            <value>
+                <fullName>Maan Computer Services</fullName>
+                <default>false</default>
+                <label>Maan Computer Services</label>
+            </value>
+            <value>
+                <fullName>Madras Networking Company</fullName>
+                <default>false</default>
+                <label>Madras Networking Company</label>
+            </value>
+            <value>
+                <fullName>Magic Systems</fullName>
+                <default>false</default>
+                <label>Magic Systems</label>
+            </value>
+            <value>
+                <fullName>Mahir Technology</fullName>
+                <default>false</default>
+                <label>Mahir Technology</label>
+            </value>
+            <value>
+                <fullName>Maitreyee IT Services Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Maitreyee IT Services Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Manschaft It Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Manschaft It Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Maplecloud Technologies</fullName>
+                <default>false</default>
+                <label>MapleCloud Technologies</label>
+            </value>
+            <value>
+                <fullName>Massif Marketing</fullName>
+                <default>false</default>
+                <label>Massif Marketing</label>
+            </value>
+            <value>
+                <fullName>Matrix Business Machines Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Matrix Business Machines Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Maxx Infotech</fullName>
+                <default>false</default>
+                <label>Maxx Infotech</label>
+            </value>
+            <value>
+                <fullName>Medley India Infosolution Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Medley India Infosolution Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Micro Access Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Micro Access Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Micrologic Networks Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Micrologic Networks Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Micromax Systems</fullName>
+                <default>false</default>
+                <label>Micromax Systems</label>
+            </value>
+            <value>
+                <fullName>Micro Network</fullName>
+                <default>false</default>
+                <label>Micro Network</label>
+            </value>
+            <value>
+                <fullName>Micropro Software Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Micropro Software Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Minerva Computer Services Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Minerva Computer Services Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Minitek Systems India Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Minitek Systems India Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Mm9 Information Technologies Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Mm9 Information Technologies Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Modi Innovations Private Limited</fullName>
+                <default>false</default>
+                <label>Modi Innovations Private Limited</label>
+            </value>
+            <value>
+                <fullName>Monarch Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>Monarch Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>Msoftserv</fullName>
+                <default>false</default>
+                <label>MSOFTSERV</label>
+            </value>
+            <value>
+                <fullName>Multivirt India Private Limited</fullName>
+                <default>false</default>
+                <label>Multivirt India Private Limited</label>
+            </value>
+            <value>
+                <fullName>Mvc Tech</fullName>
+                <default>false</default>
+                <label>Mvc Tech</label>
+            </value>
+            <value>
+                <fullName>Navicent Solutions</fullName>
+                <default>false</default>
+                <label>Navicent Solutions</label>
+            </value>
+            <value>
+                <fullName>Neel Computex</fullName>
+                <default>false</default>
+                <label>Neel Computex</label>
+            </value>
+            <value>
+                <fullName>Nefraa Infoservices India Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Nefraa Infoservices India Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Netcom System</fullName>
+                <default>false</default>
+                <label>Netcom System</label>
+            </value>
+            <value>
+                <fullName>Netcon Technologies India Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Netcon Technologies India Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Netfas Technologies</fullName>
+                <default>false</default>
+                <label>Netfas Technologies</label>
+            </value>
+            <value>
+                <fullName>Netpro</fullName>
+                <default>false</default>
+                <label>Netpro</label>
+            </value>
+            <value>
+                <fullName>Netsoft Consulting Services Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Netsoft Consulting Services Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Nexgen Solution</fullName>
+                <default>false</default>
+                <label>Nexgen Solution</label>
+            </value>
+            <value>
+                <fullName>NGenious Solutions Inc</fullName>
+                <default>false</default>
+                <label>NGenious Solutions Inc</label>
+            </value>
+            <value>
+                <fullName>Nilvin Technologies Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Nilvin Technologies Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Nishi Infotech</fullName>
+                <default>false</default>
+                <label>Nishi Infotech</label>
+            </value>
+            <value>
+                <fullName>Novel Telenet</fullName>
+                <default>false</default>
+                <label>Novel Telenet</label>
+            </value>
+            <value>
+                <fullName>N-Scope Technolab Llp</fullName>
+                <default>false</default>
+                <label>N-SCOPE TechnoLab LLP</label>
+            </value>
+            <value>
+                <fullName>Nuage Techsol Private Limited</fullName>
+                <default>false</default>
+                <label>Nuage Techsol Private Limited</label>
+            </value>
+            <value>
+                <fullName>Nuris Info Services Private Limited</fullName>
+                <default>false</default>
+                <label>Nuris Info Services Private Limited</label>
+            </value>
+            <value>
+                <fullName>Omkar Enterprises</fullName>
+                <default>false</default>
+                <label>Omkar Enterprises</label>
+            </value>
+            <value>
+                <fullName>OM Sai Corporation</fullName>
+                <default>false</default>
+                <label>OM Sai Corporation</label>
+            </value>
+            <value>
+                <fullName>Openview Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>Openview Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>Orbit India</fullName>
+                <default>false</default>
+                <label>Orbit India</label>
+            </value>
+            <value>
+                <fullName>Orbit Info Systems</fullName>
+                <default>false</default>
+                <label>Orbit Info Systems</label>
+            </value>
+            <value>
+                <fullName>Orbit Techsol India Private Limited</fullName>
+                <default>false</default>
+                <label>Orbit Techsol India Private Limited</label>
+            </value>
+            <value>
+                <fullName>Oscar Solutions</fullName>
+                <default>false</default>
+                <label>Oscar Solutions</label>
+            </value>
+            <value>
+                <fullName>Os Ventures Private Limited</fullName>
+                <default>false</default>
+                <label>Os Ventures Private Limited</label>
+            </value>
+            <value>
+                <fullName>PACIFIC INCORPORATION</fullName>
+                <default>false</default>
+                <label>PACIFIC INCORPORATION</label>
+            </value>
+            <value>
+                <fullName>Palmura Tech Private Limited</fullName>
+                <default>false</default>
+                <label>Palmura Tech Private Limited</label>
+            </value>
+            <value>
+                <fullName>Panash Infotech</fullName>
+                <default>false</default>
+                <label>Panash Infotech</label>
+            </value>
+            <value>
+                <fullName>Par Computing Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Par Computing Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Paths Enterprise</fullName>
+                <default>false</default>
+                <label>Paths Enterprise</label>
+            </value>
+            <value>
+                <fullName>Pc World</fullName>
+                <default>false</default>
+                <label>Pc World</label>
+            </value>
+            <value>
+                <fullName>Pearl Infotech</fullName>
+                <default>false</default>
+                <label>Pearl Infotech</label>
+            </value>
+            <value>
+                <fullName>Pentacle It Solutions Private Limited</fullName>
+                <default>false</default>
+                <label>Pentacle IT Solutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>Perfect House Private Limited</fullName>
+                <default>false</default>
+                <label>Perfect House Private Limited</label>
+            </value>
+            <value>
+                <fullName>Ph Teknow Pvt. Ltd</fullName>
+                <default>false</default>
+                <label>Ph Teknow Pvt. Ltd</label>
+            </value>
+            <value>
+                <fullName>Pifi Solutions Llp</fullName>
+                <default>false</default>
+                <label>Pifi Solutions Llp</label>
+            </value>
+            <value>
+                <fullName>P K Suri &amp; Associates</fullName>
+                <default>false</default>
+                <label>P K Suri &amp; Associates</label>
+            </value>
+            <value>
+                <fullName>Planet Accounting Solution</fullName>
+                <default>false</default>
+                <label>Planet Accounting Solution</label>
+            </value>
+            <value>
+                <fullName>POWER TECHNICS INFOSOLUTIONS PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>POWER TECHNICS INFOSOLUTIONS PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Pransv</fullName>
+                <default>false</default>
+                <label>Pransv</label>
+            </value>
+            <value>
+                <fullName>Prathmesh Infotech</fullName>
+                <default>false</default>
+                <label>Prathmesh Infotech</label>
+            </value>
+            <value>
+                <fullName>Printer Point</fullName>
+                <default>false</default>
+                <label>Printer Point</label>
+            </value>
+            <value>
+                <fullName>Probox Infotech Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Probox Infotech Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>PROLINK COMPUTERS PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>Prolink Computers Private Limited</label>
+            </value>
+            <value>
+                <fullName>Prompt Data Products Private Limited</fullName>
+                <default>false</default>
+                <label>Prompt Data Products Private Limited</label>
+            </value>
+            <value>
+                <fullName>Protech Microsystems India Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Protech Microsystems India Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Proxinet Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>Proxinet Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>Pyramid It Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Pyramid It Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Pyramids Skilltech Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Pyramids Skilltech Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Qnomix Technologies</fullName>
+                <default>false</default>
+                <label>Qnomix Technologies</label>
+            </value>
+            <value>
+                <fullName>Quickcomm Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>Quickcomm Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>R.D.Corporation</fullName>
+                <default>false</default>
+                <label>R.D.Corporation</label>
+            </value>
+            <value>
+                <fullName>Raksha Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>Raksha Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>Raman Compuit Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Raman Compuit Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Redwings Solutions</fullName>
+                <default>false</default>
+                <label>Redwings Solutions</label>
+            </value>
+            <value>
+                <fullName>R Enterprises</fullName>
+                <default>false</default>
+                <label>R Enterprises</label>
+            </value>
+            <value>
+                <fullName>Ritcom System And Services</fullName>
+                <default>false</default>
+                <label>Ritcom System And Services</label>
+            </value>
+            <value>
+                <fullName>Rk Tech Solutions</fullName>
+                <default>false</default>
+                <label>Rk Tech Solutions</label>
+            </value>
+            <value>
+                <fullName>R P Tech Computers</fullName>
+                <default>false</default>
+                <label>R P Tech Computers</label>
+            </value>
+            <value>
+                <fullName>Safal Infosoft Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Safal Infosoft Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Said Technologies Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Said Technologies Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Saitech Corporation</fullName>
+                <default>false</default>
+                <label>Saitech Corporation</label>
+            </value>
+            <value>
+                <fullName>San Services</fullName>
+                <default>false</default>
+                <label>SAN Services</label>
+            </value>
+            <value>
+                <fullName>Savex Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>Savex Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>SBA Info Solutions Private Limited</fullName>
+                <default>false</default>
+                <label>SBA Info Solutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>SCA IT INFRASTRUCTURE PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>SCA IT INFRASTRUCTURE PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>SD Services Limited</fullName>
+                <default>false</default>
+                <label>SD Services Limited</label>
+            </value>
+            <value>
+                <fullName>Seamless Infotech Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Seamless Infotech Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>SecurDefense</fullName>
+                <default>false</default>
+                <label>SecurDefense</label>
+            </value>
+            <value>
+                <fullName>Shaligram Infotech LLP</fullName>
+                <default>false</default>
+                <label>Shaligram Infotech LLP</label>
+            </value>
+            <value>
+                <fullName>Shatakshi Automation</fullName>
+                <default>false</default>
+                <label>Shatakshi Automation</label>
+            </value>
+            <value>
+                <fullName>Sheeltron Digital Systems Private Limited</fullName>
+                <default>false</default>
+                <label>Sheeltron Digital Systems Private Limited</label>
+            </value>
+            <value>
+                <fullName>Shree IT Solutions</fullName>
+                <default>false</default>
+                <label>Shree IT Solutions</label>
+            </value>
+            <value>
+                <fullName>Shriinfotech</fullName>
+                <default>false</default>
+                <label>Shriinfotech</label>
+            </value>
+            <value>
+                <fullName>Shri Ram Computer</fullName>
+                <default>false</default>
+                <label>Shri Ram Computer</label>
+            </value>
+            <value>
+                <fullName>Shubam Infotech</fullName>
+                <default>false</default>
+                <label>Shubam Infotech</label>
+            </value>
+            <value>
+                <fullName>Shunya Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>Shunya Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>Sidhshree Computronics (P) Ltd</fullName>
+                <default>false</default>
+                <label>Sidhshree Computronics (P) Ltd</label>
+            </value>
+            <value>
+                <fullName>Sigma IT Solutions</fullName>
+                <default>false</default>
+                <label>Sigma IT Solutions</label>
+            </value>
+            <value>
+                <fullName>Silver Steels</fullName>
+                <default>false</default>
+                <label>Silver Steels</label>
+            </value>
+            <value>
+                <fullName>Silver Touch Technologies Limited</fullName>
+                <default>false</default>
+                <label>Silver Touch Technologies Limited</label>
+            </value>
+            <value>
+                <fullName>Simvic It Solutions</fullName>
+                <default>false</default>
+                <label>Simvic It Solutions</label>
+            </value>
+            <value>
+                <fullName>Sisl Infotech Pvt. Ltd</fullName>
+                <default>false</default>
+                <label>Sisl Infotech Pvt. Ltd</label>
+            </value>
+            <value>
+                <fullName>S N A Infotech pvt ltd</fullName>
+                <default>false</default>
+                <label>S N A Infotech pvt ltd</label>
+            </value>
+            <value>
+                <fullName>Solaris Computers Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Solaris Computers Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Solaris Consultancy Services</fullName>
+                <default>false</default>
+                <label>Solaris consultancy services</label>
+            </value>
+            <value>
+                <fullName>Spectrum Infosolution Pvt.Ltd</fullName>
+                <default>false</default>
+                <label>Spectrum Infosolution Pvt.Ltd</label>
+            </value>
+            <value>
+                <fullName>Sra Solutions</fullName>
+                <default>false</default>
+                <label>Sra Solutions</label>
+            </value>
+            <value>
+                <fullName>Staunchondemand Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Staunchondemand Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>STI INFOTECH PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>STI INFOTECH PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Substance Infotech Solutions Pvt.Ltd</fullName>
+                <default>false</default>
+                <label>Substance Infotech Solutions Pvt.Ltd</label>
+            </value>
+            <value>
+                <fullName>Sujata Computers Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Sujata Computers Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Suraj Power &amp; Equipments</fullName>
+                <default>false</default>
+                <label>Suraj Power &amp; Equipments</label>
+            </value>
+            <value>
+                <fullName>Surbhi Technology Services</fullName>
+                <default>false</default>
+                <label>Surbhi Technology Services</label>
+            </value>
+            <value>
+                <fullName>Surflex Technology</fullName>
+                <default>false</default>
+                <label>Surflex Technology</label>
+            </value>
+            <value>
+                <fullName>Suttantra Services</fullName>
+                <default>false</default>
+                <label>Suttantra Services</label>
+            </value>
+            <value>
+                <fullName>Swan Solutions &amp; Services Private Limited</fullName>
+                <default>false</default>
+                <label>Swan Solutions &amp; Services Private Limited</label>
+            </value>
+            <value>
+                <fullName>Symmetrix Computer Systems Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Symmetrix Computer Systems Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Sync Tech Solutions</fullName>
+                <default>false</default>
+                <label>Sync Tech Solutions</label>
+            </value>
+            <value>
+                <fullName>Systematic Solutions</fullName>
+                <default>false</default>
+                <label>Systematic Solutions</label>
+            </value>
+            <value>
+                <fullName>Tactile Software</fullName>
+                <default>false</default>
+                <label>Tactile Software</label>
+            </value>
+            <value>
+                <fullName>Targus Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>Targus Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>Tatvan Networks</fullName>
+                <default>false</default>
+                <label>Tatvan Networks</label>
+            </value>
+            <value>
+                <fullName>Team1 Consulting Private Limited</fullName>
+                <default>false</default>
+                <label>Team1 Consulting Private Limited</label>
+            </value>
+            <value>
+                <fullName>Teamone Technologies Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Teamone Technologies Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Tech4Logic Private Limited</fullName>
+                <default>false</default>
+                <label>Tech4logic Private Limited</label>
+            </value>
+            <value>
+                <fullName>Tech Agility</fullName>
+                <default>false</default>
+                <label>Tech Agility</label>
+            </value>
+            <value>
+                <fullName>TechBerg Enterprise Solutions Private Limited</fullName>
+                <default>false</default>
+                <label>TechBerg Enterprise Solutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>Techfruit It Services</fullName>
+                <default>false</default>
+                <label>Techfruit It Services</label>
+            </value>
+            <value>
+                <fullName>Techfruits Solutions Private Limited</fullName>
+                <default>false</default>
+                <label>Techfruits Solutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>Techigent Technologies Private Limited</fullName>
+                <default>false</default>
+                <label>Techigent Technologies Private Limited</label>
+            </value>
+            <value>
+                <fullName>Technoamaze Solutions Private Limited</fullName>
+                <default>false</default>
+                <label>Technoamaze Solutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>Technotrust Solutions</fullName>
+                <default>false</default>
+                <label>Technotrust Solutions</label>
+            </value>
+            <value>
+                <fullName>TECHNOWARE</fullName>
+                <default>false</default>
+                <label>TECHNOWARE</label>
+            </value>
+            <value>
+                <fullName>Tech Rudra Services</fullName>
+                <default>false</default>
+                <label>Tech Rudra Services</label>
+            </value>
+            <value>
+                <fullName>Techtreno Solutions Private Limited</fullName>
+                <default>false</default>
+                <label>Techtreno Solutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>Techtrix Solutions Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Techtrix Solutions Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Tekintro Systems Private Limited</fullName>
+                <default>false</default>
+                <label>Tekintro Systems Private Limited</label>
+            </value>
+            <value>
+                <fullName>Tescom Business Solutions</fullName>
+                <default>false</default>
+                <label>Tescom Business Solutions</label>
+            </value>
+            <value>
+                <fullName>The Print Mall</fullName>
+                <default>false</default>
+                <label>The Print Mall</label>
+            </value>
+            <value>
+                <fullName>Three Ess Computer Services (India) Private Limited,</fullName>
+                <default>false</default>
+                <label>Three Ess Computer Services (India) Private Limited,</label>
+            </value>
+            <value>
+                <fullName>Total Solutions</fullName>
+                <default>false</default>
+                <label>Total Solutions</label>
+            </value>
+            <value>
+                <fullName>Touch Automation Private Limited</fullName>
+                <default>false</default>
+                <label>Touch Automation Private Limited</label>
+            </value>
+            <value>
+                <fullName>Tower Infotech Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Tower Infotech Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Trend Vision Llp</fullName>
+                <default>false</default>
+                <label>Trend Vision Llp</label>
+            </value>
+            <value>
+                <fullName>Trisita Engineering</fullName>
+                <default>false</default>
+                <label>Trisita Engineering</label>
+            </value>
+            <value>
+                <fullName>Trixter Cyber Solutions Private Limited</fullName>
+                <default>false</default>
+                <label>Trixter Cyber Solutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>Trustly Technology Solutions Pvt.Ltd.</fullName>
+                <default>false</default>
+                <label>Trustly Technology Solutions Pvt.Ltd.</label>
+            </value>
+            <value>
+                <fullName>Tullu Sales Private Limited</fullName>
+                <default>false</default>
+                <label>Tullu Sales Private Limited</label>
+            </value>
+            <value>
+                <fullName>Twin City Enterprises</fullName>
+                <default>false</default>
+                <label>Twin City Enterprises</label>
+            </value>
+            <value>
+                <fullName>U Cloud Services Pvt Ltd</fullName>
+                <default>false</default>
+                <label>U Cloud Services Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>UNICOM INFOTEL PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>UNICOM INFOTEL PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Unified Communications</fullName>
+                <default>false</default>
+                <label>Unified Communications</label>
+            </value>
+            <value>
+                <fullName>Uniq Data Solution Pvt.Ltd.</fullName>
+                <default>false</default>
+                <label>Uniq Data Solution Pvt.Ltd.</label>
+            </value>
+            <value>
+                <fullName>Unique Tech Arena</fullName>
+                <default>false</default>
+                <label>Unique Tech Arena</label>
+            </value>
+            <value>
+                <fullName>Uniserved Tech Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Uniserved Tech Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Uniware  Systems</fullName>
+                <default>false</default>
+                <label>Uniware  Systems</label>
+            </value>
+            <value>
+                <fullName>Uptech Systems Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Uptech Systems Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Varnitech Solution Private Limited</fullName>
+                <default>false</default>
+                <label>Varnitech Solution Private Limited</label>
+            </value>
+            <value>
+                <fullName>Vasudha Teleservices</fullName>
+                <default>false</default>
+                <label>Vasudha Teleservices</label>
+            </value>
+            <value>
+                <fullName>Vedant E Consultants</fullName>
+                <default>false</default>
+                <label>Vedant E consultants</label>
+            </value>
+            <value>
+                <fullName>Veer Creations</fullName>
+                <default>false</default>
+                <label>Veer Creations</label>
+            </value>
+            <value>
+                <fullName>Vinayaka Global Services Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Vinayaka Global Services Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Vintech Electronic Systems</fullName>
+                <default>false</default>
+                <label>Vintech Electronic Systems</label>
+            </value>
+            <value>
+                <fullName>Virtual Galaxy Infotech Private Limited</fullName>
+                <default>false</default>
+                <label>Virtual Galaxy Infotech Private Limited</label>
+            </value>
+            <value>
+                <fullName>Volksara Techno Solutions Private Limited</fullName>
+                <default>false</default>
+                <label>Volksara Techno Solutions Private Limited</label>
+            </value>
+            <value>
+                <fullName>V Technologies</fullName>
+                <default>false</default>
+                <label>V Technologies</label>
+            </value>
+            <value>
+                <fullName>Vtechys Private Limited</fullName>
+                <default>false</default>
+                <label>Vtechys Private Limited</label>
+            </value>
+            <value>
+                <fullName>Vvip Infotech Systems</fullName>
+                <default>false</default>
+                <label>Vvip Infotech Systems</label>
+            </value>
+            <value>
+                <fullName>Wave Technology Services</fullName>
+                <default>false</default>
+                <label>Wave Technology Services</label>
+            </value>
+            <value>
+                <fullName>Wayzon Infotech Private Limited</fullName>
+                <default>false</default>
+                <label>Wayzon Infotech Private Limited</label>
+            </value>
+            <value>
+                <fullName>Websenz Technologies</fullName>
+                <default>false</default>
+                <label>Websenz Technologies</label>
+            </value>
+            <value>
+                <fullName>Well Known Computer</fullName>
+                <default>false</default>
+                <label>Well Known Computer</label>
+            </value>
+            <value>
+                <fullName>Whiz Works</fullName>
+                <default>false</default>
+                <label>Whiz Works</label>
+            </value>
+            <value>
+                <fullName>WRENSEVEN TECHNO SOLUTIONS PRIVATE LIMITED</fullName>
+                <default>false</default>
+                <label>WRENSEVEN TECHNO SOLUTIONS PRIVATE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Xavier Educational Services And Technology Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Xavier Educational Services And Technology Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>Y.K Infotech</fullName>
+                <default>false</default>
+                <label>Y.K Infotech</label>
+            </value>
+            <value>
+                <fullName>Y2K Info-Systems</fullName>
+                <default>false</default>
+                <label>Y2K Info-Systems</label>
+            </value>
+            <value>
+                <fullName>Yottabyte Avit &amp; Business Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Yottabyte Avit &amp; Business Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Zaco Computers Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Zaco Computers Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Zest Digital Solutions</fullName>
+                <default>false</default>
+                <label>Zest Digital Solutions</label>
+            </value>
+            <value>
+                <fullName>Zm Technologies</fullName>
+                <default>false</default>
+                <label>ZM Technologies</label>
+            </value>
+            <value>
+                <fullName>Zoom Computers</fullName>
+                <default>false</default>
+                <label>Zoom Computers</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

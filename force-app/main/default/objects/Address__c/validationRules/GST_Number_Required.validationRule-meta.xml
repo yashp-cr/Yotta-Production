@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GST_Number_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+AND(
+  ISPICKVAL( GSTApplicable__c , &apos;Yes&apos; ),
+  ISBLANK(  GSTIN__c  )
+),
+AND(
+ISPICKVAL( GSTApplicable__c , &apos;No&apos; ),
+  NOT(ISBLANK(  GSTIN__c  ))
+))</errorConditionFormula>
+    <errorDisplayField>GSTIN__c</errorDisplayField>
+    <errorMessage>Cannot Modified GST Number</errorMessage>
+</ValidationRule>

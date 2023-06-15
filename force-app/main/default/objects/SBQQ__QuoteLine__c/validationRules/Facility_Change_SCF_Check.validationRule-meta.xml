@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Facility_Change_SCF_Check</fullName>
+    <active>true</active>
+    <description>Facility Change is mandatory</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL( SBQQ__Quote__r.SBQQ__Type__c, &quot;Amendment&quot;),
+    ISPICKVAL( SBQQ__Quote__r.SCF_Type__c, &quot;Contract Line SCF&quot;),
+    ISPICKVAL( SCF_Type__c, &quot;Facility Change&quot;),
+    ISNEW(),
+    TEXT( Location__c ) == TEXT( Original_SCF_Quote_Line__r.Location__c ),
+    Shipping_Address__c == Original_SCF_Quote_Line__r.Shipping_Address__c
+)</errorConditionFormula>
+    <errorMessage>Please update Location if SCF Type is Facility Change</errorMessage>
+</ValidationRule>

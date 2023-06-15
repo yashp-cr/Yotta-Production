@@ -1,0 +1,4321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner</fullName>
+    <active>true</active>
+    <businessProcess>Partner Registration</businessProcess>
+    <label>Partner</label>
+    <picklistValues>
+        <picklist>Annual_Revenue__c</picklist>
+        <values>
+            <fullName>%3C 25 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1000 - 5000 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25 - 250 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>250 - 1000 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5000 Cr %2B</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Auto_Convert__c</picklist>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BU__c</picklist>
+        <values>
+            <fullName>Application Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colo %26 Customer Dc Build Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core Cloud Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cyber Security Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extended %26 Federated Cloud %26 Inframanage Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Network Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Cloud Services</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Budget__c</picklist>
+        <values>
+            <fullName>Budget Defined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Budget Not Defined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote Required for Budgeting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Closed_Reason__c</picklist>
+        <values>
+            <fullName>Deferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Due to Location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Late Entrant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost - Pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost - Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Requirement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Eligibility - Certification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Eligibility - Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Eligibility - Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Eligibility - Technical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POC Successful</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POC Unsuccessful</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Features</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project on hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROI Not Justified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Capabilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Won - Account Mapping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Won - Early Entrant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Won - Existing customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Won - POC Successful</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Won - Pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Won - Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Won - Speed RFP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrongly created</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Company_Type__c</picklist>
+        <values>
+            <fullName>Govt Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limited Liability Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NBFC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proprietorship%2FIndividual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trust%2FNGO%2FSociety%2FHUF</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Country_Code__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>212</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>213</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>216</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>218</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>220</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>221</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>222</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>223</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>224</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>226</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>227</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>228</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>229</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>230</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>231</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>232</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>233</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>234</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>235</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>237</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>242</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>244</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>246</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>248</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>249</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>250</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>251</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>252</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>253</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>254</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>255</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>256</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>257</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>258</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>260</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>261</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>263</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>264</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>265</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>266</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>267</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>268</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>269</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>27</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>290</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>291</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>297</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>299</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>31</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>32</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>33</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>34</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>345</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>350</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>351</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>352</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>353</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>354</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>355</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>356</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>357</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>358</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>359</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>36</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>370</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>371</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>372</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>373</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>374</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>375</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>376</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>377</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>378</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>379</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>380</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>381</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>385</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>386</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>387</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>39</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>40</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>41</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>420</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>421</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>423</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>43</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>44</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>441</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>45</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>46</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>47</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>473</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>48</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>49</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>501</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>502</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>503</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>504</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>505</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>506</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>507</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>509</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>51</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>52</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>53</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>54</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>55</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>56</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>57</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>58</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>590</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>591</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>592</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>593</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>595</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>597</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>598</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>61</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>62</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>63</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>64</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>65</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>66</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>664</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>670</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>672</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>674</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>676</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>677</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>678</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>679</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>680</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>682</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>684</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>686</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>687</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>688</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>691</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>73</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>758</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>767</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>787</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>81</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>82</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>84</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>850</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>852</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>853</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>855</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>856</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>86</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>876</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>880</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>886</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>90</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>91</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>92</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>93</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>94</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>95</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>960</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>961</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>962</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>963</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>964</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>965</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>966</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>967</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>968</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>970</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>971</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>972</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>973</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>974</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>975</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>976</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>977</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>98</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>992</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>993</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>994</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>995</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>996</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>998</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Country__c</picklist>
+        <values>
+            <fullName>AD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ET</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ML</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZW</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Created_in_Salesforce__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Relationship__c</picklist>
+        <values>
+            <fullName>Existing Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CustomersInfrastructuresetup__c</picklist>
+        <values>
+            <fullName>Inhouse however they have plan to Outsource</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inhouse no plans however want to evaluate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outsourced</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Distributor_Partner_Name__c</picklist>
+        <values>
+            <fullName>3C IT SOLUTIONS %26 TELECOMS INDIA PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4Dcompass Infosolutions Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>64 Network Security Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A3A Infotech Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ACCUTECH TECHNOLOGIES PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ACP IT SOLUTIONS PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ALLIANCE PRO IT PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AMSYS INFOCOM PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>APEX INFOCOM TECHNOLOGY PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ARRCS PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aadhion Digital Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aaptteknous</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aaraventure Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aarkay Techno Consultants P Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Abm Micro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accel It Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accveil Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adroit Infoways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adtech Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aforeserve</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agility Technology Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agray Infosolutions Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alchemist Softwares Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alekas Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allatone Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alpha Network And Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ampran Technologies Pvt%2E Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Appmac Infotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Appolo Computers Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apricot Business Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aquilaclouds India Pvt%2E Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrow Pc Network Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arton  Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aurionpro Solutions Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ausilio Technology Solution Llp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Avanish Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BOLT INDIA PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Balaji Computers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bavista Software India Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Binary Global Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bloom Smc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bosontech It Services Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bridge It Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brightstone Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brisk Technovsion Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Softwares %26 Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C R G Solutions Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cdp India Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chromatic Group Of Companies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Citiuscloud Services Llp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cloudace Technologies Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Computech Associate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Computer %26 Network Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Computer Concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Computer Infotecch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comtech Computers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conjoin Network Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connect Infosol</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connectivity It Services Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cosmogenic It Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELTA IT NETWORK PVT LTD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DIGITAL360SHOP PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dataformatics Infotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Datasoft Network Solutions Pvt%2E Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delphi Info Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deltakraft Solutions Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digipearl Software Technologies Llp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Electro Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digitaltrack Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digitekh It-Infra Services Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dixit Infotech Services Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dolphin Computers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DotCad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dual Systech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E Square Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Echelon Edge Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emade Infoteq Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Esnp Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluable Infoserve Pvt Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evoke Global</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excel Informatics Pvt%2E Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eyeq Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foli Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foxbat Infotech Solutions Llp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future Businesstech India Pvt%2E Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GIGABIT TECHNOLOGIES PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Galaxy Infoserv Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Galiocas Technologies Llp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garius Technology Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gbappa Projects And Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Technologies India Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Generic Computer Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gl Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gocloudme Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grinfranet Services Pvt%2E Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gts Technosoft Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gunship Technologies Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gvb Geomatics Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harikrushna Computing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hazel Systems Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hem Infotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Host Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I Prime Services Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IBN Technologies Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indus Systems And Services Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infonet Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infosoft Consultants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Innovative Techhub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Innovinc Global Systems Pvt%2E Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insat Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insight Business Machines Pvt%2C Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insiza Technologies Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interface Techno System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Itcg Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kalyx Networks Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kap Technosoft Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kapstech Inc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Karman Infotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kaspen It Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kjm Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Knowledge Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kritasutra Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>La Technologies Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lanwin IT Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Larioax Business Machines Llp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lds Infotech Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Levantine Infotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logarhythm Consultancy Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logicnsk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lrs Services Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M%2FS Kenosis It Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Madras Networking Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mahir Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maitreyee IT Services Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manschaft It Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maplecloud Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Massif Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matrix Business Machines Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maxx Infotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medley India Infosolution Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro Access Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micrologic Networks Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micromax Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micropro Software Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minerva Computer Services Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minitek Systems India Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mm9 Information Technologies Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modi Innovations Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Msoftserv</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multivirt India Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mvc Tech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N-Scope Technolab Llp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navicent Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neel Computex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nefraa Infoservices India Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netcom System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netcon Technologies India Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netfas Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netpro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netsoft Consulting Services Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nexgen Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nilvin Technologies Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nishi Infotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Novel Telenet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nuris Info Services Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omkar Enterprises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orbit India</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orbit Info Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orbit Techsol India Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Os Ventures Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oscar Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P K Suri %26 Associates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PACIFIC INCORPORATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POWER TECHNICS INFOSOLUTIONS PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PROLINK COMPUTERS PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Palmura Tech Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panash Infotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Par Computing Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paths Enterprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pc World</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pearl Infotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pentacle It Solutions Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perfect House Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ph Teknow Pvt%2E Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pifi Solutions Llp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planet Accounting Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pransv</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prathmesh Infotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer Point</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Probox Infotech Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Protech Microsystems India Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pyramid It Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pyramids Skilltech Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qnomix Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quickcomm Technologies Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>R Enterprises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>R P Tech Computers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>R%2ED%2ECorporation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Raman Compuit Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redwings Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ritcom System And Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rk Tech Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>S N A Infotech pvt ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SD Services Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STI INFOTECH PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safal Infosoft Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Said Technologies Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saitech Corporation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>San Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Savex Technologies Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seamless Infotech Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shaligram Infotech LLP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shatakshi Automation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sheeltron Digital Systems Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shree IT Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shri Ram Computer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shriinfotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shubam Infotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sidhshree Computronics %28P%29 Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sigma IT Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silver Steels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simvic It Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sisl Infotech Pvt%2E Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solaris Computers Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solaris Consultancy Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spectrum Infosolution Pvt%2ELtd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sra Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staunchondemand Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Substance Infotech Solutions Pvt%2ELtd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sujata Computers Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suraj Power %26 Equipments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surbhi Technology Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surflex Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suttantra Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Swan Solutions %26 Services Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Symmetrix Computer Systems Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sync Tech Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tactile Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tatvan Networks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team1 Consulting Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teamone Technologies Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Agility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Rudra Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech4Logic Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Techfruit It Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technoamaze Solutions Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technotrust Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Techtrix Solutions Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tekintro Systems Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tescom Business Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Print Mall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Three Ess Computer Services %28India%29 Private Limited%2C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Total Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tower Infotech Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trend Vision Llp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trisita Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trustly Technology Solutions Pvt%2ELtd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tullu Sales Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twin City Enterprises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U Cloud Services Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNICOM INFOTEL PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unified Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uniq Data Solution Pvt%2ELtd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unique Tech Arena</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uniserved Tech Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uniware  Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uptech Systems Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>V Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Varnitech Solution Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vasudha Teleservices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vedant E Consultants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veer Creations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vinayaka Global Services Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vintech Electronic Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volksara Techno Solutions Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vvip Infotech Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WRENSEVEN TECHNO SOLUTIONS PRIVATE LIMITED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wave Technology Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wayzon Infotech Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Websenz Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Well Known Computer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whiz Works</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Xavier Educational Services And Technology Pvt%2E Ltd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y%2EK Infotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y2K Info-Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yottabyte Avit %26 Business Solutions Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zaco Computers Pvt Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zest Digital Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zm Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>e-Matrix Crop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>i-tek Logics Private Limited</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DuplicateCheck__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Employee_Count__c</picklist>
+        <values>
+            <fullName>%3C100 %28SOHO%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>100 - 250 %28SME%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1000 - 5000 %28Large%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>250 - 1000 %28LSME%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5000%2B %28Xlarge%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>BFSI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hyperscalers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT%26ITES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadContactsAuthorityLevel__c</picklist>
+        <values>
+            <fullName>Tier 1%3A C Level %2F VP IT %2F Director Level %2F Key Decision Makers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 2%3A GM %2F AGM %2F Manager IT %2F Sr Manager IT%2E Mid Level managers handling Teams</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 3%3A System Admin %2F Executives %2F Asst Managers %3A Influencers</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadIntent__c</picklist>
+        <values>
+            <fullName>Basic requirement given no tech specs defined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Specification Defined</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Attended an Event where Yotta was present</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CIO Klub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CIO100_2019-Attendees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cloud Care Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Infra India 2021 networking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Innovation Summit 2020</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Innovation Summit 2021</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hardcat Launch %E2%80%93 2023</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound Any Web %2F email %2F Telephone source</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>India cloud Summit 2020</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead Nurturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail Enquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NISC 2020</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organic Web Form Fill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound Call Customer Responded with Requirement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound Call Pitched</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound Calls - Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Selling Simplified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Switch on savings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar - Virtual Fitness Masterclass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yotta Launch Offer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yotta NM1 Unveil registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YottaGuide - Chatbot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>webinar - CIO round table</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>webinar - Post-Covid-IT-Outlook</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Location__c</picklist>
+        <values>
+            <fullName>IN11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN14</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN16</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN18</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OEM_Company_Name__c</picklist>
+        <values>
+            <fullName>AMD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Airtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cisco</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commvault</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comscope</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forninet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IBM India Private Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lenovo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NetApps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nutanix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OnetouchInfra</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PiDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redhat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SuperMicro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TCL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTML</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VMWare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veeam</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Partner_Type__c</picklist>
+        <values>
+            <fullName>Alliance Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultant Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor Partner-Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor Partner-TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP Partner-Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP Partner-TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP Technology Partner B2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Partner - Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Partner - TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Partner - Technology B2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reseller Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YIC Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PrimarySource__c</picklist>
+        <values>
+            <fullName>Alliance Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development - Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultant Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor Partner-Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor Partner-TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP Partner-Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP Partner-TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP Technology Partner B2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Partner - Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Partner - TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Partner - Technology B2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leadership Leads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reseller Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YCIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YIC Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ProductFamily__c</picklist>
+        <values>
+            <fullName>AI%2FML</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adrenalin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Analytics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colocation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DC Build</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Darwin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IoT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netsuite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Network %26 Connectivity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sharepoint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traded Goods</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tussom</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Region__c</picklist>
+        <values>
+            <fullName>Central</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Role__c</picklist>
+        <values>
+            <fullName>Analyst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CEO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CFO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CIO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivery Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Head</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT Head</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD%2FChairman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procurement Head</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procurement Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Manager</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SecondarySource__c</picklist>
+        <values>
+            <fullName>Alliance Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development - Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultant Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor Partner-Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor Partner-TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP Partner-Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP Partner-TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP Technology Partner B2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Partner - Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Partner - TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Partner - Technology B2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leadership Leads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reseller Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YCIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YIC Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Services__c</picklist>
+        <values>
+            <fullName>Cloud services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Datacenter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hardware reseller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IPC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independent software vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System integrator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telecom</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TenderRFP__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TertiarySource__c</picklist>
+        <values>
+            <fullName>Alliance Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development - Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultant Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor Partner-Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor Partner-TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP Partner-Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP Partner-TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP Technology Partner B2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Partner - Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Partner - TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Partner - Technology B2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leadership Leads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reseller Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YCIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YIC Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TimeFrame__c</picklist>
+        <values>
+            <fullName>Long Term %28 %3E 6 months%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mid Term %283-6 months%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Near Term %280-3 months%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vertical_Temp__c</picklist>
+        <values>
+            <fullName>BFSI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conglomerate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Govt %26 PSU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hyperscalers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT%26ITES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media and entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>YottaIndustry__c</picklist>
+        <values>
+            <fullName>Animation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cargo %26 Logistics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conglomerate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consumer Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-Commerce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electricity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering and Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fintech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gaming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global BFSI centers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global CDN Players</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Cloud Players</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global ISP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Internet Exchanges</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global TSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hi-tech and electronic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ITES%2FBPO%2FKPO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Info Tech Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local ISP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Internet Exchange%2F CDN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local TSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile OEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NGO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Portals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Financial Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Gateways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research and consultancy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail %26 Distribution %28physical%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security stock trader %2F Broker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stock Exchanges</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel and Tourism</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VFX</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

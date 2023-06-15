@@ -1,0 +1,47 @@
+<apex:component controller="RenewalReminderController" access="global">
+    <apex:attribute name="contractIdValue" type="String" description="This is the Id of the quote" assignTo="{!quoteId}" access="global" />
+    <apex:attribute name="business_Unit" type="String" description="This is the business unit of the contract" assignTo="{!businessUnit}" access="global" />
+    <div style="font-family:Calibri;font-size:14px;">
+        <table rules="all" border="1px solid black" width="75%" cellpadding="10" style="border-collapse: collapse;font-size:13px;">
+            <tr style="background-color:#1d3f81;color:#FFFFFF" >
+                <th >S. No</th>
+                <th  >Product Details</th>
+                
+                <th >Quantity</th>
+                <th >Delivery Location</th>
+                <th >Unit MRC</th>
+            </tr>
+            <apex:variable var="index" value="{!1}"/>
+            
+            <apex:repeat value="{!QuoteLines}" var="a">
+                
+                <tr >
+                    <td >{!index}</td>
+                    <apex:repeat value="{!QuoteLines[a].bundleProductWrapperMap}" var="bpw">
+                        <td style="white-space: pre-line" >
+                            {!QuoteLines[a].productFamily} <br/>
+                            {!QuoteLines[a].productDescription} <br/>
+                        </td>
+                    </apex:repeat>
+                    
+                    <td >{!QuoteLines[a].qty}</td>
+                    <td >{!QuoteLines[a].deliveryLocation}</td>
+                    
+                    <apex:repeat value="{!QuoteLines[a].bundleProductWrapperMap}" var="item" >
+                        
+                        <td >
+                            <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!QuoteLines[a].bundleProductWrapperMap[item].mrcTotal}"/>
+                            </apex:outputText> 
+                        </td>
+                    </apex:repeat>
+                    
+                </tr>
+                
+                <apex:variable var="index" value="{!index+1}"/>
+            </apex:repeat>
+            
+        </table>
+        <br/>
+    </div>
+</apex:component>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>General Terms</fullName>
+                <default>false</default>
+                <label>General Terms</label>
+            </value>
+            <value>
+                <fullName>Cancellation Terms</fullName>
+                <default>false</default>
+                <label>Cancellation Terms</label>
+            </value>
+            <value>
+                <fullName>Termination Terms</fullName>
+                <default>false</default>
+                <label>Termination Terms</label>
+            </value>
+            <value>
+                <fullName>Product Terms</fullName>
+                <default>false</default>
+                <label>Product Terms</label>
+            </value>
+            <value>
+                <fullName>Quote</fullName>
+                <default>false</default>
+                <label>Quote</label>
+            </value>
+            <value>
+                <fullName>Annexure</fullName>
+                <default>false</default>
+                <label>Annexure</label>
+            </value>
+            <value>
+                <fullName>Payment Terms</fullName>
+                <default>false</default>
+                <label>Payment Terms</label>
+            </value>
+            <value>
+                <fullName>POC Terms</fullName>
+                <default>false</default>
+                <label>POC Terms</label>
+            </value>
+            <value>
+                <fullName>Deactivation Terms</fullName>
+                <default>false</default>
+                <label>Deactivation Terms</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

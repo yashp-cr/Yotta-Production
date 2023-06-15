@@ -1,0 +1,39 @@
+<apex:page renderAs="pdf" applyBodyTag="false" controller="RenewalReminderController">
+    <div style="font-family:Helvetica - Sans Serif;">
+ <table border="1px solid black" width="95%" cellpadding="10" style="border-collapse: collapse;font-size:13px;">
+       <tr style="background-color:#1d3f81;color:#FFFFFF" >
+           <th >S. No</th>
+            <th  >Product Details</th>
+            
+            <th >Quantity</th>
+            <th >Delivery Location</th>
+            <th >Unit MRC</th>
+        </tr>
+         <apex:variable var="index" value="{!1}"/>
+        
+        <apex:repeat value="{!QuoteLines}" var="a">
+
+        <tr >
+            <td >{!index}</td>
+            <apex:repeat value="{!QuoteLines[a].bundleProductWrapperMap}" var="bpw">
+                <td style="white-space: pre-line" >
+                    {!QuoteLines[a].productFamily} <br/>
+                {!QuoteLines[a].bundleProductWrapperMap[bpw].productDescription} <br/>
+                </td>
+                </apex:repeat>
+            
+            <td >{!QuoteLines[a].qty}</td>
+            <td >{!QuoteLines[a].deliveryLocation}</td>
+            <apex:repeat value="{!QuoteLines[a].bundleProductWrapperMap}" var="item" >
+            <td >{!QuoteLines[a].bundleProductWrapperMap[item].mrcTotal}</td>
+            </apex:repeat>
+            
+        </tr>
+            
+        <apex:variable var="index" value="{!index+1}"/>
+        </apex:repeat>
+        
+    </table>
+    <br/>
+    </div>
+</apex:page>

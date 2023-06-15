@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Type__c</fullName>
+    <description>[GG] This field will be pushed to backed application instead of Type as the Backend application needs Type as PARTNER if Partner Type is populated</description>
+    <externalId>false</externalId>
+    <formula>If(
+ ISBLANK(PartnerType__c),TEXT(Type),
+  If(TEXT(Type)=&quot;Customer&quot;,&quot;Customer&quot;,&quot;Partner&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

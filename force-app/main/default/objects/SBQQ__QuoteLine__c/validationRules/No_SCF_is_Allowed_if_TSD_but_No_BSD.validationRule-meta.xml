@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_SCF_is_Allowed_if_TSD_but_No_BSD</fullName>
+    <active>true</active>
+    <description>No SCF is allowed id TSD is stamped but BSD is blank (commissioned lines)</description>
+    <errorConditionFormula>AND(
+ NOT( ISPICKVAL( SBQQ__Quote__r.SBQQ__Type__c, &quot;Quote&quot;)),
+ ISPICKVAL( SBQQ__Quote__r.SCF_Type__c, &quot;Contract Line SCF&quot;),
+ NOT(ISBLANK(TEXT( SCF_Type__c ))),
+ OR(
+  AND(
+   NOT(ISBLANK( SBQQ__UpgradedSubscription__c )),
+   ISBLANK( SBQQ__UpgradedSubscription__r.Bill_Start_Date__c ),
+   NOT( ISBLANK( SBQQ__UpgradedSubscription__r.Technical_Start_Date__c ))
+  ),
+  AND(
+   NOT(ISBLANK( SBQQ__RenewedSubscription__c )),
+   ISBLANK( SBQQ__RenewedSubscription__r.Bill_Start_Date__c ),
+   NOT( ISBLANK( SBQQ__RenewedSubscription__r.Technical_Start_Date__c ))
+  )
+ )
+)</errorConditionFormula>
+    <errorMessage>No SCF is allowed in case Bill Start Date is blank</errorMessage>
+</ValidationRule>

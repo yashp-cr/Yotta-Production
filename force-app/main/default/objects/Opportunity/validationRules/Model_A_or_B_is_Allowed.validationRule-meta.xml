@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Model_A_or_B_is_Allowed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+
+ISPICKVAL(POC__c,&apos;No&apos;),							ISCHANGED(Partner_Commision_Model__c),
+				OR(OR(ISPICKVAL(PrimarySource__c, &apos;Reseller Partner&apos;) ,ISPICKVAL(PrimarySource__c, &apos;Distributor Partner-Commission&apos;)),
+OR(ISPICKVAL(SecondarySource__c, &apos;Reseller Partner&apos;) ,ISPICKVAL(SecondarySource__c, &apos;Distributor Partner-Commission&apos;)),
+OR(ISPICKVAL(TertiarySource__c, &apos;Reseller Partner&apos;) ,ISPICKVAL(TertiarySource__c, &apos;Distributor Partner-Commission&apos;)),
+AND(ISPICKVAL(PrimarySource__c, &apos;YIC Partner&apos;),NOT(PartnerPrimary__c == AccountId)),
+AND(ISPICKVAL(PrimarySource__c, &apos;YIC Partner&apos;),NOT(PartnerPrimary__c == AccountId)),
+AND(ISPICKVAL(PrimarySource__c, &apos;YIC Partner&apos;),NOT(PartnerPrimary__c == AccountId))) 
+,
+AND(NOT(ISPICKVAL(Partner_Commision_Model__c, &apos;Model A&apos;)),
+AND(NOT(ISPICKVAL(Partner_Commision_Model__c, &apos;Model B&apos;)),ISPICKVAL(PRIORVALUE(Partner_Commision_Model__c), &apos;Model A&apos;))))</errorConditionFormula>
+    <errorMessage>Only Model A or Model B Can be Selected for the given Source</errorMessage>
+</ValidationRule>

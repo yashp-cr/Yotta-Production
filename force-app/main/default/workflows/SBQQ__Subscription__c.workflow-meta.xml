@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <rules>
+        <fullName>SCF Type Bill date deact</fullName>
+        <actions>
+            <name>Status_Deact_Bill_End_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Deactivated: Old Logic</description>
+        <formula>AND( ISBLANK(PRIORVALUE( Bill_End_Date__c )), NOT(ISBLANK(Bill_End_Date__c )),  ISPICKVAL(SCF_Type__c, &apos;Deactivation&apos;), NOT(ISBLANK( SBQQ__TerminatedDate__c )) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SCF Type Facility Change</fullName>
+        <actions>
+            <name>Status_Decomm</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Deactivated: Old Logic, handled in another Workflow for all the SCFs</description>
+        <formula>AND(     ISBLANK(PRIORVALUE( Technical_End_Date__c )),     NOT(ISBLANK(Technical_End_Date__c )),      ISPICKVAL(SCF_Type__c , &apos;Facility Change&apos;) ,      SBQQ__Quantity__c = 0   )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Scf Type Decommision</fullName>
+        <actions>
+            <name>Status_deact_tech_end_date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>12Nov2020: Added in SubscriptionTriggerHandler</description>
+        <formula>AND(     ISBLANK(PRIORVALUE( Technical_End_Date__c )),     NOT(ISBLANK(Technical_End_Date__c )),      NOT(ISBLANK( SBQQ__TerminatedDate__c )),     NOT(ISPICKVAL(Status__c, &quot;Deactivated&quot;)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Scf type Cancellation</fullName>
+        <actions>
+            <name>Update_status_cancel_scf</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>SBQQ__Subscription__c.SCF_Type__c</field>
+            <operation>equals</operation>
+            <value>Cancellation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Subscription__c.Cancellation_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>12Nov20202: Status is being updated in subscriptiontriggerhandler</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Scf type price change</fullName>
+        <actions>
+            <name>Status_Subscription_under_decom</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>SBQQ__Subscription__c.SCF_Type__c</field>
+            <operation>equals</operation>
+            <value>Price Change</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Subscription__c.SBQQ__Quantity__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>Deactivated: Old Logic, This is handled in SCF Contract Generation Code</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Status Cancelled</fullName>
+        <actions>
+            <name>Update_Status_Cancel</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Deactivated, Old Logic, Handled in another workflow</description>
+        <formula>AND(      ISBLANK(PRIORVALUE(SBQQ__TerminatedDate__c )),      NOT(ISBLANK(SBQQ__TerminatedDate__c )) ) &amp;&amp;  ISBLANK( Technical_Start_Date__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Status Deactivated%28Migrated%29</fullName>
+        <active>false</active>
+        <formula>AND(   NOT(ISBLANK( Bill_End_Date__c )), 
+NOT(ISBLANK( Technical_End_Date__c )),
+NOT(ISBLANK(SBQQ__TerminatedDate__c)),   OR(     NOT(ISPICKVAL(Status__c,&quot;Deactivated&quot;)),     NOT(ISPICKVAL(Status__c,&quot;Cancelled&quot;)),     NOT(ISPICKVAL(Status__c,&quot;Renewed&quot;))   ) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Update_Status_Deactivated</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>SBQQ__Subscription__c.Bill_End_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Update Status Decomm</fullName>
+        <actions>
+            <name>Update_Status_Decomm</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND(      ISBLANK(PRIORVALUE(SBQQ__TerminatedDate__c )),      NOT(ISBLANK(SBQQ__TerminatedDate__c )) ) &amp;&amp;  !ISBLANK( Technical_Start_Date__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Status on IR Number update</fullName>
+        <actions>
+            <name>Update_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>12Nov2020: Added in SubscriptionTriggerHandler</description>
+        <formula>AND(      ISBLANK(PRIORVALUE(IR_Number__c )),      NOT(ISBLANK(IR_Number__c )),      ISBLANK( Technical_Start_Date__c ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Status on Tech Start Date</fullName>
+        <actions>
+            <name>Update_status_Commission</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Deactivated: This is covered in Process Builder</description>
+        <formula>AND(      ISBLANK(PRIORVALUE( Technical_Start_Date__c )),      NOT(ISBLANK( Technical_Start_Date__c )),      ISBLANK( Bill_Start_Date__c ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

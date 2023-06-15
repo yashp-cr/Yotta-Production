@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>91</fullName>
+        <default>false</default>
+        <label>91 - India</label>
+    </customValue>
+    <customValue>
+        <fullName>376</fullName>
+        <default>false</default>
+        <label>376 - Andorra</label>
+    </customValue>
+    <customValue>
+        <fullName>93</fullName>
+        <default>false</default>
+        <label>93 - Afghanistan</label>
+    </customValue>
+    <customValue>
+        <fullName>268</fullName>
+        <default>false</default>
+        <label>268 - Antigua/Barbuda</label>
+    </customValue>
+    <customValue>
+        <fullName>355</fullName>
+        <default>false</default>
+        <label>355 - Albania</label>
+    </customValue>
+    <customValue>
+        <fullName>213</fullName>
+        <default>false</default>
+        <label>213 - Algeria</label>
+    </customValue>
+    <customValue>
+        <fullName>374</fullName>
+        <default>false</default>
+        <label>374 - Armenia</label>
+    </customValue>
+    <customValue>
+        <fullName>244</fullName>
+        <default>false</default>
+        <label>244 - Angola</label>
+    </customValue>
+    <customValue>
+        <fullName>672</fullName>
+        <default>false</default>
+        <label>672 - Antarctica</label>
+    </customValue>
+    <customValue>
+        <fullName>54</fullName>
+        <default>false</default>
+        <label>54 - Argentina</label>
+    </customValue>
+    <customValue>
+        <fullName>43</fullName>
+        <default>false</default>
+        <label>43 - Austria</label>
+    </customValue>
+    <customValue>
+        <fullName>61</fullName>
+        <default>false</default>
+        <label>61 - Australia</label>
+    </customValue>
+    <customValue>
+        <fullName>297</fullName>
+        <default>false</default>
+        <label>297 - Aruba</label>
+    </customValue>
+    <customValue>
+        <fullName>994</fullName>
+        <default>false</default>
+        <label>994 - Azerbaijan</label>
+    </customValue>
+    <customValue>
+        <fullName>387</fullName>
+        <default>false</default>
+        <label>387 - Bosnia-Herz.</label>
+    </customValue>
+    <customValue>
+        <fullName>246</fullName>
+        <default>false</default>
+        <label>246 - Barbados</label>
+    </customValue>
+    <customValue>
+        <fullName>880</fullName>
+        <default>false</default>
+        <label>880 - Bangladesh</label>
+    </customValue>
+    <customValue>
+        <fullName>32</fullName>
+        <default>false</default>
+        <label>32 - Belgium</label>
+    </customValue>
+    <customValue>
+        <fullName>226</fullName>
+        <default>false</default>
+        <label>226 - Burkina Faso</label>
+    </customValue>
+    <customValue>
+        <fullName>359</fullName>
+        <default>false</default>
+        <label>359 - Bulgaria</label>
+    </customValue>
+    <customValue>
+        <fullName>973</fullName>
+        <default>false</default>
+        <label>973 - Bahrain</label>
+    </customValue>
+    <customValue>
+        <fullName>257</fullName>
+        <default>false</default>
+        <label>257 - Burundi</label>
+    </customValue>
+    <customValue>
+        <fullName>229</fullName>
+        <default>false</default>
+        <label>229 - Benin</label>
+    </customValue>
+    <customValue>
+        <fullName>441</fullName>
+        <default>false</default>
+        <label>441 - Bermuda</label>
+    </customValue>
+    <customValue>
+        <fullName>591</fullName>
+        <default>false</default>
+        <label>591 - Bolivia</label>
+    </customValue>
+    <customValue>
+        <fullName>55</fullName>
+        <default>false</default>
+        <label>55 - Brazil</label>
+    </customValue>
+    <customValue>
+        <fullName>975</fullName>
+        <default>false</default>
+        <label>975 - Bhutan</label>
+    </customValue>
+    <customValue>
+        <fullName>267</fullName>
+        <default>false</default>
+        <label>267 - Botswana</label>
+    </customValue>
+    <customValue>
+        <fullName>375</fullName>
+        <default>false</default>
+        <label>375 - Belarus</label>
+    </customValue>
+    <customValue>
+        <fullName>501</fullName>
+        <default>false</default>
+        <label>501 - Belize</label>
+    </customValue>
+    <customValue>
+        <fullName>855</fullName>
+        <default>false</default>
+        <label>855 - Cambodia</label>
+    </customValue>
+    <customValue>
+        <fullName>682</fullName>
+        <default>false</default>
+        <label>682 - Cook Islands</label>
+    </customValue>
+    <customValue>
+        <fullName>56</fullName>
+        <default>false</default>
+        <label>56 - Chile</label>
+    </customValue>
+    <customValue>
+        <fullName>237</fullName>
+        <default>false</default>
+        <label>237 - Cameroon</label>
+    </customValue>
+    <customValue>
+        <fullName>86</fullName>
+        <default>false</default>
+        <label>86 - China</label>
+    </customValue>
+    <customValue>
+        <fullName>57</fullName>
+        <default>false</default>
+        <label>57 - Colombia</label>
+    </customValue>
+    <customValue>
+        <fullName>506</fullName>
+        <default>false</default>
+        <label>506 - Costa Rica</label>
+    </customValue>
+    <customValue>
+        <fullName>269</fullName>
+        <default>false</default>
+        <label>269 - Comoros</label>
+    </customValue>
+    <customValue>
+        <fullName>385</fullName>
+        <default>false</default>
+        <label>385 - Croatia</label>
+    </customValue>
+    <customValue>
+        <fullName>53</fullName>
+        <default>false</default>
+        <label>53 - Cuba</label>
+    </customValue>
+    <customValue>
+        <fullName>357</fullName>
+        <default>false</default>
+        <label>357 - Cyprus</label>
+    </customValue>
+    <customValue>
+        <fullName>420</fullName>
+        <default>false</default>
+        <label>420 - Czech Republic</label>
+    </customValue>
+    <customValue>
+        <fullName>253</fullName>
+        <default>false</default>
+        <label>253 - Djibouti</label>
+    </customValue>
+    <customValue>
+        <fullName>45</fullName>
+        <default>false</default>
+        <label>45 - Denmark</label>
+    </customValue>
+    <customValue>
+        <fullName>242</fullName>
+        <default>false</default>
+        <label>242 - Dem. Rep. Congo &amp; Rep.of Congo &amp; Bahamas</label>
+    </customValue>
+    <customValue>
+        <fullName>767</fullName>
+        <default>false</default>
+        <label>767 - Dominica</label>
+    </customValue>
+    <customValue>
+        <fullName>593</fullName>
+        <default>false</default>
+        <label>593 - Ecuador</label>
+    </customValue>
+    <customValue>
+        <fullName>372</fullName>
+        <default>false</default>
+        <label>372 - Estonia</label>
+    </customValue>
+    <customValue>
+        <fullName>20</fullName>
+        <default>false</default>
+        <label>20 - Egypt</label>
+    </customValue>
+    <customValue>
+        <fullName>291</fullName>
+        <default>false</default>
+        <label>291 - Eritrea</label>
+    </customValue>
+    <customValue>
+        <fullName>251</fullName>
+        <default>false</default>
+        <label>251 - Ethiopia</label>
+    </customValue>
+    <customValue>
+        <fullName>358</fullName>
+        <default>false</default>
+        <label>358 - Finland</label>
+    </customValue>
+    <customValue>
+        <fullName>679</fullName>
+        <default>false</default>
+        <label>679 - Fiji</label>
+    </customValue>
+    <customValue>
+        <fullName>33</fullName>
+        <default>false</default>
+        <label>33 - France</label>
+    </customValue>
+    <customValue>
+        <fullName>44</fullName>
+        <default>false</default>
+        <label>44 - United Kingdom</label>
+    </customValue>
+    <customValue>
+        <fullName>49</fullName>
+        <default>false</default>
+        <label>49 - Germany</label>
+    </customValue>
+    <customValue>
+        <fullName>473</fullName>
+        <default>false</default>
+        <label>473 - Grenada</label>
+    </customValue>
+    <customValue>
+        <fullName>995</fullName>
+        <default>false</default>
+        <label>995 - Georgia</label>
+    </customValue>
+    <customValue>
+        <fullName>233</fullName>
+        <default>false</default>
+        <label>233 - Ghana</label>
+    </customValue>
+    <customValue>
+        <fullName>350</fullName>
+        <default>false</default>
+        <label>350 - Gibraltar</label>
+    </customValue>
+    <customValue>
+        <fullName>299</fullName>
+        <default>false</default>
+        <label>299 - Greenland</label>
+    </customValue>
+    <customValue>
+        <fullName>220</fullName>
+        <default>false</default>
+        <label>220 - Gambia</label>
+    </customValue>
+    <customValue>
+        <fullName>224</fullName>
+        <default>false</default>
+        <label>224 - Guinea</label>
+    </customValue>
+    <customValue>
+        <fullName>590</fullName>
+        <default>false</default>
+        <label>590 - Guadeloupe</label>
+    </customValue>
+    <customValue>
+        <fullName>30</fullName>
+        <default>false</default>
+        <label>30 - Greece</label>
+    </customValue>
+    <customValue>
+        <fullName>502</fullName>
+        <default>false</default>
+        <label>502 - Guatemala</label>
+    </customValue>
+    <customValue>
+        <fullName>592</fullName>
+        <default>false</default>
+        <label>592 - Guyana</label>
+    </customValue>
+    <customValue>
+        <fullName>852</fullName>
+        <default>false</default>
+        <label>852 - Hong Kong</label>
+    </customValue>
+    <customValue>
+        <fullName>504</fullName>
+        <default>false</default>
+        <label>504 - Honduras</label>
+    </customValue>
+    <customValue>
+        <fullName>354</fullName>
+        <default>false</default>
+        <label>354 - Iceland</label>
+    </customValue>
+    <customValue>
+        <fullName>62</fullName>
+        <default>false</default>
+        <label>62 - Indonesia</label>
+    </customValue>
+    <customValue>
+        <fullName>353</fullName>
+        <default>false</default>
+        <label>353 - Ireland</label>
+    </customValue>
+    <customValue>
+        <fullName>972</fullName>
+        <default>false</default>
+        <label>972 - Israel</label>
+    </customValue>
+    <customValue>
+        <fullName>964</fullName>
+        <default>false</default>
+        <label>964 - Iraq</label>
+    </customValue>
+    <customValue>
+        <fullName>98</fullName>
+        <default>false</default>
+        <label>98 - Iran</label>
+    </customValue>
+    <customValue>
+        <fullName>39</fullName>
+        <default>false</default>
+        <label>39 - Italy</label>
+    </customValue>
+    <customValue>
+        <fullName>509</fullName>
+        <default>false</default>
+        <label>509 - Haiti</label>
+    </customValue>
+    <customValue>
+        <fullName>36</fullName>
+        <default>false</default>
+        <label>36 - Hungary</label>
+    </customValue>
+    <customValue>
+        <fullName>876</fullName>
+        <default>false</default>
+        <label>876 - Jamaica</label>
+    </customValue>
+    <customValue>
+        <fullName>962</fullName>
+        <default>false</default>
+        <label>962 - Jordan</label>
+    </customValue>
+    <customValue>
+        <fullName>81</fullName>
+        <default>false</default>
+        <label>81 - Japan</label>
+    </customValue>
+    <customValue>
+        <fullName>254</fullName>
+        <default>false</default>
+        <label>254 - Kenya</label>
+    </customValue>
+    <customValue>
+        <fullName>996</fullName>
+        <default>false</default>
+        <label>996 - Kyrgyzstan</label>
+    </customValue>
+    <customValue>
+        <fullName>691</fullName>
+        <default>false</default>
+        <label>691 - Micronesia</label>
+    </customValue>
+    <customValue>
+        <fullName>971</fullName>
+        <default>false</default>
+        <label>971 - Utd.Arab Emir.</label>
+    </customValue>
+    <customValue>
+        <fullName>1</fullName>
+        <default>false</default>
+        <label>1 -USA &amp; US Virgin Isl. &amp; Canada</label>
+    </customValue>
+    <customValue>
+        <fullName>684</fullName>
+        <default>false</default>
+        <label>684 - Samoa, America</label>
+    </customValue>
+    <customValue>
+        <fullName>41</fullName>
+        <default>false</default>
+        <label>41 - Switzerland</label>
+    </customValue>
+    <customValue>
+        <fullName>34</fullName>
+        <default>false</default>
+        <label>34 - Spain</label>
+    </customValue>
+    <customValue>
+        <fullName>686</fullName>
+        <default>false</default>
+        <label>686 - Kiribati</label>
+    </customValue>
+    <customValue>
+        <fullName>850</fullName>
+        <default>false</default>
+        <label>850 - North Korea</label>
+    </customValue>
+    <customValue>
+        <fullName>82</fullName>
+        <default>false</default>
+        <label>82 - South Korea</label>
+    </customValue>
+    <customValue>
+        <fullName>965</fullName>
+        <default>false</default>
+        <label>965 - Kuwait</label>
+    </customValue>
+    <customValue>
+        <fullName>345</fullName>
+        <default>false</default>
+        <label>345 - Cayman Islands</label>
+    </customValue>
+    <customValue>
+        <fullName>73</fullName>
+        <default>false</default>
+        <label>73 - Kazakhstan</label>
+    </customValue>
+    <customValue>
+        <fullName>856</fullName>
+        <default>false</default>
+        <label>856 - Laos</label>
+    </customValue>
+    <customValue>
+        <fullName>961</fullName>
+        <default>false</default>
+        <label>961 - Lebanon</label>
+    </customValue>
+    <customValue>
+        <fullName>758</fullName>
+        <default>false</default>
+        <label>758 - St. Lucia</label>
+    </customValue>
+    <customValue>
+        <fullName>423</fullName>
+        <default>false</default>
+        <label>423 - Liechtenstein</label>
+    </customValue>
+    <customValue>
+        <fullName>94</fullName>
+        <default>false</default>
+        <label>94 - Sri Lanka</label>
+    </customValue>
+    <customValue>
+        <fullName>231</fullName>
+        <default>false</default>
+        <label>231 - Liberia</label>
+    </customValue>
+    <customValue>
+        <fullName>266</fullName>
+        <default>false</default>
+        <label>266 - Lesotho</label>
+    </customValue>
+    <customValue>
+        <fullName>370</fullName>
+        <default>false</default>
+        <label>370 - Lithuania</label>
+    </customValue>
+    <customValue>
+        <fullName>352</fullName>
+        <default>false</default>
+        <label>352 - Luxembourg</label>
+    </customValue>
+    <customValue>
+        <fullName>371</fullName>
+        <default>false</default>
+        <label>371 - Latvia</label>
+    </customValue>
+    <customValue>
+        <fullName>218</fullName>
+        <default>false</default>
+        <label>218 - Libya</label>
+    </customValue>
+    <customValue>
+        <fullName>212</fullName>
+        <default>false</default>
+        <label>212 - Morocco</label>
+    </customValue>
+    <customValue>
+        <fullName>377</fullName>
+        <default>false</default>
+        <label>377 - Monaco</label>
+    </customValue>
+    <customValue>
+        <fullName>373</fullName>
+        <default>false</default>
+        <label>373 - Moldova</label>
+    </customValue>
+    <customValue>
+        <fullName>261</fullName>
+        <default>false</default>
+        <label>261 - Madagascar</label>
+    </customValue>
+    <customValue>
+        <fullName>223</fullName>
+        <default>false</default>
+        <label>223 - Mali</label>
+    </customValue>
+    <customValue>
+        <fullName>95</fullName>
+        <default>false</default>
+        <label>95 - Burma</label>
+    </customValue>
+    <customValue>
+        <fullName>976</fullName>
+        <default>false</default>
+        <label>976 - Mongolia</label>
+    </customValue>
+    <customValue>
+        <fullName>853</fullName>
+        <default>false</default>
+        <label>853 - Macau</label>
+    </customValue>
+    <customValue>
+        <fullName>222</fullName>
+        <default>false</default>
+        <label>222 - Mauritania</label>
+    </customValue>
+    <customValue>
+        <fullName>664</fullName>
+        <default>false</default>
+        <label>664 - Montserrat</label>
+    </customValue>
+    <customValue>
+        <fullName>356</fullName>
+        <default>false</default>
+        <label>356 - Malta</label>
+    </customValue>
+    <customValue>
+        <fullName>230</fullName>
+        <default>false</default>
+        <label>230 - Mauritius</label>
+    </customValue>
+    <customValue>
+        <fullName>960</fullName>
+        <default>false</default>
+        <label>960 - Maldives</label>
+    </customValue>
+    <customValue>
+        <fullName>265</fullName>
+        <default>false</default>
+        <label>265 - Malawi</label>
+    </customValue>
+    <customValue>
+        <fullName>52</fullName>
+        <default>false</default>
+        <label>52 - Mexico</label>
+    </customValue>
+    <customValue>
+        <fullName>60</fullName>
+        <default>false</default>
+        <label>60 - Malaysia</label>
+    </customValue>
+    <customValue>
+        <fullName>258</fullName>
+        <default>false</default>
+        <label>258 - Mozambique</label>
+    </customValue>
+    <customValue>
+        <fullName>264</fullName>
+        <default>false</default>
+        <label>264 -Anguilla &amp; Namibia</label>
+    </customValue>
+    <customValue>
+        <fullName>687</fullName>
+        <default>false</default>
+        <label>687 - New Caledonia</label>
+    </customValue>
+    <customValue>
+        <fullName>227</fullName>
+        <default>false</default>
+        <label>227 - Niger</label>
+    </customValue>
+    <customValue>
+        <fullName>234</fullName>
+        <default>false</default>
+        <label>234 - Nigeria</label>
+    </customValue>
+    <customValue>
+        <fullName>505</fullName>
+        <default>false</default>
+        <label>505 - Nicaragua</label>
+    </customValue>
+    <customValue>
+        <fullName>31</fullName>
+        <default>false</default>
+        <label>31 - Netherlands</label>
+    </customValue>
+    <customValue>
+        <fullName>47</fullName>
+        <default>false</default>
+        <label>47 - Norway &amp; Svalbard</label>
+    </customValue>
+    <customValue>
+        <fullName>977</fullName>
+        <default>false</default>
+        <label>977 - Nepal</label>
+    </customValue>
+    <customValue>
+        <fullName>674</fullName>
+        <default>false</default>
+        <label>674 - Nauru</label>
+    </customValue>
+    <customValue>
+        <fullName>64</fullName>
+        <default>false</default>
+        <label>64 - New Zealand</label>
+    </customValue>
+    <customValue>
+        <fullName>968</fullName>
+        <default>false</default>
+        <label>968 - Oman</label>
+    </customValue>
+    <customValue>
+        <fullName>507</fullName>
+        <default>false</default>
+        <label>507 - Panama</label>
+    </customValue>
+    <customValue>
+        <fullName>51</fullName>
+        <default>false</default>
+        <label>51 - Peru</label>
+    </customValue>
+    <customValue>
+        <fullName>63</fullName>
+        <default>false</default>
+        <label>63 - Philippines</label>
+    </customValue>
+    <customValue>
+        <fullName>92</fullName>
+        <default>false</default>
+        <label>92 - Pakistan</label>
+    </customValue>
+    <customValue>
+        <fullName>48</fullName>
+        <default>false</default>
+        <label>48 - Poland</label>
+    </customValue>
+    <customValue>
+        <fullName>787</fullName>
+        <default>false</default>
+        <label>787 - Puerto Rico</label>
+    </customValue>
+    <customValue>
+        <fullName>970</fullName>
+        <default>false</default>
+        <label>970 - Palestine</label>
+    </customValue>
+    <customValue>
+        <fullName>351</fullName>
+        <default>false</default>
+        <label>351 - Portugal</label>
+    </customValue>
+    <customValue>
+        <fullName>680</fullName>
+        <default>false</default>
+        <label>680 - Palau</label>
+    </customValue>
+    <customValue>
+        <fullName>595</fullName>
+        <default>false</default>
+        <label>595 - Paraguay</label>
+    </customValue>
+    <customValue>
+        <fullName>974</fullName>
+        <default>false</default>
+        <label>974 - Qatar</label>
+    </customValue>
+    <customValue>
+        <fullName>40</fullName>
+        <default>false</default>
+        <label>40 - Romania</label>
+    </customValue>
+    <customValue>
+        <fullName>381</fullName>
+        <default>false</default>
+        <label>381 - Serbia</label>
+    </customValue>
+    <customValue>
+        <fullName>250</fullName>
+        <default>false</default>
+        <label>250 - Rwanda</label>
+    </customValue>
+    <customValue>
+        <fullName>966</fullName>
+        <default>false</default>
+        <label>966 - Saudi Arabia</label>
+    </customValue>
+    <customValue>
+        <fullName>677</fullName>
+        <default>false</default>
+        <label>677 - Solomon Islands</label>
+    </customValue>
+    <customValue>
+        <fullName>248</fullName>
+        <default>false</default>
+        <label>248 - Seychelles</label>
+    </customValue>
+    <customValue>
+        <fullName>249</fullName>
+        <default>false</default>
+        <label>249 - Sudan</label>
+    </customValue>
+    <customValue>
+        <fullName>46</fullName>
+        <default>false</default>
+        <label>46 - Sweden</label>
+    </customValue>
+    <customValue>
+        <fullName>65</fullName>
+        <default>false</default>
+        <label>65 - Singapore</label>
+    </customValue>
+    <customValue>
+        <fullName>290</fullName>
+        <default>false</default>
+        <label>290 - Saint Helena</label>
+    </customValue>
+    <customValue>
+        <fullName>386</fullName>
+        <default>false</default>
+        <label>386 - Slovenia</label>
+    </customValue>
+    <customValue>
+        <fullName>421</fullName>
+        <default>false</default>
+        <label>421 - Slovakia</label>
+    </customValue>
+    <customValue>
+        <fullName>232</fullName>
+        <default>false</default>
+        <label>232 - Sierra Leone</label>
+    </customValue>
+    <customValue>
+        <fullName>378</fullName>
+        <default>false</default>
+        <label>378 - San Marino</label>
+    </customValue>
+    <customValue>
+        <fullName>221</fullName>
+        <default>false</default>
+        <label>221 - Senegal</label>
+    </customValue>
+    <customValue>
+        <fullName>252</fullName>
+        <default>false</default>
+        <label>252 - Somalia</label>
+    </customValue>
+    <customValue>
+        <fullName>597</fullName>
+        <default>false</default>
+        <label>597 - Suriname</label>
+    </customValue>
+    <customValue>
+        <fullName>503</fullName>
+        <default>false</default>
+        <label>503 - El Salvador</label>
+    </customValue>
+    <customValue>
+        <fullName>963</fullName>
+        <default>false</default>
+        <label>963 - Syria</label>
+    </customValue>
+    <customValue>
+        <fullName>235</fullName>
+        <default>false</default>
+        <label>235 - Chad</label>
+    </customValue>
+    <customValue>
+        <fullName>228</fullName>
+        <default>false</default>
+        <label>228 - Togo</label>
+    </customValue>
+    <customValue>
+        <fullName>66</fullName>
+        <default>false</default>
+        <label>66 - Thailand</label>
+    </customValue>
+    <customValue>
+        <fullName>992</fullName>
+        <default>false</default>
+        <label>992 - Tajikistan</label>
+    </customValue>
+    <customValue>
+        <fullName>670</fullName>
+        <default>false</default>
+        <label>670 - East Timor</label>
+    </customValue>
+    <customValue>
+        <fullName>993</fullName>
+        <default>false</default>
+        <label>993 - Turkmenistan</label>
+    </customValue>
+    <customValue>
+        <fullName>216</fullName>
+        <default>false</default>
+        <label>216 - Tunisia</label>
+    </customValue>
+    <customValue>
+        <fullName>676</fullName>
+        <default>false</default>
+        <label>676 - Tonga</label>
+    </customValue>
+    <customValue>
+        <fullName>90</fullName>
+        <default>false</default>
+        <label>90 - Turkey</label>
+    </customValue>
+    <customValue>
+        <fullName>688</fullName>
+        <default>false</default>
+        <label>688 - Tuvalu</label>
+    </customValue>
+    <customValue>
+        <fullName>886</fullName>
+        <default>false</default>
+        <label>886 - Taiwan</label>
+    </customValue>
+    <customValue>
+        <fullName>255</fullName>
+        <default>false</default>
+        <label>255 - Tanzania</label>
+    </customValue>
+    <customValue>
+        <fullName>380</fullName>
+        <default>false</default>
+        <label>380 - Ukraine</label>
+    </customValue>
+    <customValue>
+        <fullName>256</fullName>
+        <default>false</default>
+        <label>256 - Uganda</label>
+    </customValue>
+    <customValue>
+        <fullName>598</fullName>
+        <default>false</default>
+        <label>598 - Uruguay</label>
+    </customValue>
+    <customValue>
+        <fullName>998</fullName>
+        <default>false</default>
+        <label>998 - Uzbekistan</label>
+    </customValue>
+    <customValue>
+        <fullName>379</fullName>
+        <default>false</default>
+        <label>379 - Vatican City</label>
+    </customValue>
+    <customValue>
+        <fullName>58</fullName>
+        <default>false</default>
+        <label>58 - Venezuela</label>
+    </customValue>
+    <customValue>
+        <fullName>84</fullName>
+        <default>false</default>
+        <label>84 - Vietnam</label>
+    </customValue>
+    <customValue>
+        <fullName>678</fullName>
+        <default>false</default>
+        <label>678 - Vanuatu</label>
+    </customValue>
+    <customValue>
+        <fullName>967</fullName>
+        <default>false</default>
+        <label>967 - Yemen</label>
+    </customValue>
+    <customValue>
+        <fullName>27</fullName>
+        <default>false</default>
+        <label>27 - South Africa</label>
+    </customValue>
+    <customValue>
+        <fullName>260</fullName>
+        <default>false</default>
+        <label>260 - Zambia</label>
+    </customValue>
+    <customValue>
+        <fullName>263</fullName>
+        <default>false</default>
+        <label>263 - Zimbabwe</label>
+    </customValue>
+    <customValue>
+        <fullName>1 - USA</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1 - USA</label>
+    </customValue>
+    <customValue>
+        <fullName>47 - Svalbard</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>47 - Svalbard</label>
+    </customValue>
+    <customValue>
+        <fullName>242 - Rep.of Congo</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>242 - Rep.of Congo</label>
+    </customValue>
+    <customValue>
+        <fullName>1 - US Virgin Isl.</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1 - US Virgin Isl.</label>
+    </customValue>
+    <masterLabel>Country Code</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

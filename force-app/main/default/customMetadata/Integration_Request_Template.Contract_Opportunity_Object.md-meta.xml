@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Contract Opportunity Object</label>
+    <protected>false</protected>
+    <values>
+        <field>All_Fields__c</field>
+        <value xsi:type="xsd:string">name</value>
+    </values>
+    <values>
+        <field>Fields_to_Trigger_Integration__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Json_Field_Names__c</field>
+        <value xsi:type="xsd:string">name</value>
+    </values>
+    <values>
+        <field>Object_Type__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Operation__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Query_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Request_Envelope__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>SOQL_Query__c</field>
+        <value xsi:type="xsd:string">Select name From Opportunity</value>
+    </values>
+    <values>
+        <field>Static_JSON_Data__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

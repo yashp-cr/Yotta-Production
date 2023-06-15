@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Who_from_CIO_community_can_help__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Who from CIO community (YCIC or otherwise) can be help in this account</inlineHelpText>
+    <label>Who from CIO community can help?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

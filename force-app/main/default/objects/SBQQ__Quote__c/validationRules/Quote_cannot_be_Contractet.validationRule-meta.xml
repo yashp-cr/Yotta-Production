@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_cannot_be_Contractet</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+    SBQQ__Opportunity2__r.SBQQ__Contracted__c,
+ PRIORVALUE(Signed_SCF_Uploaded__c) &lt;&gt; Signed_SCF_Uploaded__c,
+    Contracted__c,
+    ISCHANGED( Contracted__c )
+)</errorConditionFormula>
+    <errorDisplayField>Contracted__c</errorDisplayField>
+    <errorMessage>Opportunity is already contracted.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Ready_for_Sync__c</fullName>
+    <externalId>false</externalId>
+    <formula>(ISBLANK(SBQQ__Contract__r.Last_Sync_Date__c) || SBQQ__Contract__r.Last_Sync_Date__c &lt;  LastModifiedDate) &amp;&amp; SBQQ__Bundle__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Ready for Sync</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

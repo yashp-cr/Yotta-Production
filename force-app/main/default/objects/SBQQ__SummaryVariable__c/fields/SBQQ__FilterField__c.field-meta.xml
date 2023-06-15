@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SBQQ__FilterField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Items that are filtered for inclusion in this summary variable.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the field to use when filtering items for inclusion in this summary variable.</inlineHelpText>
+    <label>Filter Field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product Code</fullName>
+                <default>false</default>
+                <label>Product Code</label>
+            </value>
+            <value>
+                <fullName>Product Family</fullName>
+                <default>false</default>
+                <label>Product Family</label>
+            </value>
+            <value>
+                <fullName>Product_Code__c</fullName>
+                <default>false</default>
+                <label>Product_Code__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__ProductCode__c</fullName>
+                <default>false</default>
+                <label>SBQQ__ProductCode__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__ProductName__c</fullName>
+                <default>false</default>
+                <label>SBQQ__ProductName__c</label>
+            </value>
+            <value>
+                <fullName>Feature_Name__c</fullName>
+                <default>false</default>
+                <label>Feature_Name__c</label>
+            </value>
+            <value>
+                <fullName>Variable_UOM__c</fullName>
+                <default>false</default>
+                <label>Variable_UOM__c</label>
+            </value>
+            <value>
+                <fullName>ProductLineText__c</fullName>
+                <default>false</default>
+                <label>ProductLineText__c</label>
+            </value>
+            <value>
+                <fullName>SCF_Type__c</fullName>
+                <default>false</default>
+                <label>SCF_Type__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__RequiredBy__c</fullName>
+                <default>false</default>
+                <label>SBQQ__RequiredBy__c</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

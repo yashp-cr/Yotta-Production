@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HeaderMap__c</fullName>
+    <description>header key value compbinaitons for integration request
+example= key:value</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>header key value compbinaitons for integration request
+example= key:value</inlineHelpText>
+    <label>HeaderMap</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

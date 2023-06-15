@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location_Avalibility_for_Validation__c</fullName>
+    <description>This is specifically created to implement Validation on Location - where in Product Delivery Location can be validated.</description>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES( Location_Availability__c , &quot;IN12&quot;), &quot;IN12&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;IN13&quot;), &quot;IN13&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;IN14&quot;), &quot;IN14&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;IN15&quot;), &quot;IN15&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;IN22&quot;), &quot;IN22&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;IN23&quot;), &quot;IN23&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;IN11&quot;), &quot;IN11&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;IN18&quot;), &quot;IN18&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;IN25&quot;), &quot;IN25&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;IN16&quot;), &quot;IN16&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;IN19&quot;), &quot;IN19&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;I101&quot;), &quot;I101&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;I102&quot;), &quot;I102&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;IN26&quot;), &quot;IN26&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;IN29&quot;), &quot;IN29&quot;, NULL) + BR() +
+IF(INCLUDES(Location_Availability__c , &quot;Customer Site&quot;), &quot;Customer Site&quot;, NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Location Avalibility for Validation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

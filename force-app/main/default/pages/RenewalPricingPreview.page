@@ -1,0 +1,57 @@
+<apex:page renderAs="pdf" standardController="SBQQ__Quote__c" extensions="RenewalSCFController" showHeader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false">
+     <apex:stylesheet value="{!$Resource.PDFCss}" />
+    <span style="color:#1d3f81;"><b>Pricing Summary</b></span><br/><br/>
+     <span style="color:#1d3f81; font-family:sans-serif; font-size: 12px; font-weight: bold;">Details of Contract Renewal</span><br/>
+                <br/>
+                <table border="1px solid black" width="100%" cellpadding="3" style="border-collapse: collapse; font-size:10px; font-family:sans-serif;">
+                    <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="4" style=";font-size:10px; font-family:sans-serif;">Pricing Details</td>
+                    </tr>
+                    <tr style="background-color:#1d3f81;color:#FFFFFF;text-align: center;">
+                        <td width = "5%" style="font-size:10px; font-family:sans-serif;">Line #</td>
+                        <td width = "40%" style="font-size:10px; font-family:sans-serif;">Service Name</td>
+                        <td style="font-size:10px; font-family:sans-serif;">Qty</td>
+                        <td style="font-size:10px; font-family:sans-serif;">UoM</td>
+                        <td style="font-size:10px; font-family:sans-serif;">OTC</td>
+                        <td style="font-size:10px; font-family:sans-serif;">MRC</td>
+                        <td style="font-size:10px; font-family:sans-serif;">VAR</td>
+                        <td style="font-size:10px; font-family:sans-serif;">Location</td>
+                    </tr>         
+                    <apex:variable value="{!1}" var="index"/>
+                    <apex:repeat value="{!childQuoteLineMap}" var="nlm">
+                        <tr style = "font-size:10px; font-family:sans-serif;">
+                            <td>{!index}</td>
+                            <td>
+                                <b>{!childQuoteLineMap[nlm].Family}</b><br/>
+                                {!childQuoteLineMap[nlm].serviceName}<br/>
+                                <apex:outputText value="{!childQuoteLineMap[nlm].prodDescription}<br/>" escape="false"/></td>
+                            <td>{!Round(childQuoteLineMap[nlm].qty,0)}</td>
+                            <td>{!childQuoteLineMap[nlm].uom}</td>
+                            
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!childQuoteLineMap[nlm].otc}"/>
+                                </apex:outputText>
+                                </td>
+                                <td>
+                                    <apex:outputText value="{0, number, ###,##0}" >
+                                        <apex:param value="{!childQuoteLineMap[nlm].mrc}"/>
+                                    </apex:outputText>
+                                </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!childQuoteLineMap[nlm].vCharge}"/>
+                                </apex:outputText>
+                            </td>
+                            <td>{!childQuoteLineMap[nlm].deliveryLocation}</td>
+                        </tr>
+                        <apex:variable value="{!index+1}" var="index"/>
+                    </apex:repeat>
+                </table>    
+                <br/><br/>
+
+</apex:page>

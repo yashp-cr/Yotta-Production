@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Comission_is_Required_before_OMT</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISCHANGED( Submit_for_OMT_Approval__c ) &amp;&amp;
+NOT(Is_SOF_Approved__c) &amp;&amp;
+Submit_for_OMT_Approval__c &amp;&amp;
+(
+NOT(ISBLANK( SBQQ__Opportunity__r.PartnerPrimary__c )) ||
+NOT(ISBLANK( SBQQ__Opportunity__r.PartnerSecondary__c )) ||
+NOT(ISBLANK( SBQQ__Opportunity__r.PartnerTertiary__c ))
+)
+&amp;&amp;
+ISBLANK(TEXT( Partner_Commision_Model__c ))</errorConditionFormula>
+    <errorMessage>Please update Partner Commission before submitting for OMT Approval.</errorMessage>
+</ValidationRule>

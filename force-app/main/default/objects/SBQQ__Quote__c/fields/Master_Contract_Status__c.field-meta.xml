@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master_Contract_Status__c</fullName>
+    <description>Stamp Master Contract Status in Amendment &amp; Renewal Quotes on Creation. This Status is used during contract generation for TOS, Bill Cycle Change &amp; Address Change SCFs.</description>
+    <externalId>false</externalId>
+    <label>Master Contract Status</label>
+    <length>50</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

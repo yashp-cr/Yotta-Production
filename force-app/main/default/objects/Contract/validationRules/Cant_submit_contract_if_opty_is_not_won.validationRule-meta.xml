@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_submit_contract_if_opty_is_not_won</fullName>
+    <active>true</active>
+    <description>Can&apos;t submit contract for OMT Approval if opportunity is not marked as Closed Won.</description>
+    <errorConditionFormula>ISCHANGED( Submit_for_OMT_Approval__c ) &amp;&amp;
+NOT(Is_SOF_Approved__c) &amp;&amp;
+Submit_for_OMT_Approval__c &amp;&amp;
+ POC__c = &apos;No&apos; &amp;&amp;
+( NOT( ISPICKVAL( SBQQ__Opportunity__r.StageName, &quot;Closed Won&quot;))
+)</errorConditionFormula>
+    <errorMessage>Please mark opportunity as Closed Won before submitting the contract for OMT Approval.</errorMessage>
+</ValidationRule>

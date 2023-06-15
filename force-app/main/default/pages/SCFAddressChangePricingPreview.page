@@ -1,0 +1,54 @@
+<apex:page renderAs="PDF" applyBodyTag="false" standardController="SBQQ__Quote__c" extensions="SCFAddressChangeController" >
+     <apex:stylesheet value="{!$Resource.PDFCss}" />
+    <span style="color:#1d3f81;"><b>Pricing Summary</b></span><br/><br/>
+    <table border="1px solid black" cellpadding="3"  style="border-collapse: collapse; font-size: 10px; font-family:sans-serif;">
+            <tr style="background-color:#1d3f81;color:#FFFFFF" >
+                <th width="350px" style="text-align:center">Existing Billing Address</th>
+                <th width="350px" style="text-align:center">New Billing Address</th>
+            </tr>
+            <tr cellpadding="5">
+                <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(SBQQ__Quote__c.Bill_To_Address__c))}">
+                    <apex:outputText >
+                        <td style="text-align:left" >{!SBQQ__Quote__c.Bill_To_Address__r.AddressLine1__c},
+                                    {!SBQQ__Quote__c.Bill_To_Address__r.AddressLine2__c},
+                                    {!SBQQ__Quote__c.Bill_To_Address__r.City__c},
+                                    {!SBQQ__Quote__c.Bill_To_Address__r.PostalCode__c}
+                        </td>
+                    </apex:outputText>                  
+                </apex:outputPanel>
+
+                <apex:outputPanel layout="none" rendered="{!(ISBLANK(SBQQ__Quote__c.Bill_To_Address__c))}">
+                    <apex:outputText >
+                        <td style="text-align:left" >
+                                                    
+                        </td>
+                    </apex:outputText>                  
+                </apex:outputPanel>
+                
+                <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(SBQQ__Quote__c.New_Bill_To_Address__c))}">
+                    <apex:outputText >
+                        <td style="text-align:left">
+                            {!SBQQ__Quote__c.New_Bill_To_Address__r.AddressLine1__c},
+                            {!SBQQ__Quote__c.New_Bill_To_Address__r.AddressLine2__c},
+                            {!SBQQ__Quote__c.New_Bill_To_Address__r.City__c},
+                            {!SBQQ__Quote__c.New_Bill_To_Address__r.PostalCode__c}
+                        </td>
+                    </apex:outputText>
+                </apex:outputPanel>
+                <apex:outputPanel layout="none" rendered="{!(ISBLANK(SBQQ__Quote__c.New_Bill_To_Address__c))}">
+                    <apex:outputText >
+                        <td style="text-align:left"></td>
+                    </apex:outputText>
+                </apex:outputPanel>
+            </tr>
+        </table>
+
+        <div style="font-size: 10px; font-family:sans-serif;">
+            <p> We would request you to submit below mentioned documents</p> 
+            <ol>
+                <li>Address proof</li>
+                <li>GSTIN number if applicable</li>
+            </ol>
+
+        </div>
+</apex:page>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Bill_To_Address__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>GG: Needed for Bill Address SCF</description>
+    <externalId>false</externalId>
+    <label>New Bill To Address</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Value does not exist or does not match filter criteria- new bill to address.</errorMessage>
+        <filterItems>
+            <field>Address__c.Account__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.SBQQ__Account__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Address__c</referenceTo>
+    <relationshipLabel>Quotes (New Billing Address)</relationshipLabel>
+    <relationshipName>Quotes2</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

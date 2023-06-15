@@ -1,0 +1,27 @@
+<apex:component controller="RenReminder60Controller" access="global">
+    
+    <apex:attribute name="contractId" type="String" description="This is the Id of the contract" assignTo="{!conId}" access="global" />
+    <div style="font-family:Calibri;font-size:16px;"> 
+        <apex:outputText >
+            <p>
+                In this regard, would request you to confirm any one of the following options:
+            </p>
+            <ol>
+                <li>You would like to continue with the services on same terms and conditions.</li>
+                <li>You want to discontinue the service.</li>
+            </ol>
+            <p>
+                Please revert to us in writing to renewals@yotta.com before &nbsp;<apex:outputText value="{0,date,dd-MM-YYYY}"> <apex:param value="{!endDate65}" /> </apex:outputText> .
+                <br/>
+                For clarification/query, contact the Account Manager.
+                <br/>
+                This is system generated notification, kindly ignore the same if already informed about the renewal. 
+            </p>    
+            <p>
+                Regards,<br/>
+                Team Yotta.
+                
+            </p>
+        </apex:outputText>
+    </div>
+</apex:component>

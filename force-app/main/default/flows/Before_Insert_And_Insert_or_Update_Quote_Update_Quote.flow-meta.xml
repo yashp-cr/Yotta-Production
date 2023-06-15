@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>Assign_Commercial_Approval_Status</name>
+        <label>Assign Commercial Approval Status</label>
+        <locationX>50</locationX>
+        <locationY>2663</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Commercial_Approval_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Required</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Status_as_Approved</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Generate Term as FALSE</description>
+        <name>Assign_Generated_Terms_value</name>
+        <label>Assign Generated Terms value</label>
+        <locationX>50</locationX>
+        <locationY>983</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Generated_Terms__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Quote_Name_value</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_qoute_status_as_draft</name>
+        <label>Assign qoute status as draft</label>
+        <locationX>50</locationX>
+        <locationY>1655</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SBQQ__Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Validate_Commission_Model__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Quote_Subscription_Term_value</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update Quote Name</description>
+        <name>Assign_Quote_Name</name>
+        <label>Assign Quote Name</label>
+        <locationX>50</locationX>
+        <locationY>1319</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Quote_Name__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>updateQuoteNameFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Quote_Status_as_Draft_value</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update Quote Start Date</description>
+        <name>Assign_Quote_Start_Date</name>
+        <label>Assign Quote Start Date</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SBQQ__StartDate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>startDateFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Generate_Term_as_FALSE_value</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_status_tech</name>
+        <label>Assign status tech</label>
+        <locationX>50</locationX>
+        <locationY>2327</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Technical_Approval_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Approval Required</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Generated_Terms__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Commercial_status_Not_Required_value</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Subscription_Term</name>
+        <label>Assign Subscription Term</label>
+        <locationX>50</locationX>
+        <locationY>1991</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SBQQ__SubscriptionTerm__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>subscriptionTermFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Status_Tech_value</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Status_as_Approvedin</name>
+        <label>Update Status as Approved</label>
+        <locationX>50</locationX>
+        <locationY>2999</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SBQQ__Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Approved</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Isnew_record</name>
+        <label>Isnew</label>
+        <locationX>182</locationX>
+        <locationY>311</locationY>
+        <defaultConnector>
+            <targetReference>Update_Quote_Start_Date_value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>New_Records_Only</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Quote_Start_Date_value</targetReference>
+            </connector>
+            <label>New Records Only</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Update Commercial status - Not Required</description>
+        <name>Update_Commercial_status_Not_Required_value</name>
+        <label>Update Commercial status - Not Required value</label>
+        <locationX>182</locationX>
+        <locationY>2543</locationY>
+        <defaultConnector>
+            <targetReference>Update_Status_as_Approved</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Commercial_status_Not_Required</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>commercialStatusFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Commercial_Approval_Status</targetReference>
+            </connector>
+            <label>Update Commercial status - Not Required</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Generate Term as FALSE</description>
+        <name>Update_Generate_Term_as_FALSE_value</name>
+        <label>Update Generate Term as FALSE value</label>
+        <locationX>182</locationX>
+        <locationY>863</locationY>
+        <defaultConnector>
+            <targetReference>Update_Quote_Name_value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Generate_Term_as_FALSE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>generateTermAsFalse</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Generated_Terms_value</targetReference>
+            </connector>
+            <label>Update Generate Term as FALSE</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Update Quote Name</description>
+        <name>Update_Quote_Name_value</name>
+        <label>Update Quote Name value</label>
+        <locationX>182</locationX>
+        <locationY>1199</locationY>
+        <defaultConnector>
+            <targetReference>Update_Quote_Status_as_Draft_value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Quote_Name</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Quote_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Quote_Name</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Update Quote Name</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Update Quote Start Date</description>
+        <name>Update_Quote_Start_Date_value</name>
+        <label>Update Quote Start Date value</label>
+        <locationX>182</locationX>
+        <locationY>527</locationY>
+        <defaultConnector>
+            <targetReference>Update_Generate_Term_as_FALSE_value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Quote_Start</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Quote</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Quote_Start_Date</targetReference>
+            </connector>
+            <label>Update Quote Start</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_Quote_Status_as_Draft_value</name>
+        <label>Update Quote Status as Draft value</label>
+        <locationX>182</locationX>
+        <locationY>1535</locationY>
+        <defaultConnector>
+            <targetReference>Update_Quote_Subscription_Term_value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Quote_Status_as_Draft</name>
+            <conditionLogic>4 AND 5 AND 6 AND (1 OR 2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Technical_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approval Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Commercial_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approval Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Term_Condition_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approval Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Commercial_Approval_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Submitted for Approval</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Term_Condition_Approval_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Submitted for Approval</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Technical_Approval_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Submitted for Approval</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_qoute_status_as_draft</targetReference>
+            </connector>
+            <label>Update Quote Status as Draft</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Update Subscription Term</description>
+        <name>Update_Quote_Subscription_Term_value</name>
+        <label>Update Quote Subscription Term value</label>
+        <locationX>182</locationX>
+        <locationY>1871</locationY>
+        <defaultConnector>
+            <targetReference>Update_Status_Tech_value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Quote_Subscription_Term</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>quoteSubscrptionFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Subscription_Term</targetReference>
+            </connector>
+            <label>Update Quote Subscription Term</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_Status_as_Approved</name>
+        <label>Update Status as Approved</label>
+        <locationX>182</locationX>
+        <locationY>2879</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Quote_Approval_Flag</name>
+            <conditionLogic>(6 OR 7) AND (1 OR 8) AND (2 OR 4) AND (3 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Technical_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Commercial_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Term_Condition_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Commercial_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Term_Condition_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Draft</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Technical_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status_as_Approvedin</targetReference>
+            </connector>
+            <label>Check Quote Approval Flag</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_Status_Tech_value</name>
+        <label>Update Status Tech value</label>
+        <locationX>182</locationX>
+        <locationY>2207</locationY>
+        <defaultConnector>
+            <targetReference>Update_Commercial_status_Not_Required_value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Status_Tech</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>updateStatusQuoteFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_status_tech</targetReference>
+            </connector>
+            <label>Update Status Tech</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>commercialStatusFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISCHANGED({!$Record.Approval_Level__c}) &amp;&amp; ISPICKVAL({!$Record.Commercial_Approval_Status__c}, &apos;Approval Required&apos;) &amp;&amp; ( ISBLANK({!$Record.Approval_Level__c}) ||   {!$Record.Approval_Level__c} = 0 )</expression>
+    </formulas>
+    <formulas>
+        <name>generateTermAsFalse</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+   {!$Record.Generated_Terms__c},
+    OR(
+        ISCHANGED({!$Record.One_Time_Charges_Third_Party__c} ),
+        ISCHANGED({!$Record.One_Time_Charges_Other_Services__c} ),
+        ISCHANGED({!$Record.Late_Payment_Invoice_Interest__c} ),
+        ISCHANGED({!$Record.Termination_Fee_Initial_Contract__c} ),
+        ISCHANGED({!$Record.Adv_Written_Notice_Period_Initial_Cntrct__c} ),
+        ISCHANGED({!$Record.Recurring_Charges_Third_Party__c} ),
+        ISCHANGED({!$Record.Recurring_Charges_Other_Party__c} ),
+        ISCHANGED({!$Record.Equipment_Sale_Value__c} ),
+        ISCHANGED({!$Record.Termination_Fee_Renewal_renewal__c} ),
+        ISCHANGED({!$Record.Adv_Written_Notice_Period_Renewal_Cntrct__c} )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>isNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>QuoteSubscriptionTermFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    ISPICKVAL({!$Record.SBQQ__Type__c}, &quot;Amendment&quot;),
+    ISNEW()
+)</expression>
+    </formulas>
+    <formulas>
+        <name>quoteSubscrptionFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    ISPICKVAL({!$Record.SBQQ__Type__c}, &quot;Quote&quot;),
+    OR(
+        ISCHANGED({!$Record.Contract_Tenure_Year__c} ),
+        ISCHANGED({!$Record.Contract_Tenure_Month__c} ),
+        ISCHANGED({!$Record.Contract_Tenure_Days__c} )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>startDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+    MONTH(TODAY()) == 12,
+    DATE( YEAR(TODAY()) + 1, 1, 1) ,
+    DATE( YEAR(TODAY()), MONTH(TODAY()) + 1, 1) 
+)</expression>
+    </formulas>
+    <formulas>
+        <name>subscriptionTermFormula</name>
+        <dataType>Number</dataType>
+        <expression>IF({!$Record.Contract_Tenure_Year__c} &gt; 0,{!$Record.Contract_Tenure_Year__c} * 12 , 0)
++
+IF({!$Record.Contract_Tenure_Month__c} &gt; 0,{!$Record.Contract_Tenure_Month__c} , 0)
++
+ROUND(IF({!$Record.Contract_Tenure_Days__c} &gt; 0,{!$Record.Contract_Tenure_Days__c} / 30 , 0),0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>updateQuoteNameFormula</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.SBQQ__Opportunity2__r.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>updateStatusQuoteFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(ISNEW()) &amp;&amp;
+ISCHANGED({!$Record.SBQQ__LineItemCount__c}) &amp;&amp;  
+(ISPICKVAL({!$Record.SBQQ__Type__c},&apos;Quote&apos;) || ((ISPICKVAL({!$Record.SBQQ__Type__c},&apos;Amendment&apos;) || ISPICKVAL({!$Record.SBQQ__Type__c},&apos;Renewal&apos;)  ) &amp;&amp; NOT(ISBLANK(TEXT({!$Record.SCF_Type__c}))))
+) &amp;&amp;
+NOT(ISPICKVAL({!$Record.Technical_Approval_Status__c} , &apos;Submitted for Approval&apos;)) &amp;&amp;
+NOT({!$Record.Full_Quote_Cancellation_Deactivation__c})</expression>
+    </formulas>
+    <interviewLabel>Before Insert And Insert or Update Quote : Update Quote {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Before Insert or Update Quote</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Isnew_record</targetReference>
+        </connector>
+        <object>SBQQ__Quote__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

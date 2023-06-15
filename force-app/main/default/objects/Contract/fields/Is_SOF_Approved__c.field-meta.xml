@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_SOF_Approved__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flag indicating Contract signed SOF is approved and subsequent approvals will be for SCF</description>
+    <externalId>false</externalId>
+    <label>Is SOF Approved?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

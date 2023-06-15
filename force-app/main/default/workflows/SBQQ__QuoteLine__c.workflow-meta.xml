@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <rules>
+        <fullName>Commercial Status change on quantity%28Migrated%29</fullName>
+        <actions>
+            <name>Change_Approved_Unit_Price</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Commercial_Approval_Req</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>( ISPICKVAL(SBQQ__Quote__r.Commercial_Approval_Status__c , &apos;Approved&apos;) ||    ISPICKVAL(SBQQ__Quote__r.Commercial_Approval_Status__c , &apos;Rejected&apos;)  ) &amp;&amp;    ISCHANGED(SBQQ__Quantity__c) &amp;&amp; IF((Quote_Type__c = &apos;Amendment&apos; || Quote_Type__c = &apos;Renewal&apos;) &amp;&amp; ISBLANK( TEXT( SBQQ__Quote__r.SCF_Type__c )), FALSE, TRUE) &amp;&amp; (   IF( (Quote_Type__c = &apos;Amendment&apos; || Quote_Type__c = &apos;Renewal&apos;),     (       ( SBQQ__Bundle__c &amp;&amp;          NOT(ISBLANK(TEXT( SCF_Type__c))) &amp;&amp;         NOT(ISPICKVAL(SCF_Type__c , &apos;Cancellation&apos;)) &amp;&amp;         NOT(ISPICKVAL(SCF_Type__c , &apos;Deactivation&apos;)) &amp;&amp;         ISBLANK( SBQQ__UpgradedSubscription__c ) &amp;&amp;         ISBLANK( SBQQ__UpgradedAsset__c ) &amp;&amp;         ISBLANK( SBQQ__RenewedSubscription__c ) &amp;&amp;         ISBLANK( SBQQ__RenewedAsset__c )       ) ||       ( !SBQQ__Bundle__c &amp;&amp;         NOT(ISBLANK(Required_By_SCF_Type__c)) &amp;&amp;         Required_By_SCF_Type__c &lt;&gt; &apos;Cancellation&apos; &amp;&amp;         Required_By_SCF_Type__c &lt;&gt; &apos;Deactivation&apos; &amp;&amp;         ISBLANK( SBQQ__UpgradedSubscription__c ) &amp;&amp;         ISBLANK( SBQQ__UpgradedAsset__c ) &amp;&amp;         ISBLANK( SBQQ__RenewedSubscription__c ) &amp;&amp;         ISBLANK( SBQQ__RenewedAsset__c )       )     ),      TRUE   ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>If Product is optional%28Migrated%29</fullName>
+        <actions>
+            <name>Quote_Technical_Status_change</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>if Product is optional, we need technical approval</description>
+        <formula>ISCHANGED( SBQQ__Optional__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Commercial Status%28Migrated%29</fullName>
+        <actions>
+            <name>Commercial_Approval_Req</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>New Approval Logic : Update Quote Commercial Status either if approval level is changed or if price is changed @level 3</description>
+        <formula>!ISBLANK( Approval_level__c ) &amp;&amp; (Approval_level__c &gt; 0 &amp;&amp; Final_Unit_Price__c &lt;&gt; Approved_Unit_Price__c) &amp;&amp;
+NOT(ISPICKVAL( SBQQ__Quote__r.Commercial_Approval_Status__c , &apos;Submitted for Approval&apos;)) &amp;&amp;
+IF((Quote_Type__c = &apos;Amendment&apos; || Quote_Type__c = &apos;Renewal&apos;) &amp;&amp; ISBLANK( TEXT( SBQQ__Quote__r.SCF_Type__c )), FALSE, TRUE) &amp;&amp;
+( ISPICKVAL( SBQQ__Quote__r.Commercial_Approval_Status__c , &apos;Not Required&apos; )
+|| ( ( ISPICKVAL( SBQQ__Quote__r.Commercial_Approval_Status__c , &apos;Approved&apos; )
+|| ISPICKVAL( SBQQ__Quote__r.Commercial_Approval_Status__c , &apos;Rejected&apos; ) )
+&amp;&amp; ( ISNEW() || ISCHANGED(Final_Unit_Price__c ) )
+&amp;&amp; Final_Unit_Price__c &lt;&gt; Approved_Unit_Price__c ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Price Dimension Type</fullName>
+        <actions>
+            <name>Update_Price_Dimension_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>29 Jan 21: Inactivated, added in QuoteLineTriggerHandler</description>
+        <formula>AND(     SBQQ__Dimension__c != NULL,     Price_Dimension_Type__c = NULL )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Technical Status%28Migrated%29</fullName>
+        <actions>
+            <name>Update_Generate_Term_as_FALSE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Technical_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>( ISCHANGED( SBQQ__Product__c ) ||
+(ISCHANGED(SBQQ__Quantity__c) &amp;&amp; NOT(SBQQ__Quote__r.Full_Quote_Cancellation_Deactivation__c)) ||
+ISCHANGED( SBQQ__Optional__c ) ||
+ISCHANGED( Location__c ) ||
+ISCHANGED( Shipping_Address__c ) ||
+ISNEW() ) &amp;&amp;
+(
+IF( (ISPICKVAL(SBQQ__Quote__r.SBQQ__Type__c,&quot;Amendment&quot;) || ISPICKVAL(SBQQ__Quote__r.SBQQ__Type__c,&quot;Renewal&quot;)),
+( SBQQ__Bundle__c &amp;&amp; NOT(ISBLANK(TEXT( SCF_Type__c))) &amp;&amp; NOT(ISPICKVAL(SCF_Type__c , &apos;Price Change&apos;))), TRUE ))
+
+&amp;&amp; NOT(ISPICKVAL( SBQQ__Quote__r.Technical_Approval_Status__c , &apos;Submitted for Approval&apos;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

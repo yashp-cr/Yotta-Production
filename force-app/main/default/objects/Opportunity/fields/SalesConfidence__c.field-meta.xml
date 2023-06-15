@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesConfidence__c</fullName>
+    <externalId>false</externalId>
+    <label>Sales Confidence</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Reasonably Confident</fullName>
+                <default>false</default>
+                <label>Reasonably Confident</label>
+            </value>
+            <value>
+                <fullName>100% Confident</fullName>
+                <default>false</default>
+                <label>100% Confident</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

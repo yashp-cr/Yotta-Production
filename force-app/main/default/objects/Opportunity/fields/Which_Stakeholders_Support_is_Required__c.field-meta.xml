@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Which_Stakeholders_Support_is_Required__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the stakeholder&apos;s team from whom you need support.</inlineHelpText>
+    <label>Which Stakeholder&apos;s Support is Required?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BU-Application Services</fullName>
+                <default>false</default>
+                <label>BU-Application Services</label>
+            </value>
+            <value>
+                <fullName>BU-Colo &amp; Customer DC Build</fullName>
+                <default>false</default>
+                <label>BU-Colo &amp; Customer DC Build</label>
+            </value>
+            <value>
+                <fullName>BU-Core Cloud Services</fullName>
+                <default>false</default>
+                <label>BU-Core Cloud Services</label>
+            </value>
+            <value>
+                <fullName>BU-Cyber Security Services</fullName>
+                <default>false</default>
+                <label>BU-Cyber Security Services</label>
+            </value>
+            <value>
+                <fullName>BU-Extended &amp; Federated Cloud &amp; InfraManage Services</fullName>
+                <default>false</default>
+                <label>BU-Extended &amp; Federated Cloud &amp; InfraManage Services</label>
+            </value>
+            <value>
+                <fullName>BU-Network Services</fullName>
+                <default>false</default>
+                <label>BU-Network Services</label>
+            </value>
+            <value>
+                <fullName>SE-Solutions Team</fullName>
+                <default>false</default>
+                <label>SE-Solutions Team</label>
+            </value>
+            <value>
+                <fullName>SE-Bids Team</fullName>
+                <default>false</default>
+                <label>SE-Bids Team</label>
+            </value>
+            <value>
+                <fullName>SE-Pricing Team</fullName>
+                <default>false</default>
+                <label>SE-Pricing Team</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Inside Sales</fullName>
+                <default>false</default>
+                <label>Inside Sales</label>
+            </value>
+            <value>
+                <fullName>CEO</fullName>
+                <default>false</default>
+                <label>CEO</label>
+            </value>
+            <value>
+                <fullName>Promoters</fullName>
+                <default>false</default>
+                <label>Promoters</label>
+            </value>
+            <value>
+                <fullName>Legal</fullName>
+                <default>false</default>
+                <label>Legal</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Procurement</fullName>
+                <default>false</default>
+                <label>Procurement</label>
+            </value>
+            <value>
+                <fullName>Service Assurance</fullName>
+                <default>false</default>
+                <label>Service Assurance</label>
+            </value>
+            <value>
+                <fullName>Service Delivery</fullName>
+                <default>false</default>
+                <label>Service Delivery</label>
+            </value>
+            <value>
+                <fullName>DC Operations</fullName>
+                <default>false</default>
+                <label>DC Operations</label>
+            </value>
+            <value>
+                <fullName>GRC</fullName>
+                <default>false</default>
+                <label>GRC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

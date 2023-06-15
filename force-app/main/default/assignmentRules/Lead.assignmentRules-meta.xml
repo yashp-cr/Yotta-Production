@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Lead Assignment</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <assignedTo>IS_Team</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>ISNEW() &amp;&amp;  RecordType.Name = &apos;Regular_Lead&apos;</formula>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>badhia@yotta.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>ISNEW() &amp;&amp; RecordType.Name = &apos;Partner&apos;</formula>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry/>
+    </assignmentRule>
+</AssignmentRules>

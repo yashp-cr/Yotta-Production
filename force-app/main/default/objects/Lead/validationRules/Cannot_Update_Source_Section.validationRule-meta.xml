@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Update_Source_Section</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( NOT( ISNEW()) , OR(ISCHANGED(PrimarySource__c),
+ISCHANGED(SecondarySource__c),
+ISCHANGED(TertiarySource__c),
+ISCHANGED(Primary_Campaign__c	),
+ISCHANGED(Secondary_Campaign__c),
+ISCHANGED(Tertiary_Campaign__c),
+ISCHANGED(OEM_Company_Name__c),
+ISCHANGED(OEM_Lead_Shared_By__c),
+AND(ISCHANGED(Partner_Primary__c), NOT(ISBLANK(PRIORVALUE(Partner_Primary__c))) ),
+ISCHANGED(Partner_Secondary__c),
+ISCHANGED(Partner_Tertiary__c), 
+ISCHANGED(Partner_Sales_Rep__c),
+ISCHANGED(Distributor_Partner_Name__c)),
+				
+NOT( OR(
+CONTAINS( $Profile.Name , &apos;System Administrator&apos;),
+CONTAINS( $Profile.Name , &apos;Yotta Marketing Profile&apos;),
+CONTAINS( $User.Alias , &apos;autoproc&apos;),
+CONTAINS( $Profile.Name , &apos;Yotta IS Profile&apos;),
+CONTAINS( $Profile.Name , &apos;Yotta Partner Manager Profile&apos;))))</errorConditionFormula>
+    <errorMessage>The Source Section Cannot Be Edited</errorMessage>
+</ValidationRule>

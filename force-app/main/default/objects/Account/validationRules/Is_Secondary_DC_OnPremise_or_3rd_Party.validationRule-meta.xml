@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Secondary_DC_OnPremise_or_3rd_Party</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL( Is_your_Secondary_DR_Datacenter_Captiv__c , &apos;3rd Party&apos;),
+ISBLANK( Select_3rd_Party_DC_Provider_for_Seconda__c )
+)</errorConditionFormula>
+    <errorDisplayField>Select_3rd_Party_DC_Provider_for_Seconda__c</errorDisplayField>
+    <errorMessage>Please Select 3rd Party for Secondary DC</errorMessage>
+</ValidationRule>

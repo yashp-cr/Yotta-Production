@@ -1,0 +1,16 @@
+<apex:component Controller="partnerOpptyEmailController" access="global">
+    <apex:attribute name="quoteIdValue" type="String" description="This is the Id of the quote" assignTo="{!quoteId}" access="global" />
+    
+    <p>
+        Primary Quote of Opportunity {!getPartnerEmailInf.SBQQ__Opportunity2__r.Name} is approved. Kindly update Partner Model. <br/>
+        Details are: 
+    </p>
+    <p>
+        Account Name: {!getPartnerEmailInf.SBQQ__Account__r.Name}<br/>
+        Opportunity Name: {!getPartnerEmailInf.SBQQ__Opportunity2__r.Name}<br/>
+        Quote Number: {!getPartnerEmailInf.Quote__c}
+    </p>
+    
+   
+    
+</apex:component>

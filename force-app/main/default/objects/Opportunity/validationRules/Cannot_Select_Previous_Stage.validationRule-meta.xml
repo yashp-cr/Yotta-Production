@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Select_Previous_Stage</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ $Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+  !Exclude_from_Validation__c ,
+ OR(
+ AND(
+  ISPICKVAL( PriorValue(StageName), &apos;Draft Order&apos;),
+  OR(
+   ISPICKVAL( StageName, &apos;Negotiation/Review&apos;),
+   ISPICKVAL( StageName, &apos;Proposal/Price Quote&apos;),
+   ISPICKVAL( StageName, &apos;Needs Analysis&apos;),
+   ISPICKVAL( StageName, &apos;Qualification&apos;)
+  )
+ ),
+ AND(
+  ISPICKVAL( PriorValue(StageName), &apos;Negotiation/Review&apos;),
+  OR(
+   ISPICKVAL( StageName, &apos;Proposal/Price Quote&apos;),
+   ISPICKVAL( StageName, &apos;Needs Analysis&apos;),
+   ISPICKVAL( StageName, &apos;Qualification&apos;)
+  )
+ ),
+ AND(
+  ISPICKVAL(PriorValue(StageName), &apos;Proposal/Price Quote&apos;),
+  OR(
+   ISPICKVAL( StageName, &apos;Needs Analysis&apos;),
+   ISPICKVAL( StageName, &apos;Qualification&apos;)
+  )
+ ),
+ AND(
+  ISPICKVAL( PriorValue ( StageName ), &apos;Needs Analysis&apos;),
+  ISPICKVAL( StageName, &apos;Qualification&apos;)
+ )
+ )
+)</errorConditionFormula>
+    <errorMessage>Cannot select previous Stage</errorMessage>
+</ValidationRule>

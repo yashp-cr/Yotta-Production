@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Should_be_changed_for_TOS_SCF</fullName>
+    <active>true</active>
+    <description>Account Should be changed for TOS SCF on OMT approval submission and contract generation</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL( SCF_Type__c, &apos;Transfer of Service&apos;),
+  OR( Submit_for_Approval__c,
+      Contracted__c,
+      ISPICKVAL( SBQQ__Status__c, &apos;Presented&apos;),
+      ISPICKVAL( SBQQ__Status__c, &apos;Customer Accepted&apos;)
+  ),
+  SBQQ__Account__c = SBQQ__Opportunity2__r.SBQQ__AmendedContract__r.AccountId 
+)</errorConditionFormula>
+    <errorMessage>The account should be changed in Transfer of Service SCF</errorMessage>
+</ValidationRule>

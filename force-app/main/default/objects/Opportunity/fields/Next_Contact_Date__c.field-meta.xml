@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Contact_Date__c</fullName>
+    <description>Date to be enterred for Deferred Opportunities</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Mandatory for Deferred Opportunities, cannot be less than 20 days from Today.</inlineHelpText>
+    <label>Next Contact Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

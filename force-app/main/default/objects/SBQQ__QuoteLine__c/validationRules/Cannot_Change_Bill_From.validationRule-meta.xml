@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Bill_From</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISPICKVAL(Location__c, &apos;Customer Site&apos;)),
+Bill_From_old__c &lt;&gt; TEXT(Bill_From__c),
+ISBLANK(TEXT(Bill_From__c))
+)</errorConditionFormula>
+    <errorMessage>Bill From can Only be Changed for the Customer Site</errorMessage>
+</ValidationRule>

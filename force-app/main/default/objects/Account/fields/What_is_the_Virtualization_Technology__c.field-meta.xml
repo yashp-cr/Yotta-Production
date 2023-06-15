@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_is_the_Virtualization_Technology__c</fullName>
+    <externalId>false</externalId>
+    <label>What is the Virtualization Technology?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VMWare</fullName>
+                <default>false</default>
+                <label>VMWare</label>
+            </value>
+            <value>
+                <fullName>KVM</fullName>
+                <default>false</default>
+                <label>KVM</label>
+            </value>
+            <value>
+                <fullName>Microsoft HyperV</fullName>
+                <default>false</default>
+                <label>Microsoft HyperV</label>
+            </value>
+            <value>
+                <fullName>Oracle</fullName>
+                <default>false</default>
+                <label>Oracle</label>
+            </value>
+            <value>
+                <fullName>Xen</fullName>
+                <default>false</default>
+                <label>Xen</label>
+            </value>
+            <value>
+                <fullName>Acropolis</fullName>
+                <default>false</default>
+                <label>Acropolis</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Apparel &amp; Fashion</fullName>
+        <default>false</default>
+        <label>Apparel &amp; Fashion</label>
+    </customValue>
+    <customValue>
+        <fullName>Automotive</fullName>
+        <default>false</default>
+        <label>Automotive</label>
+    </customValue>
+    <customValue>
+        <fullName>Broadcast (TV, Radio, etc)</fullName>
+        <default>false</default>
+        <label>Broadcast (TV, Radio, etc)</label>
+    </customValue>
+    <customValue>
+        <fullName>Cargo &amp; Logistics</fullName>
+        <default>false</default>
+        <label>Cargo &amp; Logistics</label>
+    </customValue>
+    <customValue>
+        <fullName>Central Government</fullName>
+        <default>false</default>
+        <label>Central Government</label>
+    </customValue>
+    <customValue>
+        <fullName>Chemicals</fullName>
+        <default>false</default>
+        <label>Chemicals</label>
+    </customValue>
+    <customValue>
+        <fullName>Consumer Products</fullName>
+        <default>false</default>
+        <label>Consumer Products</label>
+    </customValue>
+    <customValue>
+        <fullName>Content Creation</fullName>
+        <default>false</default>
+        <label>Content Creation</label>
+    </customValue>
+    <customValue>
+        <fullName>Content Distribution</fullName>
+        <default>false</default>
+        <label>Content Distribution</label>
+    </customValue>
+    <customValue>
+        <fullName>Content Processing</fullName>
+        <default>false</default>
+        <label>Content Processing</label>
+    </customValue>
+    <customValue>
+        <fullName>E-Commerce</fullName>
+        <default>false</default>
+        <label>E-Commerce</label>
+    </customValue>
+    <customValue>
+        <fullName>Education</fullName>
+        <default>false</default>
+        <label>Education</label>
+    </customValue>
+    <customValue>
+        <fullName>Electricity</fullName>
+        <default>false</default>
+        <label>Electricity</label>
+    </customValue>
+    <customValue>
+        <fullName>Engineering and Construction</fullName>
+        <default>false</default>
+        <label>Engineering and Construction</label>
+    </customValue>
+    <customValue>
+        <fullName>Fintech</fullName>
+        <default>false</default>
+        <label>Fintech</label>
+    </customValue>
+    <customValue>
+        <fullName>Global BFSI centers</fullName>
+        <default>false</default>
+        <label>Global BFSI centers</label>
+    </customValue>
+    <customValue>
+        <fullName>Global CDN Players</fullName>
+        <default>false</default>
+        <label>Global CDN Players</label>
+    </customValue>
+    <customValue>
+        <fullName>Global DC Players</fullName>
+        <default>false</default>
+        <label>Global DC Players</label>
+    </customValue>
+    <customValue>
+        <fullName>Global Internet Exchanges</fullName>
+        <default>false</default>
+        <label>Global Internet Exchanges</label>
+    </customValue>
+    <customValue>
+        <fullName>Global ISP</fullName>
+        <default>false</default>
+        <label>Global ISP</label>
+    </customValue>
+    <customValue>
+        <fullName>Global TSP</fullName>
+        <default>false</default>
+        <label>Global TSP</label>
+    </customValue>
+    <customValue>
+        <fullName>Healthcare</fullName>
+        <default>false</default>
+        <label>Healthcare</label>
+    </customValue>
+    <customValue>
+        <fullName>Hi-tech and electronic</fullName>
+        <default>false</default>
+        <label>Hi-tech and electronic</label>
+    </customValue>
+    <customValue>
+        <fullName>Hospitality</fullName>
+        <default>false</default>
+        <label>Hospitality</label>
+    </customValue>
+    <customValue>
+        <fullName>Hoster &amp; Local DC Players</fullName>
+        <default>false</default>
+        <label>Hoster &amp; Local DC Players</label>
+    </customValue>
+    <customValue>
+        <fullName>Hyperscalers</fullName>
+        <default>false</default>
+        <label>Hyperscalers</label>
+    </customValue>
+    <customValue>
+        <fullName>Independent Software Vendor (ISV)</fullName>
+        <default>false</default>
+        <label>Independent Software Vendor (ISV)</label>
+    </customValue>
+    <customValue>
+        <fullName>Info Tech Services</fullName>
+        <default>false</default>
+        <label>Info Tech Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance</fullName>
+        <default>false</default>
+        <label>Insurance</label>
+    </customValue>
+    <customValue>
+        <fullName>ITES/BPO/KPO</fullName>
+        <default>false</default>
+        <label>ITES/BPO/KPO</label>
+    </customValue>
+    <customValue>
+        <fullName>Local Internet Exchange/ CDN</fullName>
+        <default>false</default>
+        <label>Local Internet Exchange/ CDN</label>
+    </customValue>
+    <customValue>
+        <fullName>Local ISP</fullName>
+        <default>false</default>
+        <label>Local ISP</label>
+    </customValue>
+    <customValue>
+        <fullName>Local TSP</fullName>
+        <default>false</default>
+        <label>Local TSP</label>
+    </customValue>
+    <customValue>
+        <fullName>Mobile Banking</fullName>
+        <default>false</default>
+        <label>Mobile Banking</label>
+    </customValue>
+    <customValue>
+        <fullName>Mobile OEM</fullName>
+        <default>false</default>
+        <label>Mobile OEM</label>
+    </customValue>
+    <customValue>
+        <fullName>NGO</fullName>
+        <default>false</default>
+        <label>NGO</label>
+    </customValue>
+    <customValue>
+        <fullName>Online Portals</fullName>
+        <default>false</default>
+        <label>Online Portals</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Financial Services</fullName>
+        <default>false</default>
+        <label>Other Financial Services</label>
+    </customValue>
+    <customValue>
+        <fullName>OTT</fullName>
+        <default>false</default>
+        <label>OTT</label>
+    </customValue>
+    <customValue>
+        <fullName>Payment Gateways</fullName>
+        <default>false</default>
+        <label>Payment Gateways</label>
+    </customValue>
+    <customValue>
+        <fullName>Pharma</fullName>
+        <default>false</default>
+        <label>Pharma</label>
+    </customValue>
+    <customValue>
+        <fullName>Print</fullName>
+        <default>false</default>
+        <label>Print</label>
+    </customValue>
+    <customValue>
+        <fullName>Public Sector Units</fullName>
+        <default>false</default>
+        <label>Public Sector Units</label>
+    </customValue>
+    <customValue>
+        <fullName>Research and consultancy</fullName>
+        <default>false</default>
+        <label>Research and consultancy</label>
+    </customValue>
+    <customValue>
+        <fullName>Retail &amp; Distribution (physical)</fullName>
+        <default>false</default>
+        <label>Retail &amp; Distribution (physical)</label>
+    </customValue>
+    <customValue>
+        <fullName>Retail Services</fullName>
+        <default>false</default>
+        <label>Retail Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Security stock trader / Broker</fullName>
+        <default>false</default>
+        <label>Security stock trader / Broker</label>
+    </customValue>
+    <customValue>
+        <fullName>State Government</fullName>
+        <default>false</default>
+        <label>State Government</label>
+    </customValue>
+    <customValue>
+        <fullName>Stock Exchanges</fullName>
+        <default>false</default>
+        <label>Stock Exchanges</label>
+    </customValue>
+    <customValue>
+        <fullName>Transport</fullName>
+        <default>false</default>
+        <label>Transport</label>
+    </customValue>
+    <customValue>
+        <fullName>Travel and Tourism</fullName>
+        <default>false</default>
+        <label>Travel and Tourism</label>
+    </customValue>
+    <customValue>
+        <fullName>Global Cloud Players</fullName>
+        <default>false</default>
+        <label>Global Cloud Players</label>
+    </customValue>
+    <customValue>
+        <fullName>Defence</fullName>
+        <default>false</default>
+        <label>Defence</label>
+    </customValue>
+    <customValue>
+        <fullName>Conglomerate</fullName>
+        <default>false</default>
+        <label>Conglomerate</label>
+    </customValue>
+    <customValue>
+        <fullName>VFX</fullName>
+        <default>false</default>
+        <label>VFX</label>
+    </customValue>
+    <customValue>
+        <fullName>Animation</fullName>
+        <default>false</default>
+        <label>Animation</label>
+    </customValue>
+    <customValue>
+        <fullName>Gaming</fullName>
+        <default>false</default>
+        <label>Gaming</label>
+    </customValue>
+    <customValue>
+        <fullName>Datacentre service providers</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Datacentre service providers</label>
+    </customValue>
+    <customValue>
+        <fullName>ISP and Telecom</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ISP and Telecom</label>
+    </customValue>
+    <customValue>
+        <fullName>Real Estate</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Real Estate</label>
+    </customValue>
+    <customValue>
+        <fullName>services</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>services</label>
+    </customValue>
+    <customValue>
+        <fullName>Banking services</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Banking services</label>
+    </customValue>
+    <customValue>
+        <fullName>Internet Exchanges</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Internet Exchanges</label>
+    </customValue>
+    <customValue>
+        <fullName>Media and entertainment</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Media and entertainment</label>
+    </customValue>
+    <customValue>
+        <fullName>Govt / PSU / NGO</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Govt / PSU / NGO</label>
+    </customValue>
+    <customValue>
+        <fullName>Public Works</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Public Works</label>
+    </customValue>
+    <customValue>
+        <fullName>Telecommunication</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Telecommunication</label>
+    </customValue>
+    <customValue>
+        <fullName>Individual</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Individual</label>
+    </customValue>
+    <customValue>
+        <fullName>No Information</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>No Information</label>
+    </customValue>
+    <customValue>
+        <fullName>Cloud service providers</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Cloud service providers</label>
+    </customValue>
+    <customValue>
+        <fullName>Pharma &amp; Healthcare</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Pharma &amp; Healthcare</label>
+    </customValue>
+    <customValue>
+        <fullName>Manufacturing</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Manufacturing</label>
+    </customValue>
+    <customValue>
+        <fullName>Named Conglomerates</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Named Conglomerates</label>
+    </customValue>
+    <customValue>
+        <fullName>ISP</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ISP</label>
+    </customValue>
+    <customValue>
+        <fullName>TSP</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TSP</label>
+    </customValue>
+    <masterLabel>Industry</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_add_delete_line_items_on_status</fullName>
+    <active>false</active>
+    <description>Restrict addition and deletion of quoteLine items on reaching customer accepted status.</description>
+    <errorConditionFormula>AND(ISPICKVAL( SBQQ__Status__c , &quot;Customer Accepted&quot;),
+
+ SBQQ__LineItemCount__c !=
+
+PRIORVALUE(SBQQ__LineItemCount__c ) )</errorConditionFormula>
+    <errorMessage>You cannot add or delete products once quote status is &apos;Customer Accepted&apos;.</errorMessage>
+</ValidationRule>

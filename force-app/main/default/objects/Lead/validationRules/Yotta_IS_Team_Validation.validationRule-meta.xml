@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Yotta_IS_Team_Validation</fullName>
+    <active>false</active>
+    <description>This doesn&apos;t seem to be functionally needed. We will review this post UAT. In any case the IS team should not be able to update the lead post transfer to Sales Team.</description>
+    <errorConditionFormula>AND(
+  NOT(ISNEW()),
+  $Profile.Name = &apos;Yotta IS Profile&apos;,
+   Owner:Queue.DeveloperName = &apos;IS_Team&apos;,
+  NOT(ISPICKVAL( Status , &apos;Deferred&apos;)),
+  NOT(ISPICKVAL( Status, &apos;No Requirement&apos;))
+)</errorConditionFormula>
+    <errorMessage>Record cannot be edited</errorMessage>
+</ValidationRule>

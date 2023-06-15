@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Unit_Check</fullName>
+    <active>true</active>
+    <description>During SCF or Renewal, can only add product of same BU as of Contract</description>
+    <errorConditionFormula>IF(
+    AND(
+        ISPICKVAL(SBQQ__Quote__r.SBQQ__Type__c, &apos;Amendment&apos;),
+        ISNEW()
+    ),
+    IF(
+        TEXT( Business_Unit__c ) != TEXT( SBQQ__Quote__r.SBQQ__Opportunity2__r.SBQQ__AmendedContract__r.Business_Unit__c ),
+        TRUE,
+        FALSE
+    ),
+    IF(
+        AND(
+            ISPICKVAL(SBQQ__Quote__r.SBQQ__Type__c, &apos;Renewal&apos;),
+            ISNEW()
+        ),
+        IF(
+            TEXT( Business_Unit__c ) != TEXT( SBQQ__Quote__r.SBQQ__Opportunity2__r.SBQQ__RenewedContract__r.Business_Unit__c ),
+            TRUE,
+            FALSE
+        ),
+        FALSE
+    )
+)</errorConditionFormula>
+    <errorMessage>You are only allowed to add products of same Business Unit</errorMessage>
+</ValidationRule>

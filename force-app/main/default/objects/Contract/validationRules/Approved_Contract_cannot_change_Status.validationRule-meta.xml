@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_Contract_cannot_change_Status</fullName>
+    <active>true</active>
+    <description>Once the Contract is approved, the user cannot change the status manually. The approved contract can be activated only through the integration.</description>
+    <errorConditionFormula>AND(
+ TEXT(PRIORVALUE(Status)) = &quot;Approved&quot;,
+ ISCHANGED(StatusCode),
+ OR(
+  ISPICKVAL(StatusCode, &quot;Draft&quot;),
+  ISPICKVAL(StatusCode, &quot;Activated&quot;)
+ ),
+ NOT( CONTAINS( $Profile.Name, &quot;Admin&quot;)),
+ Quote_Type__c  &lt;&gt; &quot;Amendment&quot;
+)</errorConditionFormula>
+    <errorMessage>Cannot change the status!</errorMessage>
+</ValidationRule>

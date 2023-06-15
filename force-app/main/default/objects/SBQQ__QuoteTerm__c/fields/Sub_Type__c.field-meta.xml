@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>About Yotta Brief</fullName>
+                <default>false</default>
+                <label>About Yotta Brief</label>
+            </value>
+            <value>
+                <fullName>Products and Services</fullName>
+                <default>false</default>
+                <label>Products and Services</label>
+            </value>
+            <value>
+                <fullName>Certifications</fullName>
+                <default>false</default>
+                <label>Certifications</label>
+            </value>
+            <value>
+                <fullName>Customers</fullName>
+                <default>false</default>
+                <label>Customers</label>
+            </value>
+            <value>
+                <fullName>About Yotta Detailed</fullName>
+                <default>false</default>
+                <label>About Yotta Detailed</label>
+            </value>
+            <value>
+                <fullName>Colocation</fullName>
+                <default>false</default>
+                <label>Colocation</label>
+            </value>
+            <value>
+                <fullName>Network &amp; Connectivity</fullName>
+                <default>false</default>
+                <label>Network &amp; Connectivity</label>
+            </value>
+            <value>
+                <fullName>Yotta Cloud</fullName>
+                <default>false</default>
+                <label>Yotta Cloud</label>
+            </value>
+            <value>
+                <fullName>Traded Goods</fullName>
+                <default>false</default>
+                <label>Traded Goods</label>
+            </value>
+            <value>
+                <fullName>Private Cloud</fullName>
+                <default>false</default>
+                <label>Private Cloud</label>
+            </value>
+            <value>
+                <fullName>Federated Cloud</fullName>
+                <default>false</default>
+                <label>Federated Cloud</label>
+            </value>
+            <value>
+                <fullName>IT Management</fullName>
+                <default>false</default>
+                <label>IT Management</label>
+            </value>
+            <value>
+                <fullName>Security Services</fullName>
+                <default>false</default>
+                <label>Security Services</label>
+            </value>
+            <value>
+                <fullName>Yotta Smart Solutions</fullName>
+                <default>false</default>
+                <label>Yotta Smart Solutions</label>
+            </value>
+            <value>
+                <fullName>Power Utility Charges</fullName>
+                <default>false</default>
+                <label>Power Utility Charges</label>
+            </value>
+            <value>
+                <fullName>Temporary Storage in Service Provider Stores / Staging Area</fullName>
+                <default>false</default>
+                <label>Temporary Storage in Service Provider Stores / Staging Area</label>
+            </value>
+            <value>
+                <fullName>Migration Services and Charges</fullName>
+                <default>false</default>
+                <label>Migration Services and Charges</label>
+            </value>
+            <value>
+                <fullName>Internet Bandwidth usage / usage-based Billing</fullName>
+                <default>false</default>
+                <label>Internet Bandwidth usage / usage-based Billing</label>
+            </value>
+            <value>
+                <fullName>Inframanage/Inframonitor Services</fullName>
+                <default>false</default>
+                <label>Inframanage/Inframonitor Services</label>
+            </value>
+            <value>
+                <fullName>Third Party Cloud Services</fullName>
+                <default>false</default>
+                <label>Third Party Cloud Services</label>
+            </value>
+            <value>
+                <fullName>Equipment Sales</fullName>
+                <default>false</default>
+                <label>Equipment Sales</label>
+            </value>
+            <value>
+                <fullName>No transfer of Equipment Ownership</fullName>
+                <default>false</default>
+                <label>No transfer of Equipment Ownership</label>
+            </value>
+            <value>
+                <fullName>Pre-scheduled Tests / Activities related Services</fullName>
+                <default>false</default>
+                <label>Pre-scheduled Tests / Activities related Services</label>
+            </value>
+            <value>
+                <fullName>End User License Term</fullName>
+                <default>false</default>
+                <label>End User License Term</label>
+            </value>
+            <value>
+                <fullName>General Term</fullName>
+                <default>false</default>
+                <label>General Term</label>
+            </value>
+            <value>
+                <fullName>Cancellation Term</fullName>
+                <default>false</default>
+                <label>Cancellation Term</label>
+            </value>
+            <value>
+                <fullName>Termination Term</fullName>
+                <default>false</default>
+                <label>Termination Term</label>
+            </value>
+            <value>
+                <fullName>Intra and Inter Rack Cabling</fullName>
+                <default>false</default>
+                <label>Intra and Inter Rack Cabling</label>
+            </value>
+            <value>
+                <fullName>Fitout Material/Services</fullName>
+                <default>false</default>
+                <label>Fitout Material/Services</label>
+            </value>
+            <value>
+                <fullName>IT Management Services</fullName>
+                <default>false</default>
+                <label>IT Management Services</label>
+            </value>
+            <value>
+                <fullName>Payment Terms</fullName>
+                <default>false</default>
+                <label>Payment Terms</label>
+            </value>
+            <value>
+                <fullName>POC Term</fullName>
+                <default>false</default>
+                <label>POC Term</label>
+            </value>
+            <value>
+                <fullName>Graphics Workstation Anywhere</fullName>
+                <default>false</default>
+                <label>Graphics Workstation Anywhere</label>
+            </value>
+            <value>
+                <fullName>Storage as a Service</fullName>
+                <default>false</default>
+                <label>Storage as a Service</label>
+            </value>
+            <value>
+                <fullName>Virtual Desktop as a Service</fullName>
+                <default>false</default>
+                <label>Virtual Desktop as a Service</label>
+            </value>
+            <value>
+                <fullName>Managed Access Port</fullName>
+                <default>false</default>
+                <label>Managed Access Port</label>
+            </value>
+            <value>
+                <fullName>Network Usage Validation Term</fullName>
+                <default>false</default>
+                <label>Network Usage Validation Term</label>
+            </value>
+            <value>
+                <fullName>YottaSafe Mega Savings Offer Term</fullName>
+                <default>false</default>
+                <label>YottaSafe Mega Savings Offer Term</label>
+            </value>
+            <value>
+                <fullName>Deactivation Terms</fullName>
+                <default>false</default>
+                <label>Deactivation Terms</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>General Terms</controllingFieldValue>
+            <valueName>General Term</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancellation Terms</controllingFieldValue>
+            <valueName>Cancellation Term</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Termination Terms</controllingFieldValue>
+            <valueName>Termination Term</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>Power Utility Charges</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>Temporary Storage in Service Provider Stores / Staging Area</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>Migration Services and Charges</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>Internet Bandwidth usage / usage-based Billing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>Inframanage/Inframonitor Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>Third Party Cloud Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>Equipment Sales</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>No transfer of Equipment Ownership</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>Pre-scheduled Tests / Activities related Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>End User License Term</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>Intra and Inter Rack Cabling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>Fitout Material/Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>IT Management Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>Network Usage Validation Term</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Terms</controllingFieldValue>
+            <valueName>YottaSafe Mega Savings Offer Term</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>About Yotta Brief</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Products and Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Certifications</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Customers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>About Yotta Detailed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>Colocation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>Network &amp; Connectivity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>Yotta Cloud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>Traded Goods</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>Private Cloud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>Federated Cloud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>IT Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>Security Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>Yotta Smart Solutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>Graphics Workstation Anywhere</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>Storage as a Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>Virtual Desktop as a Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annexure</controllingFieldValue>
+            <valueName>Managed Access Port</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payment Terms</controllingFieldValue>
+            <valueName>Payment Terms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>POC Terms</controllingFieldValue>
+            <valueName>POC Term</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deactivation Terms</controllingFieldValue>
+            <valueName>Deactivation Terms</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

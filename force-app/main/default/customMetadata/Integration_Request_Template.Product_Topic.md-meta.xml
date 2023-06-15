@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Product Topic Create</label>
+    <protected>false</protected>
+    <values>
+        <field>All_Fields__c</field>
+        <value xsi:type="xsd:string">id, name,product_code__c, family, product_line__c, unit_of_measurement__c, isactive, description, business_unit__c, online_sale__c, hsn_sac_code__c, delivery_time_days__c, sale_type__c,location_availability__c,sbqq__taxcode__c,sbqq__component__c,sale_type_label__c,sap_product__c,product_family_text__c,product_line_text__c,billing_to_be_done_online__c,cI_mapping_required__c, product_line_for_pl__c,product_bu__c</value>
+    </values>
+    <values>
+        <field>Fields_to_Trigger_Integration__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Json_Field_Names__c</field>
+        <value xsi:type="xsd:string">id,name,product_code__c,family,product_line__c,unit_of_measurement__c,isactive,description,business_unit__c,online_sale__c,hsn_sac_code__c,delivery_time_days__c,sale_type__c,location_availability__c,sbqq__taxcode__c,sbqq__component__c,sale_type_label__c,sap_product__c,product_family_text__c,product_line_text__c,billing_to_be_done_online__c,cI_mapping_required__c, product_line_for_pl__c,product_bu__c</value>
+    </values>
+    <values>
+        <field>Object_Type__c</field>
+        <value xsi:type="xsd:string">Product2</value>
+    </values>
+    <values>
+        <field>Operation__c</field>
+        <value xsi:type="xsd:string">Create</value>
+    </values>
+    <values>
+        <field>Query_Field__c</field>
+        <value xsi:type="xsd:string">Id</value>
+    </values>
+    <values>
+        <field>Request_Envelope__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>SOQL_Query__c</field>
+        <value xsi:type="xsd:string">Select id, name, product_code__c, family, product_line__c, unit_of_measurement__c, isactive, description, business_unit__c, online_sale__c, hsn_sac_code__c, delivery_time_days__c, sale_type__c, location_availability__c,sbqq__taxcode__c,sbqq__component__c,sale_type_label__c ,sap_product__c,product_family_text__c,product_line_text__c,billing_to_be_done_online__c,cI_mapping_required__c, product_line_for_pl__c,product_bu__c From Product2</value>
+    </values>
+    <values>
+        <field>Static_JSON_Data__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

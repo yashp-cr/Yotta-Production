@@ -1,0 +1,76 @@
+<apex:component >
+    
+    <p>
+        <span style="color:#f4a142; font-size:16px;" >
+            <b>General Terms</b></span>
+    </p>
+    <ol>
+        <li>Prices of Goods / Services are exclusive of all taxes, duties, entry tax, cess, levies, imposts, fees or other charges whatsoever, all of which shall be paid by the Customer.
+        </li>
+        <li>The expected delivery period of any good / service, as mentioned in service order form (SOF) starts from the date the SOF is signed by the customer and accepted by Service Provider.
+        </li>
+        <li>Bill date / Bill start date for each good /service in a SOF shall be the actual date of delivery of that good / service, irrespective of the actual usage of good /services by the customer and irrespective of whether all goods / services under the SOF have been delivered or not.
+        </li>
+        <li>Any future changes in the contract as may be required by the customer (like upgrade, downgrade, service cancellation / termination, name change etc.) need to be notified to clientservices@yotta.com
+            
+        </li>
+    </ol>
+    <p>
+        <span style="color:#f4a142; font-size:16px;" >
+            <b>Invoicing Payment Terms</b></span>
+    </p>
+    
+    <ol>
+        <li>Advance Payment (payable along with SOF, without formal Invoice. No Credit period applicable)
+            <ul style="list-style-type:disc;">
+                <li>100% of One Time Charge</li>
+                <li>1 Month equivalent of MRC</li>
+            </ul>
+        </li>
+        <li>Invoicing frequency:
+            <ul style="list-style-type:disc;">
+                <li>One Time Service Charges: Upon delivery of service
+                </li>
+                <li>Recurring Service Charges:
+                </li>
+            </ul>
+        </li>
+        <li>First Invoice: Upon delivery of service
+            <ul style="list-style-type:disc;"> 
+                <li>Later invoices: Monthly in advance
+                </li>
+                <li>Usage based Charges: Monthly in arrears
+                </li>
+            </ul>
+        </li>
+        
+        <li>Credit Period for Service Invoice Payments (from Invoice Date) is 15 days. Credit Period is not applicable for Advance Payments.
+        </li>
+        <li>Interest @ 1.50 will be calculated monthly on late payments applied post due date along with Taxes as applicable.
+        </li>
+        <li>In case of non-payment of dues against any invoice within 30 days of the payment becoming due, Service Provider (or TPC, in case of TPC services subscribed through Service Provider) holds the right to terminate the service (in case of services) and the right to repossess / sell / dispose off the equipment (in case of sale of equipment) at customer's expense, without being liable to prosecution or for damages. In case of such termination, customer has to pay all due charges / interests / penalties, as applicable for restoration of service / re-possession of equipment
+            
+        </li>
+    </ol>
+    
+    <p>
+        <span style="color:#f4a142; font-size:16px;" >
+            <b>Cancellation Term</b> </span></p> 
+    <ol type="i">
+        <li>Customer cannot cancel a SOF / service / sale of equipment (before services / equipment delivered and billed by service provider) once it is signed by customer and accepted by Service Provider, else cancellation fee is applicable.
+        </li>
+        <li>Payment Type 1 Services
+            <ul style="list-style-type:disc;">
+                <li>100%of One time charges of contract period</li>
+                <li>50%of Recurring charges of contract period</li>
+            </ul>
+        </li>
+        <li>Payment Type 2 Services
+            <ul style="list-style-type:disc;">
+                <li>50% of One time charges of contract period</li>
+                <li>25% of Recurring charges of contract period Equipment Sale</li>
+                <li>100% of Equipment Sale value</li>
+            </ul>
+        </li>
+    </ol>
+</apex:component>

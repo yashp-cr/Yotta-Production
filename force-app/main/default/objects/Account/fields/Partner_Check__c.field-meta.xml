@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Check__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES(PartnerType__c, &quot;Alliance Partner&quot;), &quot;Alliance Partner&quot;, NULL) + BR() +
+IF(INCLUDES(PartnerType__c, &quot;Reseller Partner&quot;), &quot;Reseller Partner&quot;, NULL) + BR() +
+IF(INCLUDES(PartnerType__c, &quot;Technology Partner&quot;), &quot;Technology Partner&quot;, NULL) + BR() +
+IF(INCLUDES(PartnerType__c, &quot;Consultant Partner&quot;), &quot;Consultant Partner&quot;, NULL) + BR() +
+IF(INCLUDES(PartnerType__c, &quot;Distributor Partner-Commission&quot;), &quot;Distributor Partner-Commission&quot;, NULL) + BR() +
+IF(INCLUDES(PartnerType__c, &quot;Distributor Partner-TP&quot;), &quot;Distributor Partner-TP&quot;, NULL) +
+IF(INCLUDES(PartnerType__c, &quot;Business Partner&quot;), &quot;Business Partner&quot;, NULL) +
+IF(INCLUDES(PartnerType__c, &quot;ERP Partner-Commission&quot;), &quot;ERP Partner-Commission&quot;, NULL) +
+IF(INCLUDES(PartnerType__c, &quot;ERP Partner-TP&quot;), &quot;ERP Partner-TP&quot;, NULL) +
+IF(INCLUDES(PartnerType__c, &quot;ERP Technology Partner B2B&quot;), &quot;ERP Technology Partner B2B&quot;, NULL) +
+IF(INCLUDES(PartnerType__c, &quot;YIC Partner&quot;), &quot;YIC Partner&quot;, NULL)+
+IF(INCLUDES(PartnerType__c, &quot;Government Partner - TP&quot;), &quot;Government Partner - TP&quot;, NULL) +
+IF(INCLUDES(PartnerType__c, &quot;Government Partner - Commission&quot;), &quot;Government Partner - Commission&quot;, NULL) +
+IF(INCLUDES(PartnerType__c, &quot;Government Partner - Technology B2B&quot;), &quot;Government Partner - Technology B2B&quot;, NULL)</formula>
+    <label>Partner Check</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Partner_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Partner Account Sharing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Yotta_Sales_Head</roleAndSubordinatesInternal>
+        </sharedTo>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <criteriaItems>
+            <field>Partner_Source__c</field>
+            <operation>contains</operation>
+            <value>Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Secondary_Source__c</field>
+            <operation>contains</operation>
+            <value>Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Tertiary_Source__c</field>
+            <operation>contains</operation>
+            <value>Partner</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Account_Sharing_to_IS_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <label>Account Sharing to IS Team</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Yotta_IS_Head</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Yotta_Management</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Account_Sharing_to_Sales_Coordinator</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <label>Account Sharing to Sales Coordinator</label>
+        <sharedTo>
+            <role>Sales_Coordinator</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Yotta_Management</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Yotta_BD_Owner_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>BD Owner Sharing with Sales User</description>
+        <label>Yotta BD Owner Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>Yotta_Sales_Head</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Yotta_BD_Team</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

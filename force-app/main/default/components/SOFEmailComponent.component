@@ -1,0 +1,42 @@
+<apex:component controller="SOFEmailComponentController" access="global">
+    <apex:attribute type="Id" name="getIdAttribute" description="Record ID" assignTo="{!recId}" />
+    <body>
+        <p style="text-align: right;"> 
+            <apex:outputText value=" Date:{0,date,dd-MM-yyyy}">
+                <apex:param value="{!NOW()}" />
+            </apex:outputText>
+        </p>
+        <p>To,</p>
+        <p>{!contract.Account.Name}</p>
+        <p>{!contract.Bill_To_Address__r.AddressLine1__c},{!contract.Bill_To_Address__r.AddressLine2__c},{!contract.Bill_To_Address__r.City__c}</p>
+        <p>{!contract.Bill_To_Address__r.Country__c}</p>
+        <p>Subject: Business Proposal for {!contract.SBQQ__Opportunity__r.Name}</p><br/>
+        <p>Dear {!contract.Customer_Authorised_Signatory__r.Name},</p><br/>
+        
+        <p style="text-align: justify;">
+            We thank you for giving Yotta Infrastructure Solutions LLP the opportunity to propose a
+            solution for your Data Center, communication, IT and IT management Services business
+            needs. After an in-depth analysis of your requirements, we have prepared a comprehensive
+            communications solution, tailor-made for your organization. We are including a proposal for
+            your consideration.
+        </p>
+        <p style="text-align: justify;">
+            Our portfolio comprises of leading-edge products and services. These form the building
+            blocks of the innovative solutions we construct. With us, you can be assured of platinum-
+            grade service, world-class data center, IT infrastructure, and management services along
+            with superior domain expertise.
+        </p>
+        
+        <p style="text-align: justify;">
+            If you have any queries or require any clarifications on the enclosed proposal, please do
+            contact us.
+        </p>
+        
+        <p style="text-align: justify;">We look forward to doing business with you.</p><br/><br/>
+        
+        <p>Warm Regards,</p>
+        <p>For Yotta Infrastructure Solutions LLP</p>
+        <p>{!contract.Owner.Name} </p>
+        <p>{!contract.Owner.Phone} </p>
+    </body>
+</apex:component>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Infrastructure_Information_Section_VR</fullName>
+    <active>true</active>
+    <errorConditionFormula>(ISPICKVAL(Is_the_Org_running_a_captive_datacentre__c, &quot;Yes&quot;) &amp;&amp;
+  ( ISBLANK(If_yes_datacentre_is_in_which_city__c) ||
+    ISBLANK(if_yes_how_many_racks_in_datacenter__c )
+  )
+) ||
+(ISPICKVAL(Is_the_Org_colocating_in_3rd_party_DC__c, &quot;Yes&quot;) &amp;&amp;
+  ( ISBLANK(if_yes_who_is_service_provider__c) ||
+    ISBLANK(if_yes_service_provide_is_in_which_city__c) ||
+    ISBLANK(if_yes_how_many_racks__c)
+  )
+) ||
+(ISPICKVAL(Is_org_running_its_app_on_Public_Cloud__c, &quot;Yes&quot;) &amp;&amp;
+  ( ISBLANK(if_yes_which_provider__c) ||
+    ISBLANK(if_yes_how_many_VMs__c)
+  )
+)</errorConditionFormula>
+    <errorMessage>Please provide more details in the related fields if any of the field is selected as &quot;Yes&quot; in section &quot;Infrastructure Information&quot;.</errorMessage>
+</ValidationRule>

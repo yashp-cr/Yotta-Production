@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Need_CXO_Level_Contact_on_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+ ISPICKVAL(StageName,&quot;Proposal/Price Quote&quot;),
+				ISCHANGED(StageName),
+				 IF(Account.Count_Of_Tier_1_Authority_Level__c &lt; 1, True, FALSE )
+
+)</errorConditionFormula>
+    <errorMessage>Need a CXO Level of Contact in the Account</errorMessage>
+</ValidationRule>

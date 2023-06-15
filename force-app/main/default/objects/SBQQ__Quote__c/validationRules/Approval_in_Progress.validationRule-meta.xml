@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_in_Progress</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISCHANGED( Submit_for_Approval__c ),
+ Submit_for_Approval__c,
+ OR(
+  ISPICKVAL( Technical_Approval_Status__c , &quot;Submitted for Approval&quot;),
+  ISPICKVAL( Commercial_Approval_Status__c , &quot;Submitted for Approval&quot;),
+  ISPICKVAL( Term_Condition_Approval_Status__c , &quot;Submitted for Approval&quot;)
+ )
+)</errorConditionFormula>
+    <errorMessage>Approval is already in progress</errorMessage>
+</ValidationRule>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NonOwner_Cant_change_contact_field</fullName>
+    <active>true</active>
+    <description>Some field can only be updated by the Owner</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+OR(
+ISCHANGED(OwnerId),
+NOT(ISBLANK(PRIORVALUE(FirstName))) &amp;&amp; ISCHANGED(FirstName),
+NOT(ISBLANK(PRIORVALUE(LastName))) &amp;&amp; ISCHANGED(LastName),
+NOT(ISBLANK(PRIORVALUE(MobilePhone))) &amp;&amp; ISCHANGED(MobilePhone),
+NOT(ISBLANK(PRIORVALUE(Email))) &amp;&amp; ISCHANGED(Email),
+NOT(ISBLANK(PRIORVALUE(Phone))) &amp;&amp; ISCHANGED(Phone),
+ISCHANGED(DoNotCall),
+ISCHANGED(HasOptedOutOfEmail),
+NOT(ISBLANK(PRIORVALUE(Department))) &amp;&amp; ISCHANGED(Department),
+NOT(ISBLANK(PRIORVALUE(ContactType__c))) &amp;&amp; ISCHANGED(ContactType__c),
+NOT(ISBLANK(PRIORVALUE(Birthdate))) &amp;&amp; ISCHANGED(Birthdate),
+NOT(ISBLANK(TEXT(PRIORVALUE(Status__c)))) &amp;&amp; ISCHANGED(Status__c),
+NOT(ISBLANK(PRIORVALUE(Description))) &amp;&amp; ISCHANGED(Description),
+NOT(ISBLANK(PRIORVALUE(Title))) &amp;&amp; ISCHANGED(Title)
+),
+$User.Id &lt;&gt; OwnerId,
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+$Profile.Name &lt;&gt; &apos;Yotta Integration Admin Profile&apos;,
+$UserRole.Name &lt;&gt; &apos;Sales Coordinator&apos;
+)</errorConditionFormula>
+    <errorMessage>Please contact Owner for doing any Contact Updates</errorMessage>
+</ValidationRule>

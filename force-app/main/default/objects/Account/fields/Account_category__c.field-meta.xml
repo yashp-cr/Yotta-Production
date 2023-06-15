@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_category__c</fullName>
+    <externalId>false</externalId>
+    <label>Account category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Named Account</fullName>
+                <default>false</default>
+                <label>Named Account</label>
+            </value>
+            <value>
+                <fullName>Commercial Account</fullName>
+                <default>true</default>
+                <label>Commercial Account</label>
+            </value>
+            <value>
+                <fullName>Hoster Account - Do not Sell</fullName>
+                <default>false</default>
+                <label>Hoster Account - Do not Sell</label>
+            </value>
+            <value>
+                <fullName>PSU Account</fullName>
+                <default>false</default>
+                <label>PSU Account</label>
+            </value>
+            <value>
+                <fullName>GOVT Account</fullName>
+                <default>false</default>
+                <label>Govt Account</label>
+            </value>
+            <value>
+                <fullName>Partner Account</fullName>
+                <default>false</default>
+                <label>Partner Account</label>
+            </value>
+            <value>
+                <fullName>Business Development Account</fullName>
+                <default>false</default>
+                <label>Business Development Account</label>
+            </value>
+            <value>
+                <fullName>Global Account</fullName>
+                <default>false</default>
+                <label>Global Account</label>
+            </value>
+            <value>
+                <fullName>HyperScaler Account</fullName>
+                <default>false</default>
+                <label>HyperScaler Account</label>
+            </value>
+            <value>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Coverage</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

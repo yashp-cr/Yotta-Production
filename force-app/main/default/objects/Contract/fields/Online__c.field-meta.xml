@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Online__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>[GG]This will be updated by Cloud Portal for the Contracts created from Cloud Portal.</description>
+    <externalId>false</externalId>
+    <label>Online</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

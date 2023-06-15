@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SCF_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>SCF Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+                <label>Cancellation</label>
+            </value>
+            <value>
+                <fullName>Deactivation</fullName>
+                <default>false</default>
+                <label>Deactivation</label>
+            </value>
+            <value>
+                <fullName>Facility Change</fullName>
+                <default>false</default>
+                <label>Facility Change</label>
+            </value>
+            <value>
+                <fullName>New Line</fullName>
+                <default>false</default>
+                <label>New Line</label>
+            </value>
+            <value>
+                <fullName>Price Change</fullName>
+                <default>false</default>
+                <label>Price Change</label>
+            </value>
+            <value>
+                <fullName>Transfer of Service</fullName>
+                <default>false</default>
+                <label>Transfer of Service</label>
+            </value>
+            <value>
+                <fullName>Upgrade/Downgrade</fullName>
+                <default>false</default>
+                <label>Upgrade/Downgrade</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

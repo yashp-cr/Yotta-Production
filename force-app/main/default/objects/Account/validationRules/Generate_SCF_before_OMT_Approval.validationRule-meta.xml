@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_SCF_before_OMT_Approval</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(KYC_Approval_Status__c , &apos;Approved&apos;) &amp;&amp;
+Submit_for_KYC_Approval__c &amp;&amp;
+ISCHANGED(Submit_for_KYC_Approval__c ) &amp;&amp;
+!Is_SCF_Generated__c</errorConditionFormula>
+    <errorMessage>Generate SCF before OMT Approval.</errorMessage>
+</ValidationRule>

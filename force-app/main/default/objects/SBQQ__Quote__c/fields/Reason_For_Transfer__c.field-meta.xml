@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_For_Transfer__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason For Transfer</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>SCF_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Amalgamation or Merger</fullName>
+                <default>false</default>
+                <label>Amalgamation or Merger</label>
+            </value>
+            <value>
+                <fullName>Business Transfer</fullName>
+                <default>false</default>
+                <label>Business Transfer</label>
+            </value>
+            <value>
+                <fullName>Voluntary Transfer</fullName>
+                <default>false</default>
+                <label>Voluntary Transfer</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Transfer of Service</controllingFieldValue>
+            <valueName>Amalgamation or Merger</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transfer of Service</controllingFieldValue>
+            <valueName>Business Transfer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transfer of Service</controllingFieldValue>
+            <valueName>Voluntary Transfer</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

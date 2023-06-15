@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllOpportunities</fullName>
+    <columns>OpportunityId__c</columns>
+    <columns>Region__c</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Opportunity_ACV__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.PROBABILITY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>PrimarySource__c</columns>
+    <columns>PartnerPrimary__c</columns>
+    <columns>Primary_Campaign_Source__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Opportunities</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Yotta_Management</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

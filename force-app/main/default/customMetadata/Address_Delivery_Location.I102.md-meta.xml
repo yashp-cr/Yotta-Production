@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>YIS TB2 - Data Center</label>
+    <protected>false</protected>
+    <values>
+        <field>Address__c</field>
+        <value xsi:type="xsd:string">204, C Wing, 2nd Floor, Reliable Tech Park,
+Thane-Belapur Road, Airoli,
+Navi Mumbai, Maharashtra 400708
+India</value>
+    </values>
+    <values>
+        <field>DeliveryLocation__c</field>
+        <value xsi:type="xsd:string">YIS TB2 - Data Center</value>
+    </values>
+    <values>
+        <field>State__c</field>
+        <value xsi:type="xsd:string">Maharashtra</value>
+    </values>
+</CustomMetadata>

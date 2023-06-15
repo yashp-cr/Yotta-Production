@@ -1,0 +1,11 @@
+<apex:component >
+    _____________________________________________________________________________________________________________________________________________________________
+    <apex:panelGrid columns="2" width="100%" style="font-size: 8px;">
+        <apex:outputText value="Corporate Address: Yotta Data Services Private Limited" id="theFirst"/><br/>
+        <apex:outputText value="5th Floor, Scorpio Building," id="theSecond"/><br/>
+        <apex:outputText value="Hiranandani Gardens, Powai, Mumbai 400076" id="theThird"/><br/><br/>
+        
+        <apex:outputText value="Proprietary and Confidential" id="theFourth"/>
+    </apex:panelGrid> 
+    
+</apex:component>

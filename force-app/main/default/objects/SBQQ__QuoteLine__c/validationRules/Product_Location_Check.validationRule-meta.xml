@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Location_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(!CONTAINS(  SBQQ__Product__r.Location_Avalibility_for_Validation__c  , TEXT(Location__c)) &amp;&amp;
+ !ISBLANK(TEXT(Location__c)),   OR(ISPICKVAL( SBQQ__Quote__r.SBQQ__Type__c, &apos;Quote&apos;),ISPICKVAL(SCF_Type__c, &apos;New Line&apos;)))</errorConditionFormula>
+    <errorDisplayField>SBQQ__Discount__c</errorDisplayField>
+    <errorMessage>The Product is not available on the selected location.</errorMessage>
+</ValidationRule>

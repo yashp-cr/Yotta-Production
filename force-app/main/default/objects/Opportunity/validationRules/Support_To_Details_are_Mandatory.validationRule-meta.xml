@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_To_Details_are_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISBLANK(SupportTo__c),
+  ISBLANK(SupporttoCustomerName__c),
+  NOT(BillToSameasSupportTo__c),
+  IF( OR( NOT( ISBLANK( SBQQ__AmendedContract__c )), NOT( ISBLANK( SBQQ__RenewedContract__c ))),
+    NOT(ISNEW()),
+    TRUE
+  )
+)</errorConditionFormula>
+    <errorMessage>Support To details are Mandatory</errorMessage>
+</ValidationRule>

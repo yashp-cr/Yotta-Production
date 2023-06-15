@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Period_cannot_be_greater_than_1</fullName>
+    <active>true</active>
+    <errorConditionFormula>(IF( Contract_Tenure_Year__c &gt; 0, Contract_Tenure_Year__c * 12 , 0)
++
+IF( Contract_Tenure_Month__c &gt; 0, Contract_Tenure_Month__c , 0)
++
+IF( Contract_Tenure_Days__c &gt; 0, Contract_Tenure_Days__c / 30 , 0)) &gt; 12 &amp;&amp; POC__c  = &apos;Yes&apos;</errorConditionFormula>
+    <errorMessage>Contract Period cannot be more than a year in case of POC.</errorMessage>
+</ValidationRule>

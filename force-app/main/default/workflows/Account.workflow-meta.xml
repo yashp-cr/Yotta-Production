@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_Alert_to_Account_Owner_on_KYC_approval_Rejection</fullName>
+        <description>Email Alert to Account Owner on KYC approval Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Account_KYC_Approval_Reject</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_to_Account_Owner_on_KYC_approval_Success</fullName>
+        <description>Email Alert to Account Owner on KYC approval Success</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Account_KYC_Approval_Success</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_to_Account_Owner_on_OMT_approval_Rejection</fullName>
+        <description>Email Alert to Account Owner on OMT approval Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/OMT_Rejection_on_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_to_Account_Owner_on_OMT_approval_Success</fullName>
+        <description>Email Alert to Account Owner on OMT approval Success</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/OMT_Approval_on_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Flow_Debugger</fullName>
+        <description>Flow Debugger</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sadmin@yotta.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Flow_Debugger</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Check_Send_To_API_Layer_Account</fullName>
+        <field>Send_To_API_Layer__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Send To API Layer - Account</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Make_Remarks_blank_after_OMT_Approved</fullName>
+        <field>Remarks__c</field>
+        <name>Make Remarks blank after OMT Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Name_Update</fullName>
+        <field>Name</field>
+        <formula>New_Customer_Name__c</formula>
+        <name>Name Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Name_Update_on_Account</fullName>
+        <field>Name</field>
+        <formula>New_Customer_Name__c</formula>
+        <name>Name Update on Account</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>New_Account_Name</fullName>
+        <field>New_Customer_Name__c</field>
+        <name>New Account Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>New_Name</fullName>
+        <field>New_Customer_Name__c</field>
+        <name>New Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OMT_Approval_Field_Update</fullName>
+        <field>OMT_Approval_Status__c</field>
+        <literalValue>Not - Submitted</literalValue>
+        <name>OMT Approval Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OMT_Approved</fullName>
+        <field>OMT_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>OMT Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OMT_Rejection</fullName>
+        <field>OMT_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>OMT Rejection</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Is_SCF_Generated</fullName>
+        <field>Is_SCF_Generated__c</field>
+        <literalValue>0</literalValue>
+        <name>Reset Is SCF Generated</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Submit_for_Approval</fullName>
+        <field>Submit_for_KYC_Approval__c</field>
+        <literalValue>0</literalValue>
+        <name>Reset Submit for  Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Submit_for_KYC_Approval</fullName>
+        <field>Submit_for_KYC_Approval__c</field>
+        <literalValue>0</literalValue>
+        <name>Reset Submit for KYC Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SCF_Effective_Date</fullName>
+        <field>Name_Change_Effective_Date__c</field>
+        <name>SCF Effective Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status</fullName>
+        <field>OMT_Approval_Status__c</field>
+        <literalValue>Submitted for Approval</literalValue>
+        <name>Update Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_KYC_Approval_Status_Approved</fullName>
+        <field>KYC_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update KYC Approval Status - Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_KYC_Approval_Status_In_Process</fullName>
+        <field>KYC_Approval_Status__c</field>
+        <literalValue>In-Process</literalValue>
+        <name>Update KYC Approval Status - In Process</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_KYC_Approval_Status_Not_Submitted</fullName>
+        <field>KYC_Approval_Status__c</field>
+        <literalValue>Not-Submitted</literalValue>
+        <name>Update KYC Approval Status Not-Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_KYC_Approval_Status_Rejected</fullName>
+        <field>KYC_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update KYC Approval Status - Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_OMT_Approval_Status_Not_Submitted</fullName>
+        <field>OMT_Approval_Status__c</field>
+        <literalValue>Not - Submitted</literalValue>
+        <name>Update OMT Approval Status Not-Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Signed_SCF_Uploaded_False</fullName>
+        <description>Signed SCF Uploaded? is marked as False here so that validation will fire during the next SCF</description>
+        <field>Signed_SCF_Uploaded__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Signed SCF Uploaded? False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>OMT Approval</fullName>
+        <actions>
+            <name>OMT_Approval_Field_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Deactivated, Old Logic, handled in another workflow</description>
+        <formula>AND( ISBLANK(PRIORVALUE(New_Customer_Name__c )), NOT(ISBLANK(New_Customer_Name__c )) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>OMT Approved%3F%28Migrated%29</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.OMT_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Make_Remarks_blank_after_OMT_Approved</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Name_Update_on_Account</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>New_Account_Name</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>OMT_Approval_Field_Update</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Account.Name_Change_Effective_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

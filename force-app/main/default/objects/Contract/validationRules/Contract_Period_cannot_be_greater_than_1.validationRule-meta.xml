@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Period_cannot_be_greater_than_1</fullName>
+    <active>true</active>
+    <errorConditionFormula>POC__c = &apos;Yes&apos; &amp;&amp;   ContractTerm &gt; 12</errorConditionFormula>
+    <errorMessage>Contract Period cannot be more than a year in case of POC.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Please_select_software_used_for_GWS__c</fullName>
+    <externalId>false</externalId>
+    <label>Software used for Graphic Workstation?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AutoCAD</fullName>
+                <default>false</default>
+                <label>AutoCAD</label>
+            </value>
+            <value>
+                <fullName>SolidWorks</fullName>
+                <default>false</default>
+                <label>SolidWorks</label>
+            </value>
+            <value>
+                <fullName>Ansys</fullName>
+                <default>false</default>
+                <label>Ansys</label>
+            </value>
+            <value>
+                <fullName>Autodesk Maya</fullName>
+                <default>false</default>
+                <label>Autodesk Maya</label>
+            </value>
+            <value>
+                <fullName>Nuke</fullName>
+                <default>false</default>
+                <label>Nuke</label>
+            </value>
+            <value>
+                <fullName>Foundry</fullName>
+                <default>false</default>
+                <label>Foundry</label>
+            </value>
+            <value>
+                <fullName>Siemens Annex</fullName>
+                <default>false</default>
+                <label>Siemens Annex</label>
+            </value>
+            <value>
+                <fullName>V-ray</fullName>
+                <default>false</default>
+                <label>V-ray</label>
+            </value>
+            <value>
+                <fullName>Unity</fullName>
+                <default>false</default>
+                <label>Unity</label>
+            </value>
+            <value>
+                <fullName>Autodesk Arnold</fullName>
+                <default>false</default>
+                <label>Autodesk Arnold</label>
+            </value>
+            <value>
+                <fullName>Autodesk Flame</fullName>
+                <default>false</default>
+                <label>Autodesk Flame</label>
+            </value>
+            <value>
+                <fullName>Substance</fullName>
+                <default>false</default>
+                <label>Substance</label>
+            </value>
+            <value>
+                <fullName>Catia</fullName>
+                <default>false</default>
+                <label>Catia</label>
+            </value>
+            <value>
+                <fullName>PTC Creo</fullName>
+                <default>false</default>
+                <label>PTC Creo</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

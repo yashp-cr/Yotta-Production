@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_RC_Advance_Payment_Term__c</fullName>
+    <externalId>false</externalId>
+    <label>New RC Advance Payment Term</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Monthly in Advance</fullName>
+                <default>false</default>
+                <label>Monthly in Advance</label>
+            </value>
+            <value>
+                <fullName>Monthly in Arrears</fullName>
+                <default>false</default>
+                <label>Monthly in Arrears</label>
+            </value>
+            <value>
+                <fullName>Quarterly in Advance</fullName>
+                <default>false</default>
+                <label>Quarterly in Advance</label>
+            </value>
+            <value>
+                <fullName>Quarterly in Arrears</fullName>
+                <default>false</default>
+                <label>Quarterly in Arrears</label>
+            </value>
+            <value>
+                <fullName>Half yearly in Advance</fullName>
+                <default>false</default>
+                <label>Half yearly in Advance</label>
+            </value>
+            <value>
+                <fullName>Half yearly in Arrears</fullName>
+                <default>false</default>
+                <label>Half yearly in Arrears</label>
+            </value>
+            <value>
+                <fullName>Yearly in Advance</fullName>
+                <default>false</default>
+                <label>Yearly in Advance</label>
+            </value>
+            <value>
+                <fullName>Yearly in Arrears</fullName>
+                <default>false</default>
+                <label>Yearly in Arrears</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

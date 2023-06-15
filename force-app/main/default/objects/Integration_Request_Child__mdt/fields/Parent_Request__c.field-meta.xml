@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Request__c</fullName>
+    <description>To be made required later</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Parent Request</label>
+    <referenceTo>Integration_Request_Template__mdt</referenceTo>
+    <relationshipLabel>Integration Request Child</relationshipLabel>
+    <relationshipName>Integration_Request_Child</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

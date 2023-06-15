@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Type_is_not_blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( NOT( ISBLANK( PartnerType__c ) ),( ISBLANK( Partner_Manager__c ) ))</errorConditionFormula>
+    <errorMessage>Enter Partner Manager for following Partner Account</errorMessage>
+</ValidationRule>

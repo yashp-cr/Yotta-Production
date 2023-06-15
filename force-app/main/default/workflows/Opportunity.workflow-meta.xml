@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Deferred_Opty_Notification_before_10_Days</fullName>
+        <description>Deferred Opty Notification before 10 Days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Deferred_Opty_Alert_Before_10_Days</template>
+    </alerts>
+    <alerts>
+        <fullName>POC_unsuccessful_Customer_POC</fullName>
+        <description>POC unsuccessful Customer POC</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>badhia@yotta.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>njadhav@yotta.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Unsuccessful_Poc_alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Unsuccessful_POC_Partner_POC</fullName>
+        <description>Unsuccessful POC Partner POC</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>badhia@yotta.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sadmin@yotta.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Unsuccessful_Poc_alert</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Probability</fullName>
+        <field>Probability</field>
+        <formula>CASE( Type , &apos;Existing Business&apos;, 25, &apos;New Business&apos;, 12.50, 0)/100
+ + 
+CASE( PoliticalAlignment__c, &apos;Negative&apos;, 0, &apos;Neutral&apos;, 7.50, &apos;Positive&apos;, 15, 0 )/100
+ + 
+CASE( StageName, &apos;Qualification&apos;, 0, &apos;Need Analysis&apos;, 0, &apos;Proposal/Price Quote&apos;, 10, &apos;Negotiation/Review&apos;, 20, &apos;Draft Order&apos;, 40, &apos;Closed Won&apos;, 40, &apos;Closed Lost&apos;, 0, 0 )/100
+ + 
+CASE( SalesConfidence__c , &apos;Reasonably Confident&apos;, 10, &apos;100% Confident&apos;, 20, 0)/100</formula>
+        <name>Update Probability</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Calculate Win Probability%28Migrated%29</fullName>
+        <actions>
+            <name>Update_Probability</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Customer POC unsuccessful%28Migrated%29</fullName>
+        <actions>
+            <name>POC_unsuccessful_Customer_POC</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>!ISBLANK(TEXT(StageName)) &amp;&amp;  ISPICKVAL(StageName , &apos;Closed Lost&apos;) &amp;&amp;  ISPICKVAL(ClosedReason__c, &apos;POC Unsuccessful&apos;) &amp;&amp;   POC_Type__c = &apos;Customer POC&apos; &amp;&amp;  ISCHANGED(StageName)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Partner POC Unsuccessful Poc</fullName>
+        <actions>
+            <name>Unsuccessful_POC_Partner_POC</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>!ISBLANK(TEXT(StageName)) &amp;&amp; ISPICKVAL(StageName , &apos;Closed Lost&apos;) &amp;&amp; ISPICKVAL(ClosedReason__c, &apos;POC Unsuccessful&apos;) &amp;&amp; POC_Type__c = &apos;Partner POC&apos; &amp;&amp;  ISCHANGED(StageName)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

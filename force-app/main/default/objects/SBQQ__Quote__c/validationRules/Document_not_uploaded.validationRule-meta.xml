@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Document_not_uploaded</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED( Submit_for_Approval__c ) &amp;&amp; 
+Submit_for_Approval__c &amp;&amp;
+!ISPICKVAL(SBQQ__Type__c , &apos;Quote&apos;) &amp;&amp;
+ISPICKVAL(SBQQ__Status__c , &apos;Customer Accepted&apos;)&amp;&amp;
+!Signed_SCF_Uploaded__c</errorConditionFormula>
+    <errorMessage>Please upload Signed SCF document before SCF Approval.</errorMessage>
+</ValidationRule>

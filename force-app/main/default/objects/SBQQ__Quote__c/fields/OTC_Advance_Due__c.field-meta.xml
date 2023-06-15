@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OTC_Advance_Due__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT(One_Time_Payment_Terms__c),
+&quot;25% in advance and balance on delivery&quot;,25,
+&quot;50% in advance and balance on delivery&quot;,50,
+&quot;100% in advance&quot;,100,
+0)* Annual_One_Time_Charge__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>OTC Advance Due</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

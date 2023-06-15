@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Deactivation</fullName>
+    <fields>Generate_Deactivation_Request__c</fields>
+    <fields>Replacement_Contact__c</fields>
+    <fields>Deactivation_Status__c</fields>
+    <label>Contact Deactivation</label>
+</CompactLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State_and_Country_are_mandatory</fullName>
+    <active>true</active>
+    <description>SR-0207 This will be created for timebeing for restricting Conversion of the LEADs already in the system. This requirement is primarily handled making the relevant fields as mandatory on both Lead and Address layout.</description>
+    <errorConditionFormula>OR(
+ISBLANK( State2__c ),
+ISBLANK(TEXT(Country__c))
+)</errorConditionFormula>
+    <errorMessage>State &amp; Country are Mandatory</errorMessage>
+</ValidationRule>

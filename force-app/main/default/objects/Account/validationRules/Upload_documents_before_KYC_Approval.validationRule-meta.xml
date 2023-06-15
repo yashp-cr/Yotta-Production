@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upload_documents_before_KYC_Approval</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED( Submit_for_KYC_Approval__c ) &amp;&amp;
+Submit_for_KYC_Approval__c &amp;&amp;
+(
+  NOT( Address_Proof_Uploaded__c ) ||
+  NOT( Identity_Proof_Uploaded__c )
+)</errorConditionFormula>
+    <errorMessage>Upload document against Identity proof and Address proof</errorMessage>
+</ValidationRule>

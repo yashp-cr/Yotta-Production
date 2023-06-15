@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Postal_Code_Format</fullName>
+    <active>true</active>
+    <description>SR-0208 Can contain 0-9, A-Z &amp; a-z only (no space allowed as well)</description>
+    <errorConditionFormula>NOT(REGEX(PostalCode__c, &quot;^[1-9][0-9]{5}&quot;)) &amp;&amp;  ISPICKVAL(Country__c  , &apos;IN&apos;)</errorConditionFormula>
+    <errorMessage>Postal Code should in valid format</errorMessage>
+</ValidationRule>

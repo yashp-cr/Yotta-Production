@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Score_Formula__c</fullName>
+    <businessStatus>Hidden</businessStatus>
+    <description>DO NOT ADD ON LAYOUT</description>
+    <externalId>false</externalId>
+    <formula>&apos;LeadContactsAuthorityLevel__c&apos; + 
+TEXT(CASE( LeadContactsAuthorityLevel__c , &apos;Tier 1: C Level / VP IT / Director Level / Key Decision Makers&apos;, 20, &apos;Tier 2: GM / AGM / Manager IT / Sr Manager IT. Mid Level managers handling Teams&apos;, 15, &apos;Tier 3: System Admin / Executives / Asst Managers : Influencers&apos;, 10, 0)) + &apos;\n CustomersInfrastructuresetup__c:&apos; + TEXT(CASE( CustomersInfrastructuresetup__c , &apos;Outsourced&apos;, 15, &apos;Inhouse however they have plan to Outsource&apos;, 10, &apos;Inhouse no plans however want to evaluate&apos;, 3, 0))
++ &apos;\n LeadIntent__c:&apos; + 
+TEXT(CASE( LeadIntent__c , &apos;Technical Specification Defined&apos;,20, &apos;Basic Requirement Given No Tech Specs Defined&apos;,15, &apos;Evaluation&apos;, 10, 0))
++ &apos;\n LeadSource&apos; + &apos;:&apos; + TEXT(
+CASE( LeadSource , &apos;Outbound Call Pitched&apos;, 5, &apos;Outbound Call Customer Responded with Requirement&apos;, 15 ,&apos;Inbound Any Web / email / Telephone source&apos;, 15, &apos;Attended an Event where Yotta was present and connected&apos;, 10, &apos;Attended an Event where Yotta was present&apos;, 8, &apos;Response to Emailer Campaign&apos;, 15, &apos;Response to Partner Mailer Campaign&apos;, 15, &apos;Referral from Existing Customer or Partner or Employee&apos;, 15, 0 )) + &apos;\n TimeFrame__c:&apos; +
+TEXT(CASE( TimeFrame__c , &apos;Near Term (0-3 months)&apos;, 15, &apos;Mid Term (3-6 months)&apos;, 10, &apos;Long Term ( &gt; 6 months)&apos;, 5, 0))
++
+&apos;\n Budget__c:&apos; + TEXT(CASE( Budget__c , &apos;Budget Defined&apos;, 15, &apos;Quote Required for Budgeting&apos;, 10, &apos;Budget Not Defined&apos;, 5, 0 ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>DO NOT ADD ON LAYOUT</inlineHelpText>
+    <label>Lead Score Formula</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Slab1__c</fullName>
+    <externalId>false</externalId>
+    <formula>ISBLANK(Range_end_value__c )</formula>
+    <label>Last Slab</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

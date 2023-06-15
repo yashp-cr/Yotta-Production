@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notifications_Associated__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>[GG]This field will be updated by ITSM via integration. TRUE indicates that there are NOTIFICATIONS sent to this contact.</description>
+    <externalId>false</externalId>
+    <label>Notifications Associated</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Closed Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+                <label>Deferred</label>
+            </value>
+            <value>
+                <fullName>No Requirement</fullName>
+                <default>false</default>
+                <label>No Requirement</label>
+            </value>
+            <value>
+                <fullName>Lost - Pricing</fullName>
+                <default>false</default>
+                <label>Lost - Pricing</label>
+            </value>
+            <value>
+                <fullName>Lost - Solution</fullName>
+                <default>false</default>
+                <label>Lost - Solution</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Wrongly created</fullName>
+                <default>false</default>
+                <label>Wrongly created</label>
+            </value>
+            <value>
+                <fullName>Won - Pricing</fullName>
+                <default>false</default>
+                <label>Won - Pricing</label>
+            </value>
+            <value>
+                <fullName>Won - Solution</fullName>
+                <default>false</default>
+                <label>Won - Solution</label>
+            </value>
+            <value>
+                <fullName>Won - Speed RFP</fullName>
+                <default>false</default>
+                <label>Won - Speed RFP</label>
+            </value>
+            <value>
+                <fullName>Won - POC Successful</fullName>
+                <default>false</default>
+                <label>Won - POC Successful</label>
+            </value>
+            <value>
+                <fullName>Won - Account Mapping</fullName>
+                <default>false</default>
+                <label>Won - Account Mapping</label>
+            </value>
+            <value>
+                <fullName>Won - Early Entrant</fullName>
+                <default>false</default>
+                <label>Won - Early Entrant</label>
+            </value>
+            <value>
+                <fullName>Won - Existing customer</fullName>
+                <default>false</default>
+                <label>Won - Existing customer</label>
+            </value>
+            <value>
+                <fullName>ROI Not Justified</fullName>
+                <default>false</default>
+                <label>ROI Not Justified</label>
+            </value>
+            <value>
+                <fullName>Late Entrant</fullName>
+                <default>false</default>
+                <label>Late Entrant</label>
+            </value>
+            <value>
+                <fullName>Project on hold</fullName>
+                <default>false</default>
+                <label>Project on hold</label>
+            </value>
+            <value>
+                <fullName>Due to Location</fullName>
+                <default>false</default>
+                <label>Due to Location</label>
+            </value>
+            <value>
+                <fullName>Product Features</fullName>
+                <default>false</default>
+                <label>Product Features</label>
+            </value>
+            <value>
+                <fullName>Technical Capabilities</fullName>
+                <default>false</default>
+                <label>Technical Capabilities</label>
+            </value>
+            <value>
+                <fullName>Non Eligibility - Finance</fullName>
+                <default>false</default>
+                <label>Non Eligibility - Finance</label>
+            </value>
+            <value>
+                <fullName>Non Eligibility - Experience</fullName>
+                <default>false</default>
+                <label>Non Eligibility - Experience</label>
+            </value>
+            <value>
+                <fullName>Non Eligibility - Technical</fullName>
+                <default>false</default>
+                <label>Non Eligibility - Technical</label>
+            </value>
+            <value>
+                <fullName>Non Eligibility - Certification</fullName>
+                <default>false</default>
+                <label>Non Eligibility - Certification</label>
+            </value>
+            <value>
+                <fullName>POC Successful</fullName>
+                <default>false</default>
+                <label>POC Successful</label>
+            </value>
+            <value>
+                <fullName>POC Unsuccessful</fullName>
+                <default>false</default>
+                <label>POC Unsuccessful</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

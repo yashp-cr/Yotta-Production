@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Virtual_Desktops_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL(  Virtual_Desktops_VDI__c , &apos;Yes&apos;),
+ISBLANK(  If_VDI_present__c )
+)</errorConditionFormula>
+    <errorDisplayField>If_VDI_present__c</errorDisplayField>
+    <errorMessage>Please Select VDI</errorMessage>
+</ValidationRule>

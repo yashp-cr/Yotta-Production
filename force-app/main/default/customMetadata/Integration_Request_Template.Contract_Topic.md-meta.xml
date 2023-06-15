@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Contract Topic Create</label>
+    <protected>false</protected>
+    <values>
+        <field>All_Fields__c</field>
+        <value xsi:type="xsd:string">contract_number__c
+,original_contract_number__c	
+,internal_remarks__c
+,billing_currency__c	
+,tcv_formula_for_year_1__c
+,tcv_formula_for_year_2__c
+,tcv_formula_for_year_3__c
+,tcv_formula_for_year_4__c
+,tcv_formula_for_year_5__c
+,sales_rep_commission__c
+,credit_period__c
+,business_unit__c
+,sbqq__quote__r.solution_engineer__r.email
+,owner.email
+,scf_type__c
+,lastest_quote_type__c
+,sbqq__amendmentstartdate__c
+,billing_method__c
+,billing_frequency_formula__c
+,accountid
+,id	
+,name	
+,support_to_account__c	
+,customer_po__c	
+,customer_po_date__c	
+,bill_to_address__c 	
+,contract_tenure_days__c	
+,contract_tenure_months__c	
+,contract_tenure_years__c	
+,startdate	
+,enddate	
+,contract_currency__c		
+,customer_tech_spoc__c	
+,customer_billing_contact__c	
+,customer_authorised_signatory__c	
+,total_grand_total__c			
+,partner_commision_model__c	
+,partner_commission__c		
+,sbqq__quote__c	
+,project_manager__c	
+,original_master_contract_id__c        	
+,sbqq__opportunity__c	
+,online__c		
+,otc_advance_payment_term_sos__c		
+,advance_along_with_po_sof__c		
+,intimation_of_readiness_of_dispatch__c		
+,delivery__c		
+,installation_commissioning__c		
+,uat__c		
+,post_uat__c		
+,mode_of_advance_payment__c	
+,rc_advance_payment_term_sos__c
+,renewal_cycle_count__c
+,external_id__c
+,POC__c
+,Last_Quote__r.Name,
+Number_Of_Subscription__c</value>
+    </values>
+    <values>
+        <field>Fields_to_Trigger_Integration__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Json_Field_Names__c</field>
+        <value xsi:type="xsd:string">contract_number__c
+,original_contract_number__c
+,internal_remarks__c
+,billing_currency__c	
+,tcv_formula_for_year_1__c
+,tcv_formula_for_year_2__c
+,tcv_formula_for_year_3__c
+,tcv_formula_for_year_4__c
+,tcv_formula_for_year_5__c
+,sales_rep_commission__c
+,credit_period__c
+,business_unit__c
+,solution_engineer
+,account_manager
+,scf_type__c
+,quote_Type__c
+,sbqq__amendmentstartdate__c
+,billing_method__c
+,billing_frequency_formula__c
+,accountid
+,id	
+,name	
+,support_to_account__c	
+,customer_po__c	
+,customer_po_date__c	
+,bill_to_address__c 	
+,contract_tenure_days__c	
+,contract_tenure_months__c	
+,contract_tenure_years__c	
+,startdate	
+,enddate	
+,contract_currency__c		
+,customer_tech_spoc__c	
+,customer_billing_contact__c	
+,customer_authorised_signatory__c	
+,total_grand_total__c		
+,partner_commision_model__c	
+,partner_commission__c		
+,sbqq__quote__c	
+,project_manager__c	
+,original_contract__c        	
+,sbqq__opportunity__c	
+,online__c		
+,otc_advance_payment_term_sos__c		
+,advance_along_with_po_sof__c		
+,intimation_of_readiness_of_dispatch__c		
+,delivery__c		
+,installation_commissioning__c		
+,uat__c		
+,post_uat__c		
+,mode_of_advance_payment__c	
+,rc_advance_payment_term_sos__c
+,renewal_cycle_count__c
+,external_id__c
+,POC__c
+,Last_Quote__c
+,Number_Of_Subscription__c</value>
+    </values>
+    <values>
+        <field>Object_Type__c</field>
+        <value xsi:type="xsd:string">Contract</value>
+    </values>
+    <values>
+        <field>Operation__c</field>
+        <value xsi:type="xsd:string">Create</value>
+    </values>
+    <values>
+        <field>Query_Field__c</field>
+        <value xsi:type="xsd:string">id</value>
+    </values>
+    <values>
+        <field>Request_Envelope__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>SOQL_Query__c</field>
+        <value xsi:type="xsd:string">Select contract_number__c
+,internal_remarks__c
+,original_contract_number__c
+,business_unit__c
+,billing_currency__c	
+,tcv_formula_for_year_1__c
+,tcv_formula_for_year_2__c
+,tcv_formula_for_year_3__c
+,tcv_formula_for_year_4__c
+,tcv_formula_for_year_5__c
+,sales_rep_commission__c
+,credit_period__c
+,sbqq__quote__r.solution_engineer__r.email
+,owner.email
+,sbqq__amendmentstartdate__c
+,billing_method__c
+,billing_frequency_formula__c
+,accountid
+,id	
+,name	
+,support_to_account__c	
+,customer_po__c	
+,customer_po_date__c	
+,bill_to_address__c 	
+,contract_tenure_days__c	
+,contract_tenure_months__c	
+,contract_tenure_years__c	
+,startdate	
+,enddate	
+,contract_currency__c		
+,customer_tech_spoc__c	
+,customer_billing_contact__c	
+,customer_authorised_signatory__c	
+,total_grand_total__c		
+,partner_commision_model__c	
+,partner_commission__c		
+,sbqq__quote__c	
+,project_manager__c	
+,original_master_contract_id__c        	
+,sbqq__opportunity__c	
+,online__c		
+,otc_advance_payment_term_sos__c		
+,advance_along_with_po_sof__c		
+,intimation_of_readiness_of_dispatch__c		
+,delivery__c		
+,installation_commissioning__c	
+,amount_due_installation_commissioning__c	
+,uat__c		
+,post_uat__c		
+,mode_of_advance_payment__c	
+,rc_advance_payment_term_sos__c		
+,scf_type__c
+,lastest_quote_type__c
+,renewal_cycle_count__c	
+,external_id__c
+,POC__c
+,Last_Quote__r.Name
+,Number_Of_Subscription__c
+From Contract</value>
+    </values>
+    <values>
+        <field>Static_JSON_Data__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

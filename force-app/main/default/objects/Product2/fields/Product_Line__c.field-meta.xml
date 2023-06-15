@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Line__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Line</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Ad-hoc</fullName>
+                <default>false</default>
+                <label>Ad-hoc</label>
+            </value>
+            <value>
+                <fullName>13400</fullName>
+                <default>false</default>
+                <label>Application Security</label>
+            </value>
+            <value>
+                <fullName>Backup and Recovery</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Backup and Recovery</label>
+            </value>
+            <value>
+                <fullName>14300</fullName>
+                <default>false</default>
+                <label>Backup and Recovery as a Service</label>
+            </value>
+            <value>
+                <fullName>Cloud Connect</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cloud Connect</label>
+            </value>
+            <value>
+                <fullName>13500</fullName>
+                <default>false</default>
+                <label>Cloud Security</label>
+            </value>
+            <value>
+                <fullName>10200</fullName>
+                <default>false</default>
+                <label>Colocation Support</label>
+            </value>
+            <value>
+                <fullName>Colo Services</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Colo Services</label>
+            </value>
+            <value>
+                <fullName>Compute</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Compute</label>
+            </value>
+            <value>
+                <fullName>14100</fullName>
+                <default>false</default>
+                <label>Compute as a service</label>
+            </value>
+            <value>
+                <fullName>13100</fullName>
+                <default>false</default>
+                <label>Data Security</label>
+            </value>
+            <value>
+                <fullName>DC Build</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DC Build</label>
+            </value>
+            <value>
+                <fullName>10300</fullName>
+                <default>false</default>
+                <label>Dedicated Building Colocation</label>
+            </value>
+            <value>
+                <fullName>14400</fullName>
+                <default>false</default>
+                <label>Disaster Recovery As A Service</label>
+            </value>
+            <value>
+                <fullName>16100</fullName>
+                <default>false</default>
+                <label>Federated Cloud</label>
+            </value>
+            <value>
+                <fullName>12100</fullName>
+                <default>false</default>
+                <label>Hosted Network Services</label>
+            </value>
+            <value>
+                <fullName>Infra Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Infra Management</label>
+            </value>
+            <value>
+                <fullName>13300</fullName>
+                <default>false</default>
+                <label>Infra Security</label>
+            </value>
+            <value>
+                <fullName>Internet Bandwidth</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Internet Bandwidth</label>
+            </value>
+            <value>
+                <fullName>17200</fullName>
+                <default>false</default>
+                <label>IT Administration</label>
+            </value>
+            <value>
+                <fullName>17100</fullName>
+                <default>false</default>
+                <label>IT Monitoring</label>
+            </value>
+            <value>
+                <fullName>17300</fullName>
+                <default>false</default>
+                <label>IT Professional</label>
+            </value>
+            <value>
+                <fullName>Managed Network</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Managed Network</label>
+            </value>
+            <value>
+                <fullName>12200</fullName>
+                <default>false</default>
+                <label>Managed WAN Services</label>
+            </value>
+            <value>
+                <fullName>Miscellaneous</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Miscellaneous</label>
+            </value>
+            <value>
+                <fullName>10100</fullName>
+                <default>false</default>
+                <label>Multitenant Colocation</label>
+            </value>
+            <value>
+                <fullName>Multitenat Colocation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Multitenat Colocation</label>
+            </value>
+            <value>
+                <fullName>14600</fullName>
+                <default>false</default>
+                <label>Platform As A Service</label>
+            </value>
+            <value>
+                <fullName>14700</fullName>
+                <default>false</default>
+                <label>Private Cloud</label>
+            </value>
+            <value>
+                <fullName>13200</fullName>
+                <default>false</default>
+                <label>Professional Security</label>
+            </value>
+            <value>
+                <fullName>Professional Services</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Professional Services</label>
+            </value>
+            <value>
+                <fullName>Software</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Software</label>
+            </value>
+            <value>
+                <fullName>14500</fullName>
+                <default>false</default>
+                <label>Software as a service</label>
+            </value>
+            <value>
+                <fullName>Storage</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Storage</label>
+            </value>
+            <value>
+                <fullName>14200</fullName>
+                <default>false</default>
+                <label>Storage as a Service</label>
+            </value>
+            <value>
+                <fullName>Structured Cabling</fullName>
+                <default>false</default>
+                <label>Structured Cabling</label>
+            </value>
+            <value>
+                <fullName>Third Party Cloud</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Third Party Cloud</label>
+            </value>
+            <value>
+                <fullName>18100</fullName>
+                <default>false</default>
+                <label>Traded Goods</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

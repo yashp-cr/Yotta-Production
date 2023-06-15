@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Terms_and_Condition</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISBLANK(Quote_Term__c )) &amp;&amp; 
+Quote__r.Generated_Terms__c  &amp;&amp; 
+    (
+        ISCHANGED( Term_Name__c ) || 
+        ISCHANGED( Term_Condition_Description__c )
+    ) &amp;&amp; 
+    NOT(ISNEW())</errorConditionFormula>
+    <errorMessage>Cannot Update Existing Terms and Condition</errorMessage>
+</ValidationRule>

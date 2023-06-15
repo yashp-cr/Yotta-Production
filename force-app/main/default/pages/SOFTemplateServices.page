@@ -1,0 +1,764 @@
+<apex:page renderAs="pdf" standardController="Contract" extensions="SOFTemplateServicesExtension" showHeader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false">
+    <head>                
+        <style type="text/css">                 
+            @page {
+            margin-top: 3cm;
+            margin-bottom: 3cm;
+            size:A4 portrait;
+            
+            @top-center {
+            content: element(header);
+            }
+            @bottom-left {
+            content: element(footer);
+            }
+            @bottom-right {
+            content: "Page " counter() " of " counter(pages);
+            }
+            }
+            .image-stack {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            position: relative;
+            }
+            .image-stack__item--left {
+            grid-column: 1 / span 8;
+            grid-row: 1; // must be on the same row as the other image
+            // padding-top: 20%; // this pushes the image down, and keeps it proportional as it resizes
+            // make this image render on top of the bottom
+            }
+            .image-stack__item--center{
+            grid-column: 1 / span 8;
+            grid-row: 1; // must be on the same row as the other image
+            padding-top: 20%; // this pushes the image down, and keeps it proportional as it resizes
+            z-index: 1; // make this image render on top of the bottom
+            }
+            
+            div.header {
+            padding: 0px;
+            position: running(header);
+            }
+            div.footer {
+            display: block;
+            padding: 5px;
+            position: running(footer);
+            }
+            .pagenumber:before {
+            content: counter(page);
+            }
+            .pagecount:before {
+            content: counter(pages);
+            }
+            div.content {
+            float: left;
+            width: 100%;
+            } 
+            body{
+            font-family: sans-serif;
+            }
+            .borderClass table, .borderClass td, .borderClass th, .borderClass tr{
+            applyHtmlTag="false";
+            border: 0.5px solid #8BA9E5 !important; 
+            border-collapse: collapse;
+            }
+        </style>             
+    </head> 
+    <body style="margin:0px; width: 100%">
+        
+        <div class="header" >
+            
+            
+            <div class="image-stack">
+                
+                
+                <div class="image-stack__item image-stack__item--left">
+                    
+                    <img style="margin-left: -50px; margin-top: -15px; float: left; width: 80%; HEIGHT: 100px; border:0px" src='{!URLFOR($Resource.PDFHeader)}' title="logo" align="left" /> 
+                </div>
+                <div class="image-stack__item image-stack__item--center">
+                    <img style="width: 140px; HEIGHT: 90px; border:0px;" src='{!URLFOR($Resource.Yotta_Logo)}' title="logo" align="center"  />
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer" style="font-family:sans-serif; font-size: 8px;color:#696969">
+            <apex:outputText rendered="{!IF(business_unit == 'Yotta Network Services Private Limited',true,false)}">
+                <c:SOFFooter />
+            </apex:outputText>
+            <apex:outputText rendered="{!IF(business_unit == 'Yotta Data Services Private Limited',true,false)}">
+                <c:SOFFooterInfra />
+            </apex:outputText>
+            
+            <div style="float:right; font-size: 9px;color:#696969">Page <span class="pagenumber"/> | <span class="pagecount"/></div>
+        </div>  
+        
+        <div style="text-align: center;">
+            <span style="font-size: 14px; font-family:sans-serif; font-weight: bold;color:#1d3f81" >{!business_unit}</span>   
+        </div>
+        <br/>
+        <div style="text-align: center;"> 
+            <span style="font-size: 18px; font-family:sans-serif; font-weight: bold;color:#f4a142">Service Order Form (SOF):</span> 
+            <span style="color:#1d3f81; font-family:sans-serif; font-size:20px; font-weight: bold;" >{!Contract.Contract_Number__c  
+                }</span>   
+        </div>
+        
+        <br/>
+        
+        <div style="page-break-after: always">
+            <span style="color:#1d3f81; font-family:sans-serif; font-weight: bold; font-size:12px;">Customer Details</span> <br/><br/>
+            <table class="borderClass" width="95%" cellpadding="5" border="0.5" cellspacing="0" style="border-collapse: collapse; font-size: 10px; font-family:sans-serif;">
+                <tr style="background-color:#DCDCDC;font-size:12px;">
+                    <th></th>
+                    <th>Bill To Customer</th>
+                    <th>Support To Customer</th>
+                </tr>
+                <tr style="font-size:10px;">
+                    <td width="25%" style="color:#1d3f81;font-size:10px;">Customer ID</td>
+                    <td>{!Contract.Account.Account_Number__c}</td>
+                    <td>{!Contract.Support_To_Account__r.Account_Number__c}</td>
+                </tr>
+                <tr style="font-size:10px;">
+                    <td width="25%" style="color:#1d3f81;font-size:10px;" >Name</td>
+                    <td>{!Contract.Account.Name}</td>
+                    <td>{!Contract.Support_To_Account__r.Name}</td>
+                </tr>
+                <apex:outputText rendered="{!IF(Contract.Customer_PO__c != null,true,false)}">
+                    <tr style="font-size:10px;">
+                        <td width="25%" style="color:#1d3f81;font-size:10px;">PO Number</td>
+                        <td colspan="2">{!Contract.Customer_PO__c}</td>
+                        
+                    </tr>
+                </apex:outputText>
+                <apex:outputText rendered="{!IF(Contract.Customer_PO_Date__c != null,true,false)}">
+                    <tr style="font-size:10px;">
+                        <td width="25%" style="color:#1d3f81;font-size:10px;">PO Date</td>
+                        <td colspan="2">
+                            <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                                <apex:param value="{!Contract.Customer_PO_Date__c}" />
+                            </apex:outputText>
+                        </td>                       
+                    </tr>
+                </apex:outputText>
+                <tr style="font-size:10px;">
+                    <td width="25%" style="color:#1d3f81">GSTIN</td>
+                    <td>{!Contract.Bill_To_Address__r.GSTIN__c}</td>
+                    <td></td>
+                </tr> 
+            </table>
+            
+            <br/>
+            <br/>
+            
+            <table class="borderClass" width="95%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size:10px;">
+                <tr > 
+                    <td width="25%" style="background-color:#DCDCDC">Billing Address</td>
+                    <td style="font-size:10px;">
+                        <apex:outputText value="{!Contract.Bill_To_Address__r.AddressLine1__c}," rendered="{!IF(Contract.Bill_To_Address__r.AddressLine1__c != null,true,false)}"/>
+                        <apex:outputText value="{!Contract.Bill_To_Address__r.AddressLine2__c} {!Contract.Bill_To_Address__r.City__c},"  rendered="{!IF(Contract.Bill_To_Address__r.City__c != null,true,false)}"/>
+                        <apex:outputText value="{!Contract.Bill_To_Address__r.PostalCode__c}"/>
+                    </td>
+                </tr>                
+            </table>
+            <br/>
+            
+            <span style="color:#1d3f81; font-family:sans-serif; font-size:12px;"><b>Contact Details</b></span><br/><br/>
+            
+            <table class="borderClass" width="95%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size:10px;">
+                <tr style="background-color:#DCDCDC;">
+                    <th></th>
+                    <th>Customer SPoC*</th>
+                    <th>Customer Billing Contact</th>
+                    <th>Service Provider Account Manager#</th>
+                </tr>
+                <tr >
+                    <td width="18%" >Name</td>
+                    <td>{!Contract.Customer_SPoC__r.Name}</td>
+                    <td>{!Contract.Customer_Billing_Contact__r.Name}</td>
+                    <td>{!Contract.Owner.Name}</td>
+                </tr>
+                <tr>
+                    <td width="18%" >Email ID</td>
+                    <td>{!Contract.Customer_SPoC__r.Email}</td>
+                    <td>{!Contract.Customer_Billing_Contact__r.Email}</td>
+                    <td>{!Contract.Owner.Email}</td>
+                </tr>
+                <tr>
+                    <td width="18%" >Contact No.</td>
+                    <td>{!Contract.Customer_SPoC__r.MobilePhone}</td>
+                    <td>{!Contract.Customer_Billing_Contact__r.MobilePhone}</td>
+                    <td>{!Contract.Owner.MobilePhone}</td>
+                </tr>        
+                <tr>
+                    <td colspan="4" >SPoC* oversee the order execution from Customer Organization. <br/> Yotta Account Manager# is service provider’s point of contact</td>
+                </tr>
+                
+            </table>
+            <br/>
+            <span style="color:#1d3f81; font-family:sans-serif; font-size:12px;">
+                <apex:outputText ><b>Commercial Summary</b></apex:outputText>
+            </span><br/><br/>
+            
+            <table class="borderClass" width="95%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size:10px;">
+                <tr>
+                    <td  style="background-color:#DCDCDC; ">Contract (Service) Term</td>
+                    <td>
+                        {!ROUND(Contract.Contract_Tenure_Years__c,0)} Years, {!ROUND(Contract.Contract_Tenure_Months__c,0)} Months,
+                        {!ROUND(Contract.Contract_Tenure_Days__c,0)} Days
+                    </td>
+                    <td style="background-color:#DCDCDC; ">POC</td>
+                    <td>{!Contract.POC__c}</td>
+                    <td style="background-color:#DCDCDC; ">SOF Currency</td>
+                    <td>{!Contract.Contract_Currency__c}</td>
+                    <apex:outputText rendered="{!IF(business_unit != 'Yotta Network Services Private Limited',true,false)}">
+                        <td style="background-color:#DCDCDC; ">Billing Currency</td>
+                        <td>{!Contract.Billing_Currency__c}</td>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!IF(business_unit == 'Yotta Network Services Private Limited',true,false)}">
+                        <td style="background-color:#DCDCDC; ">Billing Currency</td>
+                        <td>{!Contract.Contract_Currency__c}</td>
+                    </apex:outputText>
+                    
+                    <!-- <td style="background-color:#C5D4F2;">Billing Currency</td>
+<td>{!Contract.Billing_Currency__c}</td> -->
+                </tr>
+            </table>
+            
+            <table class="borderClass" border="1px solid black" width="95%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size:10px;">
+                <tr style="background-color:#DCDCDC;font-size:11px;">
+                    <td>Year</td>
+                    <td>One Time Charges</td>                
+                    <td>Annual Recurring Charges (ARC)</td>
+                    <td>Total for the Period (OTC+ARC)</td>
+                </tr>            
+                
+                <apex:variable value="{!0.00}" var="total1"/>
+                <apex:variable value="{!0.00}" var="total2"/>
+                <apex:variable value="{!0.00}" var="totalOTC"/>
+                <apex:repeat value="{!QuoteLines}" var="a">
+                    <apex:variable var="total1" value="{! total1 + QuoteLines[a].arc}" />
+                    <apex:variable var="total2" value="{! total2 + QuoteLines[a].totalYearSum}" />
+                    <apex:variable var="totalOTC" value="{! totalOTC + QuoteLines[a].totalOTC}" />
+                    <tr style="font-size:10px;">
+                        <td>Year {!QuoteLines[a].refNo}</td>
+                        <td>
+                            <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!QuoteLines[a].totalOTC}"/>
+                            </apex:outputText> 
+                        </td>
+                        <td>
+                            <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!QuoteLines[a].arc}"/>
+                            </apex:outputText> 
+                        </td>
+                        <td>
+                            <apex:outputText value="{0, number, ###,##0}" >
+                                <apex:param value="{!QuoteLines[a].totalYearSum}"/>
+                            </apex:outputText> 
+                        </td>
+                        
+                    </tr>
+                </apex:repeat>            
+                
+                <tr style="background-color:#696969;font-size:10px;color:#FFFFFF">
+                    <td>Total</td>
+                    <td>
+                        <apex:outputText value="{0, number, ###,##0}" >
+                            <apex:param value="{!totalOTC}"/>
+                        </apex:outputText> 
+                    </td>
+                    <td>
+                        <apex:outputText value="{0, number, ###,##0}" >
+                            <apex:param value="{!total1}"/>
+                        </apex:outputText> 
+                    </td>
+                    <td>
+                        <apex:outputText value="{0, number, ###,##0}" >
+                            <apex:param value="{!total2}"/>
+                        </apex:outputText> 
+                    </td>
+                </tr>
+            </table> 
+            <apex:outputText >
+                <b>
+                    <span style="font-family:sans-serif; color:#f4a142; font-size:10px;">Variable Charges: </span> 
+                    <span style="font-family:sans-serif; font-size:10px;">{!variableCharges}</span>
+                </b>
+            </apex:outputText>
+            <br/>
+            <br/>
+        </div>
+        
+        <!-- page starts -->
+        <div style="page-break-after: always">
+            <table class="borderClass" border="1px solid black" width="95%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size:10px;">
+                <tr style="background-color:#DCDCDC; ">
+                    <td colspan= "3"> The Undersigned signatory is aware and agrees to abide by and be bound by the provisions of this SOF, the MSA
+                        and/or any other documents like SOW/SLA agreed between the two parties. The signatory deems to be an
+                        authorized.
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%"></td>
+                    <td width="35%">For Customer</td>
+                    <td width="35%">For Yotta</td>
+                </tr>
+                
+                <!-- <table class="borderClass" border="1px solid black" width="95%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size:10px;"> -->
+                <tr style=" height: 40px">
+                    <td style="; background-color: #DCDCDC;" width="30%">Signature</td>
+                    <td width="35%"></td>
+                    <td width="35%"></td>
+                </tr>
+                
+                <tr>
+                    <td style="color:#1d3f81">Authorized Signatory</td>
+                    <td> {!authorizedSignatory.Name} </td>
+                    <td> {!salesHeadInfo.Name}</td>
+                </tr>
+                <tr>
+                    <td style="color:#1d3f81">Designation</td>
+                    <td> {!authorizedSignatory.Title} </td>
+                    <td> {!salesHeadInfo.Title}</td>
+                </tr>
+                <tr>
+                    <td style="color:#1d3f81">Mobile Number</td>
+                    <td> {!authorizedSignatory.MobilePhone} </td>
+                    <td> {!salesHeadInfo.MobilePhone}</td>
+                </tr>
+                <tr>
+                    <td style="color:#1d3f81">Email ID</td>
+                    <td> {!authorizedSignatory.Email} </td>
+                    <td> {!salesHeadInfo.Email}</td>
+                </tr>
+                <tr> 
+                    <td style="color:#1d3f81">Date</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+            </table>
+        </div>
+        <!-- adding page break -->
+        <div style="page-break-after: always">
+            
+            <apex:outputText >
+                <span style="font-family:sans-serif; font-size: 12px; font-weight: bold;color:#f4a142"> Annexure #{!indexMap['SOS']}: </span>
+                <span style="color:#1d3f81; font-family:sans-serif; font-size: 14px; font-weight: bold;">Payment terms for Sale of Services (SOS)</span>
+            </apex:outputText><br/><br/>
+            <span style="font-family:sans-serif; font-size:12px;">
+                <apex:outputText ><b>Advance Payment</b></apex:outputText>
+            </span>
+            <br/>
+            <br/>
+            <table class="borderClass" border="1px solid black" width="95%" cellpadding="3" style="border-collapse: collapse; font-family:sans-serif; font-size:10px;">
+                <tr style="background-color:#DCDCDC;">
+                    <td>Charge Type</td>
+                    <td>Advance Payment term</td>
+                    <td>Advance Amount Due (*)</td>
+                </tr>
+                <tr>
+                    <td>One Time Charges</td>
+                    <td>{!Contract.OTC_Advance_Payment_Term_SOS__c}</td>
+                    <td>
+                        <apex:outputText value="{0, number, #,##,##0}" >
+                            <apex:param value="{!Contract.OTC_Advance_Amount_Due_SOS__c*Contract.Currency_Conversion_Factor__c}"/>
+                        </apex:outputText> 
+                    </td>
+                </tr>
+                <apex:outputText >
+                    <tr>
+                        <td>Recurring Charges</td>
+                        <td>{!Contract.RC_Advance_Payment_Term_SOS__c}</td>
+                        <td>
+                            <apex:outputText value="{0, number, #,##,##0}" >
+                                <apex:param value="{!Contract.RC_Advance_Amount_Due_SOE__c * Contract.Currency_Conversion_Factor__c}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                </apex:outputText>
+                <tr>
+                    <td colspan="2">Total Advance Due</td>
+                    <td>
+                        <apex:outputText value="{0, number, #,##,##0}" >
+                            <apex:param value="{!((Contract.OTC_Advance_Amount_Due_SOS__c * Contract.Currency_Conversion_Factor__c) + (Contract.RC_Advance_Amount_Due_SOE__c * Contract.Currency_Conversion_Factor__c))}"/>
+                        </apex:outputText>
+                    </td>
+                </tr>
+            </table>
+            <apex:outputText ><span style="font-family:sans-serif; font-size: 9px;">*Advance Payment is payable along with the SOF &amp; Credit Period is not applicable.</span></apex:outputText>
+            <br/>
+            <br/>
+            <span style="font-family:sans-serif; font-size:12px;">
+                <apex:outputText ><b>Invoicing frequency, payment timeline &amp; Credit period </b></apex:outputText>
+            </span>
+            <br/> 
+            <br/>
+            <table class="borderClass" border="1px solid black" width="95%" cellpadding="3" style="border-collapse: collapse; font-family:sans-serif; font-size: 10px;">
+                <tr style="background-color:#DCDCDC;">
+                    <td>Charge Type</td>
+                    <td>Frequency</td>
+                </tr>
+                <tr>
+                    <td>One Time Charges payment as per the Invoice(s)</td>
+                    <td>Upon delivery of Services as per the Service Commencement Note (SCN) issued by Yotta.</td>
+                </tr>
+                <tr>
+                    <td>Recurring Charges payment as per the Invoice(s)</td>
+                    <td><b>First invoice:</b> Upon delivery of Services as per the Service Commencement Note (SCN) issued by Yotta.
+                        <b>Subsequent regular invoices:</b> {!Contract.RC_Advance_Payment_Term_SOS__c}</td>
+                </tr>
+                <tr>
+                    <td>Usage based Charges</td>
+                    <td>{!Contract.RC_Advance_Payment_Term_SOS__c}</td>
+                </tr>
+                <tr>
+                    <td>Credit Period (*)</td>
+                    <td>{!Contract.Credit_Period__c}</td>
+                </tr>
+            </table>
+            <apex:outputText ><span style="font-family:sans-serif; font-size: 9px;">*Credit Period is calculated starting from Invoice Date </span></apex:outputText>
+            <br/>
+            <br/>
+            
+            <apex:outputPanel rendered="{!annexure2Available}"> 
+                <apex:outputText >
+                    <span style="font-family:sans-serif; font-size:14px; font-weight: bold;color:#f4a142">Annexure #{!indexMap['SOE']}: </span>
+                    <span style="color:#1d3f81; font-family:sans-serif; font-size:14px; font-weight: bold;">Payment terms for Sale of Equipment (SOE)</span>
+                </apex:outputText><br/><br/>
+                
+                <span style="font-family:sans-serif; color:#f4a142; font-size:12px;">
+                    <apex:outputText ><b>Advance Payment</b></apex:outputText>
+                </span>
+                <br/> 
+                <br/>
+                <table class="borderClass" border="1px solid black" width="95%" cellpadding="3" style="border-collapse: collapse; font-family:sans-serif; font-size:10px;">
+                    <tr style="background-color:#DCDCDC;">
+                        <td>Charge Type</td>
+                        <td>Advance Payment Term</td>
+                        <td>Advance Amount Due</td>
+                    </tr>
+                    <tr>
+                        <td>One Time Charges</td>
+                        <td>{!Contract.Advance_along_with_PO_SOF__c}</td>
+                        <td>
+                            <apex:outputText value="{0, number, #,##,##0}" >
+                                <apex:param value="{!Contract.Advance_Amount_Due_SOE__c * Contract.Currency_Conversion_Factor__c}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Total Advance Due</td>
+                        <td>
+                            <apex:outputText value="{0, number, #,##,##0}" >
+                                <apex:param value="{!Contract.Advance_Amount_Due_SOE__c * Contract.Currency_Conversion_Factor__c}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    
+                </table>
+                <br/>
+                <span style="font-family:sans-serif; color:#f4a142; font-size:12px;">
+                    <apex:outputText ><b>Payment Milestones (May Differ Case to Case)</b></apex:outputText>
+                </span>
+                <br/>
+                <br/>
+                <table class="borderClass" border="1px solid black" width="95%" cellpadding="1" style="border-collapse: collapse; font-family:sans-serif; font-size:10px;">
+                    <tr style="background-color:#DCDCDC;">
+                        <td>Sr. No.</td>
+                        <td>Milestones</td>
+                        <td>Amount Due(*)</td>
+                    </tr>
+                    <tr>
+                        <td>1.</td>
+                        <td>{!Text(Contract.Advance_along_with_PO_SOF__c)}% in Advance, along with the PO / SOF</td>
+                        <td>{!Contract.Advance_Amount_Due_SOE__c*Contract.Currency_Conversion_Factor__c}</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>{!Text(Contract.Intimation_of_Readiness_of_Dispatch__c)}% on Intimation of readiness of despatch</td>
+                        <td>{!Contract.Amount_Due_Intimation_of_Dispatch__c*Contract.Currency_Conversion_Factor__c}</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>{!Text(Contract.Delivery__c)}% on Delivery</td>
+                        <td>{!Contract.Amount_Due_Delivery__c*Contract.Currency_Conversion_Factor__c}</td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>{!Text(Contract.Installation_Commissioning__c)}% on Installation &amp; Commissioning</td>
+                        <td>{!Contract.Amount_Due_Installation_Commissioning__c*Contract.Currency_Conversion_Factor__c}</td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>{!Text(Contract.UAT__c)}% on UAT</td>
+                        <td>{!Contract.Amount_Due_UAT__c*Contract.Currency_Conversion_Factor__c}</td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td>{!Text(Contract.Post_UAT__c)}% post UAT</td>
+                        <td>{!Contract.Amount_Due_Post_UAT__c*Contract.Currency_Conversion_Factor__c}</td>
+                    </tr>
+                    <tr>
+                        <td colspan ="2">Total</td>
+                        <td>{!(Contract.Advance_Amount_Due_SOE__c+ Contract.Amount_Due_Intimation_of_Dispatch__c+ Contract.Amount_Due_Delivery__c+ Contract.Amount_Due_Installation_Commissioning__c+ Contract.Amount_Due_UAT__c+ Contract.Amount_Due_Post_UAT__c)*Contract.Currency_Conversion_Factor__c}</td>
+                    </tr>
+                </table>
+                <apex:outputText >
+                    <span style="font-family:sans-serif; font-size: 9px;">*Full Value of Equipment Invoice will be raised upon delivery of Equipment and paid as per above payment milestones.</span>
+                    <br/>
+                    <span style="font-family:sans-serif; font-size: 10px;">Payment becomes immediately due on reaching the milestone and there is no further credit period applicable for this. </span>
+                </apex:outputText>
+            </apex:outputPanel> 
+        </div>
+        <!--page ends -->
+        <!-- page starts --> 
+        
+         
+        <div >
+            <apex:outputText >
+                <span style="font-family:sans-serif; font-size:14px; font-weight: bold;color:#f4a142">Annexure # {!indexMap['commercial details']}: </span>
+                <span style="font-family:sans-serif; font-size:14px; font-weight: bold; color:#1d3f81"> Item wise commercial details</span>
+            </apex:outputText>
+            <br/>
+            
+            <apex:repeat var="a" value="{!QuoteLines}">
+                <span style="font-family:sans-serif; font-size: 12px;">
+                    <apex:outputText ><b>Commercials for Year #{!QuoteLines[a].refNo}</b></apex:outputText></span>
+                <br/>
+                
+                <table class="borderClass" border="1px solid black" width="95%" cellpadding="3" style="border-collapse: collapse; font-family:sans-serif; font-size:10px;">
+                    <tr style="background-color:#DCDCDC;">
+                        <td rowspan="2">Ref No</td>
+                        <td rowspan="2">Product Family</td>
+                        <td rowspan="2">Product Model</td>
+                        <td rowspan="2">Product Description</td>
+                        <td rowspan="2">Type</td>
+                        <td rowspan="2">SAC Code</td>
+                        <td rowspan="2">QTY</td>
+                        <td rowspan="2">Delivery Location</td>
+                        <!--    <td rowspan="2">Billing Currency</td> -->
+                        <td colspan="2">OTC</td>
+                        <td colspan="2">MRC</td>
+                        <td colspan="2">Variable Charges</td>                    
+                    </tr>
+                    
+                    <tr style="background-color:#DCDCDC;">                    
+                        <td style="background-color:#DCDCDC">Unit</td>
+                        <td style="background-color:#DCDCDC">Total</td>
+                        <td style="background-color:#DCDCDC">Unit</td>
+                        <td style="background-color:#DCDCDC">Total</td>
+                        <td style="background-color:#DCDCDC">Charge</td>
+                        <td style="background-color:#DCDCDC">UOM</td>
+                    </tr>
+                     <apex:repeat value="{!QuoteLines[a].prodWrapKeySet }" var="key">
+                        <tr style="background-color:#DCDCDC"><td colspan="14">{!key}</td></tr>
+                         
+                    <apex:variable var="index" value="{!1}"/>
+                    <apex:repeat value="{!QuoteLines[a].bundleProductWrapperMap[key]}" var="prodWrap">  
+                        <tr  style="font-size:9px;"> 
+                            <td>{!index}</td>
+                            <td>
+                                <!--{!prodWrap.productFamily}  changed for split product family and product model-->
+                                <apex:outputText escape="false" value="<br/>{!prodWrap.productFamily}"/>
+                            </td>
+                            <td>
+                                <apex:outputText escape="false" value="{!prodWrap.productModel}"/>
+                            </td>
+                            <td> 
+                                <apex:outputText escape="false" value="{!prodWrap.productDescription}" />
+                                <br/>
+                                    Remarks:
+                                    <apex:outputText value="{!prodWrap.remarks}" escape="false"/>
+                            </td>
+                            <td>{!prodWrap.type}</td>
+                            <td>{!prodWrap.sacCode}</td>
+                            <td>{!prodWrap.qty}</td>
+                            <td>{!prodWrap.deliveryLocation}</td>
+                            <!-- <td>{!prodWrap.billingCurrency}</td> -->
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!prodWrap.otcUnit}"/>
+                                </apex:outputText> 
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!prodWrap.otcTotal}"/>
+                                </apex:outputText> 
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!prodWrap.mrcUnit}"/>
+                                </apex:outputText> 
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!prodWrap.mrcTotal}"/>
+                                </apex:outputText> 
+                            </td>
+                            <td>
+                                <apex:outputText value="{0, number, ###,##0.00}" >
+                                    <apex:param value="{!prodWrap.vrcCharge}"/>
+                                </apex:outputText> 
+                            </td>
+                            <td>{!prodWrap.vrcUOM}</td>
+                            <apex:variable var="index" value="{!index+1}"/>
+                        </tr>
+                         </apex:repeat>
+                         <apex:repeat value="{!QuoteLines[a].otcTotalMap[key]}" var="otcTotal">
+                            <apex:repeat value="{!QuoteLines[a].recTotalMap[key]}" var="mrcTotal">
+                                <tr><td colspan="2"><b>Total</b></td><td></td><td></td><td></td><td></td><td></td> <td></td><td></td><td>
+                                    <apex:outputText value="{0, number, ###,##0}" ><apex:param value="{!otcTotal}" /></apex:outputText>
+                                    </td><td></td>      
+                                      <td> <apex:outputText value="{0, number, ###,##0}" >
+                                        
+                                        <apex:param value="{!mrcTotal}"/></apex:outputText></td><td></td><td></td>
+                        </tr>
+                            </apex:repeat>
+                        </apex:repeat>
+                         
+                        
+                    </apex:repeat>
+                </table> 
+                <apex:outputText > <span style="font-family:sans-serif; font-size: 9px;">OTC - One Time Charges | MRC – Monthly Recurring Charges | UoM - Unit of Measurement | TP - Third Party</span></apex:outputText>
+                <br/>
+                <br/>
+            </apex:repeat>
+            
+            <apex:outputPanel rendered="{!annexure4Available}"> 
+                <apex:outputText >
+                    <span style="font-family:sans-serif; font-size:14px; font-weight: bold;color:#f4a142">Annexure #{!indexMap['POC']}: </span>
+                    <span style="color:#1d3f81; font-family:sans-serif; font-size:14px; font-weight: bold;">POC Details</span>
+                </apex:outputText><br/><br/>
+                
+               
+                <table class="borderClass" border="1px solid black" width="95%" cellpadding="3" style="border-collapse: collapse; font-family:sans-serif; font-size:10px;">
+                    <tr style="background-color:#DCDCDC;">
+                        <td width ='22%' >Details</td>
+                        <td>Expectation</td>
+                    </tr>
+                    <tr>
+                        <td>POC Purpose</td>
+                        <td>{!Contract.SBQQ__Quote__r.POC_Purpose__c}</td>
+                        
+                    </tr>
+                    <tr>
+                        <td >POC Period</td>
+                        <td> {!ROUND(Contract.Contract_Tenure_Years__c,0)} Years, {!ROUND(Contract.Contract_Tenure_Months__c,0)} Months,
+                        {!ROUND(Contract.Contract_Tenure_Days__c,0)} Days</td>
+                    </tr>
+                    <tr>
+                        <td >POC Success Criteria</td>
+                        <td>{!Contract.SBQQ__Quote__r.POC_Success_Criteria__c}</td>
+                    </tr>
+                    <tr>
+                        <td >User Connectivity Details</td>
+                        <td>{!Contract.SBQQ__Quote__r.User_connectivity_details__c}</td>
+                    </tr>
+                    <tr>
+                        <td >Application Details</td>
+                        <td>{!Contract.SBQQ__Quote__r.Application_details__c}</td>
+                    </tr>
+                    <tr>
+                        <td >Yotta Scope</td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td >Customer scope of work</td>
+                        <td><apex:outputText value="{!Contract.SBQQ__Quote__r.Scope_of_Work__c}" escape="false" /></td>
+                    </tr>
+                     <tr>
+                        <td >Architectural diagram(optional) Must for: In case of any non-standard solution</td>
+                        <td></td>
+                    </tr>
+                    
+                </table>
+        </apex:outputPanel>
+        <br/>
+            
+            <apex:outputText >
+                <span style="font-family:sans-serif; font-size: 14px; font-weight: bold;color:#f4a142"> Annexure #{!indexMap['Delivery Address']}: </span>
+                <span style="font-family:sans-serif; color:#1d3f81; font-size: 14px; font-weight: bold;">Delivery Address Details</span><br/><br/>
+            </apex:outputText>
+            
+            <!-- <span style="font-family:sans-serif; font-size: 9px;">
+                <apex:outputText >
+                    (Please note that only unique Address selected in the Contract lines should be printed. This implies, the Address details should not be repeated as many times it appears in the Line items)
+                </apex:outputText>
+            </span> -->
+            
+            
+            <table class="borderClass" border="1px solid black" width="95%" cellpadding="5" style="border-collapse: collapse; font-family:sans-serif; font-size: 10px;">
+                <tr style="background-color:#DCDCDC;">
+                    <td>S No.</td>
+                    <td>Delivery Location</td>
+                    <td>Address Details</td>
+                </tr>
+                <apex:repeat value="{!QuoteLines}" var="a">
+                    <apex:variable var="index" value="{!1}"/>
+                    <apex:repeat value="{!QuoteLines[a].locationDeliveryAddressMap}" var="key">
+                        <tr>
+                            <td>{!index}</td>
+                            <td>{!IF(contains(key, 'Customer Site'), 'Customer Site', key)}</td>
+                            <td>{!QuoteLines[a].locationDeliveryAddressMap[key]}</td>
+                            <apex:variable var="index" value="{!index+1}"/>
+                        </tr> 
+                    </apex:repeat>
+                </apex:repeat>
+            </table>
+        </div>
+        <br/>
+        <apex:outputPanel rendered="{!IF(Contract.External_Remarks__c != null,true,IF(Contract.SBQQ__Quote__r.Scope_of_Work__c != null,true,IF(Contract.SBQQ__Quote__r.Assumptions_and_Exclusions__c != null,true,false)))}">
+            <div style="page-break-after: always;font-size:10px;page-break-before: always;">     
+            <apex:outputText rendered="{!IF(Contract.External_Remarks__c != null,true,false)}">
+                <apex:outputText >
+                    <span style="font-family:sans-serif; font-size: 12px; font-weight: bold;"> Remarks </span>
+                </apex:outputText>
+                <br/>
+                <apex:outputText style="font-size:10px; font-family:sans-serif;" value="{!SUBSTITUTE((Contract.External_Remarks__c),'\r\n','<br/>')}" escape="false"/>
+                
+            </apex:outputText><br/>
+            <apex:outputText rendered="{!IF(Contract.SBQQ__Quote__r.Scope_of_Work__c != null,true,false)}">
+                <apex:outputText >
+                    <span style="font-family:sans-serif; font-size: 12px; font-weight: bold;"> Scope of Work </span>
+                </apex:outputText>
+                <br/>
+                <apex:outputText style="font-size:10px; font-family:sans-serif;" value="{!SUBSTITUTE((Contract.SBQQ__Quote__r.Scope_of_Work__c),'\r\n','<br/>')}" escape="false"/>
+                
+            </apex:outputText>
+            <apex:outputText rendered="{!IF(Contract.SBQQ__Quote__r.Assumptions_and_Exclusions__c != null,true,false)}">
+                <apex:outputText >
+                    <span style="font-family:sans-serif; font-size: 12px; font-weight: bold;"> Assumptions and Exclusions </span>
+                </apex:outputText>
+                <br/>
+                <apex:outputText style="font-size:10px; font-family:sans-serif;" value="{!SUBSTITUTE((Contract.SBQQ__Quote__r.Assumptions_and_Exclusions__c),'\r\n','<br/>')}" escape="false"/>
+                
+            </apex:outputText>
+        </div>
+        </apex:outputPanel>
+        
+        <!-- page ends -->
+        <!-- page starts -->
+        
+        <span style="font-family:sans-serif; font-weight: bold; font-size: 14px;color:#f4a142" > Annexure {!indexMap['terms']}: </span>
+        <span style="font-family:sans-serif; font-weight: bold; color:#1d3f81; font-size: 14px;" > Terms &amp; Conditions</span>
+        <br/><br/>
+        <table>
+            <apex:repeat value="{!termNameSet}" var="key" >
+                <span style="font-family:sans-serif; font-weight: bold; color:#f4a142; font-size: 12px;" >
+                    {!key}
+                </span>
+                <br/>
+                <br/>
+                
+                <apex:repeat value="{!TnC[key]}" var="value">
+                    <span style="font-family: sans-serif; font-size: 10px !important;"> 
+                        <!-- <apex:outputText style="font-family: sans-serif; font-size: 10px " value="{!value}" escape="false"/> -->
+                        <apex:outputText style="font-size:10px; font-family:sans-serif;" value="{!SUBSTITUTE(JSENCODE(value),'\r\n','<br/>')}" escape="false"/>
+                        
+                    </span>
+                    <br/><br/>
+                </apex:repeat>
+            </apex:repeat>
+        </table>
+    </body>    
+</apex:page>

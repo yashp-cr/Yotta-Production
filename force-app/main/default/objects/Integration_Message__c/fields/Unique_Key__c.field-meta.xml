@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unique_Key__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Format of this field will be
+Failed/ NP and Valid for Retrial - Object type_Record ID_IntegrationStatus
+Success and Not Valid for Retrial - Object type_Record ID_IntegrationStatus_Im Number</description>
+    <externalId>true</externalId>
+    <inlineHelpText>SObject Type_SFDC Record ID_Status_AutoNumber(For Success)</inlineHelpText>
+    <label>Unique Key</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TOS_SCF_Check</fullName>
+    <active>true</active>
+    <description>Cannot select SCF type as TOS if if quote is Contract Lines SCF</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL( SBQQ__Quote__r.SBQQ__Type__c, &quot;Amendment&quot;),
+    ISPICKVAL( SBQQ__Quote__r.SCF_Type__c, &quot;Contract Line SCF&quot;),
+    ISPICKVAL( SCF_Type__c, &quot;Transfer of Service&quot;)
+)</errorConditionFormula>
+    <errorMessage>Transfer of Service SCF is available when Quote SCF Type is Transfer of Service</errorMessage>
+</ValidationRule>

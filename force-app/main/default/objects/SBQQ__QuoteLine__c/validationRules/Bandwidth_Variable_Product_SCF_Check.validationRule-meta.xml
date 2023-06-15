@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bandwidth_Variable_Product_SCF_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    OR(
+        ISPICKVAL( SBQQ__Quote__r.SBQQ__Type__c, &quot;Amendment&quot; ),
+        ISPICKVAL( SBQQ__Quote__r.SBQQ__Type__c, &quot;Renewal&quot; )
+    ),
+    OR(
+        ISPICKVAL( SBQQ__Quote__r.SCF_Type__c, &quot;Contract Line SCF&quot; ),
+        ISPICKVAL( SBQQ__Quote__r.SCF_Type__c, &quot;Transfer of Service&quot; )
+    ),
+    
+    OR(
+        ISPICKVAL( SBQQ__RequiredBy__r.SCF_Type__c, &quot;Facility Change&quot;),
+        ISPICKVAL( SBQQ__RequiredBy__r.SCF_Type__c, &quot;Transfer of Service&quot;),
+        ISPICKVAL( SBQQ__RequiredBy__r.SCF_Type__c, &quot;Upgrade/Downgrade&quot;) 
+    ),
+    NOT(ISBLANK(TEXT( Bandwidth_Type__c ))),
+    Variable_Product__c 
+)</errorConditionFormula>
+    <errorMessage>Facility Change ,Transfer of Service and Upgrade/Downgrade are not allowed on Variable Bandwidth Products.</errorMessage>
+</ValidationRule>

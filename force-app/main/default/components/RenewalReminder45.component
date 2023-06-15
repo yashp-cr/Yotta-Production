@@ -1,0 +1,28 @@
+<apex:component controller="RenReminderCont" access="global">
+    
+    <apex:attribute name="contractId" type="String" description="This is the Id of the contract" assignTo="{!conId}" access="global" />
+    <div style="font-family:Calibri;font-size:16px;">
+        
+        <br/>
+        <apex:outputText >
+            <p>
+                However, would request you to confirm any one of the following options:
+            </p>
+            <ol>
+                <li>You would like to continue with the services on same terms and conditions.</li>
+                <li>You would not like to continue and wants the services to be discontinued.</li>
+            </ol>
+            <p>
+                Please revert to us in writing to renewals@yotta.com before &nbsp;<apex:outputText value="{0,date,dd-MM-YYYY}"> <apex:param value="{!endDate45}" /> </apex:outputText>,
+                to get the same effective date in our system, as the <br/> invoices are raised in advance. 
+                <br/>
+                
+            </p>    
+            <p>
+                Regards,<br/>
+                Team Yotta.
+                
+            </p>
+        </apex:outputText>
+    </div>
+</apex:component>

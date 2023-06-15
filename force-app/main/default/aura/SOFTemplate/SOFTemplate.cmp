@@ -1,0 +1,31 @@
+<aura:component controller="SOFTemplateServicesExtension" implements="force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+     <aura:html tag="style">
+        .slds-modal__container{ 
+            height : 100%; width: 80%; max-width: 500vh; 
+        } 
+        .modal-body{ 
+           height : 100vh !important; 
+           max-height: 500vh !important; 
+        }         
+    </aura:html>
+
+    <lightning:quickActionAPI aura:id="quickActionAPI" />
+    
+    <aura:attribute name='recordId' type='String' />
+    <aura:attribute name="isPdfGenerated" type='Boolean' default='true' />
+    <aura:attribute name='spinner' type='Boolean' default='false' />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:if isTrue="{!v.spinner}">
+        <lightning:spinner variant="brand" size="small" />
+    </aura:if>
+
+    <iframe src="{!'/apex/SOFTemplateServices?id=' + v.recordId}" scrolling="false" id="theIframe" frameborder="true" height="500px" width="100%" />
+
+    <div style="text-align: center; margin-top : 15px">
+        <lightning:button label="Save and Close" onclick="{!c.save}" />
+        <lightning:button label="Save and Email" onclick="{!c.saveandemail}" />
+        <lightning:button label="Cancel" onclick="{!c.cancel}" />
+    </div>
+    <!--ID is -  {!v.recordId}-->
+</aura:component>

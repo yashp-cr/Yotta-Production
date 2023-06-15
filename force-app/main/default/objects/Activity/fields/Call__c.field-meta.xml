@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call__c</fullName>
+    <defaultValue>&quot;First Call&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Call  Count</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>First Call</fullName>
+                <default>true</default>
+                <label>First Call</label>
+            </value>
+            <value>
+                <fullName>Follow-up Call</fullName>
+                <default>false</default>
+                <label>Follow-up Call</label>
+            </value>
+            <value>
+                <fullName>First Call to Contact person</fullName>
+                <default>false</default>
+                <label>First Call to Contact person</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

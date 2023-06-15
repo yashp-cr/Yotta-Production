@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE_cant_modify_after_Approval</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Solution_Engineer__c = $User.Id,
+ISCHANGED(SBQQ__Status__c ),
+ISPICKVAL ( PRIORVALUE(SBQQ__Status__c) , &quot;Approved&quot;)
+)</errorConditionFormula>
+    <errorMessage>SE can&apos;t modify quote at this stage.</errorMessage>
+</ValidationRule>

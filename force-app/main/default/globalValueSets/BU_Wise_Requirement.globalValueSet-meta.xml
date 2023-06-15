@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Application Services</fullName>
+        <default>false</default>
+        <label>Application Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Colo &amp; Customer Dc Build Services</fullName>
+        <default>false</default>
+        <label>Colo &amp; Customer DC Build Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Core Cloud Services</fullName>
+        <default>false</default>
+        <label>Core Cloud, Multi Cloud &amp; Media Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Cyber Security Services</fullName>
+        <default>false</default>
+        <label>Cyber Security Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Extended &amp; Federated Cloud &amp; Inframanage Services</fullName>
+        <default>false</default>
+        <label>Content, Continuity &amp; IT Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Network Services</fullName>
+        <default>false</default>
+        <label>Network Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Cloud Services</fullName>
+        <default>false</default>
+        <label>Private Cloud Services</label>
+    </customValue>
+    <masterLabel>BU Wise Requirement</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

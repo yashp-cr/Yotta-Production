@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Network_Services__c</fullName>
+    <externalId>false</externalId>
+    <label>Network Services currently used</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Internet Leased Line</fullName>
+                <default>false</default>
+                <label>Internet Leased Line</label>
+            </value>
+            <value>
+                <fullName>P2P/Leased Line</fullName>
+                <default>false</default>
+                <label>P2P/Leased Line</label>
+            </value>
+            <value>
+                <fullName>MPLS</fullName>
+                <default>false</default>
+                <label>MPLS</label>
+            </value>
+            <value>
+                <fullName>IPLC</fullName>
+                <default>false</default>
+                <label>IPLC</label>
+            </value>
+            <value>
+                <fullName>CDN</fullName>
+                <default>false</default>
+                <label>CDN</label>
+            </value>
+            <value>
+                <fullName>Dark Fiber</fullName>
+                <default>false</default>
+                <label>Dark Fiber</label>
+            </value>
+            <value>
+                <fullName>SD-WAN</fullName>
+                <default>false</default>
+                <label>SD-WAN</label>
+            </value>
+            <value>
+                <fullName>Exchange Connectivity (Xtreme-IX,DE-CIX, NIXI)</fullName>
+                <default>false</default>
+                <label>Exchange Connectivity (Xtreme-IX,DE-CIX, NIXI)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

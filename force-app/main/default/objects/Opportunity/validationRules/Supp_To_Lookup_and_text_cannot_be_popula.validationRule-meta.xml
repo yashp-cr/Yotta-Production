@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supp_To_Lookup_and_text_cannot_be_popula</fullName>
+    <active>false</active>
+    <description>This is not required as lead conversion will keep both the fields populated and anyway text field will not be available on the page layout</description>
+    <errorConditionFormula>AND(
+ NOT(ISBLANK(SupportTo__c)),
+ NOT(ISBLANK(SupporttoCustomerName__c))
+)</errorConditionFormula>
+    <errorMessage>Support To &amp; Support to Customer Name cannot be populated together.</errorMessage>
+</ValidationRule>

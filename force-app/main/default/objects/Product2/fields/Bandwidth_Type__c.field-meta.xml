@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bandwidth_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Bandwidth Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Burstable</fullName>
+                <default>false</default>
+                <label>Burstable</label>
+            </value>
+            <value>
+                <fullName>Data Transfer</fullName>
+                <default>false</default>
+                <label>Data Transfer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

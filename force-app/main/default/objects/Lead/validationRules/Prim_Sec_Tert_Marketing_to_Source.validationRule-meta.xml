@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prim_Sec_Tert_Marketing_to_Source</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR( 
+	AND(
+		NOT(ISPICKVAL( PrimarySource__c, &apos;Marketing&apos;)),
+		NOT(ISBLANK( Primary_Campaign__c ))
+	),
+	AND(
+		NOT(ISPICKVAL( SecondarySource__c, &apos;Marketing&apos;)),
+		NOT(ISBLANK( Secondary_Campaign__c ))
+	),
+	AND(
+		NOT(ISPICKVAL( TertiarySource__c, &apos;Marketing&apos;)),
+		NOT(ISBLANK(Tertiary_Campaign__c))
+	)
+)</errorConditionFormula>
+    <errorMessage>Source should be Marketing when Campaign is associated</errorMessage>
+</ValidationRule>

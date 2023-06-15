@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_can_be_Contracted_if_primary</fullName>
+    <active>true</active>
+    <errorConditionFormula>(!SBQQ__Primary__c &amp;&amp; Contracted__c &amp;&amp;  ISCHANGED(Contracted__c))</errorConditionFormula>
+    <errorDisplayField>Contracted__c</errorDisplayField>
+    <errorMessage>The Quote can be Contracted only if it is Primary..</errorMessage>
+</ValidationRule>

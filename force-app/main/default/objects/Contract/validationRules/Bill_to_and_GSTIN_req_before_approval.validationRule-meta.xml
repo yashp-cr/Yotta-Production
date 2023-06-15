@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bill_to_and_GSTIN_req_before_approval</fullName>
+    <active>true</active>
+    <description>Bill to Address and GSTIN fields should  not be blank before OMT Approval.</description>
+    <errorConditionFormula>ISCHANGED( Submit_for_OMT_Approval__c ) &amp;&amp;
+NOT(Is_SOF_Approved__c) &amp;&amp;
+Submit_for_OMT_Approval__c &amp;&amp;
+( ISBLANK(Bill_To_Address__c) ||
+  ISBLANK( TEXT( Bill_To_Address__r.GSTApplicable__c ))
+)</errorConditionFormula>
+    <errorMessage>Bill to Address along with GST details is required before Submitting the Contract for Approval.</errorMessage>
+</ValidationRule>

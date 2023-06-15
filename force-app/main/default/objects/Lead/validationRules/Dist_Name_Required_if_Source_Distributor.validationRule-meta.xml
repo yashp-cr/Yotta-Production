@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dist_Name_Required_if_Source_Distributor</fullName>
+    <active>true</active>
+    <description>Distributor Name is required if any of the sources is Distributor</description>
+    <errorConditionFormula>AND(
+ ISBLANK(TEXT( Distributor_Partner_Name__c )),
+ OR(
+  CONTAINS(TEXT( PrimarySource__c ), &quot;Distributor&quot;),
+  CONTAINS(TEXT( SecondarySource__c ), &quot;Distributor&quot;),
+  CONTAINS(TEXT( TertiarySource__c ), &quot;Distributor&quot;)
+ )
+)</errorConditionFormula>
+    <errorMessage>Distributor Name is required if any of the sources is Distributor</errorMessage>
+</ValidationRule>

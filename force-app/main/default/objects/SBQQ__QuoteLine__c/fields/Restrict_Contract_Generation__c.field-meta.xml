@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Contract_Generation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicator to identify to product if added, contract generation should not be allowed</description>
+    <externalId>false</externalId>
+    <label>Restrict Contract Generation</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,19 @@
+<apex:component controller="RenReminder60Controller" access="global">
+    <apex:attribute name="contractId" type="String" description="This is the Id of the contract" assignTo="{!conId}" access="global" />
+    <div style="font-family:Calibri;font-size:16px;"> 
+            <apex:outputText >
+                <p>
+            Kindly note that if we do not receive any confirmation from you on or before  &nbsp;<apex:outputText value="{0,date,dd-MM-YYYY}"> <apex:param value="{!endDate65}" /> </apex:outputText>,
+            <br/>
+            then it will be considered as acceptance of auto renewal for a further period of initial term at the same terms
+            <br/>
+            and conditions.
+                </p>
+                <p>
+                 You can stop your services from being auto renewed by informing us about the discontinuation of services in
+            <br/>
+            writing at renewals@yotta.com. 
+                </p>
+            </apex:outputText>
+    </div>
+</apex:component>

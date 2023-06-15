@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_cannot_be_zero_or_fraction</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(Quote_Type__c = &apos;Quote&apos;,
+AND(Quote_Type__c = &apos;Amendment&apos;,  ISPICKVAL( SCF_Type__c ,&apos;New Line&apos;)),
+AND(Quote_Type__c = &apos;Renewal&apos;,  
+    ISPICKVAL( SCF_Type__c ,&apos;New Line&apos;))
+) &amp;&amp; 
+OR( 
+NOT(REGEX(TEXT( SBQQ__Quantity__c ), &quot;^\\d+$&quot;)),  
+SBQQ__Quantity__c = 0)
+&amp;&amp; SBQQ__RequiredBy__c = NULL</errorConditionFormula>
+    <errorMessage>Bundle Quantity cannot be 0 or a fraction.</errorMessage>
+</ValidationRule>

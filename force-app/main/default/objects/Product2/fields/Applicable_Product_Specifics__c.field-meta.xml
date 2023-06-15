@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applicable_Product_Specifics__c</fullName>
+    <description>Used for mapping T &amp; C with product master</description>
+    <externalId>false</externalId>
+    <label>Applicable Product Specifics</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Equipment Sales</fullName>
+                <default>false</default>
+                <label>Equipment Sales</label>
+            </value>
+            <value>
+                <fullName>Fitout Material/Services</fullName>
+                <default>false</default>
+                <label>Fitout Material/Services</label>
+            </value>
+            <value>
+                <fullName>Internet Bandwidth usage / usage-based Billing</fullName>
+                <default>false</default>
+                <label>Internet Bandwidth usage / usage-based Billing</label>
+            </value>
+            <value>
+                <fullName>IT Management Services</fullName>
+                <default>false</default>
+                <label>IT Management Services</label>
+            </value>
+            <value>
+                <fullName>Power Utility Charges</fullName>
+                <default>false</default>
+                <label>Power Utility Charges</label>
+            </value>
+            <value>
+                <fullName>Pre-scheduled Tests / Activities related Services</fullName>
+                <default>false</default>
+                <label>Pre-scheduled Tests / Activities related Services</label>
+            </value>
+            <value>
+                <fullName>Temporary Storage in Service Provider Stores / Staging Area</fullName>
+                <default>false</default>
+                <label>Temporary Storage in Service Provider Stores / Staging Area</label>
+            </value>
+            <value>
+                <fullName>Third Party Cloud Services</fullName>
+                <default>false</default>
+                <label>Third Party Cloud Services</label>
+            </value>
+            <value>
+                <fullName>End User License Term</fullName>
+                <default>false</default>
+                <label>End User License Term</label>
+            </value>
+            <value>
+                <fullName>Network Usage Validation Term</fullName>
+                <default>false</default>
+                <label>Network Usage Validation Term</label>
+            </value>
+            <value>
+                <fullName>YottaSafe Mega Savings Offer Term</fullName>
+                <default>false</default>
+                <label>YottaSafe Mega Savings Offer Term</label>
+            </value>
+            <value>
+                <fullName>Infra Utility Charges per Circuit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Infra Utility Charges per Circuit</label>
+            </value>
+            <value>
+                <fullName>Inframanage/Inframonitor Services</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Inframanage/Inframonitor Services</label>
+            </value>
+            <value>
+                <fullName>Migration Services and Charges</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Migration Services and Charges</label>
+            </value>
+            <value>
+                <fullName>No transfer of Equipment Ownership</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No transfer of Equipment Ownership</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

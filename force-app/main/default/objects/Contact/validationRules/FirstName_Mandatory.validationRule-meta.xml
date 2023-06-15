@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FirstName_Mandatory</fullName>
+    <active>true</active>
+    <description>24-Sep-2020 - FirstName should be mandatory as this is needed in the backend applications for integration</description>
+    <errorConditionFormula>ISBLANK(FirstName)</errorConditionFormula>
+    <errorMessage>First Name is mandatory</errorMessage>
+</ValidationRule>

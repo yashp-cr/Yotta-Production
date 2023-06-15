@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Development_Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>Business Development Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Research</fullName>
+                <default>false</default>
+                <label>Account Research</label>
+            </value>
+            <value>
+                <fullName>Reach Out</fullName>
+                <default>false</default>
+                <label>Reach Out</label>
+            </value>
+            <value>
+                <fullName>1st Meet Done</fullName>
+                <default>false</default>
+                <label>1st Meet Done</label>
+            </value>
+            <value>
+                <fullName>Yotta Capability Workshop</fullName>
+                <default>false</default>
+                <label>Yotta Capability Workshop</label>
+            </value>
+            <value>
+                <fullName>BU/Product Specific Workshop</fullName>
+                <default>false</default>
+                <label>BU/Product Specific Workshop</label>
+            </value>
+            <value>
+                <fullName>Leadership Connect Planned</fullName>
+                <default>false</default>
+                <label>Leadership Connect Planned</label>
+            </value>
+            <value>
+                <fullName>Partner Connect Planned</fullName>
+                <default>false</default>
+                <label>Partner Connect Planned</label>
+            </value>
+            <value>
+                <fullName>YCIC Connect Planned</fullName>
+                <default>false</default>
+                <label>YCIC Connect Planned</label>
+            </value>
+            <value>
+                <fullName>Cold/Dormat Account</fullName>
+                <default>false</default>
+                <label>Cold/Dormat Account</label>
+            </value>
+            <value>
+                <fullName>Lead/Opportunity in process</fullName>
+                <default>false</default>
+                <label>Lead/Opportunity in process</label>
+            </value>
+            <value>
+                <fullName>Handed over to region</fullName>
+                <default>false</default>
+                <label>Handed over to region</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

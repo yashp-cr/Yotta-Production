@@ -1,0 +1,15 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId,flexipage:availableForAllPageTypes" access="global" controller="TermsAndConditionClass">
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
+    <aura:attribute name="toggleSpinner" type="boolean" default="false"/>
+    
+    <aura:if isTrue="{!v.toggleSpinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container slds-card__header ">
+            <div class="slds-spinner_brand  slds-spinner slds-spinner_large " role="alert">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if> 
+</aura:component>

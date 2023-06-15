@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_submit_contract_if_kyc_not_approved</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED( Submit_for_OMT_Approval__c ) &amp;&amp;
+Submit_for_OMT_Approval__c &amp;&amp;
+Not(ISPICKVAL( Account.KYC_Approval_Status__c , &quot;Approved&quot;)) &amp;&amp;  POC__c  = &quot;Yes&quot;</errorConditionFormula>
+    <errorMessage>Account&apos;s KYC Approval Status is not approved. Please get it approved before submitting the contract for approval.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Contract Subscription Object</label>
+    <protected>false</protected>
+    <values>
+        <field>Child_Query_Field__c</field>
+        <value xsi:type="xsd:string">sbqq__contract__c</value>
+    </values>
+    <values>
+        <field>Classname__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Format_Parameters__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>GroupBy_Clause__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Instance_Name__c</field>
+        <value xsi:type="xsd:string">ContractLines</value>
+    </values>
+    <values>
+        <field>Instance_Type__c</field>
+        <value xsi:type="xsd:string">List</value>
+    </values>
+    <values>
+        <field>Parameter_Value__c</field>
+        <value xsi:type="xsd:string">SBQQ__RequiredById__c = null And SBQQ__Quantity__c&gt; -1 And Is_Ready_for_Sync__c = true</value>
+    </values>
+    <values>
+        <field>Parameter_key__c</field>
+        <value xsi:type="xsd:string">And finalized_billing_dates__c = true</value>
+    </values>
+    <values>
+        <field>ParentGroupField__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Parent_Field__c</field>
+        <value xsi:type="xsd:string">id</value>
+    </values>
+    <values>
+        <field>Parent_Request__c</field>
+        <value xsi:type="xsd:string">Contract_Topic</value>
+    </values>
+    <values>
+        <field>Self_Template_Name__c</field>
+        <value xsi:type="xsd:string">Contract_Subscription_Object</value>
+    </values>
+    <values>
+        <field>Static_Condition__c</field>
+        <value xsi:type="xsd:string">SBQQ__RequiredById__c = null And SBQQ__Quantity__c&gt; -1 And Is_Ready_for_Sync__c = true</value>
+    </values>
+    <values>
+        <field>bulk_process__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

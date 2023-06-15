@@ -1,0 +1,12 @@
+.THIS .preformat{
+    white-space: pre; 
+    font-family: monospace;
+}
+
+.THIS pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+.THIS .string { color: green; }
+.THIS .number { color: darkorange; }
+.THIS .boolean { color: blue; }
+.THIS .null { color: magenta; }
+.THIS .key { color: red; }
+.THIS .floatButtonRight button {float:right!important;}

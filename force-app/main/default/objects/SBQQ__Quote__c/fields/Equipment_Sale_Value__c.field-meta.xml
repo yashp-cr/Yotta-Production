@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Equipment_Sale_Value__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Equipment Sale 
+• &lt;ES&gt; of Equipment Sale value</inlineHelpText>
+    <label>Equipment Sale Value</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>100%</fullName>
+                <default>true</default>
+                <label>100%</label>
+            </value>
+            <value>
+                <fullName>75%</fullName>
+                <default>false</default>
+                <label>75%</label>
+            </value>
+            <value>
+                <fullName>50%</fullName>
+                <default>false</default>
+                <label>50%</label>
+            </value>
+            <value>
+                <fullName>25%</fullName>
+                <default>false</default>
+                <label>25%</label>
+            </value>
+            <value>
+                <fullName>0%</fullName>
+                <default>false</default>
+                <label>0%</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

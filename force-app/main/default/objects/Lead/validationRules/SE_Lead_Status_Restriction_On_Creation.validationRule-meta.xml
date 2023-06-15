@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE_Lead_Status_Restriction_On_Creation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISNEW(),
+OR(
+AND(
+RecordType.DeveloperName = &quot;Regular_Lead&quot;,
+OR(
+ISPICKVAL(Status,&apos;Assigned to Sales&apos;),
+ISPICKVAL(Status,&apos;Not Qualified&apos;),
+ISPICKVAL(Status,&apos;Closed lost&apos;),
+ISPICKVAL(Status,&apos;Closed cancelled&apos;),
+ISPICKVAL(Status,&apos;Omitted&apos;)
+)
+),
+AND(
+RecordType.DeveloperName = &quot;Partner&quot;,
+OR(
+ISPICKVAL(Status,&apos;Not Qualified&apos;),
+ISPICKVAL(Status,&apos;Closed lost&apos;),
+ISPICKVAL(Status,&apos;Closed cancelled&apos;),
+ISPICKVAL(Status,&apos;Omitted&apos;)
+)
+)
+),
+$Profile.Name &lt;&gt; &quot;Yotta IS Profile&quot;,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;
+)</errorConditionFormula>
+    <errorMessage>Status selected is not a valid selection. Please change appropriately.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,413 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" 
+                access="global" 
+                controller="UpdatePartnerCommissions">
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="userProfile" type="String"/>
+    <aura:attribute name="modelType" type="String" />
+    <aura:attribute name="partnerModelType" type="String" />
+    <aura:attribute name="partnerType" type="Boolean" default="false" />
+    <aura:attribute name="quoteStatus" type="String" />
+    <aura:attribute name="partnerLineStatusList" type="List" />
+    <aura:attribute name="quoteStatusList" type="List" />
+    <aura:attribute name="Valuetocheck" type="String"/>    
+    <aura:attribute name="Name" type="String"/>
+    <aura:attribute name="One_Time_Commission_on_Annual_Contract__c" type="Double"/>
+    <aura:attribute name="Recurring_Commission_on_Actual_Billed__c" type="Double"/>
+    <aura:attribute name="Distributor_Recurring_Commission_on_Actual_Billed__c" type="Double"/>
+    <aura:attribute name="CommissionModelList" type="List" />
+    <aura:attribute name="partnerBModelList" type="List" />
+    <aura:attribute name="partnerTPModelList" type="List" />
+    <aura:attribute name="Contracted" type="Boolean" />
+
+
+
+    <aura:attribute name="opportunity" type="Opportunity"
+                    default="{ 'sobjectType': 'Opportunity' }"/>
+    <aura:attribute name="HideSpinner" type="Boolean" default="false"/>
+    <c:ApexService aura:id="service"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
+    <aura:html tag="style">
+        
+        .slds-modal__container{
+        height : 100% !important;
+        width: 75%;
+        max-width: none;
+        display: block;
+        }
+        .slds-modal__content{
+        overflow: initial !important;
+        }
+        .customHeader{
+        display: flex inline !important;
+        }
+        .quick-action-panel{
+        overflow: initial !important;
+        }
+        .cuf-content{
+        padding: 0 0rem !important;
+        }
+        
+    </aura:html>
+    
+    <aura:if isTrue="{!v.userProfile == 'Yotta Partner Manager Profile' || v.userProfile == 'System Administrator' || v.userProfile == 'Yotta Sales Head Profile'}">
+
+
+        <aura:if isTrue="{!(v.quoteStatus == 'False')}" >
+            <header>
+                <div class="slds-m-top_medium"> 
+                    <div class="lds-docked-form-header customHeader slds-modal__header" style="height:55px;">
+                        <h3 class="title slds-text-heading--medium">Partner Commission Type</h3>
+                    </div>
+                </div>
+                
+            </header>
+            <div aura:id="container">
+                <p><lightning:formattedUrl value="https://yotta--cpqdev--c.documentforce.com/servlet/servlet.FileDownload?file=0151m000000N27e" label="Partner Commission Doc" tooltip="Click on link for Partner Commission Document" /></p>
+            </div>
+            <div class="slds-form slds-form_compound">
+                <fieldset class="slds-form-element">
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">                      
+                            <div class="slds-form-element slds-size_1-of-2  ">
+                                <br />
+                                <ui:outputText value="Partner Commission Model" />
+                                
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <br/>
+                                <ui:inputSelect class="single" aura:id="InputSelectSingle" change="{!c.onSaveType}">
+                                    
+                                    
+                                    <ui:inputSelectOption text="None" value="true" select="None"/>
+                                    <ui:inputSelectOption text="Model A" select="Model A"/>
+                                    <ui:inputSelectOption text="Model B" select="Model B"/>
+                                </ui:inputSelect>
+                                
+                            </div>                 
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                </fieldset>
+                
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{!and(not(empty(v.CommissionModelList)), v.partnerModelType == 'Model A')}">
+            <header>
+                <div class="slds-m-top_medium"> 
+                    <div class="slds-docked-form-header customHeader slds-modal__header" style="height:55px;">
+                        <h3 class="title slds-text-heading--medium">Partner Commissions A</h3>
+                    </div>
+                </div>
+                
+            </header>
+            <div class="slds-form slds-form_compound slds-scrollable_x">
+                <fieldset class="slds-form-element">
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-7">
+                                <label class="slds-form-element__label slds-text-body_regular " for="input-01"><b>PRODUCT FAMILY</b></label>
+                                
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-7">
+                                <label class="slds-form-element__label slds-text-body_regular " for="input-02"><b>PRODUCT LINE</b></label>
+                                
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-7">
+                                <label class="slds-form-element__label slds-text-body_regular " for="input-02"><b>PRODUCT NAME</b></label>
+                                
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-7">
+                                <label class="slds-form-element__label slds-text-body_regular " for="input-02"><b>QUANTITY</b></label>
+
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-7">
+                                <label class="slds-form-element__label slds-text-body_regular " for="input-01"><b>ONE TIME COMMISSION ON ANNUAL CONTRACT</b></label>
+                                
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-7">
+                                <label class="slds-form-element__label slds-text-body_regular " for="input-01"><b>RECURRING COMMISSION ON ACTUAL BILLED</b></label>
+                                
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-7" style="{!IF(v.partnerType , 'display:block', 'display:none')}">
+                                <label class="slds-form-element__label slds-text-body_regular " for="input-01"><b>DISTRIBUTOR RECURRING COMMISSION ON ACTUAL BILLED</b></label>
+
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="slds-scrollable_y" style="height:20rem;width:auto;">
+                <aura:iteration items="{!v.CommissionModelList}" var="value">
+                    <fieldset class="slds-form-element" disabled="{!v.Contracted}">
+                        <div class="slds-form-element__group">
+                            <div class="slds-form-element__row">                      
+                                <div class="slds-form-element slds-size_1-of-7  ">
+                                    <br />
+                                    <ui:outputText class = ".WRAP" value="{!value.SBQQ__ProductFamily__c}" />
+                                    
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-7  ">
+                                    <br />
+                                    <ui:outputText class = ".WRAP" value="{!value.Product_Line__c}" />
+                                    
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-7  ">
+                                    <br />
+                                    <ui:outputText class = ".WRAP" value="{!value.SBQQ__ProductName__c}" />
+                                    
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-7  ">
+                                    <br />
+                                    <ui:outputText class = ".WRAP" value="{!value.SBQQ__Quantity__c}" />
+
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-7">
+                                    <lightning:input aura:id="field"
+                                                     type="number" step="0.1" formatter = "percent-fixed" 
+                                                     value="{!value.Sales_Rep_Commission__c}"
+                                                     disabled="{!IF(value.Sales_Rep_Commission__c == null || v.Contracted, true,false)}"
+                                                     name="One_Time_Commission_on_Annual_Contract__c" 
+                                                     min ="0"
+                                                     max = "100"
+                                                     messageWhenRangeUnderflow="Please enter a positive value."
+                                                     messageWhenRangeOverflow="Please enter a positive value less than or equal to 100."
+                                                     />
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-7">
+                                    <lightning:input aura:id="field"
+                                                     type="number" step="0.1" formatter = "percent-fixed" 
+                                                     id="input-03" value="{!value.Partner_Commission__c}"
+                                                     disabled="{!IF(value.Partner_Commission__c == null || v.Contracted, true,false)}"
+                                                     name="Recurring_Commission_on_Actual_Billed__c"
+                                                     min ="0"
+                                                     max = "100"
+                                                     messageWhenRangeUnderflow="Please enter a positive value."
+                                                     messageWhenRangeOverflow="Please enter a positive value less than or equal to 100."
+                                                     />
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-7" style="{!IF(value.Distributor_Partner_Commission__c == null , 'display:none', 'display:block')}">
+                                    <lightning:input aura:id="field"
+                                                     type="number" step="0.1" formatter = "percent-fixed"
+                                                     id="input-04" value="{!value.Distributor_Partner_Commission__c}"
+                                                     disabled="{!IF(value.Distributor_Partner_Commission__c == null || v.Contracted, true,false)}"
+                                                     name="Distributor_Recurring_Commission_on_Actual_Billed__c"
+                                                     min ="0"
+                                                     max = "100"
+                                                     messageWhenRangeUnderflow="Please enter a positive value."
+                                                     messageWhenRangeOverflow="Please enter a positive value less than or equal to 100."
+                                    />
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </fieldset>
+                </aura:iteration>
+                </div>
+            </div>
+        <aura:if isTrue="{!not(v.Contracted)}">
+            <footer>
+                <div class="slds-m-top_medium">
+                    <div class="slds-docked-form-footer slds-modal__footer customFooter" style="height:55px;">
+                        <div style="float:right;width: -webkit-fill-available">
+                            <lightning:button variant="Neutral" class="slds-button" label="Update" onclick="{!c.onSave}"/>
+                            <lightning:button variant="Brand" class="slds-button" label="Cancel" onclick="{!c.onCancel}"/>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </aura:if>
+        </aura:if>
+        <aura:if isTrue="{!and(not(empty(v.partnerBModelList)), v.partnerModelType == 'Model B')}">
+            <header>
+                <div class="slds-m-top_medium"> 
+                    <div class="lds-docked-form-header customHeader slds-modal__header" style="height:55px;">
+                        <h3 class="title slds-text-heading--medium">Partner Commissions B</h3>
+                    </div>
+                </div>
+                
+            </header>
+            <div class="slds-form slds-form_compound">
+                <fieldset class="slds-form-element">
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label class="slds-form-element__label slds-text-body_regular " for="input-01"><b>YEAR</b></label>
+                                
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label class="slds-form-element__label slds-text-body_regular " for="input-02"><b>YEAR PERCENTAGE</b></label>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </fieldset>
+                <aura:iteration items="{!v.partnerBModelList}" var="value" >
+                    <fieldset class="slds-form-element" disabled="{!v.Contracted}">
+                        <div class="slds-form-element__group">
+                            <div class="slds-form-element__row">                      
+                                <div class="slds-form-element slds-size_1-of-2  ">
+                                    <br />
+                                    <ui:outputText value="Year 1" />
+                                    
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-2">
+                                    <lightning:input aura:id="field"
+                                                     type="number" step="0.1" formatter = "percent-fixed" 
+                                                     value="{!value.TCV_Formula_for_Year_1__c}"
+                                                     disabled="{!IF(v.Contracted, true,false)}"
+                                                     name="TCV_Formula_for_Year_1__c" 
+                                                     min ="0"
+                                                     max = "100"
+                                                     messageWhenRangeUnderflow="Please enter a positive value."
+                                                     messageWhenRangeOverflow="Please enter a positive value less than or equal to 100."
+                                                     />
+                                </div>                 
+                            </div>
+                            <div class="slds-form-element__row">                      
+                                <div class="slds-form-element slds-size_1-of-2  ">
+                                    <br />
+                                    <ui:outputText value="Year 2" />
+                                    
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-2">
+                                    <lightning:input aura:id="field"
+                                                     type="number" step="0.1" formatter = "percent-fixed" 
+                                                     value="{!value.TCV_Formula_for_Year_2__c}"
+                                                     disabled="{!IF(v.Contracted, true,false)}"
+                                                     name="TCV_Formula_for_Year_2__c" 
+                                                     min ="0"
+                                                     max = "100"
+                                                     messageWhenRangeUnderflow="Please enter a positive value."
+                                                     messageWhenRangeOverflow="Please enter a positive value less than or equal to 100."
+                                                     />
+                                </div>                 
+                            </div>
+                            <div class="slds-form-element__row">                      
+                                <div class="slds-form-element slds-size_1-of-2  ">
+                                    <br />
+                                    <ui:outputText value="Year 3" />
+                                    
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-2">
+                                    <lightning:input aura:id="field"
+                                                     type="number" step="0.1" formatter = "percent-fixed" 
+                                                     value="{!value.TCV_Formula_for_Year_3__c}"
+                                                     disabled="{!IF(v.Contracted, true,false)}"
+                                                     name="TCV_Formula_for_Year_3__c" 
+                                                     min ="0"
+                                                     max = "100"
+                                                     messageWhenRangeUnderflow="Please enter a positive value."
+                                                     messageWhenRangeOverflow="Please enter a positive value less than or equal to 100."
+                                                     />
+                                </div>                 
+                            </div>
+                            <div class="slds-form-element__row">                      
+                                <div class="slds-form-element slds-size_1-of-2  ">
+                                    <br />
+                                    <ui:outputText value="Year 4" />
+                                    
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-2">
+                                    <lightning:input aura:id="field"
+                                                     type="number" step="0.1" formatter = "percent-fixed" 
+                                                     value="{!value.TCV_Formula_for_Year_4__c}"
+                                                     disabled="{!IF(v.Contracted, true,false)}"
+                                                     name="TCV_Formula_for_Year_4__c" 
+                                                     min ="0"
+                                                     max = "100"
+                                                     messageWhenRangeUnderflow="Please enter a positive value."
+                                                     messageWhenRangeOverflow="Please enter a positive value less than or equal to 100."
+                                                     />
+                                </div>                 
+                            </div>
+                            <div class="slds-form-element__row">                      
+                                <div class="slds-form-element slds-size_1-of-2  ">
+                                    <br />
+                                    <ui:outputText value="Year 5" />
+                                    
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-2">
+                                    <lightning:input aura:id="field"
+                                                     type="number" step="0.1" formatter = "percent-fixed" 
+                                                     value="{!value.TCV_Formula_for_Year_5__c}"
+                                                     disabled="{!IF(v.Contracted, true,false)}"
+                                                     name="TCV_Formula_for_Year_5__c" 
+                                                     min ="0"
+                                                     max = "100"
+                                                     messageWhenRangeUnderflow="Please enter a positive value."
+                                                     messageWhenRangeOverflow="Please enter a positive value less than or equal to 100."
+                                                     />
+                                </div>                 
+                            </div>
+                            <div class="slds-form-element__row">                      
+                                <div class="slds-form-element slds-size_1-of-2  ">
+                                    <br />
+                                    <ui:outputText value="One Time Commission % to Partner Organisation" />
+                                    
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-2">
+                                    <lightning:input aura:id="field"
+                                                     type="number" step="0.1" formatter = "percent-fixed" 
+                                                     value="{!value.Partner_Commission__c}"
+                                                     disabled="{!IF(v.Contracted, true,false)}"
+                                                     name="Partner_Commission__c" 
+                                                     min ="0"
+                                                     max = "100"
+                                                     messageWhenRangeUnderflow="Please enter a positive value."
+                                                     messageWhenRangeOverflow="Please enter a positive value less than or equal to 100."
+                                                     />
+                                </div>                 
+                            </div>
+                            <div class="slds-form-element__row">                      
+                                <div class="slds-form-element slds-size_1-of-2  ">
+                                    <br />
+                                    <ui:outputText value="One Time Commission % to Partner Sales Representative" />
+                                    
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-2">
+                                    <lightning:input aura:id="field"
+                                                     type="number" step="0.1" formatter = "percent-fixed" 
+                                                     value="{!value.Sales_Rep_Commission__c}"
+                                                     disabled="{!IF(v.Contracted, true,false)}"
+                                                     name="Sales_Rep_Commission__c" 
+                                                     min ="0"
+                                                     max = "100"
+                                                     messageWhenRangeUnderflow="Please enter a positive value."
+                                                     messageWhenRangeOverflow="Please enter a positive value less than or equal to 100."
+                                                     />
+                                </div>                 
+                            </div>
+                        </div>
+                    </fieldset>
+                </aura:iteration>
+                <aura:if isTrue="{!not(v.Contracted)}">
+                    <footer>
+                        <div class="slds-m-top_medium">
+                            <div class="slds-docked-form-footer slds-modal__footer customFooter" style="height:55px;">
+                                <div style="float:right;width: -webkit-fill-available;">
+                                    <lightning:button variant="Neutral" class="slds-button" label="Update" onclick="{!c.onSaveModelB}"/>
+                                    <lightning:button variant="Brand" class="slds-button" label="Cancel" onclick="{!c.onCancel}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </aura:if>
+            </div>
+
+        </aura:if>
+
+        <aura:if isTrue="{!v.HideSpinner}">
+            <div class="slds-spinner_container">
+                <lightning:spinner aura:id="mySpinner" variant="brand" size="medium" alternativeText="Loading"/>
+            </div>
+        </aura:if>
+       
+    </aura:if>
+    
+</aura:component>

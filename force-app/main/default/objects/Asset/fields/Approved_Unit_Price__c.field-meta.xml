@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_Unit_Price__c</fullName>
+    <description>The field is created for the new approval process. Allowable Sales Price will be stamped in this field on line creation and will be updated with Final Unit Price on every Quote Approval.</description>
+    <externalId>false</externalId>
+    <label>Approved Unit Price</label>
+    <precision>14</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

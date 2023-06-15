@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_and_hours_cant_be_empty_if_VRC</fullName>
+    <active>false</active>
+    <errorConditionFormula>Variable_Product_Count__c &gt; 0 &amp;&amp;
+( ISBLANK(No_of_days_per_month__c  )|| ISBLANK(No_of_hours_per_month__c  ))</errorConditionFormula>
+    <errorMessage>No. of days per month and no. of hours per day cannot be blank if the dimesion type of product is VRC.</errorMessage>
+</ValidationRule>

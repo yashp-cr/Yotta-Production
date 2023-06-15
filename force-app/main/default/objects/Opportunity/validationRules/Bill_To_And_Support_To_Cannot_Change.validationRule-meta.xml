@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bill_To_And_Support_To_Cannot_Change</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ NOT(ISNEW()),
+ $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ ISBLANK( SBQQ__AmendedContract__c ),
+ OR( 
+   AND(
+    NOT(PRIORVALUE(BillToSameasSupportTo__c)),
+    ISCHANGED(BillToSameasSupportTo__c)
+   ),
+   AND( 
+    PRIORVALUE(SupportTo__c) &lt;&gt; SupportTo__c,
+    NOT(ISBLANK(PRIORVALUE(SupportTo__c))) 
+   ),
+   AND( 
+    PRIORVALUE(AccountId) &lt;&gt; AccountId,
+    NOT(ISBLANK(PRIORVALUE(AccountId))) 
+   )
+ )
+)</errorConditionFormula>
+    <errorMessage>Bill To And Support To fields cannot be updated.</errorMessage>
+</ValidationRule>

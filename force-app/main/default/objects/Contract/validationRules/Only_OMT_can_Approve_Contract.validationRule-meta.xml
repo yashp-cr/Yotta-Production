@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_OMT_can_Approve_Contract</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ Quote_SCF_Type__c &lt;&gt; &quot;Transfer of Service&quot;,
+ Quote_SCF_Type__c &lt;&gt; &quot;Bill Cycle Change&quot;,
+ Quote_SCF_Type__c &lt;&gt; &quot;Address Change&quot;,
+ Quote_Type__c &lt;&gt; &quot;Renewal&quot;,
+ ISPICKVAL(Status, &quot;Approved&quot;),
+ ISCHANGED(Status),
+ $Profile.Name &lt;&gt; &quot;Yotta Order Management&quot;,
+ $Profile.Name &lt;&gt; &quot;System Administrator&quot;
+)</errorConditionFormula>
+    <errorMessage>Only OMT team can approve contract</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Who_from_partner_community_can_be_help__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Who from partner community can be help in this account</inlineHelpText>
+    <label>Who from partner community can be help?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

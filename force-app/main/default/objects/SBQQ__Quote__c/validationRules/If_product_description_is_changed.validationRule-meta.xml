@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_product_description_is_changed</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(SBQQ__Status__c  , &apos;Customer Accepted&apos;) &amp;&amp;  !Is_PDF_Generated__c &amp;&amp; Contracted__c &amp;&amp; NOT(ISCHANGED(Signed_SCF_Uploaded__c)) &amp;&amp;  $Profile.Name &lt;&gt; &quot;System Administrator&quot;</errorConditionFormula>
+    <errorMessage>Please generate quote PDF before proceeding further.</errorMessage>
+</ValidationRule>

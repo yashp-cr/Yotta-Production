@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Signed_SCF_Uploaded__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field will be marked as True when Signed SCF form is uploaded and will be marked as False when OMT approves the approval process. There is a validation that it has to be True while submitting the SCF for approval.</description>
+    <externalId>false</externalId>
+    <label>Signed SCF Uploaded?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

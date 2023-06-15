@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>application_platforms__c</fullName>
+    <externalId>false</externalId>
+    <label>Application Platforms?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SAP HANA</fullName>
+                <default>false</default>
+                <label>SAP HANA</label>
+            </value>
+            <value>
+                <fullName>SAP ECC</fullName>
+                <default>false</default>
+                <label>SAP ECC</label>
+            </value>
+            <value>
+                <fullName>SAP B1</fullName>
+                <default>false</default>
+                <label>SAP B1</label>
+            </value>
+            <value>
+                <fullName>Oracle EBS</fullName>
+                <default>false</default>
+                <label>Oracle EBS</label>
+            </value>
+            <value>
+                <fullName>Infor</fullName>
+                <default>false</default>
+                <label>Infor</label>
+            </value>
+            <value>
+                <fullName>HRMS</fullName>
+                <default>false</default>
+                <label>HRMS</label>
+            </value>
+            <value>
+                <fullName>DMS</fullName>
+                <default>false</default>
+                <label>DMS</label>
+            </value>
+            <value>
+                <fullName>Mail Messaging</fullName>
+                <default>false</default>
+                <label>Mail Messaging</label>
+            </value>
+            <value>
+                <fullName>PLM</fullName>
+                <default>false</default>
+                <label>PLM</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

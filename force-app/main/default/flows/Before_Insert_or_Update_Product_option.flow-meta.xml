@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <description>Update Information Note</description>
+        <name>Update_Information_Note</name>
+        <label>Update Information Note</label>
+        <locationX>474</locationX>
+        <locationY>529</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Information_Note__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SBQQ__OptionalSKU__r.Information_Note__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Update_Information_Note_Decision</name>
+        <label>Update Information Note Decision</label>
+        <locationX>467</locationX>
+        <locationY>291</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Information_Note</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__OptionalSKU__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Information_Note</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Information Note</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>informationNoteFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(ISBLANK({!$Record.SBQQ__OptionalSKU__c} ))</expression>
+    </formulas>
+    <formulas>
+        <name>updateInformationNoteFormula</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.SBQQ__OptionalSKU__r.Information_Note__c}</expression>
+    </formulas>
+    <interviewLabel>Before Insert or Update : Product option {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Before Insert or Update : Product option</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>349</locationX>
+        <locationY>14</locationY>
+        <connector>
+            <targetReference>Update_Information_Note_Decision</targetReference>
+        </connector>
+        <object>SBQQ__ProductOption__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

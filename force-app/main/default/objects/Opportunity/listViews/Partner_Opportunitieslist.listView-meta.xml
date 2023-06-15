@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Opportunitieslist</fullName>
+    <booleanFilter>1 OR 2 OR 3</booleanFilter>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>End_Customer_Project__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>PrimarySource__c</columns>
+    <columns>SecondarySource__c</columns>
+    <columns>PartnerPrimary__c</columns>
+    <columns>PartnerSecondary__c</columns>
+    <columns>Primary_Campaign_Source__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PrimarySource__c</field>
+        <operation>equals</operation>
+        <value>Alliance Partner,Reseller Partner,Technology Partner,Consultant Partner,Distributor Partner-Commission,Distributor Partner-TP</value>
+    </filters>
+    <filters>
+        <field>SecondarySource__c</field>
+        <operation>equals</operation>
+        <value>Alliance Partner,Reseller Partner,Technology Partner,Consultant Partner,Distributor Partner-Commission,Distributor Partner-TP</value>
+    </filters>
+    <filters>
+        <field>TertiarySource__c</field>
+        <operation>equals</operation>
+        <value>Alliance Partner,Reseller Partner,Technology Partner,Consultant Partner,Distributor Partner-Commission,Distributor Partner-TP</value>
+    </filters>
+    <label>Partner Opportunities</label>
+    <sharedTo>
+        <allPartnerUsers></allPartnerUsers>
+        <roleAndSubordinates>Yotta_Partner_Head</roleAndSubordinates>
+    </sharedTo>
+</ListView>

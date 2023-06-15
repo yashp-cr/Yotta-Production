@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Month_is_mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL( SBQQ__Quote__r.SBQQ__Type__c , &apos;Quote&apos;) &amp;&amp; 
+(ISBLANK(StartMonth__c)||StartMonth__c=0) &amp;&amp; ISBLANK(SBQQ__RequiredBy__c)</errorConditionFormula>
+    <errorDisplayField>SBQQ__Discount__c</errorDisplayField>
+    <errorMessage>Start Month is mandatory</errorMessage>
+</ValidationRule>

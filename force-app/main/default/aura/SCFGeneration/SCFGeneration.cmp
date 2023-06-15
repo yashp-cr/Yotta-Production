@@ -1,0 +1,50 @@
+<aura:component controller="SCFCustomerNameChangePDFController"
+    implements="force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,force:hasRecordId"
+    access="global">
+     <aura:html tag="style">
+        .slds-modal__container{ 
+            height : 100%; width: 80%; max-width: 500vh; 
+        } 
+        .modal-body{ 
+            height : 100vh !important; 
+            max-height: 500vh !important; 
+        }         
+    </aura:html>
+     <ltng:require styles="{!$Resource.ModalWidth}" />
+    <lightning:quickActionAPI aura:id="quickActionAPI" />
+    <aura:attribute name='ErrorMessage' type='String' default='' />
+    <aura:attribute name='recordId' type='String' />
+    <aura:attribute name='toEmail' type='String' default='' />
+    <aura:attribute name='SalesModel' type='String' default='' />
+    <aura:attribute name='spinner' type='Boolean' default='false' />
+    <aura:attribute name='functioncalled' type='String' default='' />
+    <aura:attribute name="simpleRecord" type="Object" />
+    <aura:attribute name="message" type="String" default="" />
+    <aura:attribute name="OnlineAcceptance" type="boolean" default='false' />
+    <aura:attribute name="oppty" type="Opportunity" />
+    <aura:attribute name="isDispalySaveEmail" type="Boolean" default="true"></aura:attribute>
+    <aura:attribute name="isError" type="Boolean" default="true"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!-- Load This if primary store is not empty -->
+    <!--<lightning:recordForm recordId="{!v.recordId}" 
+                          objectApiName="Opportunity"
+                          targetFields="{!v.simpleRecord}"
+                          mode="readonly"
+                          fields="Primary_Store__c" />-->
+    <!-- abcd-->
+    <!--{!v.simpleRecord}-->
+
+    <aura:if isTrue="{!v.spinner}">
+        <lightning:spinner variant="brand" size="small" />
+    </aura:if>
+     <aura:if isTrue="{!!v.isError}">
+    <iframe src="{!'/apex/SCFCustomerNameChangePDF?id=' + v.recordId}" scrolling="false" id="theIframe" frameborder="true"
+        height="500px" width="100%" />
+    </aura:if>
+    <div style="text-align: center; margin-top : 15px">
+        <lightning:button label="Save and Close" onclick="{!c.save}" />
+        
+        <lightning:button label="Cancel" onclick="{!c.cancel}" />
+    </div>
+    <!--ID is -  {!v.recordId}-->
+</aura:component>

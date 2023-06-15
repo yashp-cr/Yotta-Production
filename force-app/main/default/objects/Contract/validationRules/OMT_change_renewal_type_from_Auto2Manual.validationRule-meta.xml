@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OMT_change_renewal_type_from_Auto2Manual</fullName>
+    <active>true</active>
+    <description>OMT can change renewal type from Auto to Manual only and not vice a versa</description>
+    <errorConditionFormula>$Profile.Name = &quot;Yotta Order Management&quot; &amp;&amp;
+ ISCHANGED( Renewal_Type__c ) &amp;&amp;
+ ISPICKVAL( Renewal_Type__c, &quot;Auto&quot;)</errorConditionFormula>
+    <errorMessage>OMT can change renewal type from Auto to Manual only and not vice a versa</errorMessage>
+</ValidationRule>

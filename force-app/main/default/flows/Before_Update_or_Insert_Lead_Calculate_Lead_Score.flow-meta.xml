@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>Update_Score</name>
+        <label>Update Score</label>
+        <locationX>470</locationX>
+        <locationY>397</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.LeadScore__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>scoreFormula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>scoreFormula</name>
+        <dataType>Number</dataType>
+        <expression>CASE({!$Record.LeadContactsAuthorityLevel__c} , &apos;Tier 1: C Level / VP IT / Director Level / Key Decision Makers&apos;, 20, &apos;Tier 2: GM / AGM / Manager IT / Sr Manager IT. Mid Level managers handling Teams&apos;, 15, &apos;Tier 3: System Admin / Executives / Asst Managers : Influencers&apos;, 10, 0)
++
+CASE({!$Record.CustomersInfrastructuresetup__c} , &apos;Outsourced&apos;, 15, &apos;Inhouse however they have plan to Outsource&apos;, 10, &apos;Inhouse no plans however want to evaluate&apos;, 3, 0)
++
+CASE({!$Record.LeadIntent__c} , &apos;Technical Specification Defined&apos;,20, &apos;Basic Requirement Given No Tech Specs Defined&apos;,15, &apos;Evaluation&apos;, 10, 0)
++
+CASE({!$Record.LeadSource} , &apos;Outbound Call Pitched&apos;, 5, 
+                   &apos;Outbound Call Customer Responded with Requirement&apos;, 15 ,
+                   &apos;Inbound Any Web / email / Telephone source&apos;, 15,
+                   &apos;Attended an Event where Yotta was present and connected&apos;, 10, 
+                   &apos;Attended an Event where Yotta was present&apos;, 8, &apos;Response to Emailer Campaign&apos;, 15, 
+                   &apos;Response to Partner Mailer Campaign&apos;, 15,
+                   &apos;Referral from Existing Customer or Partner or Employee&apos;, 15,
+                   &apos;BANT Leads&apos;,10,
+&apos;BANT - Mercadeo&apos;,10,
+&apos;BANT – LT&apos;,10,
+&apos;BANT -Ubiquitous&apos;,10,
+&apos;BANT - Affinity&apos;,10,
+&apos;Enterprise Innovation Summit 2021&apos;,10,
+                   &apos;CIO Klub&apos;,10,
+                   &apos;CIO100_2019-Attendees&apos;,10,
+                   &apos;Cloud Care Portal&apos;,10,
+                   &apos;Colocation&apos;,10,
+                   &apos;Colocation - 100% Uptime advantage&apos;,10,
+                   &apos;Colocation Offer Plan&apos;,10,
+                   &apos;Digital Infra India 2021 networking&apos;,10,
+                   &apos;Email Campaign&apos;,10,
+                   &apos;Enterprise Innovation Summit 2020&apos;,10,
+                   &apos;Evolve&apos;,10,
+                   &apos;Experience&apos;,10,
+                   &apos;Facebook Campaign&apos;,10,
+                   &apos;India cloud Summit 2020&apos;,10,
+                   &apos;Lead Nurturing&apos;,10,
+                   &apos;LinkedIn Campaign&apos;,10,
+                   &apos;LinkedIn Direct&apos;,10,
+                   &apos;Mail Enquiry&apos;,10,
+                   &apos;MKT Inbound Telephone source&apos;,10,
+                   &apos;NISC 2020&apos;,10,
+                   &apos;Organic Web Form Fill&apos;,10,
+                   &apos;Outbound Calls - Marketing&apos;,10,
+                   &apos;Selling Simplified&apos;,10,
+                   &apos;Switch on savings&apos;,10,
+                   &apos;webinar - CIO round table&apos;,10,
+                   &apos;webinar - Post-Covid-IT-Outlook&apos;,10,
+                   &apos;Webinar - Virtual Fitness Masterclass&apos;,10,
+                   &apos;Yotta Launch Offer&apos;,10,
+                   &apos;Yotta NM1 Unveil registration&apos;,10,
+                   &apos;YottaGuide - Chatbot&apos;,10,0 )
++
+CASE({!$Record.TimeFrame__c} , &apos;Near Term (0-3 months)&apos;, 15, &apos;Mid Term (3-6 months)&apos;, 10, &apos;Long Term ( &gt; 6 months)&apos;, 5, 0)
++
+CASE({!$Record.Budget__c} , &apos;Budget Defined&apos;, 15, &apos;Quote Required for Budgeting&apos;, 10, &apos;Budget Not Defined&apos;, 5, 0 )</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Before Update or Insert Lead :  Calculate Lead Score {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Before Update or Insert Lead :  Calculate Lead Score</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>344</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Update_Score</targetReference>
+        </connector>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

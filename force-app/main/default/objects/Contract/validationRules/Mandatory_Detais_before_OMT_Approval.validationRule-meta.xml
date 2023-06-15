@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Detais_before_OMT_Approval</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISCHANGED( Submit_for_OMT_Approval__c ) &amp;&amp;
+Submit_for_OMT_Approval__c &amp;&amp;
+(
+  ISBLANK( Customer_Billing_Contact__c ) ||
+  ISBLANK( Customer_Exec_Mgmt_Contact__c ) ||
+  ISBLANK( Customer_Authorised_Signatory__c ) ||
+  ISBLANK( Customer_SPoC__c ) ||
+  ISBLANK( TEXT( RC_Advance_Payment_Term_SOS__c ))
+)</errorConditionFormula>
+    <errorMessage>Please fill mandatory details before submitting the contract for OMT approval.</errorMessage>
+</ValidationRule>

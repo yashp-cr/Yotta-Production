@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Customers_Requirement_change</fullName>
+        <ccEmails>vdeshmukh@yotta.com</ccEmails>
+        <description>Customers Requirement change</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cmody@yotta.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Customer_Requirement_Changee</template>
+    </alerts>
+    <alerts>
+        <fullName>New_ERP_Partner_Lead_On_Creation</fullName>
+        <description>New ERP Partner Lead On Creation</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Yotta_ERP_Partner_Team</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Yotta_IS_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_Lead_notification_to_Partner_Manager</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Lead_notification_to_Avinash</fullName>
+        <description>New Lead notification to Avinash</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>amane@yotta.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Lead_New_assignment_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Lead_notification_to_Distributor_Team</fullName>
+        <ccEmails>distributorpartner@yotta.com</ccEmails>
+        <description>New Lead notification to Distributor Team</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_Lead_notification_to_Partner_Manager</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Lead_notification_to_Owner</fullName>
+        <description>New Lead notification to Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Lead_New_assignment_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Lead_notification_to_Partner_Manager</fullName>
+        <ccEmails>partnerleads@yotta.com</ccEmails>
+        <description>New Lead notification to Partner Manager</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_Lead_notification_to_Partner_Manager</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Partner_Lead_On_Creation</fullName>
+        <description>New Partner Lead On Creation</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>athekkutt@yotta.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kbhide@yotta.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_Partner_Lead_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_Lead_Assignment_for_Distributor</fullName>
+        <description>Partner Lead Assignment for Distributor</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Partner_Sales_Rep__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <recipient>sadmin@yotta.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Lead_Notification_Distributor</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Score</fullName>
+        <field>LeadScore__c</field>
+        <formula>CASE( LeadContactsAuthorityLevel__c , &apos;Tier 1: C Level / VP IT / Director Level / Key Decision Makers&apos;, 20, &apos;Tier 2: GM / AGM / Manager IT / Sr Manager IT. Mid Level managers handling Teams&apos;, 15, &apos;Tier 3: System Admin / Executives / Asst Managers : Influencers&apos;, 10, 0)
++
+CASE( CustomersInfrastructuresetup__c , &apos;Outsourced&apos;, 15, &apos;Inhouse however they have plan to Outsource&apos;, 10, &apos;Inhouse no plans however want to evaluate&apos;, 3, 0)
++
+CASE( LeadIntent__c , &apos;Technical Specification Defined&apos;,20, &apos;Basic Requirement Given No Tech Specs Defined&apos;,15, &apos;Evaluation&apos;, 10, 0)
++
+CASE( LeadSource , &apos;Outbound Call Pitched&apos;, 5, 
+                   &apos;Outbound Call Customer Responded with Requirement&apos;, 15 ,
+                   &apos;Inbound Any Web / email / Telephone source&apos;, 15,
+                   &apos;Attended an Event where Yotta was present and connected&apos;, 10, 
+                   &apos;Attended an Event where Yotta was present&apos;, 8, &apos;Response to Emailer Campaign&apos;, 15, 
+                   &apos;Response to Partner Mailer Campaign&apos;, 15,
+                   &apos;Referral from Existing Customer or Partner or Employee&apos;, 15,
+                   &apos;BANT Leads&apos;,10,
+&apos;BANT - Mercadeo&apos;,10,
+&apos;BANT – LT&apos;,10,
+&apos;BANT -Ubiquitous&apos;,10,
+&apos;BANT - Affinity&apos;,10,
+&apos;Enterprise Innovation Summit 2021&apos;,10,
+                   &apos;CIO Klub&apos;,10,
+                   &apos;CIO100_2019-Attendees&apos;,10,
+                   &apos;Cloud Care Portal&apos;,10,
+                   &apos;Colocation&apos;,10,
+                   &apos;Colocation - 100% Uptime advantage&apos;,10,
+                   &apos;Colocation Offer Plan&apos;,10,
+                   &apos;Digital Infra India 2021 networking&apos;,10,
+                   &apos;Email Campaign&apos;,10,
+                   &apos;Enterprise Innovation Summit 2020&apos;,10,
+                   &apos;Evolve&apos;,10,
+                   &apos;Experience&apos;,10,
+                   &apos;Facebook Campaign&apos;,10,
+                   &apos;India cloud Summit 2020&apos;,10,
+                   &apos;Lead Nurturing&apos;,10,
+                   &apos;LinkedIn Campaign&apos;,10,
+                   &apos;LinkedIn Direct&apos;,10,
+                   &apos;Mail Enquiry&apos;,10,
+                   &apos;MKT Inbound Telephone source&apos;,10,
+                   &apos;NISC 2020&apos;,10,
+                   &apos;Organic Web Form Fill&apos;,10,
+                   &apos;Outbound Calls - Marketing&apos;,10,
+                   &apos;Selling Simplified&apos;,10,
+                   &apos;Switch on savings&apos;,10,
+                   &apos;webinar - CIO round table&apos;,10,
+                   &apos;webinar - Post-Covid-IT-Outlook&apos;,10,
+                   &apos;Webinar - Virtual Fitness Masterclass&apos;,10,
+                   &apos;Yotta Launch Offer&apos;,10,
+                   &apos;Yotta NM1 Unveil registration&apos;,10,
+                   &apos;YottaGuide - Chatbot&apos;,10,0 )
++
+CASE( TimeFrame__c , &apos;Near Term (0-3 months)&apos;, 15, &apos;Mid Term (3-6 months)&apos;, 10, &apos;Long Term ( &gt; 6 months)&apos;, 5, 0)
++
+CASE( Budget__c , &apos;Budget Defined&apos;, 15, &apos;Quote Required for Budgeting&apos;, 10, &apos;Budget Not Defined&apos;, 5, 0 )</formula>
+        <name>Update Score</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Calculate Lead Score%28Migrated%29</fullName>
+        <actions>
+            <name>Update_Score</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

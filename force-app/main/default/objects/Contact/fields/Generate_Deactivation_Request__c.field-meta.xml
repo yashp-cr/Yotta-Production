@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Deactivation_Request__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Created by Nandish for Contact Deactivation Integration</description>
+    <externalId>false</externalId>
+    <label>Generate Deactivation Request</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Instance_Type__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Property Type</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>List</fullName>
+                <default>true</default>
+                <label>List</label>
+            </value>
+            <value>
+                <fullName>Single</fullName>
+                <default>false</default>
+                <label>Single</label>
+            </value>
+            <value>
+                <fullName>Custom Method</fullName>
+                <default>false</default>
+                <label>Custom Method</label>
+            </value>
+            <value>
+                <fullName>ListItem</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ListItem</label>
+            </value>
+            <value>
+                <fullName>ListWrapper</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ListWrapper</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

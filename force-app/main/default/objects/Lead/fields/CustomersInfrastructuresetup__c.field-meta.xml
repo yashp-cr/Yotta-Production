@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CustomersInfrastructuresetup__c</fullName>
+    <externalId>false</externalId>
+    <label>Customer&apos;s Infrastructure set up</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Inhouse however they have plan to Outsource</fullName>
+                <default>false</default>
+                <label>Inhouse however they have plan to Outsource</label>
+            </value>
+            <value>
+                <fullName>Inhouse no plans however want to evaluate</fullName>
+                <default>false</default>
+                <label>Inhouse no plans however want to evaluate</label>
+            </value>
+            <value>
+                <fullName>Outsourced</fullName>
+                <default>false</default>
+                <label>Outsourced</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

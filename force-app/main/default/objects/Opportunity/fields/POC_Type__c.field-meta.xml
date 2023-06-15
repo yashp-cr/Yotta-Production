@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POC_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL(POC__c , &apos;Yes&apos;), 
+    IF( Owner.Profile.Name = &apos;Yotta Partner Manager Profile&apos; , 
+        &apos;Partner POC&apos;,
+        &apos;Customer POC&apos;
+    ),
+    &apos;&apos;
+)</formula>
+    <label>POC Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

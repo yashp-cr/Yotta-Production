@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products_which_Yotta_can_position__c</fullName>
+    <externalId>false</externalId>
+    <label>Products which Yotta can position</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Colocation</fullName>
+                <default>false</default>
+                <label>Colocation</label>
+            </value>
+            <value>
+                <fullName>IT Management</fullName>
+                <default>false</default>
+                <label>IT Management</label>
+            </value>
+            <value>
+                <fullName>IT Security</fullName>
+                <default>false</default>
+                <label>IT Security</label>
+            </value>
+            <value>
+                <fullName>Network &amp; Connectivity</fullName>
+                <default>false</default>
+                <label>Network &amp; Connectivity</label>
+            </value>
+            <value>
+                <fullName>Yotta Cloud</fullName>
+                <default>false</default>
+                <label>Yotta Cloud</label>
+            </value>
+            <value>
+                <fullName>Federated Cloud</fullName>
+                <default>false</default>
+                <label>Federated Cloud</label>
+            </value>
+            <value>
+                <fullName>Private Cloud</fullName>
+                <default>false</default>
+                <label>Private Cloud</label>
+            </value>
+            <value>
+                <fullName>Traded Goods</fullName>
+                <default>false</default>
+                <label>Traded Goods</label>
+            </value>
+            <value>
+                <fullName>Yotta Smart Solution</fullName>
+                <default>false</default>
+                <label>Yotta Smart Solution</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

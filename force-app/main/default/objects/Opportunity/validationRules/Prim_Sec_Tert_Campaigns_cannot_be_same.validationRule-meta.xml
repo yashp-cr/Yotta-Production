@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prim_Sec_Tert_Campaigns_cannot_be_same</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+ AND(
+   NOT(ISBLANK( Primary_Campaign_Source__c )),
+   NOT(ISBLANK( SecondaryCampaignSource__c )),
+   Primary_Campaign_Source__c = SecondaryCampaignSource__c     
+ ),
+ AND(
+   NOT(ISBLANK( Primary_Campaign_Source__c )),
+   NOT(ISBLANK( TertiaryCampaignSource__c  )),
+   Primary_Campaign_Source__c = TertiaryCampaignSource__c     
+ ),
+ AND(
+   NOT(ISBLANK( TertiaryCampaignSource__c )),
+   NOT(ISBLANK( SecondaryCampaignSource__c )),
+   SecondaryCampaignSource__c = TertiaryCampaignSource__c    
+ )
+)</errorConditionFormula>
+    <errorMessage>Primary, Secondary and Tertiary Campaigns cannot be same</errorMessage>
+</ValidationRule>

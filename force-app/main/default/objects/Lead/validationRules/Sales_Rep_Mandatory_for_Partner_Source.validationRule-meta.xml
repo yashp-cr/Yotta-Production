@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Rep_Mandatory_for_Partner_Source</fullName>
+    <active>true</active>
+    <description>Partner Sales Rep is mandatory when Source is Partner and logged in user is from Partner Community or Partner Manager Profile</description>
+    <errorConditionFormula>AND(
+ISBLANK( Partner_Sales_Rep__c ),
+OR(
+NOT(ISBLANK( Partner_Primary__c )),
+NOT(ISBLANK( Partner_Secondary__c )),
+NOT(ISBLANK( Partner_Tertiary__c ))
+),
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;
+)</errorConditionFormula>
+    <errorMessage>Please add Partner Sales Rep</errorMessage>
+</ValidationRule>

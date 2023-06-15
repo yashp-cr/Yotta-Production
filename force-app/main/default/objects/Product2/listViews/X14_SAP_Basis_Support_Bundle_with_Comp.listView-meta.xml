@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X14_SAP_Basis_Support_Bundle_with_Comp</fullName>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>Product_Code__c</columns>
+    <columns>SAP_Product__c</columns>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>Model_Name__c</columns>
+    <columns>Product_Line__c</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Line__c</field>
+        <operation>equals</operation>
+        <value>17200</value>
+    </filters>
+    <filters>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Model_Name__c</field>
+        <operation>equals</operation>
+        <value>SAP BASIS SUPPORT</value>
+    </filters>
+    <label>14. SAP Basis Support Bundle (with Comp)</label>
+    <language>en_US</language>
+</ListView>

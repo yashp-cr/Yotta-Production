@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bill_to_Cannot_be_Changed_post_Apporval</fullName>
+    <active>false</active>
+    <description>Bill To Address can only be changed before OMT Approval
+Dated 10 Nov 2020: Deactivated, Not Required as different page layout is created for Approved COntract with all fields Read Only.</description>
+    <errorConditionFormula>AND(
+    ISCHANGED( Bill_To_Address__c ),
+     Is_SOF_Approved__c 
+)</errorConditionFormula>
+    <errorDisplayField>Bill_To_Address__c</errorDisplayField>
+    <errorMessage>Bill to Address can only be changed before OMT Approval</errorMessage>
+</ValidationRule>

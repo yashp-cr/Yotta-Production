@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_For_Retrail</fullName>
+    <active>true</active>
+    <description>Created By Nandish for Billing Group</description>
+    <errorConditionFormula>Valid_for_Retrial__c &amp;&amp; NOT(ISBLANK(TEXT(Webservice_Request__c)))</errorConditionFormula>
+    <errorMessage>Webservice Request are invalid targets for retrial</errorMessage>
+</ValidationRule>

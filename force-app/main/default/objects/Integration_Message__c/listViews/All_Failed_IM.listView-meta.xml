@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Failed_IM</fullName>
+    <columns>NAME</columns>
+    <columns>Integration_Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Contract__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Valid_for_Retrial__c</columns>
+    <columns>Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Integration_Status__c</field>
+        <operation>equals</operation>
+        <value>Failed</value>
+    </filters>
+    <filters>
+        <field>Account__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>All Failed IM</label>
+</ListView>

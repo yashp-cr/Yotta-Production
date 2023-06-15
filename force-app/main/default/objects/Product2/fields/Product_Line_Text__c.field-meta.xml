@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Line_Text__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT( Product_Line__c ), 
+&apos;16100&apos;,&apos;FEDERATED CLOUD&apos;,
+&apos;13300&apos;,&apos;HOSTED SECURITY&apos;,
+&apos;12100&apos;,&apos;HOSTED NETWORK SERVICES&apos;,
+&apos;12200&apos;,&apos;MANAGED WAN SERVICES&apos;,
+&apos;18100&apos;,&apos;TRADED GOODS&apos;,
+&apos;14400&apos;,&apos;DISASTER RECOVERY AS A SERVICE&apos;,
+&apos;14600&apos;,&apos;PLATFORM AS A SERVICE&apos;,
+&apos;14700&apos;,&apos;PRIVATE CLOUD&apos;,
+&apos;10100&apos;,&apos;MULTITENANT COLOCATION&apos;,
+&apos;10200&apos;,&apos;COLOCATION SUPPORT &apos;,
+&apos;10300&apos;,&apos;DEDICATED BUILDING COLOCATION&apos;,
+&apos;13100&apos;,&apos;MANAGED SECURITY&apos;,
+&apos;14200&apos;,&apos;STORAGE AS A SERVICE&apos;,
+&apos;14100&apos;,&apos;COMPUTE AS A  SERVICE&apos;,
+&apos;17100&apos;,&apos;IT MONITORING&apos;,
+&apos;17200&apos;,&apos;IT ADMINISTRATION&apos;,
+&apos;17300&apos;,&apos;IT PROFESSIONAL&apos;,
+&apos;13200&apos;,&apos;PROFESSIONAL SECURITY&apos;,
+&apos;14300&apos;,&apos;BACKUP &amp; RECOVERY AS A SERVICE&apos;,
+&apos;14500&apos;,&apos;SOFTWARE AS A SERVICE&apos;,
+&apos;Structured Cabling&apos;,&apos;Structured Cabling&apos;,
+&apos;Ad-hoc&apos;,&apos;Ad-hoc&apos;,
+&apos;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product Line Text</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

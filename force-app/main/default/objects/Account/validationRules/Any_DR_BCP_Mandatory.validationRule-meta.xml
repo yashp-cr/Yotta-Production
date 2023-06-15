@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Any_DR_BCP_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL(    Any_DR_BCP_Automation_Replication__c , &apos;Yes&apos;),
+ISBLANK(    If_DR_BCP_Replication_Automation_is_Yes__c  )
+)</errorConditionFormula>
+    <errorDisplayField>If_DR_BCP_Replication_Automation_is_Yes__c</errorDisplayField>
+    <errorMessage>Please Enter DR,BCP Replication/Automation Details</errorMessage>
+</ValidationRule>

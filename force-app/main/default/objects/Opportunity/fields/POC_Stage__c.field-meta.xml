@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POC_Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>POC Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>POC in Process</fullName>
+                <default>false</default>
+                <label>POC in Process</label>
+            </value>
+            <value>
+                <fullName>Under Implementation</fullName>
+                <default>false</default>
+                <label>Under Implementation</label>
+            </value>
+            <value>
+                <fullName>Scrapped</fullName>
+                <default>false</default>
+                <label>Scrapped</label>
+            </value>
+            <value>
+                <fullName>Lost</fullName>
+                <default>false</default>
+                <label>Lost</label>
+            </value>
+            <value>
+                <fullName>Won</fullName>
+                <default>false</default>
+                <label>Won</label>
+            </value>
+            <value>
+                <fullName>POC Successful PO Awaited</fullName>
+                <default>false</default>
+                <label>POC Successful PO Awaited</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

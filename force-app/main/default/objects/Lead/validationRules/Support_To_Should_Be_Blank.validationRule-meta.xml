@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_To_Should_Be_Blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ BillToSameasSupportTo__c, 
+ OR( 
+   NOT(ISBLANK(Support_To__c)),
+   NOT(ISBLANK(SupporttoCustomerName__c))
+ )
+)</errorConditionFormula>
+    <errorMessage>Support To Customer Details cannot be populated when Bill To same as Support To</errorMessage>
+</ValidationRule>

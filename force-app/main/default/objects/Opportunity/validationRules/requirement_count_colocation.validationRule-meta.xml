@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>requirement_count_colocation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+NOT(ISNEW()),
+Requirement_Count__c &lt; 1,
+OR(ISPICKVAL(StageName, &apos;Needs Analysis&apos;),
+ISPICKVAL(StageName, &apos;Proposal/Price Quote&apos;)),
+INCLUDES( ProductFamily__c , &apos;Colocation&apos;) ,
+ISBLANK( SBQQ__AmendedContract__c ),
+ISBLANK( SBQQ__RenewedContract__c )
+)</errorConditionFormula>
+    <errorMessage>Kindly fill the details for Colocation in the Questionaire for Opportunities</errorMessage>
+</ValidationRule>

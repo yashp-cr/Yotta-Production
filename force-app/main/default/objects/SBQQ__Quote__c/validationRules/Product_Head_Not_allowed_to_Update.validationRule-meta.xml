@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Head_Not_allowed_to_Update</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISPICKVAL( SBQQ__Status__c, &quot;In Review&quot; )),
+    $Profile.Name == &quot;Yotta Product Team&quot;,
+    NOT(ISCHANGED( LastModifiedDate ))
+)</errorConditionFormula>
+    <errorMessage>You are not allowed to make any changes</errorMessage>
+</ValidationRule>

@@ -1,0 +1,36 @@
+<aura:component controller="GenerateQuotePDFDocument" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global">
+    <aura:html tag="style">
+        .slds-modal__container{ 
+            height : 100%; width: 80%; max-width: 500vh; 
+        } 
+        .modal-body{ 
+            height : 100vh !important; 
+            max-height: 500vh !important; 
+        }         
+    </aura:html>
+    
+    <lightning:quickActionAPI aura:id="quickActionAPI" /> 
+    <aura:attribute name='Status' type='Boolean' />
+    <aura:attribute name='FileId' type='Id' default =''/>
+    <aura:attribute name='toEmail' type='String' default =''/>
+    <aura:attribute name='pdfName' type='String' default =''/>
+    <aura:attribute name="toggleSpinner" type="boolean" default="false"/>
+    
+ 	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:if isTrue="{!v.toggleSpinner}">
+        <lightning:spinner variant="brand" size="small" />
+    </aura:if>
+
+    <aura:if isTrue="{!(v.Status  == True)}">
+        <iframe src="{!'/apex/' + v.pdfName + '?id=' + v.recordId}" scrolling="false" id="theIframe" frameborder="true"
+        height="500px" width="100%" />
+    </aura:if>
+    
+    <div style="text-align: center; margin-top : 15px">
+        <lightning:button label="Save and Close" onclick="{!c.save}" />
+        <lightning:button label="Save and Email" onclick="{!c.saveandemail}" />
+        <lightning:button label="Cancel" onclick="{!c.cancel}" />
+    </div>
+    <!--ID is -  {!v.recordId}-->
+</aura:component>

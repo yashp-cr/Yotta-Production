@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Signed_SCF_Uploaded__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flag indicating Signed SCF document is uploaded and not approved</description>
+    <externalId>false</externalId>
+    <label>Is Signed SCF Uploaded?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contains_Addresses_and_Contacts__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field to be deleted</description>
+    <externalId>false</externalId>
+    <label>2del Contains Addresses and Contacts</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Facility_change_not_allowed_on_renewal</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL( SBQQ__Quote__r.SBQQ__Type__c, &quot;Renewal&quot;),
+ISPICKVAL( SBQQ__Quote__r.SCF_Type__c, &quot;Contract Line SCF&quot;),
+ISPICKVAL( SCF_Type__c, &quot;Facility Change&quot;)
+)</errorConditionFormula>
+    <errorMessage>Facility Change is not allowed on Renewal Contract.</errorMessage>
+</ValidationRule>

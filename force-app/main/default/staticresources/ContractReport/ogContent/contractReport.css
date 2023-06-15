@@ -1,0 +1,129 @@
+html {
+    background-color: #BEC5C6;
+}
+
+#contractReport tbody td{
+    border-bottom: 1px solid black;
+}
+
+#contractReport tr:hover {
+    background-color: none !important;
+}
+
+#contractReport tr td{
+    background-color: white !important;
+} 
+
+.setWidth {
+    width: 180px;
+}
+
+.swal-button {
+    font: initial!important;
+    color: initial!important;
+}
+
+.setWidth2 {
+    width: 150px;
+}
+
+.pickheight {
+    height: 90px;
+}
+
+.buttonmargin {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 198px;
+}
+
+.buttonmargin button:not(.pagingCtrl) {
+    width:57%;
+}
+
+#contractReport {
+    max-height: 500px;
+    display: grid;
+}
+
+/*#contractReport .tableHeader {
+    width:100px;
+}
+
+#contractReport tbody td {
+    width:100px;
+}*/
+
+#contractReport .descriptionTextArea {
+    word-break: break-word;
+   white-space: pre-wrap;
+   -moz-white-space: pre-wrap;   
+   width: 539px; 
+}
+
+#contractReport th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #ead9c4;
+    height: 44px;
+}
+
+#contractReport table {
+    table-layout: fixed;
+    width:5444.44px;
+}
+#contractReport .primaryCol {
+    width:150px!important;
+    white-space: normal;
+}
+
+#contractReport .secondWidth{
+    width:75px!important;
+    white-space: break-spaces;
+} 
+
+#contractReport .dateWidth{
+    width:100px!important;
+    white-space: break-spaces;
+} 
+
+#contractReport .textWidth{
+    width:100px!important;
+    white-space: break-spaces;
+}
+
+#contractReport .minWidth{
+    width:50px!important;
+    white-space: break-spaces;
+} 
+
+#contractReport .valueWidth{
+    width:100px!important;
+    white-space: break-spaces;
+}
+
+#contractReport .textArea {
+    width:475px!important;
+}
+
+#loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(192, 192, 192, 0.5);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#contractReport table th:nth-child(1) {
+    width:101px;
+}
+
+
+

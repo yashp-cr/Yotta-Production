@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_SPoC__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>GG: 26-Oct Created to get the Contact from Contract then make it available for update on Contract.</description>
+    <externalId>false</externalId>
+    <label>Customer SPoC</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+        <errorMessage>Value does not exist or does not match filter criteria-Customer SPOC.</errorMessage>
+        <filterItems>
+            <field>Contact.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.SBQQ__Account__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Contact.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.Support_To_Customer__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Contact.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Inactive</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Quotes (Customer SPoC)</relationshipLabel>
+    <relationshipName>Quotes4</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

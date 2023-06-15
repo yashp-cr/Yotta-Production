@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit_for_approval_when_SOW_upload</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Submit_for_OMT_Approval__c=true,
+ISCHANGED(Submit_for_OMT_Approval__c),
+SOW_Document_Uploaded__c!=true,
+ISPICKVAL(SOW_agreed_with_Customer__c, &apos;Yes&apos;)
+)</errorConditionFormula>
+    <errorMessage>Please Upload the SOW document</errorMessage>
+</ValidationRule>

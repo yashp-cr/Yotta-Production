@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Name__c</fullName>
+    <description>[GG] Get Partner Names from Opportunity. This will be pushed to backend.</description>
+    <externalId>false</externalId>
+    <formula>if( SBQQ__Opportunity__r.PartnerPrimary__c &lt;&gt; &quot;&quot;,SBQQ__Opportunity__r.PartnerPrimary__r.Name,
+ if( SBQQ__Opportunity__r.PartnerSecondary__c &lt;&gt; &quot;&quot;, SBQQ__Opportunity__r.PartnerSecondary__r.Name,
+  if( SBQQ__Opportunity__r.PartnerTertiary__c &lt;&gt; &quot;&quot;,  SBQQ__Opportunity__r.PartnerTertiary__r.Name,&quot;&quot;
+  ) 
+ )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Partner Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

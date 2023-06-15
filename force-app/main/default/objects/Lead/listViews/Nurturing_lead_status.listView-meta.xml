@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nurturing_lead_status</fullName>
+    <columns>Lead_Id__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>LeadQualification__c</columns>
+    <columns>LEAD.INDUSTRY</columns>
+    <columns>YottaIndustry__c</columns>
+    <columns>PrimarySource__c</columns>
+    <columns>Partner_Primary__c</columns>
+    <columns>Primary_Campaign__c</columns>
+    <columns>End_Customer_Project__c</columns>
+    <columns>BillToSameasSupportTo__c</columns>
+    <columns>LeadScore__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Nurturing</value>
+    </filters>
+    <label>Leads in Nurturing Status</label>
+</ListView>

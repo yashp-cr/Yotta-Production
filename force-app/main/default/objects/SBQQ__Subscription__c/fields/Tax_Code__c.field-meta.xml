@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tax_Code__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(TEXT(Business_Unit__c)=&quot;IN10&quot;,
+   IF(Sale_Type__c =&quot;ZTAD&quot;,  
+     CASE(TEXT( Location__c ),
+                &quot;IN14&quot; ,&quot;GST012&quot;, 
+                &quot;IN11&quot; ,&quot;GST012&quot;, 
+                &quot;IN12&quot; ,SBQQ__Product__r.SBQQ__TaxCode__c,                 
+                &quot;IN15&quot; ,&quot;GST012&quot; ,
+                &quot;IN16&quot; , SBQQ__Product__r.SBQQ__TaxCode__c ,
+		&quot;IN18&quot; , &quot;GST012&quot; ,
+                &quot;IN19&quot; , SBQQ__Product__r.SBQQ__TaxCode__c,
+		&quot;I101&quot;, SBQQ__Product__r.SBQQ__TaxCode__c ,
+                &quot;I102&quot;, SBQQ__Product__r.SBQQ__TaxCode__c ,
+                &quot;Customer Site&quot;, SBQQ__Product__r.SBQQ__TaxCode__c,&quot;&quot;) ,
+
+						
+     CASE(TEXT( Location__c ),
+                &quot;IN14&quot;, SBQQ__Product__r.SBQQ__TaxCode__c,
+                &quot;IN11&quot; ,SBQQ__Product__r.SBQQ__TaxCode__c,
+                &quot;IN12&quot;, SBQQ__Product__r.SBQQ__TaxCode__c,
+                &quot;IN15&quot;, SBQQ__Product__r.SBQQ__TaxCode__c,
+                &quot;IN16&quot;, SBQQ__Product__r.SBQQ__TaxCode__c,
+		&quot;IN18&quot; , SBQQ__Product__r.SBQQ__TaxCode__c ,
+                &quot;IN19&quot; , SBQQ__Product__r.SBQQ__TaxCode__c,
+		&quot;I101&quot;, SBQQ__Product__r.SBQQ__TaxCode__c ,
+                &quot;I102&quot;, SBQQ__Product__r.SBQQ__TaxCode__c ,
+                &quot;Customer Site&quot; ,SBQQ__Product__r.SBQQ__TaxCode__c,&quot;&quot; ) )  , 
+
+IF(Sale_Type__c=&quot;ZTAD&quot;,  
+     CASE(TEXT( Location__c ),
+                &quot;IN11&quot; ,SBQQ__Product__r.SBQQ__TaxCode__c,
+                &quot;IN14&quot; , SBQQ__Product__r.SBQQ__TaxCode__c, 
+                &quot;IN15&quot; , SBQQ__Product__r.SBQQ__TaxCode__c,  
+                &quot;IN12&quot; , SBQQ__Product__r.SBQQ__TaxCode__c,
+                &quot;IN16&quot; , SBQQ__Product__r.SBQQ__TaxCode__c,
+		&quot;IN18&quot; , SBQQ__Product__r.SBQQ__TaxCode__c ,
+                &quot;I101&quot; , SBQQ__Product__r.SBQQ__TaxCode__c,
+                &quot;I102&quot; , SBQQ__Product__r.SBQQ__TaxCode__c ,
+                &quot;IN26&quot; , SBQQ__Product__r.SBQQ__TaxCode__c,
+                &quot;IN29&quot; , SBQQ__Product__r.SBQQ__TaxCode__c,
+                &quot;Customer Site&quot; , SBQQ__Product__r.SBQQ__TaxCode__c,&quot;&quot;)  , 
+
+   CASE(TEXT( Location__c ),
+                &quot;IN16&quot;, SBQQ__Product__r.SBQQ__TaxCode__c,
+                &quot;IN14&quot;, SBQQ__Product__r.SBQQ__TaxCode__c,
+                &quot;IN15&quot;, SBQQ__Product__r.SBQQ__TaxCode__c,
+                &quot;Customer Site&quot; , SBQQ__Product__r.SBQQ__TaxCode__c,&quot;&quot;
+                ) ) )</formula>
+    <label>Tax Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

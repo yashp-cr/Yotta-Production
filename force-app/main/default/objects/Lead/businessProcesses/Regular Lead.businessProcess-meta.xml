@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regular Lead</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Assigned to Sales</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Contacted</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Deferred</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Duplicate</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Junk Lead</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Marketing Qualified</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>No Requirement</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Nurturing</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Open</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>Pending Assignment</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Pending Qualification</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT( Location__c ),
+ &apos;IN12&apos; , TEXT($CustomMetadata.Address_Delivery_Location__mdt.IN12.State__c) ,
+ &apos;IN11&apos;,  TEXT($CustomMetadata.Address_Delivery_Location__mdt.IN11.State__c) ,
+ &apos;IN21&apos;,  TEXT($CustomMetadata.Address_Delivery_Location__mdt.IN21.State__c),
+ &apos;IN14&apos;,  TEXT($CustomMetadata.Address_Delivery_Location__mdt.IN14.State__c),
+ &apos;IN23&apos;,  TEXT($CustomMetadata.Address_Delivery_Location__mdt.IN23.State__c),
+ &apos;IN15&apos;,  TEXT($CustomMetadata.Address_Delivery_Location__mdt.IN15.State__c),
+ &apos;IN16&apos;,  TEXT($CustomMetadata.Address_Delivery_Location__mdt.IN16.State__c),
+&quot;&quot; )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>State</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,42 @@
+<apex:component controller="QuoteProposalEmailComponentController" access="global">
+    <apex:attribute type="Id" name="getIdAttribute" description="Record ID" assignTo="{!recId}" />
+    <body>
+        <p style="text-align: right;"> 
+            <apex:outputText value=" Date:{0,date,dd-MM-yyyy}">
+                <apex:param value="{!NOW()}" />
+            </apex:outputText>
+        </p>
+        <p>To,</p>
+        <p>{!quote.SBQQ__Account__r.Name}</p>
+        <p>{!quote.Bill_To_Address__r.AddressLine1__c},{!quote.Bill_To_Address__r.AddressLine2__c},{!quote.Bill_To_Address__r.City__c}</p>
+        <p>{!quote.Bill_To_Address__r.Country__c}</p>
+        <p>Subject: Business Proposal for {!quote.SBQQ__Opportunity2__r.Name}</p><br/>
+        <p>Dear {!quote.Customer_Contact__r.Name},</p><br/>
+        
+        <p style="text-align: justify;">
+            We thank you for giving Yotta Data Services Private Limited the opportunity to propose a
+            solution for your Data Center, communication, IT and IT management Services business
+            needs. After an in-depth analysis of your requirements, we have prepared a comprehensive
+            communications solution, tailor-made for your organization. We are including a proposal for
+            your consideration.
+        </p>
+        <p style="text-align: justify;">
+            Our portfolio comprises of leading-edge products and services. These form the building
+            blocks of the innovative solutions we construct. With us, you can be assured of platinum-
+            grade service, world-class data center, IT infrastructure, and management services along
+            with superior domain expertise.
+        </p>
+        
+        <p style="text-align: justify;">
+            If you have any queries or require any clarifications on the enclosed proposal, please do
+            contact us.
+        </p>
+        
+        <p style="text-align: justify;">We look forward to doing business with you.</p><br/><br/>
+        
+        <p>Warm Regards,</p>
+        <p>For Yotta Data Services Private Limited</p>
+        <p>{!quote.Owner.Name} </p>
+        <p>{!quote.Owner.Phone} </p>
+    </body>
+</apex:component>

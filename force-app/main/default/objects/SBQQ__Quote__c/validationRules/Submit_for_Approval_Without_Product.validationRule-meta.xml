@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit_for_Approval_Without_Product</fullName>
+    <active>true</active>
+    <description>Quote Lines are required for submitting for Approval</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(  Submit_for_Approval__c ),
+    SBQQ__LineItemCount__c == 0,
+    Submit_for_Approval__c
+)</errorConditionFormula>
+    <errorMessage>Please add Quote Lines before starting Approval Process.</errorMessage>
+</ValidationRule>

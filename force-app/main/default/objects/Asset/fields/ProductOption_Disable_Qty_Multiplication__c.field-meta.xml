@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductOption_Disable_Qty_Multiplication__c</fullName>
+    <externalId>false</externalId>
+    <formula>SBQQ__QuoteLine__r.Disable_Quantity_Multiplication__c</formula>
+    <label>ProductOption Disable Qty Multiplication</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

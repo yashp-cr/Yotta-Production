@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Effective_Date_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK( Name_Change_Effective_Date__c ) &amp;&amp;  !ISBLANK(New_Customer_Name__c )</errorConditionFormula>
+    <errorMessage>Effective Date is mandatory for entering New Customer Name.</errorMessage>
+</ValidationRule>

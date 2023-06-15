@@ -1,0 +1,78 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" controller="ContractReportExcelController">
+
+    <apex:slds />
+    <!--<apex:includeScript value="{!URLFOR($Resource.ContractReport, '/jquery-3.6.0.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ContractReport, '/handlebars.min-v4.7.7.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ContractReport, '/contractReportController.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ContractReport, '/csvGenerator.js')}" />
+    <apex:includeScript value="https://code.jquery.com/ui/1.12.1/jquery-ui.js" />
+    <apex:stylesheet value="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <apex:stylesheet value="{!URLFOR($Resource.ContractReport, '/contractReport.css')}" />
+    <apex:includeScript value="https://unpkg.com/sweetalert/dist/sweetalert.min.js" />-->
+
+    <apex:includeScript value="{!URLFOR($Resource.ContractReport, 'libsJS/jquery-3.6.0.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ContractReport, 'libsJS/handlebars.min-v4.7.7.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ContractReport, 'libsJS/csvGenerator.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ContractReport, 'libsJS/jquery-ui.js')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ContractReport, 'libsCSS/jquery-ui.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ContractReport, 'main/contractReport.css')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ContractReport, 'libsJS/sweetalert.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ContractReport, 'main/contractReportController.js')}" />
+
+    <script>
+        window['ContractReportData'] = [];
+        window['PageInstance'] = undefined;
+        window['PageSize'] = 100;
+        window['PicklistValues'] = {!picklistFilterJSON};
+        window['DataColumns'] = ["Bill to Cust ID","Account Name","Opportunity Id","Quote No","Contract Number","Bundle Product Name","Component Product Name","Segment","Business Unit","Contract Start Date","Contract End Date","Account Manager Name","Product Family","Product Model","Product: Product Description","Technical Start Date","Technical End Date","Bill Start Date","Bill End Date","Cancellation Date","Years","Months","Days","Contract Currency","Billing Currency","Billing Frequency","Line Item Sr #","Line Item Id","Service Id","Status","Component Quantity","Unit OTC","Unit MRC","Unit VRC","Total OTC","Total MRC","Total VRC","Total ACV","Total TCV","DC Location","Support to Cust ID","Support to Cust Name","HSN / SAC Code","OMT Approval Status","Primary Source","Secondary Source","Tertiary Source","Vertical","Contract Approved Date"];
+        Handlebars.getTemplate = function(name) {
+            if (Handlebars.templates === undefined || Handlebars.templates[name] === undefined) {
+                $.ajax({
+                    url : "{!URLFOR($Resource.ContractReport, 'handlebars/" + name + ".handlebars')}",
+                    success : function(data) {
+                        if (Handlebars.templates === undefined) {
+                            Handlebars.templates = {};
+                        }
+                        Handlebars.templates[name] = Handlebars.compile(data);
+                    },
+                    async : false
+                });
+            }
+            return Handlebars.templates[name];
+        };
+    </script>
+    
+    <div class="slds-grid slds-gutters slds-wrap slds-p-top_small slds-p-left_small slds-p-right_small container">
+        <div class="slds-col slds-size_1-of-1 filterBlock">
+            <article class="slds-card">
+                <div class="slds-card__body slds-card__body_inner">
+                    <div id="filterOptions"></div>
+                </div>
+            </article>
+        </div>
+        <!--<div class="slds-col slds-size_1-of-1 pageBlock">
+            <article class="slds-card">
+                <div class="slds-card__body slds-card__body_inner">
+                    <center>
+                        <button class="slds-button slds-button_neutral prevButton pagingCtrl">&lt;&lt;</button>
+                        <button class="slds-button slds-button_neutral nextButton pagingCtrl">&gt;&gt;</button>
+                    </center>
+                </div>
+            </article>
+        </div>-->
+        <div class="slds-col slds-size_1-of-1 dataBlock">
+            <article class="slds-card slds-scrollable">
+                <div class="slds-card__body slds-card__body_inner"><!--style="height: 54vh;"-->
+                    <div id="contractReport"></div>
+                </div> 
+            </article>
+        </div>
+    </div>
+    <div id="loading" style="display:none;">
+        <div role="status" class="slds-spinner slds-spinner_medium">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+          </div>
+    </div>
+</apex:page>

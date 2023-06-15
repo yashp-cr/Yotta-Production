@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Contract Topic Create Deprecated</label>
+    <protected>false</protected>
+    <values>
+        <field>All_Fields__c</field>
+        <value xsi:type="xsd:string">contractnumber, business_division__c, bill_to_account__c, support_to_account__c, customer_po__c, customer_po_date__c, contract_tenure_days__c, contract_tenure_months__c, contract_tenure_years__c, startdate,enddate, contract_currency__c, customer_tech_spoc__c, customersignedid, net_amount__c, billing_frequency__c, credit_period__c, partner_commision_model__c, sbqq__quote__c, sdm__c, sbqq__opportunity__c, renewal_cycle_count__c,
+Bill_To_Address__c</value>
+    </values>
+    <values>
+        <field>Fields_to_Trigger_Integration__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Json_Field_Names__c</field>
+        <value xsi:type="xsd:string">contractnumber, business_division__c, bill_to_account__c, support_to_account__c, customer_po__c, customer_po_date__c, contract_tenure_days__c, contract_tenure_months__c, contract_tenure_years__c, startdate,enddate, contract_currency__c, customer_tech_spoc__c, customersignedid, net_amount__c, billing_frequency__c, credit_period__c, partner_commision_model__c, sbqq__quote__c, sdm__c, sbqq__opportunity__c, renewal_cycle_count__c, Bill_To_Address__c</value>
+    </values>
+    <values>
+        <field>Object_Type__c</field>
+        <value xsi:type="xsd:string">Contract</value>
+    </values>
+    <values>
+        <field>Operation__c</field>
+        <value xsi:type="xsd:string">Create</value>
+    </values>
+    <values>
+        <field>Query_Field__c</field>
+        <value xsi:type="xsd:string">Id</value>
+    </values>
+    <values>
+        <field>Request_Envelope__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>SOQL_Query__c</field>
+        <value xsi:type="xsd:string">Select Id, contractnumber, business_division__c, bill_to_account__c, support_to_account__c, customer_po__c, customer_po_date__c, contract_tenure_days__c, contract_tenure_months__c, contract_tenure_years__c, startdate,enddate, contract_currency__c, customer_tech_spoc__c, customersignedid, net_amount__c, billing_frequency__c, credit_period__c, partner_commision_model__c, sbqq__quote__c, sdm__c, sbqq__opportunity__c, renewal_cycle_count__c, bill_to_address__c from Contract</value>
+    </values>
+    <values>
+        <field>Static_JSON_Data__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

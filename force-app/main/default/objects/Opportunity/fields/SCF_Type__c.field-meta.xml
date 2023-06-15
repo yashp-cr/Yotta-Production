@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SCF_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>SCF Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Address Change</fullName>
+                <default>false</default>
+                <label>Address Change</label>
+            </value>
+            <value>
+                <fullName>Bill Cycle Change</fullName>
+                <default>false</default>
+                <label>Bill Cycle Change</label>
+            </value>
+            <value>
+                <fullName>Contract Line SCF</fullName>
+                <default>false</default>
+                <label>Contract Line SCF</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

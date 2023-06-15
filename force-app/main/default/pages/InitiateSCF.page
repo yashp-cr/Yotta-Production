@@ -1,0 +1,5 @@
+<apex:page standardController="Contract" tabStyle="Contract" >
+    <flow:interview name="Update_SCF">
+        <apex:param name="recordId" value="{!Contract.Id}"/>
+    </flow:interview>
+</apex:page>

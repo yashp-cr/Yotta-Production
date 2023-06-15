@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_Alert_to_Contract_Owner_on_OMT_approval_Rejection</fullName>
+        <description>Email Alert to Contract Owner on OMT approval Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contract_OMT_Approval_Reject</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_to_Contract_Owner_on_OMT_approval_Success</fullName>
+        <description>Email Alert to Contract Owner on OMT approval Success</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contract_OMT_Approval_Success</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_alert_to_Partner_Sales_Rep_on_Contract_Creation</fullName>
+        <description>Email alert to Partner Sales Rep on Contract Creation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Partner_Sales_Rep__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>sadmin@yotta.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contract_creation</template>
+    </alerts>
+    <alerts>
+        <fullName>Renewal_reminder_after_15_days</fullName>
+        <ccEmails>sales.ops@yotta.com</ccEmails>
+        <description>Renewal reminder after 15 days</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Billing_Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Customer_SPoC__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Customer_Tech_SPOC__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Regional_Head_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>renewals@yotta.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/RenewalReminder15</template>
+    </alerts>
+    <alerts>
+        <fullName>Renewal_reminder_after_45_days</fullName>
+        <ccEmails>sales.ops@yotta.com</ccEmails>
+        <description>Renewal reminder after 45 days</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Billing_Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Customer_SPoC__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Customer_Tech_SPOC__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Regional_Head_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>renewals@yotta.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Renewal_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>Renewal_reminder_after_60_days</fullName>
+        <ccEmails>sales.ops@yotta.com</ccEmails>
+        <description>Renewal reminder after 60 days</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Billing_Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Customer_SPoC__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Customer_Tech_SPOC__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Regional_Head_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>renewals@yotta.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Renewal_Reminder_60</template>
+    </alerts>
+    <alerts>
+        <fullName>Successful_Renewal_Notification</fullName>
+        <description>Successful Renewal Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Billing_Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Customer_SPoC__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Customer_Tech_SPOC__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>renewals@yotta.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Successful_Renewal_Template</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Change_Record_Type_Approved</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Approved</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Change Record Type - Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_Approved_Date</fullName>
+        <field>Approved_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Contract Approved Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_Status_Approved</fullName>
+        <field>Status</field>
+        <literalValue>Approved</literalValue>
+        <name>Contract Status - Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Existing_Address</fullName>
+        <field>Existing_Billing_Address__c</field>
+        <formula>Bill_To_Address__r.AddressLine1__c  &amp; BR() 
+&amp; Bill_To_Address__r.AddressLine2__c  &amp; BR() &amp; 
+Bill_To_Address__r.City__c &amp; &quot;, &quot; &amp;  Text(Bill_To_Address__r.State__c)  &amp; &quot;,&quot; &amp;  Bill_To_Address__r.PostalCode__c</formula>
+        <name>Existing Address</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renweal_Type_auto</fullName>
+        <field>Renewal_Type__c</field>
+        <literalValue>Auto</literalValue>
+        <name>Renweal Type auto</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Submit_for_OMT_Approval</fullName>
+        <field>Submit_for_OMT_Approval__c</field>
+        <literalValue>0</literalValue>
+        <name>Reset Submit for OMT Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Contract_Status_Draft</fullName>
+        <field>Status</field>
+        <literalValue>Draft</literalValue>
+        <name>Update Contract Status - Draft</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Contract_Status_to_In_Approval</fullName>
+        <field>Status</field>
+        <literalValue>In Approval Process</literalValue>
+        <name>Update Contract Status to In Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Is_SOF_Approved_after_OMTapproval</fullName>
+        <field>Is_SOF_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Is SOF Approved after OMTapproval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_OMT_Approval_Status_Approved</fullName>
+        <field>OMT_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update OMT Approval Status - Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_OMT_Approval_Status_In_Process</fullName>
+        <field>OMT_Approval_Status__c</field>
+        <literalValue>In-Process</literalValue>
+        <name>Update OMT Approval Status - In Process</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_OMT_Approval_Status_Not_Submitted</fullName>
+        <field>OMT_Approval_Status__c</field>
+        <literalValue>Not-Submitted</literalValue>
+        <name>Update OMT Approval Status Not-Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_OMT_Approval_Status_Rejected</fullName>
+        <field>OMT_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update OMT Approval Status - Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Reneweal_Manual</fullName>
+        <field>Renewal_Type__c</field>
+        <literalValue>Manual</literalValue>
+        <name>Update Reneweal Manual</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Contract Total 0 update renewal</fullName>
+        <actions>
+            <name>Update_Reneweal_Manual</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Total_Grand_Total__c</field>
+            <operation>equals</operation>
+            <value>INR 0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.POC__c</field>
+            <operation>equals</operation>
+            <value>No</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Renewal Reminder  60%28Migrated%29</fullName>
+        <active>false</active>
+        <formula>!ISBLANK(EndDate) &amp;&amp; ISPICKVAL(Status  , &apos;Activated&apos;) &amp;&amp; POC__c = &quot;No&quot; &amp;&amp; EndDate -  TODAY() &gt; 60</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Renewal_reminder_after_60_days</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract.EndDate</offsetFromField>
+            <timeLength>-60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Renewal Reminder 45%28Migrated%29</fullName>
+        <active>false</active>
+        <formula>!ISBLANK(EndDate) &amp;&amp; ISPICKVAL(Status , &apos;Activated&apos;) &amp;&amp; POC__c = &quot;No&quot; &amp;&amp; EndDate -  TODAY() &gt; 45</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Renewal_reminder_after_45_days</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract.EndDate</offsetFromField>
+            <timeLength>-45</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RenewalEmailsBefore22</fullName>
+        <actions>
+            <name>Renewal_reminder_after_15_days</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>!ISBLANK(EndDate) &amp;&amp; ISPICKVAL(Status , &apos;Activated&apos;) &amp;&amp; POC__c = &quot;No&quot; &amp;&amp; EndDate - TODAY() &gt; 15 &amp;&amp;  CreatedDate   &lt;    DATETIMEVALUE(&apos;03/22/2021&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RenewalReminder15%28Migrated%29</fullName>
+        <active>false</active>
+        <formula>!ISBLANK(EndDate) &amp;&amp;  ISPICKVAL(Status , &apos;Activated&apos;) &amp;&amp; POC__c = &quot;No&quot; &amp;&amp; EndDate -  TODAY() &gt; 15</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Renewal_reminder_after_15_days</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract.EndDate</offsetFromField>
+            <timeLength>-15</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Update Ren Type if contract 1 year small</fullName>
+        <actions>
+            <name>Renweal_Type_auto</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>(Value(TEXT((YEAR( EndDate )*12+MONTH(EndDate ))-  (YEAR( StartDate)*12+MONTH(StartDate))) ) &lt; 12) &amp;&amp;  POC__c = &apos;No&apos;</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

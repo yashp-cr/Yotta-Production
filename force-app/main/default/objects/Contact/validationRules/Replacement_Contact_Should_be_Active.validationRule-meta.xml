@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Replacement_Contact_Should_be_Active</fullName>
+    <active>true</active>
+    <description>Replacement Contact must be Active</description>
+    <errorConditionFormula>TEXT(Replacement_Contact__r.Status__c) = &quot;Inactive&quot; &amp;&amp; ISCHANGED( Replacement_Contact__c )</errorConditionFormula>
+    <errorDisplayField>Replacement_Contact__c</errorDisplayField>
+    <errorMessage>Replacement Contact must be Active</errorMessage>
+</ValidationRule>

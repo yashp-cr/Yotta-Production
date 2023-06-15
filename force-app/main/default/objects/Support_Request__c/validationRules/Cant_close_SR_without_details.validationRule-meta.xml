@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_close_SR_without_details</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  Owner:User.FirstName = &quot;Compro&quot;,
+  Owner:User.FirstName = &quot;Cloudroute&quot;,
+  OR(
+    ISNEW(),
+    ISCHANGED(Status__c)
+  ),
+  OR(
+    ISPICKVAL(Status__c, &quot;Implemented&quot;),
+    ISPICKVAL(Status__c, &quot;Resolved&quot;),
+    ISPICKVAL(Status__c, &quot;Closed&quot;),
+    ISPICKVAL(Status__c, &quot;Duplicate&quot;)
+  ),
+  OR(
+    SR_Efforts_Count__c = 0,
+    ISBLANK( Estimated_Efforts_In_Days__c ),
+    ISBLANK( Comments__c ),
+    ISBLANK( TEXT( Assigned_Person__c )),
+    ISBLANK( Release_Date_for_Production__c )
+  )
+)</errorConditionFormula>
+    <errorMessage>@Cloudroute Team: Enter all details in Compro Section before closing SR.
+@Yotta Team: Please chatter Cloudroute to close SR</errorMessage>
+</ValidationRule>

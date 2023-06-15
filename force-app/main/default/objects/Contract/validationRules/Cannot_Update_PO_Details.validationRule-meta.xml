@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Update_PO_Details</fullName>
+    <active>true</active>
+    <description>Cannot update PO Details while SCF is in Process</description>
+    <errorConditionFormula>AND(
+Is_SCF_Generated__c 	,
+OR(
+ISCHANGED(Customer_PO__c),				     ISCHANGED(Customer_PO_Date__c)
+)
+)</errorConditionFormula>
+    <errorMessage>Cannot Update PO Details while SCF is in Process.</errorMessage>
+</ValidationRule>

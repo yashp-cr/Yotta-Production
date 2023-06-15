@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sale_of_Equipment_Is_Not_Required</fullName>
+    <active>true</active>
+    <description>Sale of Equipment Payment Term is not required</description>
+    <errorConditionFormula>AND(
+    NOT( SOE_Product_Available__c ), 
+    OR(
+        Advance_along_with_PO_SOF__c != 0,
+        Intimation_of_Readiness_of_Dispatch__c != 0,
+        Delivery__c != 0,
+        Installation_Commissioning__c != 0,
+        UAT__c != 0,
+        Post_UAT__c != 0
+    )
+)</errorConditionFormula>
+    <errorMessage>Sale of Equipment Payment Term should be zero</errorMessage>
+</ValidationRule>

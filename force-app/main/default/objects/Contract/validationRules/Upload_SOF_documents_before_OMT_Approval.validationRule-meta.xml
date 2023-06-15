@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upload_SOF_documents_before_OMT_Approval</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISCHANGED( Submit_for_OMT_Approval__c ) &amp;&amp;
+NOT(Is_SOF_Approved__c) &amp;&amp;
+Submit_for_OMT_Approval__c &amp;&amp;
+(
+  NOT( Is_PO_Uploaded__c ) ||
+  NOT( Is_Advance_Payment_Uploaded__c )
+)</errorConditionFormula>
+    <errorMessage>Upload PO and Advance Payment documents before Approval</errorMessage>
+</ValidationRule>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_VDI_present__c</fullName>
+    <externalId>false</externalId>
+    <label>If VDI present</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VMWare - OnPremise</fullName>
+                <default>false</default>
+                <label>VMWare - OnPremise</label>
+            </value>
+            <value>
+                <fullName>Citrix - OnPremise</fullName>
+                <default>false</default>
+                <label>Citrix - OnPremise</label>
+            </value>
+            <value>
+                <fullName>Xen - OnPremise</fullName>
+                <default>false</default>
+                <label>Xen - OnPremise</label>
+            </value>
+            <value>
+                <fullName>Microsoft HyperV - OnPremise</fullName>
+                <default>false</default>
+                <label>Microsoft HyperV - OnPremise</label>
+            </value>
+            <value>
+                <fullName>Using Hyperscaler</fullName>
+                <default>false</default>
+                <label>Using Hyperscaler</label>
+            </value>
+            <value>
+                <fullName>Indian Cloud Provider</fullName>
+                <default>false</default>
+                <label>Indian Cloud Provider</label>
+            </value>
+            <value>
+                <fullName>Yotta</fullName>
+                <default>false</default>
+                <label>Yotta</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

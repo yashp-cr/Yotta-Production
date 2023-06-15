@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Quote_Share_with_SE_Head</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Quote Share with SE Head</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Yotta_SE_Head</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Object__c</field>
+            <operation>notEqual</operation>
+            <value>Account</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

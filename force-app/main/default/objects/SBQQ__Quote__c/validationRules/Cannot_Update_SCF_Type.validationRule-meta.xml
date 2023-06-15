@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Update_SCF_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(SBQQ__Type__c, &quot;Amendment&quot;),
+    ISCHANGED( SCF_Type__c ),
+    SCF_Product_Count__c &gt; 0
+)</errorConditionFormula>
+    <errorDisplayField>SCF_Type__c</errorDisplayField>
+    <errorMessage>Cannot Update SCF Type once SCF is completed on Quote Lines</errorMessage>
+</ValidationRule>

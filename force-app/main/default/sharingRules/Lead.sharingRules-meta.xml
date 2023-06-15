@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Partner_Manager_Sharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Partner Manager Sharing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Yotta_Partner_Head</roleAndSubordinatesInternal>
+        </sharedTo>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <criteriaItems>
+            <field>PrimarySource__c</field>
+            <operation>equals</operation>
+            <value>Alliance Partner,Business Partner,Reseller Partner,ERP Partner-TP,ERP Partner-Commission,ERP Technology Partner B2B,YIC Partner,Technology Partner,Consultant Partner,Distributor Partner-Commission,Distributor Partner-TP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SecondarySource__c</field>
+            <operation>equals</operation>
+            <value>Business Partner,Alliance Partner,ERP Partner-TP,Reseller Partner,ERP Partner-Commission,ERP Technology Partner B2B,YIC Partner,Technology Partner,Consultant Partner,Distributor Partner-Commission,Distributor Partner-TP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>TertiarySource__c</field>
+            <operation>equals</operation>
+            <value>Business Partner,Alliance Partner,ERP Partner-TP,Reseller Partner,ERP Partner-Commission,ERP Technology Partner B2B,YIC Partner,Technology Partner,Consultant Partner,Distributor Partner-Commission,Distributor Partner-TP</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Region_is_East_and_North</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Region is East and North</label>
+        <sharedTo>
+            <role>Regional_Head_North</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>East,North</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Region_is_South1_South2_and_West</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Region is South1,South2 and West</label>
+        <sharedTo>
+            <role>Regional_Head_West</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>South2,West,South1</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Region_is_South1_and_South2</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Region is South1 and South2</label>
+        <sharedTo>
+            <role>Regional_Head_South_12</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>South2,South1</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Yotta_Partner_Sharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Yotta Partner Sharing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Yotta_Partner_Head</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>All_Lead_Edit_to_IS_team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>All Leads to be editable by the IS team</description>
+        <label>All Lead Edit to IS team</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Yotta_IS_Head</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Yotta_Management</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Lead_Sharing_to_Sales_Coordinator</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Lead Sharing to Sales Coordinator</label>
+        <sharedTo>
+            <role>Sales_Coordinator</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Yotta_Management</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

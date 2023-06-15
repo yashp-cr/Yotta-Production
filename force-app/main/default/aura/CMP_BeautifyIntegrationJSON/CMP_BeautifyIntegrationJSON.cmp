@@ -1,0 +1,31 @@
+<aura:component implements="force:hasRecordId,force:lightningQuickActionWithoutHeader,force:appHostable,flexipage:availableForAllPageTypes" controller="IntegrationBase">
+    
+    <!--<aura:attribute name="contractrecord" type="Object" access="private"/>
+    <aura:attribute name="contractfields" type="Object" access="private"/>
+    <aura:attribute name="recordLoadError" type="String" access="private"/>
+    <aura:attribute name="calledHandler" type="Boolean" default="false" access="private" />
+    <aura:attribute name="beautifiedJSON" type="String" default="" access="private" /> -->
+
+    <!--<force:recordData aura:id="recordLoader"
+                    recordId="{!v.recordId}"
+                    mode="EDIT"  
+                    fields="Id, Name, Request_Envelope__c"
+                    targetRecord="{!v.contractrecord}"
+                    targetFields="{!v.contractfields}"
+                    recordUpdated="{!c.contractHandler}"  
+                    targetError="{!v.recordLoadError}"/>-->
+    <aura:attribute name="beautifiedJSON" type="String" default="" access="private" />                
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div class="floatButtonRight">          
+        <lightning:button iconName="utility:copy_to_clipboard"
+                        onclick="{!c.copyHardcoreText}"
+                        label="Copy JSON to clipboard"/>
+    </div>                
+
+    <div class="preformat" style="white-space:pre" aura:id="jsonBracket">
+        <aura:unescapedHtml value="{!v.beautifiedJSON}" />
+    </div>
+
+</aura:component>
