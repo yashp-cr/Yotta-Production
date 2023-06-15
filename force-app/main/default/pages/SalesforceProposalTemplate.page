@@ -7,24 +7,24 @@
             @page {
                 margin-top: 3cm;
                 margin-bottom: 3cm;
-                size:A4;
+                size:A4 portrait;
                 
                 @top-center {
-                    content: element(header);
+                	content: element(header);
                 }
                 @bottom-left {
-                    content: element(footer);
+                	content: element(footer);
                 }
             }
             @page :first { 
                 @top-center {}
                 @bottom-left {}
-                
-                background-image:URL('https://yotta--cpqdev--c.visualforce.com/resource/1628855597000/PDF_Background_Image');
+            	
+            	background-image:URL('https://yotta--cpqdev--c.visualforce.com/resource/1628855597000/PDF_Background_Image');
                 background-repeat: no-repeat !important; 
                 background-position: center center !important;
-                background-size:2050px;
-                position: absolute !important;
+            	background-size:2050px;
+            	position: absolute !important;
                 background-origin:content-box;
             }
             
@@ -47,14 +47,14 @@
             }
             
             body{
-                font-family: sans-serif;
+            	font-family: sans-serif;
             }
             
             .borderClass table, .borderClass td, .borderClass th, .borderClass tr{
             border: 0.5px solid  !important; 
             border-collapse: collapse;
             }
-           
+            
             .image-stack__item--left {
             grid-column: 1 / span 8;
             grid-row: 1; // must be on the same row as the other image
@@ -385,7 +385,7 @@
                         <apex:outputText value="{!index}"/>
                     </td>
                     
-                    <td>     
+                    <td style="width: 60%">     
                         <apex:outputText escape="false" value="<b>{!allProduct.Family}</b><br/>
                                                                <b>{!allProduct.bundleName}</b><br/>"/>
                         <apex:outputText value="{!allProduct.productDescription}<br/>" escape="false"/>
@@ -399,11 +399,11 @@
         </table>
         <br/><br/>
         
-       <apex:outputPanel rendered="{!renderIndexMap['Assumptions and Exclusions']}"> 
+        <apex:outputPanel rendered="{!renderIndexMap['Assumptions and Exclusions']}"> 
             <span style="font-weight: bold; font-size: 16px; font-family:sans-serif;color:#f4a142" >{!indexMap['Assumptions and Exclusions']}. &nbsp;&nbsp;&nbsp;&nbsp;  Assumptions and Exclusions</span>
             <br/>
             <apex:outputText style="font-size: 10px; font-family:sans-serif;" escape="false" value="{!SBQQ__Quote__c.Assumptions_and_Exclusions__c}"/>
-        </apex:outputPanel>         
+        </apex:outputPanel>            
         
         <apex:outputPanel rendered="{!renderIndexMap['Commercials']}"> 
             <span style="font-weight: bold; font-size: 16px; font-family:sans-serif;color:#f4a142" >{!indexMap['Commercials']}. &nbsp;&nbsp;&nbsp;&nbsp;  Commercials</span>
@@ -534,6 +534,7 @@
                     <apex:repeat value="{!yearSet}" var="year">
                         <td align="center"><b>Recurring Charge</b></td>
                     </apex:repeat>
+                    <td rowspan="2"><b>VRC</b></td>
                 </tr>
                 
                 <tr style="background-color:#DCDCDC;font-size: 9.5px; font-family:sans-serif">
@@ -567,11 +568,17 @@
                                 </apex:outputText>
                             </td>                            
                         </apex:repeat>
+                        <td align="right">
+                            <apex:outputText value="{0, number, ###,##0.00}" >
+                                <apex:param value="{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].famWrapYearVRC}"/>
+                            </apex:outputText>
+                        </td>
                     </tr>
                     </apex:repeat>
                 </apex:repeat>
             </table>
         </apex:repeat>
+        <span style="font-size: 8px;">VRC – Variable Recurring Charges</span>
         <!-- page ends -->
         
         <div style="page-break-after: always"/>

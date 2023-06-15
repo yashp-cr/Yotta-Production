@@ -51,12 +51,13 @@ public class GenerateRenewalContractBatchTest {
         update contract1;
         contract1.Status = 'Activated';
         update contract1;
-        
+        Set<Id> OpportunityId = new Set<Id>();
         System.debug('contract.EndDate'+contract.EndDate);
         for(Opportunity opp: opportunityList){
             opp.SBQQ__RenewedContract__c = contract.Id;
             opp.SupportTo__c = account.Id;
             opp.SupporttoCustomerName__c = 'Test Account';
+            OpportunityId.add(opp.Id);
         }
         update opportunityList;
         
@@ -97,6 +98,8 @@ public class GenerateRenewalContractBatchTest {
 
 
           Id jobId =  System.enqueueJob(apc);
+
+          Id jobIdContract = System.enqueueJob(new GenerateContractQueueable(OpportunityId));
          AsyncExecutionSCF1 async = new AsyncExecutionSCF1(jobId,2);
          System.enqueueJob(async);
           

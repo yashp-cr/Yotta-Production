@@ -80,6 +80,11 @@ public without sharing class QuoteTriggerHandler extends TriggerHandler {
             if (quote.Commercial_Approval_Status__c == 'Approved' && quote.Commercial_Approval_Status__c != oldMap.get(quote.Id).Commercial_Approval_Status__c) {
                 commApprovedQuoteIdSet.add(quote.Id);
             }
+            
+            if(quote.SBQQ__Type__c == 'Renewal' && (quote.SCF_Type__c == 'Contract Line SCF' || quote.SCF_Type__c ==  'Address Change') && quote.SCF_Type__c != oldMap.get(quote.Id).SCF_Type__c && oldMap.get(quote.Id).SCF_Type__c == null){
+                ContractSCFandRenewalHandler.RenewAssetandCreateQT(quote.Id);
+            }
+
             //****New Approval Process code ended***
             if (quote.Contracted__c && quote.Contracted__c != oldMap.get(quote.Id).Contracted__c) {
                 if (quote.SBQQ__Primary__c) {
@@ -137,9 +142,9 @@ public without sharing class QuoteTriggerHandler extends TriggerHandler {
             }
 
             if (quoteType == 'Renewal') {
-                QuoteTriggerHandler.updateOpportunity(oppIdSet);
-                /*GenerateContractQueueable  ContractGen = new GenerateContractQueueable(oppIdSet);
-                ID jobID = System.enqueueJob(ContractGen);*/
+                //QuoteTriggerHandler.updateOpportunity(oppIdSet);
+                ID jobID = System.enqueueJob(new GenerateContractQueueable(oppIdSet));
+                System.debug('Renewal Queuable'+jobID);
             } else {
                 QuoteTriggerHandler.updateOpportunityFuture(oppIdSet);
             }

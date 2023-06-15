@@ -181,7 +181,7 @@
                     <td style="color:#1d3f81;border:1px solid black;">Name of Signatory</td>
                     <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Authorised_Signatory__r.Name}</td>
                     <td style="border:1px solid black;"></td>
-                </tr >
+                </tr>
                 <tr style = "font-size:10px; font-family:sans-serif;">
                     <td style="color:#1d3f81;border:1px solid black;">Designation</td>
                     <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Authorised_Signatory__r.Title}</td>
@@ -287,6 +287,11 @@
                 <td style="color:#1d3f81;border:1px solid black;">Name of Signatory</td>
                 <td style="border:1px solid black;">{!originalContract.Customer_Authorised_Signatory__r.Name}</td>
                 <td style="border:1px solid black;">{!SBQQ__Quote__c.Customer_Authorised_Signatory__r.Name}</td>
+            </tr>
+             <tr>
+                <td style="color:#1d3f81;border:1px solid black;">Name of Account</td>
+                <td style="border:1px solid black;">{!originalContract.Account.Name}</td>
+                <td style="border:1px solid black;">{!SBQQ__Quote__c.SBQQ__Account__r.Name}</td>
             </tr>
             <tr>
                 <td style="color:#1d3f81;border:1px solid black;">Designation</td>

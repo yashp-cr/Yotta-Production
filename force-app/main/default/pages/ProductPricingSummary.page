@@ -21,6 +21,7 @@
                         <apex:repeat value="{!yearSet}" var="year">
                             <td>Recuring Charges</td>
                         </apex:repeat>
+                        <td>VRC</td>
                     </tr>
 
                     <tr style="background-color:#4270C4;color:#FFFFFF">
@@ -54,11 +55,17 @@
                                         </apex:outputText>
                                     </td>
                                 </apex:repeat>
+                                <td align="right">
+                                    <apex:outputText value="{0, number, ###,##0}" >
+                                        <apex:param value="{!groupMapOptional[group].optionalFamMap[fam].OptionalProductMap[Product].famWrapYearVRC}"/>
+                                    </apex:outputText>
+                                </td>
                             </tr>
                         </apex:repeat>
                     </apex:repeat>
                 </table>
             </apex:repeat>
+            <span style="font-size: 8px;">VRC – Variable Recurring Charges</span>
             <br/>
             <br/>
         </div>

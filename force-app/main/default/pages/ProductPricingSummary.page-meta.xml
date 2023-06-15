@@ -5,8 +5,8 @@
     <confirmationTokenRequired>false</confirmationTokenRequired>
     <label>ProductPricingSummary</label>
     <packageVersions>
-        <majorNumber>236</majorNumber>
-        <minorNumber>1</minorNumber>
+        <majorNumber>242</majorNumber>
+        <minorNumber>2</minorNumber>
         <namespace>SBQQ</namespace>
     </packageVersions>
 </ApexPage>

@@ -9,70 +9,70 @@
 * 1.0   07-21-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
 **/
 public class SalesforcePropsalTemplateExtension {
-    public String quoteId {get; set;}
+    public String quoteId { get; set; }
 
-    public List<SBQQ__QuoteLine__c> quoteLineItems {get; set;}
-    public Map<String,Decimal> pricingSummaryTotalMap {get; set;}
-    public List<Decimal> monthTotal{get;set;}
-    public Boolean numberOfDaysAndMonthCheck{get;set;}
-    public Decimal TotalPricing{get;set;}
-    public List<ProposalWrapperClass.monthWrapper> monthwrapperList {get;set;}
-    public Map<String,List<String>> monthNameMap{get;set;}
-    public Map<String, List<ProposalWrapperClass.monthWrapper>> summaryMap {get; set;}
-    public Map<String, List<Decimal>> totalMap {get; set;}
-    public Set<String> yearLabelKeySet {get;set;}
-    public SBQQ__Quote__c quote {get; set;}
-    public Map<Integer, ProposalWrapperClass.YearWiseWrapper> QuoteLines { get; set;}
-    public ProposalWrapperClass.productFamilyWrapper1 QuoteLines1 { get; set;}
-    public Map<String, Decimal> monthProMap {get;set;}
-    public Decimal daysandhours{get;set;}
-    public Decimal otcTotal {get;set;}
-    public Decimal recTotal {get; set;}
-    public Decimal amtTotal{get;set;}
+    public List<SBQQ__QuoteLine__c> quoteLineItems { get; set; }
+    public Map<String, Decimal> pricingSummaryTotalMap { get; set; }
+    public List<Decimal> monthTotal { get; set; }
+    public Boolean numberOfDaysAndMonthCheck { get; set; }
+    public Decimal TotalPricing { get; set; }
+    public List<ProposalWrapperClass.monthWrapper> monthwrapperList { get; set; }
+    public Map<String, List<String>> monthNameMap { get; set; }
+    public Map<String, List<ProposalWrapperClass.monthWrapper>> summaryMap { get; set; }
+    public Map<String, List<Decimal>> totalMap { get; set; }
+    public Set<String> yearLabelKeySet { get; set; }
+    public SBQQ__Quote__c quote { get; set; }
+    public Map<Integer, ProposalWrapperClass.YearWiseWrapper> QuoteLines { get; set; }
+    public ProposalWrapperClass.productFamilyWrapper1 QuoteLines1 { get; set; }
+    public Map<String, Decimal> monthProMap { get; set; }
+    public Decimal daysandhours { get; set; }
+    public Decimal otcTotal { get; set; }
+    public Decimal recTotal { get; set; }
+    public Decimal amtTotal { get; set; }
 
-    public Decimal noOfDays{get;set;}
-    public Decimal noOfHours{get;set;}
-    public List<String> monthName{get;set;}
-    public Map<String, ProposalWrapperClass.GroupWrapper> groupValues {get; set;}
-    public List<ProposalWrapperClass.GroupWrapper> groupValuesList {get; set;}
-    public Set<Integer> yearSet {get; set;}
-    public Set<Integer> monthSet {get; set;}
-    public List<Integer> monthsList{get; set;}
-    public Map<String, ProposalWrapperClass.productFamilyWrapper1> monthMap {get; set;}
-    public Map<String, ProposalWrapperClass.SummaryTotalWrap> TotalValMap{get;set;}
-    public Map<String, ProposalWrapperClass.GroupWrapper> groupMap {get; set;}
-    public Map<String, Integer> monthYearMap{get;set;}
-    public Boolean groupPresent {get; set;}
-    public Map<String, ProposalWrapperClass.OptionalServiceGroupWrapper> groupMapOptional {get; set;}
-    public Boolean groupMapOptionalCheck {get; set;}
-    public Map<String , ProposalWrapperClass.allProducts> allProductMap {get; set;}
-    public List<ProposalWrapperClass.allProducts> allProductList {get; set;}
-    public List<ProposalWrapperClass.productFamilyWrapper1> monthList {get; set;}
+    public Decimal noOfDays { get; set; }
+    public Decimal noOfHours { get; set; }
+    public List<String> monthName { get; set; }
+    public Map<String, ProposalWrapperClass.GroupWrapper> groupValues { get; set; }
+    public List<ProposalWrapperClass.GroupWrapper> groupValuesList { get; set; }
+    public Set<Integer> yearSet { get; set; }
+    public Set<Integer> monthSet { get; set; }
+    public List<Integer> monthsList { get; set; }
+    public Map<String, ProposalWrapperClass.productFamilyWrapper1> monthMap { get; set; }
+    public Map<String, ProposalWrapperClass.SummaryTotalWrap> TotalValMap { get; set; }
+    public Map<String, ProposalWrapperClass.GroupWrapper> groupMap { get; set; }
+    public Map<String, Integer> monthYearMap { get; set; }
+    public Boolean groupPresent { get; set; }
+    public Map<String, ProposalWrapperClass.OptionalServiceGroupWrapper> groupMapOptional { get; set; }
+    public Boolean groupMapOptionalCheck { get; set; }
+    public Map<String, ProposalWrapperClass.allProducts> allProductMap { get; set; }
+    public List<ProposalWrapperClass.allProducts> allProductList { get; set; }
+    public List<ProposalWrapperClass.productFamilyWrapper1> monthList { get; set; }
     public Decimal noOfYears;
     public Decimal noOfMonths;
-    public String aboutYotta {get; set;}
-    public String yottaProductandService {get; set;}
-    public String certificates {get; set;}
-    public String customers {get; set;}
-    public String prodDes {get; set;}
-    public String allDes {get; set;}
-    public Set<String> familySet {get; set;}
-    public List<SBQQ__QuoteTerm__c> annexureList {get; set;}
-    public Decimal currencyFactor {get; set;}
-    public Map<String, Integer> indexMap {get; set;}
-    public Map<String,Decimal> monthTotalMap{get;set;}
-    public List<ProposalWrapperClass.SummaryTotalWrap> monthTotalList{get;set;}
+    public String aboutYotta { get; set; }
+    public String yottaProductandService { get; set; }
+    public String certificates { get; set; }
+    public String customers { get; set; }
+    public String prodDes { get; set; }
+    public String allDes { get; set; }
+    public Set<String> familySet { get; set; }
+    public List<SBQQ__QuoteTerm__c> annexureList { get; set; }
+    public Decimal currencyFactor { get; set; }
+    public Map<String, Integer> indexMap { get; set; }
+    public Map<String, Decimal> monthTotalMap { get; set; }
+    public List<ProposalWrapperClass.SummaryTotalWrap> monthTotalList { get; set; }
     //public List<Decimal> month
-    public Map<String, Boolean> renderIndexMap {get; set;}
-    public Map<String, Integer> IndexNumberMap {get; set;}
-    public Set<String> termNameSet {get; set;}
-    List<Terms_and_Condition__c> recordToDisplay {get; set;}
+    public Map<String, Boolean> renderIndexMap { get; set; }
+    public Map<String, Integer> IndexNumberMap { get; set; }
+    public Set<String> termNameSet { get; set; }
+    List<Terms_and_Condition__c> recordToDisplay { get; set; }
     public static Id FileId;
     public static String toEmail;
-    public  Map<String, List<String>> TnC {get; set;}
-    public  Map<String, List<Terms_and_Condition__c>> termsMap {get; set;}
+    public Map<String, List<String>> TnC { get; set; }
+    public Map<String, List<Terms_and_Condition__c>> termsMap { get; set; }
     public static ContentVersion file;
-    public ProposalWrapperClass.GroupWrapper grpTotalSummary {get; set;}
+    public ProposalWrapperClass.GroupWrapper grpTotalSummary { get; set; }
 
     public SalesforcePropsalTemplateExtension(ApexPages.StandardController stdController) {
         groupMapOptionalCheck = FALSE;
@@ -80,29 +80,35 @@ public class SalesforcePropsalTemplateExtension {
 
     public void getProposalDeatils() {
         quoteId = ApexPages.currentPage().getParameters().get('Id');
-        quote = [SELECT Id, SBQQ__Type__c, SBQQ__StartDate__c, SBQQ__SubscriptionTerm__c,Is_PDF_Generated__c,SCF_Type__c,No_of_hours_per_month__c,No_of_days_per_month__c, Yotta_s_Products_and_Services_Required__c, Yotta_s_Certifications_Required__c, Currency_Conversion_Factor__c, Scope_of_Work__c,
-                About_Yotta_Summary_Type__c, Assumptions_and_Exclusions__c, Yotta_s_Customers_Required__c, Version__c FROM SBQQ__Quote__c WHERE Id = :quoteId];
+        quote = [
+                SELECT Id, SBQQ__Type__c, SBQQ__StartDate__c, SBQQ__SubscriptionTerm__c, Is_PDF_Generated__c, SCF_Type__c, No_of_hours_per_month__c, No_of_days_per_month__c, Yotta_s_Products_and_Services_Required__c, Yotta_s_Certifications_Required__c, Currency_Conversion_Factor__c, Scope_of_Work__c,
+                        About_Yotta_Summary_Type__c, Assumptions_and_Exclusions__c, Yotta_s_Customers_Required__c, Version__c
+                FROM SBQQ__Quote__c
+                WHERE Id = :quoteId
+        ];
 
 
-        if(quote.SBQQ__Type__c != 'Quote'){
+        if (quote.SBQQ__Type__c != 'Quote') {
             return;
         }
-        quote.Is_PDF_Generated__c = true;
-        update quote;
+        //quote.Is_PDF_Generated__c = true;
+        //update quote;
         quote.Version__c = quote.Version__c + 1;
         currencyFactor = quote.Currency_Conversion_Factor__c;
-        quoteLineItems = [SELECT Id, SBQQ__Product__c,SBQQ__ProductCode__c,SBQQ__Product__r.Product_Type__c,Burstable_upto_bundle__c,SBQQ__RequiredBy__r.Remarks__c,SBQQ__ProductFamily__c ,SBQQ__SegmentLabel__c,Burstable_Upto__c,SBQQ__Quantity__c,SBQQ__Product__r.Variable_UOM__c,Bandwidth_Type__c, SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Type__c,SBQQ__RequiredBy__r.StartMonth__c, SBQQ__RequiredBy__r.SBQQ__Product__r.SAP_Product__c, SBQQ__RequiredBy__r.SBQQ__Product__r.SAP_Product__r.Name, Dimension_Type__c, SBQQ__Product__r.SAP_Product__c, SBQQ__Product__r.SAP_Product__r.Name, SBQQ__RequiredBy__r.SBQQ__Product__r.Model_Name__c, SBQQ__Group__r.Name,
-                toLabel(SBQQ__Product__r.Product_Line__c) ,SBQQ__Product__r.Description, SBQQ__Product__r.Product_Description__c, SBQQ__RequiredBy__r.SBQQ__Quantity__c,
-                Shipping_Address__c, SBQQ__RequiredBy__r.UOM__c, UOM__c, SBQQ__Dimension__r.Name, toLabel(SBQQ__RequiredBy__r.Location__c),
-                SBQQ__Description__c,  toLabel(SBQQ__RequiredBy__r.SBQQ__Product__r.Family), SBQQ__RequiredBy__r.SBQQ__Quote__r.SBQQ__StartDate__c,
-                toLabel(Location__c), SBQQ__NetPrice__c, SBQQ__Quote__r.SBQQ__EndDate__c, sbqq__requiredBy__r.Monthly_Price__c,SBQQ__NetTotal__c, SBQQ__Quote__r.SBQQ__StartDate__c,
-                SBQQ__RequiredBy__r.Component_Quantity__c, SBQQ__RequiredBy__r.SBQQ__Description__c, SBQQ__QuoteLine__c.Final_Unit_Price__c, SBQQ__QuoteLine__c.Component_Quantity__c,
-                toLabel(SBQQ__Product__r.Family), SBQQ__Product__r.Name, SBQQ__Product__r.Model_Name__c, SBQQ__RequiredBy__r.SBQQ__Product__r.Name,
-                SBQQ__Product__r.HSN_SAC_Code__c, SBQQ__Dimension__r.Dimension_Type__c, Final_Net_Price__c, SBQQ__ListPrice__c, SBQQ__RequiredBy__c, SBQQ__StartDate__c,
-                SBQQ__Group__c,SBQQ__Number__c, S_No__c,StartMonth__c ,toLabel(SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c),Remarks__c,S_No_Read_Only__c, SBQQ__Optional__c, Monthly_Price__c
-        FROM SBQQ__QuoteLine__c
-        WHERE SBQQ__Quote__c = :quoteId
-        ORDER BY SBQQ__RequiredBy__r.StartMonth__c asc,SBQQ__Product__r.Product_Family_Text__c ASC, SBQQ__RequiredBy__r.SBQQ__Product__r.Name ASC, SBQQ__Product__r.Model_Name__c,SBQQ__Dimension__r.Name, SBQQ__RequiredBy__c, SBQQ__StartDate__c NULLS LAST, SBQQ__ProductOption__r.SBQQ__Feature__r.SBQQ__Number__c  NULLS LAST];
+        quoteLineItems = [
+                SELECT Id, SBQQ__Product__c, Name, SBQQ__ProductCode__c, SBQQ__Product__r.Product_Type__c, Burstable_upto_bundle__c, SBQQ__RequiredBy__r.Remarks__c, SBQQ__ProductFamily__c, SBQQ__SegmentLabel__c, Burstable_Upto__c, SBQQ__Quantity__c, SBQQ__Product__r.Variable_UOM__c, Bandwidth_Type__c, SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Type__c, SBQQ__RequiredBy__r.StartMonth__c, SBQQ__RequiredBy__r.SBQQ__Product__r.SAP_Product__c, SBQQ__RequiredBy__r.SBQQ__Product__r.SAP_Product__r.Name, Dimension_Type__c, SBQQ__Product__r.SAP_Product__c, SBQQ__Product__r.SAP_Product__r.Name, SBQQ__RequiredBy__r.SBQQ__Product__r.Model_Name__c, SBQQ__Group__r.Name,
+                        toLabel(SBQQ__Product__r.Product_Line__c), SBQQ__Product__r.Description, SBQQ__Product__r.Product_Description__c, SBQQ__RequiredBy__r.SBQQ__Quantity__c,
+                        Shipping_Address__c, SBQQ__RequiredBy__r.UOM__c, UOM__c, SBQQ__Dimension__r.Name, toLabel(SBQQ__RequiredBy__r.Location__c),
+                        SBQQ__Description__c, toLabel(SBQQ__RequiredBy__r.SBQQ__Product__r.Family), SBQQ__RequiredBy__r.SBQQ__Quote__r.SBQQ__StartDate__c,SBQQ__SegmentIndex__c,
+                        toLabel(Location__c), SBQQ__NetPrice__c, SBQQ__Quote__r.SBQQ__EndDate__c, sbqq__requiredBy__r.Monthly_Price__c, SBQQ__NetTotal__c, SBQQ__Quote__r.SBQQ__StartDate__c,
+                        SBQQ__RequiredBy__r.Component_Quantity__c, SBQQ__RequiredBy__r.SBQQ__Description__c, SBQQ__QuoteLine__c.Final_Unit_Price__c, SBQQ__QuoteLine__c.Component_Quantity__c,
+                        toLabel(SBQQ__Product__r.Family), SBQQ__Product__r.Name, SBQQ__Product__r.Model_Name__c, SBQQ__RequiredBy__r.SBQQ__Product__r.Name,
+                        SBQQ__Product__r.HSN_SAC_Code__c, SBQQ__Dimension__r.Dimension_Type__c, Final_Net_Price__c, SBQQ__ListPrice__c, SBQQ__RequiredBy__c, SBQQ__StartDate__c,
+                        SBQQ__Group__c, SBQQ__Number__c, S_No__c, StartMonth__c, toLabel(SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c), Remarks__c, S_No_Read_Only__c, SBQQ__Optional__c, Monthly_Price__c
+                FROM SBQQ__QuoteLine__c
+                WHERE SBQQ__Quote__c = :quoteId
+                ORDER BY SBQQ__RequiredBy__r.StartMonth__c asc, SBQQ__Product__r.Product_Family_Text__c ASC, SBQQ__RequiredBy__r.SBQQ__Product__r.Name ASC, SBQQ__Product__r.Model_Name__c, SBQQ__Dimension__r.Name, SBQQ__RequiredBy__c, SBQQ__StartDate__c NULLS LAST, SBQQ__ProductOption__r.SBQQ__Feature__r.SBQQ__Number__c NULLS LAST
+        ];
 
         recordToDisplay = [SELECT Id, S_No__c, Term_Name__c, Service_Provider__c, Term_Condition_Description__c, Term_Description__c FROM Terms_and_Condition__c WHERE Quote__c = :quoteId and Excluded_from_PDF__c != true ORDER BY S_No__c NULLS LAST];
 
@@ -138,8 +144,8 @@ public class SalesforcePropsalTemplateExtension {
         String allDes;
 
         if (quote.About_Yotta_Summary_Type__c != null) {
-            indexMap.put('About Yotta' , count);
-            renderIndexMap.put('About Yotta'   , true);
+            indexMap.put('About Yotta', count);
+            renderIndexMap.put('About Yotta', true);
             count++;
         }
         if (quote.Yotta_s_Products_and_Services_Required__c == 'Yes') {
@@ -147,7 +153,7 @@ public class SalesforcePropsalTemplateExtension {
             renderIndexMap.put('Yotta’s Products and Services', true);
             count++;
         }
-        if (quote.Yotta_s_Certifications_Required__c == 'Yes' ) {
+        if (quote.Yotta_s_Certifications_Required__c == 'Yes') {
             indexMap.put('Yotta’s Certifications', count);
             renderIndexMap.put('Yotta’s Certifications', true);
             count++;
@@ -188,13 +194,12 @@ public class SalesforcePropsalTemplateExtension {
         // Quote - Start Date / End Date - Number of Year
         // Calculating number of year
         noOfYears = (quote.SBQQ__SubscriptionTerm__c / 12).round(System.RoundingMode.CEILING);
-        if(quote.No_of_days_per_month__c != null && quote.No_of_hours_per_month__c != null){
+        if (quote.No_of_days_per_month__c != null && quote.No_of_hours_per_month__c != null) {
             numberOfDaysAndMonthCheck = true;
             daysandhours = (quote.No_of_days_per_month__c * quote.No_of_hours_per_month__c).round(System.RoundingMode.CEILING);
             noOfDays = quote.No_of_days_per_month__c;
             noOfHours = quote.No_of_hours_per_month__c;
-        }
-        else{
+        } else {
             numberOfDaysAndMonthCheck = false;
         }
         Map<Integer, ProposalWrapperClass.YearWiseWrapper> yearWrapMap = new Map<Integer, ProposalWrapperClass.YearWiseWrapper>();
@@ -205,7 +210,7 @@ public class SalesforcePropsalTemplateExtension {
         ProposalWrapperClass.ProductWrapper prodWrap; // child wrapper instance
         ProposalWrapperClass.GroupWiseProductWrapper groupWrap;
         ProposalWrapperClass.allProducts allProductWrapper ;
-        allProductMap = new Map<String , ProposalWrapperClass.allProducts>();
+        allProductMap = new Map<String, ProposalWrapperClass.allProducts>();
 
 
         allProductList = new List<ProposalWrapperClass.allProducts>();
@@ -220,11 +225,11 @@ public class SalesforcePropsalTemplateExtension {
                 if (!groupPresent && qtl.SBQQ__Group__c != NULL) {
                     groupPresent = true;
                 }
-                if (qtl.SBQQ__RequiredBy__c == null && qtl.startMonth__c != null ){
+                if (qtl.SBQQ__RequiredBy__c == null && qtl.startMonth__c != null) {
 
                     monthSet.add(qtl.startMonth__c.intValue());
-                    Integer val = integer.valueof(quote.SBQQ__SubscriptionTerm__c) /12;
-                    for(integer k=1;k <= val;k++){
+                    Integer val = integer.valueof(quote.SBQQ__SubscriptionTerm__c) / 12;
+                    for (integer k = 1; k <= val; k++) {
 
                         monthSet.add(k * 12 + 1);
                     }
@@ -267,33 +272,33 @@ public class SalesforcePropsalTemplateExtension {
                     prodWrap.quoteLine = qtl;
                     //prodWrap.serialNumber = qtl.S_No_Read_Only__c;
                     //prodWrap.productBundleName = qtl.SBQQ__Product__r.Product_Line__c + ' - ' + qtl.SBQQ__Product__r.Name ;
-                    if(qtl.SBQQ__Product__r.SAP_Product__c != NULL){
+                    if (qtl.SBQQ__Product__r.SAP_Product__c != NULL) {
                         prodWrap.productBundleName = qtl.SBQQ__Product__r.SAP_Product__r.Name + '<br/>' + qtl.SBQQ__Product__r.Name;
-                    }else{
+                    } else {
                         prodWrap.productBundleName = qtl.SBQQ__Product__r.Name;
                     }
-                    if(qtl.SBQQ__Product__r.Product_Type__c == 'Third Party'){
+                    if (qtl.SBQQ__Product__r.Product_Type__c == 'Third Party') {
                         prodWrap.productBundleName = prodWrap.productBundleName + ' (TP)';
                     }
                     prodWrap.productLine = qtl.SBQQ__Product__r.Product_Line__c;
 
 
-                    groupWrap.prodWrapMap.put(qtl.Id , prodWrap);
+                    groupWrap.prodWrapMap.put(qtl.Id, prodWrap);
 
                     //groupWrap.bundleProductWrapperMap.put(qtl.SBQQ__Product__r.Product_Line__c,groupWrap.prodWrapMap);
-                    groupWrap.recTotalMap.put(qtl.SBQQ__Product__r.Product_Line__c,0);
-                    groupWrap.otcTotalMap.put(qtl.SBQQ__Product__r.Product_Line__c,0);
+                    groupWrap.recTotalMap.put(qtl.SBQQ__Product__r.Product_Line__c, 0);
+                    groupWrap.otcTotalMap.put(qtl.SBQQ__Product__r.Product_Line__c, 0);
 
                     allProductWrapper = new ProposalWrapperClass.allProducts();
                     allProductWrapper.quoteLine = qtl;
                     //allProductWrapper.serialNumb = qtl.S_No_Read_Only__c;
                     //allProductWrapper.bundleName = qtl.SBQQ__Product__r.Name;
-                    if(qtl.SBQQ__Product__r.SAP_Product__c != NULL){
+                    if (qtl.SBQQ__Product__r.SAP_Product__c != NULL) {
                         allProductWrapper.bundleName = qtl.SBQQ__Product__r.SAP_Product__r.Name + '<br/>' + qtl.SBQQ__Product__r.Name;
-                    }else{
+                    } else {
                         allProductWrapper.bundleName = qtl.SBQQ__Product__r.Name;
                     }
-                    if(qtl.SBQQ__Product__r.Product_Type__c == 'Third Party'){
+                    if (qtl.SBQQ__Product__r.Product_Type__c == 'Third Party') {
                         allProductWrapper.bundleName = allProductWrapper.bundleName + ' (TP)';
                     }
                     allProductWrapper.Family = qtl.SBQQ__Product__r.Family;
@@ -343,15 +348,14 @@ public class SalesforcePropsalTemplateExtension {
 
                     if (allProductWrapper.productDescription != null && allProductWrapper.productDescription != '') {
                         allProductWrapper.productDescription += '<br/> <br/>Qty - ' + qtl.Component_Quantity__c + ',' + ' UoM - ' + qtl.UOM__c + '<br/>' + qtl.SBQQ__Product__r.Description;
-                    } else{
+                    } else {
                         allProductWrapper.productDescription += 'Qty - ' + qtl.Component_Quantity__c + ',' + ' UoM - ' + qtl.UOM__c + '<br/>' + qtl.SBQQ__Product__r.Description;
 
                     }
-                    if ((qtl.SBQQ__Description__c == NULL || qtl.SBQQ__Description__c == '') && (qtl.SBQQ__RequiredBy__r.SBQQ__Description__c != NULL )) {
+                    if ((qtl.SBQQ__Description__c == NULL || qtl.SBQQ__Description__c == '') && (qtl.SBQQ__RequiredBy__r.SBQQ__Description__c != NULL)) {
                         allProductWrapper.productDescription = 'Qty - ' + qtl.Component_Quantity__c + ',' + ' UoM - ' + qtl.UOM__c + '<br/>' + qtl.SBQQ__RequiredBy__r.SBQQ__Description__c;
 
-                    }
-                    else if((qtl.SBQQ__Description__c == NULL || qtl.SBQQ__Description__c == '') && (qtl.SBQQ__RequiredBy__r.SBQQ__Description__c == NULL)){
+                    } else if ((qtl.SBQQ__Description__c == NULL || qtl.SBQQ__Description__c == '') && (qtl.SBQQ__RequiredBy__r.SBQQ__Description__c == NULL)) {
                         allProductWrapper.productDescription = 'Qty - ' + qtl.Component_Quantity__c + ',' + ' UoM - ' + qtl.UOM__c;
                     }
                     allProductWrapper.productDescription = allProductWrapper.productDescription.stripHtmlTags();
@@ -364,18 +368,16 @@ public class SalesforcePropsalTemplateExtension {
                 //END
                 key = startDate.year() + '-' + qtl.SBQQ__Group__c;
                 groupWrap = yearWrap.groupWrapMap.get(key);
-                prodWrap = groupWrap.prodWrapMap.get(qtl.SBQQ__RequiredBy__c );
-                if(groupWrap.recTotalMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c)){
-                    recTotal = groupWrap.recTotalMap.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c );
-                }
-                else{
+                prodWrap = groupWrap.prodWrapMap.get(qtl.SBQQ__RequiredBy__c);
+                if (groupWrap.recTotalMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c)) {
+                    recTotal = groupWrap.recTotalMap.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c);
+                } else {
                     recTotal = 0;
                 }
 
 
                 groupWrap.yearWiseRC = groupWrap.yearWiseRC + (qtl.Final_Unit_Price__c * currencyFactor);
 
-                System.debug('Quoteline'+qtl.SBQQ__Description__c);
                 if (prodWrap.productDescription != null && prodWrap.productDescription != '') {
                     prodWrap.productDescription = prodWrap.productDescription + '<br/> <br/>Qty - ' + qtl.Component_Quantity__c + ',' + ' UoM - ' + qtl.UOM__c + '<br/>' + qtl.SBQQ__Product__r.Description;
                 } else {
@@ -383,21 +385,20 @@ public class SalesforcePropsalTemplateExtension {
                 }
                 if ((qtl.SBQQ__Description__c == NULL || qtl.SBQQ__Description__c == '') && (qtl.SBQQ__RequiredBy__r.SBQQ__Description__c != NULL)) {
                     prodWrap.productDescription = 'Qty - ' + qtl.Component_Quantity__c + ',' + ' UoM - ' + qtl.UOM__c + '<br/>' + qtl.SBQQ__RequiredBy__r.SBQQ__Description__c;
-                }
-                else if((qtl.SBQQ__Description__c == NULL || qtl.SBQQ__Description__c == '') && (qtl.SBQQ__RequiredBy__r.SBQQ__Description__c == NULL)){
+                } else if ((qtl.SBQQ__Description__c == NULL || qtl.SBQQ__Description__c == '') && (qtl.SBQQ__RequiredBy__r.SBQQ__Description__c == NULL)) {
                     prodWrap.productDescription = 'Qty - ' + qtl.Component_Quantity__c + ',' + ' UoM - ' + qtl.UOM__c;
                 }
 
                 prodWrap.productDescription = prodWrap.productDescription.stripHtmlTags();
                 //if(quoteLineDescMap.containsKey(qtl.SBQQ__RequiredBy__c)){
                 quoteLineDescMap.put(qtl.SBQQ__RequiredBy__c, prodWrap.productDescription);
-                if(qtl.Bandwidth_Type__c == 'Burstable' || qtl.Bandwidth_Type__c == 'Data Transfer'){
-                    quoteLineUOMMap.put(qtl.SBQQ__RequiredBy__c,qtl);
-                    quoteLineUOMMap.put(qtl.Id,qtl);
+                if (qtl.Bandwidth_Type__c == 'Burstable' || qtl.Bandwidth_Type__c == 'Data Transfer') {
+                    quoteLineUOMMap.put(qtl.SBQQ__RequiredBy__c, qtl);
+                    quoteLineUOMMap.put(qtl.Id, qtl);
                 }
                 //}
                 prodWrap.productFamily = qtl.SBQQ__Product__r.Family;
-                if(qtl.SBQQ__RequiredBy__r.Remarks__c != null){
+                if (qtl.SBQQ__RequiredBy__r.Remarks__c != null) {
                     prodWrap.Remarks = qtl.SBQQ__RequiredBy__r.Remarks__c;
                 }
                 //prodWrap.serialNumber = qtl.S_No_Read_Only__c;
@@ -408,27 +409,25 @@ public class SalesforcePropsalTemplateExtension {
                 //System.debug('prodWrap.Qty' + prodWrap.Qty);
                 //System.debug('prodWrap.UOM' + prodWrap.UOM);
                 System.debug('qtl.SBQQ__Dimension__r.Dimension_Type__c' + qtl.SBQQ__Dimension__r.Dimension_Type__c);
-                if ( qtl.SBQQ__Dimension__r.Dimension_Type__c == 'MRC') {
+                if (qtl.SBQQ__Dimension__r.Dimension_Type__c == 'MRC') {
                     prodWrap.mrcUnit = prodWrap.mrcUnit + (qtl.Monthly_Price__c / qtl.SBQQ__RequiredBy__r.SBQQ__Quantity__c * currencyFactor);
                     prodWrap.mrcTotal = prodWrap.mrcTotal + (qtl.Monthly_Price__c * currencyFactor);
                     recTotal = recTotal + (qtl.Monthly_Price__c * currencyFactor);
-                    groupWrap.recTotalMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c,recTotal);
+                    groupWrap.recTotalMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c, recTotal);
                 }
 
                 yearWrap.arc = yearWrap.arc + (qtl.Final_Net_Price__c * currencyFactor);
-            }
-            else if (qtl.SBQQ__RequiredBy__c != null && qtl.SBQQ__StartDate__c == null && qtl.SBQQ__Dimension__r.Dimension_Type__c == 'OTC' && !qtl.SBQQ__Optional__c) { //add OTC
+            } else if (qtl.SBQQ__RequiredBy__c != null && qtl.SBQQ__StartDate__c == null && qtl.SBQQ__Dimension__r.Dimension_Type__c == 'OTC' && !qtl.SBQQ__Optional__c) { //add OTC
 
                 yearWrap = yearWrapMap.get(startYear);
                 yearWrap.totalOTC = yearWrap.totalOTC + (qtl.Final_Net_Price__c * currencyFactor);
 
                 key = startYear + '-' + qtl.SBQQ__Group__c;
                 groupWrap = yearWrap.groupWrapMap.get(key);
-                prodWrap = groupWrap.prodWrapMap.get(qtl.SBQQ__RequiredBy__c );
-                if(groupWrap.otcTotalMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c )){
-                    otcTotal = groupWrap.otcTotalMap.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c );
-                }
-                else{
+                prodWrap = groupWrap.prodWrapMap.get(qtl.SBQQ__RequiredBy__c);
+                if (groupWrap.otcTotalMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c)) {
+                    otcTotal = groupWrap.otcTotalMap.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c);
+                } else {
                     otcTotal = 0;
                 }
                 //otcTotal = groupWrap.otcTotalMap.get(qtl.SBQQ__Product__r.Product_Line__c  );
@@ -437,18 +436,18 @@ public class SalesforcePropsalTemplateExtension {
                 prodWrap.otcTotal = prodWrap.otcTotal + (qtl.Monthly_Price__c * currencyFactor);
                 otcTotal = otcTotal + (qtl.Monthly_Price__c * currencyFactor);
                 prodWrap.otcLineTotal = prodWrap.otcLineTotal + prodWrap.otcTotal;
-                groupWrap.otcTotalMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c,otcTotal);
+                groupWrap.otcTotalMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Line__c, otcTotal);
 
             }
             if (qtl.SBQQ__Dimension__r.Dimension_Type__c == 'VRC' && (qtl.SBQQ__ProductCode__c == 'MTCOLO_Pow_001' || qtl.SBQQ__ProductCode__c == 'MTCOLO_Pow_002')) {
-                System.debug('VrrCharge'+ prodWrap.vrcCharge );
+                System.debug('VrrCharge' + prodWrap.vrcCharge);
                 prodWrap.vrcCharge = qtl.Monthly_Price__c * currencyFactor;
             } else if (qtl.SBQQ__Dimension__r.Dimension_Type__c == 'VRC' && qtl.SBQQ__Product__r.Model_Name__c != 'Colo Power') {
-                System.debug('VrrCharge'+ prodWrap.vrcCharge );
-                prodWrap.vrcCharge = prodWrap.vrcCharge+ ( qtl.Monthly_Price__c * currencyFactor );
+                System.debug('VrrCharge' + prodWrap.vrcCharge);
+                prodWrap.vrcCharge = prodWrap.vrcCharge + (qtl.Monthly_Price__c * currencyFactor);
             }
-            if(!qtl.SBQQ__Optional__c){
-                yearWrap.totalYearSum =  yearWrap.arc + yearWrap.totalOTC;
+            if (!qtl.SBQQ__Optional__c) {
+                yearWrap.totalYearSum = yearWrap.arc + yearWrap.totalOTC;
                 yearWrap.totalARC = yearWrap.totalARC + yearWrap.arc;
             }
         }
@@ -463,7 +462,7 @@ public class SalesforcePropsalTemplateExtension {
             qLineDescriptionUpdateList.add(ql);
         }
         List<SBQQ__QuoteLine__c> qLineUOMUpdateList = new List<SBQQ__QuoteLine__c>();
-        for(Id i : quoteLineUOMMap.keySet()){
+        for (Id i : quoteLineUOMMap.keySet()) {
             SBQQ__QuoteLine__c ql = new SBQQ__QuoteLine__c();
             ql.Id = i;
             ql.UomValue__c = quoteLineUOMMap.get(i).uom__c;
@@ -483,26 +482,28 @@ public class SalesforcePropsalTemplateExtension {
         for (ProposalWrapperClass.YearWiseWrapper yWrap : yearWrapMap.values()) {
             for (ProposalWrapperClass.GroupWiseProductWrapper gWrap : yWrap.groupWrapMap.values()) {
                 gWrap.bundleProductWrapperList = gWrap.prodWrapMap.values();
-                for(ProposalWrapperClass.ProductWrapper prodWrp: gWrap.prodWrapMap.values() ){
-                    for(ProposalWrapperClass.ProductWrapper val: gWrap.bundleProductWrapperList){
-                        if(prodWrp.ProductLine == val.ProductLine && prodWrp.quoteLine == val.quoteLine){
+                for (ProposalWrapperClass.ProductWrapper prodWrp : gWrap.prodWrapMap.values()) {
+                    for (ProposalWrapperClass.ProductWrapper val : gWrap.bundleProductWrapperList) {
+                        if (prodWrp.ProductLine == val.ProductLine && prodWrp.quoteLine == val.quoteLine) {
 
                             //ProdWrapList.add(val);
-                            if(gWrap.bundleProductWrapperMap.containsKey(val.ProductLine)){
+                            if (gWrap.bundleProductWrapperMap.containsKey(val.ProductLine)) {
                                 List<ProposalWrapperClass.ProductWrapper> prodList = gWrap.bundleProductWrapperMap.get(prodWrp.ProductLine);
                                 prodList.add(val);
-                                gWrap.bundleProductWrapperMap.put(prodWrp.ProductLine,ProdList);
+                                gWrap.bundleProductWrapperMap.put(prodWrp.ProductLine, ProdList);
                             }
 
-                            else{
+                            else {
                                 // List<ProposalWrapperClass.ProductWrapper> ProdWrapList = new List<ProposalWrapperClass.ProductWrapper>();
-                                gWrap.bundleProductWrapperMap.put(prodWrp.ProductLine,new List<ProposalWrapperClass.ProductWrapper> { val });
+                                gWrap.bundleProductWrapperMap.put(prodWrp.ProductLine, new List<ProposalWrapperClass.ProductWrapper>{
+                                        val
+                                });
                             }
                         }
                     }
                 }
-                System.debug('Group Name :  '+gWrap.groupName);
-                System.debug('Bundle Family KeySet:   '+ gWrap.bundleProductWrapperMap.keySet());
+                System.debug('Group Name :  ' + gWrap.groupName);
+                System.debug('Bundle Family KeySet:   ' + gWrap.bundleProductWrapperMap.keySet());
                 gWrap.prodWrapKeySet = gWrap.bundleProductWrapperMap.Keyset();
                 System.debug('gWrap.bundleProductWrapperList' + gWrap.bundleProductWrapperList);
             }
@@ -514,7 +515,7 @@ public class SalesforcePropsalTemplateExtension {
     }
 
     public Map<String, ProposalWrapperClass.GroupWrapper> grpVals() {
-        yearSet  = new Set<Integer>();
+        yearSet = new Set<Integer>();
         familySet = new Set<String>();
         ProposalWrapperClass.GroupWrapper groupWiseWrapperClass;
         monthwrapperList = new List< ProposalWrapperClass.monthWrapper>();
@@ -522,8 +523,8 @@ public class SalesforcePropsalTemplateExtension {
         ProposalWrapperClass.productFamilyWrapper productFamilyWrapperClass;
         ProposalWrapperClass.productFamilyWrapper1 productFamilyWrapperClass1;
         ProposalWrapperClass.SummaryTotalWrap SummaryTotalWrapClass;
-        monthNameMap = new Map<String,List<String>>();
-        monthYearMap = new Map<String,Integer>();
+        monthNameMap = new Map<String, List<String>>();
+        monthYearMap = new Map<String, Integer>();
         ProposalWrapperClass.yearWrapper yearWrapperClass;
         monthTotalList = new List<ProposalWrapperClass.SummaryTotalWrap>();
         //monthSet = new Set<Decimal>();
@@ -532,32 +533,32 @@ public class SalesforcePropsalTemplateExtension {
         ProposalWrapperClass.GroupYearWrapper grpYearTotal;
         ProposalWrapperClass.GroupYearWrapper yearTotal;
         Decimal startMonth;
-        totalMap = new Map<String,List<Decimal>>();
+        totalMap = new Map<String, List<Decimal>>();
         ProposalWrapperClass.monthWrapper monthWrapperClass;
         monthList = new List<ProposalWrapperClass.productFamilyWrapper1>();
         monthName = new List<String>();
         monthMap = new Map<String, ProposalWrapperClass.productFamilyWrapper1>();
         TotalValMap = new Map<String, ProposalWrapperClass.SummaryTotalWrap>();
         monthTotalMap = new Map<String, Decimal>();
-        monthProMap = new Map<String,Decimal>();
+        monthProMap = new Map<String, Decimal>();
         //optionAL wrapper
         ProposalWrapperClass.OptionalServiceGroupWrapper grpWrap;
         ProposalWrapperClass.familyWrapper famWrap;
         ProposalWrapperClass.ProductOptionalWrapper ProductOptWrap;
         ProposalWrapperClass.ProdfamYearWrapper famYearWrap;
         Map<String, ProposalWrapperClass.monthWrapper> monthWrapperMaptemp;
-        summaryMap = new Map<String,List<ProposalWrapperClass.monthWrapper>>();
+        summaryMap = new Map<String, List<ProposalWrapperClass.monthWrapper>>();
 
         groupMap = new Map<String, ProposalWrapperClass.GroupWrapper>();
 
         groupMapOptional = new Map<String, ProposalWrapperClass.OptionalServiceGroupWrapper>();
         groupMapOptionalCheck = FALSE;
-        pricingSummaryTotalMap = new Map<String,Decimal>();
+        pricingSummaryTotalMap = new Map<String, Decimal>();
         Integer startYear = quote.SBQQ__StartDate__c.year();
         grpTotalSummary = new ProposalWrapperClass.GroupWrapper(startYear, noOfYears);
         List<Decimal> monList = new List<Decimal>();
         grpTotalSummary.groupName = 'Total';
-        Decimal recTotalVal= 0;
+        Decimal recTotalVal = 0;
         Decimal MRCamt = 0;
         Decimal VRCamt = 0;
         Decimal amt;
@@ -569,18 +570,18 @@ public class SalesforcePropsalTemplateExtension {
         Set<Integer> count3 = new Set<Integer>();
         Set<Integer> count4 = new Set<Integer>();
         //Decimal m = 2;
-        System.debug('monthsList'+ monthsList);
+        System.debug('monthsList' + monthsList);
         Integer countsize = 0;
 
         //monthName.add('M1');
         //monthTotal.add(1);
         Decimal maxvalue = monthsList[0];
-        for(integer i =0;i<monthsList.size();i++){
+        for (integer i = 0; i < monthsList.size(); i++) {
 
             //   if(monthsList.get(i) !=1){
-            if(monthsList.get(i) <= integer.valueof(quote.SBQQ__SubscriptionTerm__c) ){
+            if (monthsList.get(i) <= integer.valueof(quote.SBQQ__SubscriptionTerm__c)) {
                 //if(monthsList.get(i) < 12){
-                integer j  = i+1;
+                integer j = i + 1;
                 //if(monthsList.contains(j)){
 
                 System.debug('j' + j);
@@ -588,47 +589,47 @@ public class SalesforcePropsalTemplateExtension {
                 //if(m >=  monthsList.get(j) ){
                 //         j = j+1;
                 //   }
-                System.debug('monthsList.get(i)'+monthsList.get(i));
+                System.debug('monthsList.get(i)' + monthsList.get(i));
                 String mon;
-                mon = 'M'+monthsList.get(i);
+                mon = 'M' + monthsList.get(i);
                 // if(monthsList.get(i)<12 && monthsList.get(i)!=monthsList.get(j)-1)
-                if(monthsList.get(i)<integer.valueof(quote.SBQQ__SubscriptionTerm__c) + 1 && monthsList.get(i)!=monthsList.get(j)-1)
-                    mon = mon + '-' + 'M' + integer.valueOf(monthsList.get(j)-1);
+                if (monthsList.get(i) < integer.valueof(quote.SBQQ__SubscriptionTerm__c) + 1 && monthsList.get(i) != monthsList.get(j) - 1)
+                    mon = mon + '-' + 'M' + integer.valueOf(monthsList.get(j) - 1);
                 // m = monthsList.get(j) - 1;
                 System.debug('mon' + mon);
-                monthTotal.add(monthsList.get(j)-1);
-                System.debug('monthTotal'+monthTotal);
+                monthTotal.add(monthsList.get(j) - 1);
+                System.debug('monthTotal' + monthTotal);
                 monthName.add(mon);
                 System.debug('i' + i);
-                if(monthsList.get(i)<=12){
+                if (monthsList.get(i) <= 12) {
                     System.debug('iyy' + i);
                     count.add(monthsList.get(i));
-                    monthYearMap.put('Year  1',count.size());
+                    monthYearMap.put('Year  1', count.size());
                 }
-                if(monthsList.get(i) > 12 && monthsList.get(i)<=24){
+                if (monthsList.get(i) > 12 && monthsList.get(i) <= 24) {
                     System.debug('igy' + i);
                     count1.add(monthsList.get(i));
-                    countsize=count1.size();
+                    countsize = count1.size();
 
-                    monthYearMap.put('Year  2',count.size() +countsize);
+                    monthYearMap.put('Year  2', count.size() + countsize);
                 }
-                if(monthsList.get(i) > 24 && monthsList.get(i)<=36){
+                if (monthsList.get(i) > 24 && monthsList.get(i) <= 36) {
 
                     count2.add(monthsList.get(i));
-                    countsize= count2.size();
-                    monthYearMap.put('Year  3',countsize + count1.size()+ count.size());
+                    countsize = count2.size();
+                    monthYearMap.put('Year  3', countsize + count1.size() + count.size());
                 }
-                if(monthsList.get(i) > 36 && monthsList.get(i)<=48){
+                if (monthsList.get(i) > 36 && monthsList.get(i) <= 48) {
 
                     count3.add(monthsList.get(i));
-                    countsize= count3.size();
-                    monthYearMap.put('Year  4',countsize + count2.size() + count1.size()+ count.size());
+                    countsize = count3.size();
+                    monthYearMap.put('Year  4', countsize + count2.size() + count1.size() + count.size());
                 }
-                if(monthsList.get(i) > 48 && monthsList.get(i)<=60){
+                if (monthsList.get(i) > 48 && monthsList.get(i) <= 60) {
 
                     count4.add(monthsList.get(i));
-                    countsize= count4.size();
-                    monthYearMap.put('Year  5',countsize + count3.size() + count2.size() + count1.size()+ count.size());
+                    countsize = count4.size();
+                    monthYearMap.put('Year  5', countsize + count3.size() + count2.size() + count1.size() + count.size());
                 }
                 System.debug('monthYearMap' + monthYearMap);
                 //}
@@ -640,7 +641,7 @@ public class SalesforcePropsalTemplateExtension {
 
         Integer index1 = 0;
 
-        System.debug('monthName'+monthName);
+        System.debug('monthName' + monthName);
 
         for (SBQQ__QuoteLine__c qtl : quoteLineItems) {
 
@@ -651,15 +652,15 @@ public class SalesforcePropsalTemplateExtension {
             List<String> monthNameVal = new List<String>();
             Integer k ;
 
-            if(qtl.SBQQ__SegmentLabel__c == 'Year  1')
+            if (qtl.SBQQ__SegmentLabel__c == 'Year  1')
                 k = 0;
 
-            else if(qtl.SBQQ__SegmentLabel__c != null && qtl.SBQQ__SegmentLabel__c != '' && qtl.SBQQ__SegmentLabel__c != 'OTC'){
-                String countVal =  'Year  ' + String.valueOf(Integer.valueof(qtl.SBQQ__SegmentLabel__c.right(1)) - 1);
+            else if (qtl.SBQQ__SegmentLabel__c != null && qtl.SBQQ__SegmentLabel__c != '' && qtl.SBQQ__SegmentLabel__c != 'OTC') {
+                String countVal = 'Year  ' + String.valueOf(Integer.valueof(qtl.SBQQ__SegmentLabel__c.right(1)) - 1);
                 k = monthYearMap.get(countVal);
 
             }
-            while(k<value1){
+            while (k < value1) {
 
                 // if(index != monthName.size() ){
                 System.debug('k' + k);
@@ -676,10 +677,9 @@ public class SalesforcePropsalTemplateExtension {
                 k++;
             }
 
-            if(monthNameVal.size() > 0){
-                monthNameMap.put(qtl.SBQQ__SegmentLabel__c,monthNameVal);
+            if (monthNameVal.size() > 0) {
+                monthNameMap.put(qtl.SBQQ__SegmentLabel__c, monthNameVal);
             }
-
 
 
             System.debug('dimension' + qtl.SBQQ__Dimension__r.name);
@@ -694,35 +694,31 @@ public class SalesforcePropsalTemplateExtension {
                 System.debug('startMonth' + startMonth);
 
 
-
                 if (startMonth != null) {
 
-                    if(monthProMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name)){
+                    if (monthProMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name)) {
                         Decimal monthVal = monthProMap.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name);
-                        if(monthVal > qtl.SBQQ__RequiredBy__r.StartMonth__c){
+                        if (monthVal > qtl.SBQQ__RequiredBy__r.StartMonth__c) {
                             monthVal = qtl.SBQQ__RequiredBy__r.StartMonth__c;
-                            monthProMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name,monthVal);
-                            System.debug('monthProMap' +monthProMap);
+                            monthProMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name, monthVal);
+                            System.debug('monthProMap' + monthProMap);
                         }
-                    }
-                    else{
-                        monthProMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name,qtl.SBQQ__RequiredBy__r.StartMonth__c);
-                        System.debug('monthProMap' +monthProMap);
+                    } else {
+                        monthProMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name, qtl.SBQQ__RequiredBy__r.StartMonth__c);
+                        System.debug('monthProMap' + monthProMap);
                     }
 
                     Decimal startMonth1 = monthProMap.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name);
-                    if (monthMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name+ qtl.SBQQ__SegmentLabel__c)) {
-                        productFamilyWrapperClass1 = monthMap.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name+ qtl.SBQQ__SegmentLabel__c);
+                    if (monthMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + qtl.SBQQ__SegmentLabel__c)) {
+                        productFamilyWrapperClass1 = monthMap.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + qtl.SBQQ__SegmentLabel__c);
+                    } else {
+                        productFamilyWrapperClass1 = new ProposalWrapperClass.productFamilyWrapper1(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + qtl.SBQQ__SegmentLabel__c, startMonth, noOfMonths);
                     }
-                    else{
-                        productFamilyWrapperClass1 = new ProposalWrapperClass.productFamilyWrapper1(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name+ qtl.SBQQ__SegmentLabel__c,startMonth,noOfMonths);
-                    }
-
 
 
                     //if (qtl.SBQQ__SegmentLabel__c != 'OTC'){
 
-                    System.debug('qtl.SBQQ__Dimension__r.Dimension_Type__c' +qtl.SBQQ__Dimension__r.Dimension_Type__c);
+                    System.debug('qtl.SBQQ__Dimension__r.Dimension_Type__c' + qtl.SBQQ__Dimension__r.Dimension_Type__c);
                     if (qtl.SBQQ__Dimension__r.Dimension_Type__c == 'MRC') {
                         //startMonth = qtl.StartMonth__c;
                         System.debug('...MRC...startMonth.........' + startMonth);
@@ -731,18 +727,14 @@ public class SalesforcePropsalTemplateExtension {
                         System.debug('...QL...........' + qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + qtl.SBQQ__SegmentLabel__c);
 
 
-                        if (productFamilyWrapperClass1.monthWrapperMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name+ qtl.SBQQ__SegmentLabel__c)) {
+                        if (productFamilyWrapperClass1.monthWrapperMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + qtl.SBQQ__SegmentLabel__c)) {
                             monthWrapperClass = productFamilyWrapperClass1.monthWrapperMap.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + qtl.SBQQ__SegmentLabel__c);
                         } else {
                             monthWrapperClass = new ProposalWrapperClass.monthWrapper(startMonth);
                         }
-                        System.debug('qtl.Monthly_Price__c'+qtl.Monthly_Price__c);
-                        System.debug('qtl.sbqq__requiredBy__r.Monthly_Price__c'+qtl.sbqq__requiredBy__r.Monthly_Price__c);
+                        System.debug('qtl.Monthly_Price__c' + qtl.Monthly_Price__c);
+                        System.debug('qtl.sbqq__requiredBy__r.Monthly_Price__c' + qtl.sbqq__requiredBy__r.Monthly_Price__c);
                         MRCamt = (qtl.Monthly_Price__c * currencyFactor);
-
-
-
-
 
 
                     }
@@ -754,16 +746,15 @@ public class SalesforcePropsalTemplateExtension {
                         } else {
                             monthWrapperClass = new ProposalWrapperClass.monthWrapper(startMonth);
                         }
-                        System.debug('qtl.SBQQ__Product__r.Variable_UOM__c '+qtl.SBQQ__Product__r.Variable_UOM__c );
+                        System.debug('qtl.SBQQ__Product__r.Variable_UOM__c ' + qtl.SBQQ__Product__r.Variable_UOM__c);
 
-                        if(qtl.SBQQ__Product__r.Variable_UOM__c == 'Hour'){
-                            System.debug('qtl.Final_Unit_Price__c'+qtl.Final_Net_Price__c);
-                            System.debug('qtl.SBQQ__Quantity__c'+qtl.SBQQ__Quantity__c);
-                            System.debug('qtl.noOfHours'+ noOfHours);
-                            VRCamt = (qtl.Final_Unit_Price__c * qtl.SBQQ__Quantity__c * noOfHours*noOfDays * currencyFactor);
-                            System.debug('VRCamt'+VRCamt);
-                        }
-                        else{
+                        if (qtl.SBQQ__Product__r.Variable_UOM__c == 'Hour') {
+                            System.debug('qtl.Final_Unit_Price__c' + qtl.Final_Net_Price__c);
+                            System.debug('qtl.SBQQ__Quantity__c' + qtl.SBQQ__Quantity__c);
+                            System.debug('qtl.noOfHours' + noOfHours);
+                            VRCamt = (qtl.Final_Unit_Price__c * qtl.SBQQ__Quantity__c * noOfHours * noOfDays * currencyFactor);
+                            System.debug('VRCamt' + VRCamt);
+                        } else {
                             VRCamt = qtl.Monthly_Price__c * currencyFactor;
                         }
                     }
@@ -775,8 +766,7 @@ public class SalesforcePropsalTemplateExtension {
 
                     if (TotalValMap.containsKey(qtl.SBQQ__SegmentLabel__c)) {
                         SummaryTotalWrapClass = TotalValMap.get(qtl.SBQQ__SegmentLabel__c);
-                    }
-                    else{
+                    } else {
                         SummaryTotalWrapClass = new ProposalWrapperClass.SummaryTotalWrap(qtl.SBQQ__SegmentLabel__c);
                     }
                     System.debug('MRCamt' + MRCamt);
@@ -792,32 +782,31 @@ public class SalesforcePropsalTemplateExtension {
                     // List<String> monthNameVal = new List<String>();
                     Integer j ;
 
-                    if(qtl.SBQQ__SegmentLabel__c == 'Year  1')
+                    if (qtl.SBQQ__SegmentLabel__c == 'Year  1')
                         j = 0;
 
-                    else if(qtl.SBQQ__SegmentLabel__c != null && qtl.SBQQ__SegmentLabel__c != '' && qtl.SBQQ__SegmentLabel__c != 'OTC'){
-                        System.debug('yearaa'   + qtl.SBQQ__SegmentLabel__c.right(1) );
-                        System.debug('yearss'   + (Integer.valueof(qtl.SBQQ__SegmentLabel__c.right(1) )));
-                        System.debug('year'   + String.valueOf(Integer.valueof(qtl.SBQQ__SegmentLabel__c.right(1)) ));
-                        String countVal =  'Year  ' + String.valueOf(Integer.valueof(qtl.SBQQ__SegmentLabel__c.right(1)) - 1);
+                    else if (qtl.SBQQ__SegmentLabel__c != null && qtl.SBQQ__SegmentLabel__c != '' && qtl.SBQQ__SegmentLabel__c != 'OTC') {
+                        System.debug('yearaa' + qtl.SBQQ__SegmentLabel__c.right(1));
+                        System.debug('yearss' + (Integer.valueof(qtl.SBQQ__SegmentLabel__c.right(1))));
+                        System.debug('year' + String.valueOf(Integer.valueof(qtl.SBQQ__SegmentLabel__c.right(1))));
+                        String countVal = 'Year  ' + String.valueOf(Integer.valueof(qtl.SBQQ__SegmentLabel__c.right(1)) - 1);
                         j = monthYearMap.get(countVal);
 
                     }
-                    while(j<value1){
+                    while (j < value1) {
 
-                        if(startMonth <= monthTotal.get(j)){
-                            if(SummaryTotalWrapClass.monthTotalMap.containsKey(j+qtl.SBQQ__SegmentLabel__c)){
-                                Decimal val = SummaryTotalWrapClass.monthTotalMap.get(j+qtl.SBQQ__SegmentLabel__c);
+                        if (startMonth <= monthTotal.get(j)) {
+                            if (SummaryTotalWrapClass.monthTotalMap.containsKey(j + qtl.SBQQ__SegmentLabel__c)) {
+                                Decimal val = SummaryTotalWrapClass.monthTotalMap.get(j + qtl.SBQQ__SegmentLabel__c);
                                 System.debug('VALLLL' + val);
 
                                 val = val + amt;
                                 System.debug('i' + j);
-                                SummaryTotalWrapClass.monthTotalMap.put(j+qtl.SBQQ__SegmentLabel__c,val);
-                                System.debug('aaaaa'+ SummaryTotalWrapClass.monthTotalMap);
+                                SummaryTotalWrapClass.monthTotalMap.put(j + qtl.SBQQ__SegmentLabel__c, val);
+                                System.debug('aaaaa' + SummaryTotalWrapClass.monthTotalMap);
 
-                            }
-                            else{
-                                SummaryTotalWrapClass.monthTotalMap.put(j+qtl.SBQQ__SegmentLabel__c, amt);
+                            } else {
+                                SummaryTotalWrapClass.monthTotalMap.put(j + qtl.SBQQ__SegmentLabel__c, amt);
                                 System.debug('bbbb' + SummaryTotalWrapClass.monthTotalMap);
                             }
 
@@ -825,29 +814,23 @@ public class SalesforcePropsalTemplateExtension {
                             // Integer index = 0;
 
 
-
-
-
-
-
                             // Decimal value = monthYearMap.get(qtl.SBQQ__SegmentLabel__c);
                             // for(integer i=0;i<monthTotal.size();i++){
 
-                            System.debug(' monthTotal.get(i)' +  monthTotal.get(j));
+                            System.debug(' monthTotal.get(i)' + monthTotal.get(j));
 
-                            if(monthWrapperClass.amount.containsKey(j+ qtl.SBQQ__SegmentLabel__c)){
-                                Decimal val = monthWrapperClass.amount.get(j+ qtl.SBQQ__SegmentLabel__c);
+                            if (monthWrapperClass.amount.containsKey(j + qtl.SBQQ__SegmentLabel__c)) {
+                                Decimal val = monthWrapperClass.amount.get(j + qtl.SBQQ__SegmentLabel__c);
                                 System.debug('VALLLL' + val);
 
                                 val = val + amt;
 
-                                monthWrapperClass.amount.put(j+ qtl.SBQQ__SegmentLabel__c,val);
+                                monthWrapperClass.amount.put(j + qtl.SBQQ__SegmentLabel__c, val);
                                 System.debug('monthWrapperClass.amount.put(i,val)' + monthWrapperClass.amount);
 
 
-                            }
-                            else{
-                                monthWrapperClass.amount.put(j+ qtl.SBQQ__SegmentLabel__c,amt);
+                            } else {
+                                monthWrapperClass.amount.put(j + qtl.SBQQ__SegmentLabel__c, amt);
                                 System.debug('monthWrapperClass.amount.put(i,val)' + monthWrapperClass.amount);
 
 
@@ -856,17 +839,19 @@ public class SalesforcePropsalTemplateExtension {
 
                         }
 
-                        else{
-                            if(!monthWrapperClass.amount.containsKey(j+ qtl.SBQQ__SegmentLabel__c)){
+                        else {
+                            if (!monthWrapperClass.amount.containsKey(j + qtl.SBQQ__SegmentLabel__c)) {
                                 Decimal val = 0;
-                                monthWrapperClass.amount.put(j+ qtl.SBQQ__SegmentLabel__c,val);}
+                                monthWrapperClass.amount.put(j + qtl.SBQQ__SegmentLabel__c, val);
+                            }
                             //productFamilyWrapperClass1.productFamilyTotal = productFamilyWrapperClass1.productFamilyTotal + (val);
                         }
                         //
 
 
-                        j++;}
-                    System.debug(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name+'==MRC: ' + monthWrapperClass.amount +'===OTC:  '+monthWrapperClass.otc);
+                        j++;
+                    }
+                    System.debug(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + '==MRC: ' + monthWrapperClass.amount + '===OTC:  ' + monthWrapperClass.otc);
 
 
                     //                    if()
@@ -889,18 +874,18 @@ public class SalesforcePropsalTemplateExtension {
                         //System.debug('...monthWrapperMaptemp  MRC...Map Contains...........' + monthWrapperMaptemp.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name+'Year  1'));
                         //System.debug('...QL...........' + qtl);
 
-                        System.debug('product Name=='+qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name);
-                        System.debug('Map '+monthWrapperMaptemp);
-                        if (productFamilyWrapperClass1.monthWrapperMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + 'Year  1') ) {
-                            monthWrapperClass = productFamilyWrapperClass1.monthWrapperMap.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name +'Year  1');
-                            System.debug('IF - MonthWrapper-OTC:'+monthWrapperClass);
-                        } else if(monthWrapperMaptemp != null){
-                            if ( monthWrapperMaptemp.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + 'Year  1')){
+                        System.debug('product Name==' + qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name);
+                        System.debug('Map ' + monthWrapperMaptemp);
+                        if (productFamilyWrapperClass1.monthWrapperMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + 'Year  1')) {
+                            monthWrapperClass = productFamilyWrapperClass1.monthWrapperMap.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + 'Year  1');
+                            System.debug('IF - MonthWrapper-OTC:' + monthWrapperClass);
+                        } else if (monthWrapperMaptemp != null) {
+                            if (monthWrapperMaptemp.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + 'Year  1')) {
                                 monthWrapperClass = monthWrapperMaptemp.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + 'Year  1');
                             }
                         } else {
-                                monthWrapperClass = new ProposalWrapperClass.monthWrapper(startMonth);
-                            System.debug('Else - MonthWrapper-OTC:'+monthWrapperClass);
+                            monthWrapperClass = new ProposalWrapperClass.monthWrapper(startMonth);
+                            System.debug('Else - MonthWrapper-OTC:' + monthWrapperClass);
 
                         }
                         System.debug('Before monthWrapperClass.otc' + monthWrapperClass.otc);
@@ -920,7 +905,6 @@ public class SalesforcePropsalTemplateExtension {
                     }
 
 
-
                 }
 
                 if (qtl.SBQQ__Optional__c != true) {
@@ -934,14 +918,14 @@ public class SalesforcePropsalTemplateExtension {
                     }
 
                     if (qtl.SBQQ__Dimension__r.Dimension_Type__c == 'OTC') {
-                        groupWiseWrapperClass.groupWiseOTC =  groupWiseWrapperClass.groupWiseOTC + (qtl.SBQQ__NetTotal__c * currencyFactor);
+                        groupWiseWrapperClass.groupWiseOTC = groupWiseWrapperClass.groupWiseOTC + (qtl.SBQQ__NetTotal__c * currencyFactor);
                         groupWiseWrapperClass.allGroupOtc = groupWiseWrapperClass.allGroupOtc + (qtl.SBQQ__NetTotal__c * currencyFactor);
                         //groupWiseWrapperClass.groupOTC = groupWiseWrapperClass.groupOTC + (qtl.Final_Net_Price__c * currencyFactor);
-                        grpTotalSummary.groupWiseOTC =  grpTotalSummary.groupWiseOTC + (qtl.SBQQ__NetTotal__c * currencyFactor);
+                        grpTotalSummary.groupWiseOTC = grpTotalSummary.groupWiseOTC + (qtl.SBQQ__NetTotal__c * currencyFactor);
                         grpTotalSummary.allGroupOtc = grpTotalSummary.allGroupOtc + (qtl.SBQQ__NetTotal__c * currencyFactor);
                     } else if (qtl.SBQQ__Dimension__r.Dimension_Type__c == 'MRC') {
-                        groupWiseWrapperClass.groupWiseRec =   groupWiseWrapperClass.groupWiseRec + (qtl.SBQQ__NetTotal__c * currencyFactor);
-                        grpTotalSummary.groupWiseRec =   grpTotalSummary.groupWiseRec + (qtl.SBQQ__NetTotal__c * currencyFactor);
+                        groupWiseWrapperClass.groupWiseRec = groupWiseWrapperClass.groupWiseRec + (qtl.SBQQ__NetTotal__c * currencyFactor);
+                        grpTotalSummary.groupWiseRec = grpTotalSummary.groupWiseRec + (qtl.SBQQ__NetTotal__c * currencyFactor);
                     }
 
                     groupWiseWrapperClass.groupWiseTotal = groupWiseWrapperClass.groupWiseTotal + (qtl.SBQQ__NetTotal__c * currencyFactor);
@@ -954,7 +938,7 @@ public class SalesforcePropsalTemplateExtension {
                     System.debug('groupWiseWrapperClass.groupWiseTotal' + groupWiseWrapperClass.groupWiseTotal);
 
                     //Charge Wrapper
-                    if(qtl.Dimension_Type__c == 'OTC' || qtl.Dimension_Type__c == 'MRC' || qtl.Dimension_Type__c == 'VRC'){
+                    if (qtl.Dimension_Type__c == 'OTC' || qtl.Dimension_Type__c == 'MRC' || qtl.Dimension_Type__c == 'VRC') {
                         if (groupWiseWrapperClass.chargeWrapperMap.containsKey(qtl.SBQQ__Dimension__r.Dimension_Type__c)) {
                             chargeTypeWrapperClass = groupWiseWrapperClass.chargeWrapperMap.get(qtl.SBQQ__Dimension__r.Dimension_Type__c);
                             System.debug('chargeTypeWrapperClass' + chargeTypeWrapperClass);
@@ -991,14 +975,14 @@ public class SalesforcePropsalTemplateExtension {
                         yearWrapperClass.amountTotal = yearWrapperClass.amountTotal + yearWrapperClass.amount;
 
                         productFamilyWrapperClass.productFamilyTotal = productFamilyWrapperClass.productFamilyTotal + (qtl.Final_Net_Price__c * currencyFactor * 12);
-                        productFamilyWrapperClass.productTotal = productFamilyWrapperClass.productTotal + (qtl.Final_Net_Price__c * currencyFactor *12);
+                        productFamilyWrapperClass.productTotal = productFamilyWrapperClass.productTotal + (qtl.Final_Net_Price__c * currencyFactor * 12);
                     } else if (qtl.SBQQ__StartDate__c == null && qtl.SBQQ__Dimension__r.Dimension_Type__c == 'OTC') { //add OTC
                         startYear = qtl.SBQQ__RequiredBy__r.SBQQ__Quote__r.SBQQ__StartDate__c.year();
 
                         if (productFamilyWrapperClass.yearWrapperMap.containsKey(startYear)) {
-                            yearWrapperClass   = productFamilyWrapperClass.yearWrapperMap.get(startYear);
+                            yearWrapperClass = productFamilyWrapperClass.yearWrapperMap.get(startYear);
                         } else {
-                            yearWrapperClass  = new ProposalWrapperClass.yearWrapper(startYear);
+                            yearWrapperClass = new ProposalWrapperClass.yearWrapper(startYear);
                         }
                         yearWrapperClass.amount = yearWrapperClass.amount + (qtl.Final_Net_Price__c * currencyFactor);
                         System.debug('yearWrapAmout' + yearWrapperClass.amount);
@@ -1007,7 +991,7 @@ public class SalesforcePropsalTemplateExtension {
                         System.debug('otc net price ' + qtl.Final_Net_Price__c);
                         yearWrapperClass.amountTotal = yearWrapperClass.amountTotal + yearWrapperClass.amount;
                         productFamilyWrapperClass.productTotal = productFamilyWrapperClass.productTotal + (qtl.Final_Net_Price__c * currencyFactor);
-                        yearWrapperClass.otc =  yearWrapperClass.otc + (qtl.Final_Net_Price__c * currencyFactor);
+                        yearWrapperClass.otc = yearWrapperClass.otc + (qtl.Final_Net_Price__c * currencyFactor);
                         System.debug('yearWrapperClassotc' + yearWrapperClass.otc);
                     }
                     //start of wrapper 2
@@ -1031,28 +1015,26 @@ public class SalesforcePropsalTemplateExtension {
                     System.debug(qtl.SBQQ__NetTotal__c * currencyFactor);
                     grpYearTotal.recurring = grpYearTotal.recurring + (qtl.SBQQ__NetTotal__c * currencyFactor);
                     //grpYearTotal.recurringTotal = grpYearTotal.recurringTotal + (qtl.Final_Net_Price__c * currencyFactor);
-                    grpYearTotal.allGroupYearTotal =  grpYearTotal.allGroupYearTotal + (qtl.SBQQ__NetTotal__c * currencyFactor);
+                    grpYearTotal.allGroupYearTotal = grpYearTotal.allGroupYearTotal + (qtl.SBQQ__NetTotal__c * currencyFactor);
 
                     yearTotal.recurring = yearTotal.recurring + (qtl.SBQQ__NetTotal__c * currencyFactor);
                     //yearTotal.recurringTotal = grpYearTotal.recurringTotal + (qtl.Final_Net_Price__c * currencyFactor);
-                    yearTotal.allGroupYearTotal =  yearTotal.allGroupYearTotal + (qtl.SBQQ__NetTotal__c * currencyFactor);
+                    yearTotal.allGroupYearTotal = yearTotal.allGroupYearTotal + (qtl.SBQQ__NetTotal__c * currencyFactor);
                     // }
-                    if(qtl.SBQQ__SegmentLabel__c == 'OTC'){
+                    if (qtl.SBQQ__SegmentLabel__c == 'OTC') {
                         Decimal a = 0;
-                        if(pricingSummaryTotalMap.containsKey('Year  1')){
+                        if (pricingSummaryTotalMap.containsKey('Year  1')) {
                             a = pricingSummaryTotalMap.get('Year  1');
                         }
-                        Decimal recTotalVal1 =  (qtl.Final_Net_Price__c * currencyFactor) + a;
-                        pricingSummaryTotalMap.put('Year  1',recTotalVal1);
-                    }
-                    else if(pricingSummaryTotalMap.containsKey(qtl.SBQQ__SegmentLabel__c)){
+                        Decimal recTotalVal1 = (qtl.Final_Net_Price__c * currencyFactor) + a;
+                        pricingSummaryTotalMap.put('Year  1', recTotalVal1);
+                    } else if (pricingSummaryTotalMap.containsKey(qtl.SBQQ__SegmentLabel__c)) {
                         Decimal a = pricingSummaryTotalMap.get(qtl.SBQQ__SegmentLabel__c);
-                        Decimal recTotalVal2 = (qtl.Final_Net_Price__c * currencyFactor *12) + a;
-                        pricingSummaryTotalMap.put(qtl.SBQQ__SegmentLabel__c,recTotalVal2);
-                    }
-                    else{
+                        Decimal recTotalVal2 = (qtl.Final_Net_Price__c * currencyFactor * 12) + a;
+                        pricingSummaryTotalMap.put(qtl.SBQQ__SegmentLabel__c, recTotalVal2);
+                    } else {
                         Decimal recTotalVal3 = (qtl.Final_Net_Price__c * currencyFactor * 12);
-                        pricingSummaryTotalMap.put(qtl.SBQQ__SegmentLabel__c,recTotalVal3);
+                        pricingSummaryTotalMap.put(qtl.SBQQ__SegmentLabel__c, recTotalVal3);
                     }
                     grpYearTotal.recurringTotal = grpYearTotal.recurringTotal + (qtl.Final_Net_Price__c * currencyFactor);
                     yearTotal.recurringTotal = grpYearTotal.recurringTotal + (qtl.Final_Net_Price__c * currencyFactor);
@@ -1062,16 +1044,16 @@ public class SalesforcePropsalTemplateExtension {
                     productFamilyWrapperClass.yearWrapperMap.put(startYear, yearWrapperClass);
                     chargeTypeWrapperClass.familyWrapperMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Family, productFamilyWrapperClass);
 
-                    if(qtl.Dimension_Type__c == 'OTC' || qtl.Dimension_Type__c == 'MRC'){
+                    if (qtl.Dimension_Type__c == 'OTC' || qtl.Dimension_Type__c == 'MRC') {
                         groupWiseWrapperClass.chargeWrapperMap.put(qtl.SBQQ__Dimension__r.Dimension_Type__c, chargeTypeWrapperClass);
                     }
-                    groupMap.put(qtl.SBQQ__Dimension__r.Dimension_Type__c, groupWiseWrapperClass );
-
+                    groupMap.put(qtl.SBQQ__Dimension__r.Dimension_Type__c, groupWiseWrapperClass);
 
 
                     System.debug('groupWiseWrapperClass.chargeWrapperMap' + groupWiseWrapperClass.chargeWrapperMap);
                 } else if (qtl.SBQQ__Optional__c == true) {
-                    if (qtl.SBQQ__Dimension__r.Dimension_Type__c == 'MRC') {
+                    System.debug('....MapQuoteline name '+qtl.Name);
+                    if (qtl.SBQQ__Dimension__r.Dimension_Type__c == 'MRC' || qtl.SBQQ__Dimension__r.Dimension_Type__c == 'VRC') {
                         startYear = qtl.SBQQ__StartDate__c.year();
                     } else {
                         startYear = qtl.SBQQ__RequiredBy__r.SBQQ__Quote__r.SBQQ__StartDate__c.year();
@@ -1084,7 +1066,7 @@ public class SalesforcePropsalTemplateExtension {
                         grpWrap.grpName = qtl.SBQQ__Group__r.Name;
                         grpWrap.grpId = qtl.SBQQ__Group__c;
                     }
-                    if (grpWrap.optionalFamMap.containsKey( qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Family)) {
+                    if (grpWrap.optionalFamMap.containsKey(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Family)) {
                         famWrap = grpWrap.optionalFamMap.get(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Family);
                     } else {
                         famWrap = new ProposalWrapperClass.familyWrapper();
@@ -1096,45 +1078,57 @@ public class SalesforcePropsalTemplateExtension {
                         ProductOptWrap = new ProposalWrapperClass.ProductOptionalWrapper();
 
                     }
-                        if (qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.SAP_Product__c != NULL) {
-                            ProductOptWrap.bundleName = qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.SAP_Product__r.Name + '<br/>' + qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name ;
-                        } else {
-                            ProductOptWrap.bundleName = qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name ;
-                        }
+                    if (qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.SAP_Product__c != NULL) {
+                        ProductOptWrap.bundleName = qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.SAP_Product__r.Name + '<br/>' + qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name ;
+                    } else {
+                        ProductOptWrap.bundleName = qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name ;
+                    }
 
-                        if (qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Type__c == 'Third Party') {
-                            ProductOptWrap.bundleName = ProductOptWrap.bundleName + ' (TP)';
-                        }
+                    if (qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Product_Type__c == 'Third Party') {
+                        ProductOptWrap.bundleName = ProductOptWrap.bundleName + ' (TP)';
+                    }
 
-                        ProductOptWrap.family = qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Family;
-                        if (ProductOptWrap.description != null && ProductOptWrap.description != '' && !ProductOptWrap.ComponentName.contains(qtl.SBQQ__Product__r.Name)) {
-                            ProductOptWrap.description = ProductOptWrap.description + '<br/> <br/>Qty - ' + qtl.Component_Quantity__c + ', ' + ' UoM - ' + qtl.UOM__c + '<br/>' + qtl.SBQQ__Product__r.Description;
-                            ProductOptWrap.ComponentName.add(qtl.SBQQ__Product__r.Name);
+                    ProductOptWrap.family = qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Family;
+                    if (ProductOptWrap.description != null && ProductOptWrap.description != '' && !ProductOptWrap.ComponentName.contains(qtl.SBQQ__Product__r.Name)) {
+                        ProductOptWrap.description = ProductOptWrap.description + '<br/> <br/>Qty - ' + qtl.Component_Quantity__c + ', ' + ' UoM - ' + qtl.UOM__c + '<br/>' + qtl.SBQQ__Product__r.Description;
+                        ProductOptWrap.ComponentName.add(qtl.SBQQ__Product__r.Name);
 
-                        } else if (!ProductOptWrap.ComponentName.contains(qtl.SBQQ__Product__r.Name)) {
-                            ProductOptWrap.description = ProductOptWrap.description + 'Qty - ' + qtl.Component_Quantity__c + ', ' + ' UoM - ' + qtl.UOM__c + '<br/>' + qtl.SBQQ__Product__r.Description;
-                            ProductOptWrap.ComponentName.add(qtl.SBQQ__Product__r.Name);
+                    } else if (!ProductOptWrap.ComponentName.contains(qtl.SBQQ__Product__r.Name)) {
+                        ProductOptWrap.description = ProductOptWrap.description + 'Qty - ' + qtl.Component_Quantity__c + ', ' + ' UoM - ' + qtl.UOM__c + '<br/>' + qtl.SBQQ__Product__r.Description;
+                        ProductOptWrap.ComponentName.add(qtl.SBQQ__Product__r.Name);
+                    }
+                    ProductOptWrap.qty = qtl.SBQQ__RequiredBy__r.SBQQ__Quantity__c;
+                    ProductOptWrap.uom = qtl.SBQQ__RequiredBy__r.UOM__c;
+                    if (qtl.SBQQ__Dimension__r.Dimension_Type__c == 'OTC') {
+                        ProductOptWrap.famWrapYearOtc = ProductOptWrap.famWrapYearOtc + (qtl.Final_Net_Price__c * currencyFactor);
+                        System.debug('ProductOptWrap.famWrapYearOtc' + ProductOptWrap.famWrapYearOtc);
+                    }
+                    if (qtl.SBQQ__Dimension__r.Dimension_Type__c == 'VRC' && qtl.SBQQ__SegmentIndex__c == 1){
+                        if (qtl.SBQQ__ProductCode__c == 'MTCOLO_Pow_001' || qtl.SBQQ__ProductCode__c == 'MTCOLO_Pow_002') {
+                            ProductOptWrap.famWrapYearVRC = qtl.Final_Unit_Price__c * currencyFactor;
+                        } else if (qtl.SBQQ__Product__r.Model_Name__c != 'Colo Power') {
+                            ProductOptWrap.famWrapYearVRC = ProductOptWrap.famWrapYearVRC + (qtl.Final_Unit_Price__c * currencyFactor);
                         }
-                        ProductOptWrap.qty = qtl.SBQQ__RequiredBy__r.SBQQ__Quantity__c;
-                        ProductOptWrap.uom = qtl.SBQQ__RequiredBy__r.UOM__c;
-                        if (qtl.SBQQ__Dimension__r.Dimension_Type__c == 'OTC') {
-                            ProductOptWrap.famWrapYearOtc = ProductOptWrap.famWrapYearOtc + (qtl.Final_Net_Price__c * currencyFactor);
-                            System.debug('ProductOptWrap.famWrapYearOtc' + ProductOptWrap.famWrapYearOtc);
-                        }
+                    }
 
-                        yearSet.add(startYear);
-                        if (ProductOptWrap.famYearMap.containsKey(startYear)) {
-                            famYearWrap = ProductOptWrap.famYearMap.get(startYear);
-                        } else {
-                            famYearWrap = new ProposalWrapperClass.ProdfamYearWrapper();
+                    yearSet.add(startYear);
+                    System.debug('....Map Year'+startYear);
+                    if (ProductOptWrap.famYearMap.containsKey(startYear)) {
+                        famYearWrap = ProductOptWrap.famYearMap.get(startYear);
+                    } else {
+                        famYearWrap = new ProposalWrapperClass.ProdfamYearWrapper();
+                        if(qtl.SBQQ__Dimension__r.Dimension_Type__c == 'MRC' ||  qtl.SBQQ__Dimension__r.Dimension_Type__c == 'VRC'){
                             famYearWrap.famWrapYearReccuring = famYearWrap.famWrapYearReccuring + (qtl.Final_Net_Price__c * currencyFactor);
                         }
-                        ProductOptWrap.famYearMap.put(startYear, famYearWrap);
-                        System.debug('....Map Key 5....' + ProductOptWrap.famYearMap.keySet());
-                        famWrap.OptionalProductMap.put(qtl.SBQQ__RequiredBy__c, ProductOptWrap);
-                        grpWrap.optionalFamMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Family, famWrap);
-                        System.debug('qtl.SBQQ__Group__c' + qtl.SBQQ__Group__c);
-                        groupMapOptional.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Family, grpWrap);
+                    }
+                    ProductOptWrap.famYearMap.put(startYear, famYearWrap);
+                    System.debug('....Map Key 5....' + ProductOptWrap.famYearMap.keySet());
+                    System.debug('....Map Key 5....' + ProductOptWrap.famYearMap.values());
+                    System.debug('....Map Key 5....' + ProductOptWrap);
+                    famWrap.OptionalProductMap.put(qtl.SBQQ__RequiredBy__c, ProductOptWrap);
+                    grpWrap.optionalFamMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Family, famWrap);
+                    System.debug('qtl.SBQQ__Group__c' + qtl.SBQQ__Group__c);
+                    groupMapOptional.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Family, grpWrap);
 
 
                     /*
@@ -1186,29 +1180,27 @@ public class SalesforcePropsalTemplateExtension {
                 System.debug('groupMapOptional' + groupMapOptional);
                 System.debug('groupValues[group].chargeWrapperMap[c].typeOfCharge' + groupValues);
                 System.debug('startMMMMMONTH' + startMonth);
-                System.debug('monthWrapperClass'+monthWrapperClass);
-                System.debug('qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name'+qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + qtl.SBQQ__SegmentLabel__c);
-                IF(qtl.SBQQ__SegmentLabel__c != 'OTC'){
+                System.debug('monthWrapperClass' + monthWrapperClass);
+                System.debug('qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name' + qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + qtl.SBQQ__SegmentLabel__c);
+                IF (qtl.SBQQ__SegmentLabel__c != 'OTC') {
                     productFamilyWrapperClass1.monthWrapperMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + qtl.SBQQ__SegmentLabel__c, monthWrapperClass);
                     System.debug('productFamilyWrapperClass1.monthWrapperMap' + productFamilyWrapperClass1.monthWrapperMap);
-                    monthMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name+qtl.SBQQ__SegmentLabel__c, productFamilyWrapperClass1 );
+                    monthMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + qtl.SBQQ__SegmentLabel__c, productFamilyWrapperClass1);
 
                     yearLabelKeySet.add(qtl.SBQQ__SegmentLabel__c);
 
-                    TotalValMap.put( qtl.SBQQ__SegmentLabel__c, SummaryTotalWrapClass );
-                }
-                else{
+                    TotalValMap.put(qtl.SBQQ__SegmentLabel__c, SummaryTotalWrapClass);
+                } else {
                     productFamilyWrapperClass1.monthWrapperMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + 'Year  1', monthWrapperClass);
 
-                    monthMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name+'Year  1', productFamilyWrapperClass1 );
+                    monthMap.put(qtl.SBQQ__RequiredBy__r.SBQQ__Product__r.Name + 'Year  1', productFamilyWrapperClass1);
                 }
                 monthWrapperMaptemp = productFamilyWrapperClass1.monthWrapperMap;
                 monthwrapperList = productFamilyWrapperClass1.monthWrapperMap.values();
-                System.debug('monthwrapperList' +monthwrapperList);
-                System.debug('monthWrapperMaptemp -- Keyset' +monthWrapperMaptemp.keySet());
-                System.debug('monthWrapperMaptemp-- Values' +monthWrapperMaptemp.Values());
+                System.debug('monthwrapperList' + monthwrapperList);
+                System.debug('monthWrapperMaptemp -- Keyset' + monthWrapperMaptemp.keySet());
+                System.debug('monthWrapperMaptemp-- Values' + monthWrapperMaptemp.Values());
                 List<ProposalWrapperClass.monthWrapper> newList = new List<ProposalWrapperClass.monthWrapper> ();
-
 
 
             }
@@ -1220,10 +1212,9 @@ public class SalesforcePropsalTemplateExtension {
         }
 
 
-
         TotalPricing = 0;
         List<Decimal> value = pricingSummaryTotalMap.values();
-        for(Decimal y: value){
+        for (Decimal y : value) {
             TotalPricing = TotalPricing + y;
         }
 
@@ -1239,34 +1230,34 @@ public class SalesforcePropsalTemplateExtension {
             List<Decimal> totNewList = new List<Decimal>();
 
 
-            if(qtl.SBQQ__RequiredBy__c != null){
+            if (qtl.SBQQ__RequiredBy__c != null) {
                 for (ProposalWrapperClass.productFamilyWrapper1 gWrap : monthMap.values()) {
                     monthwrapperList = gWrap.monthWrapperMap.values();
-                    System.debug('monthwrapperList' +monthwrapperList);
-                    for(ProposalWrapperClass.monthWrapper listVal : monthwrapperList){
+                    System.debug('monthwrapperList' + monthwrapperList);
+                    for (ProposalWrapperClass.monthWrapper listVal : monthwrapperList) {
                         System.debug('listVal.yearlabel' + listVal.yearlabel);
-                        if(listVal.yearlabel == qtl.SBQQ__SegmentLabel__c){
+                        if (listVal.yearlabel == qtl.SBQQ__SegmentLabel__c) {
 
                             newList.add(listVal);
-                            summaryMap.put(listVal.yearLabel,newList);
+                            summaryMap.put(listVal.yearLabel, newList);
                             //newList.clear();
-                            System.debug('summaryMap' +summaryMap);
+                            System.debug('summaryMap' + summaryMap);
                             // totalMap.put(listVal.yearLabel,totNewList);
                         }
                     }
 
                 }
-                for(ProposalWrapperClass.SummaryTotalWrap sWrap: TotalValMap.values() ){
+                for (ProposalWrapperClass.SummaryTotalWrap sWrap : TotalValMap.values()) {
                     List<Decimal> mList = sWrap.monthTotalMap.values();
-                    for(Decimal listVal : mList){
+                    for (Decimal listVal : mList) {
                         //
-                        if(sWrap.yearlabel1 == qtl.SBQQ__SegmentLabel__c){
+                        if (sWrap.yearlabel1 == qtl.SBQQ__SegmentLabel__c) {
                             // List<Decimal> totNewList = new List<Decimal>();
 
                             totNewList.add(listVal);
 
 
-                            totalMap.put(sWrap.yearLabel1,totNewList);
+                            totalMap.put(sWrap.yearLabel1, totNewList);
                             //System.debug('totalMap' + totalMap);
                             // totalMap.put(listVal.yearLabel,totNewList);
                         }
@@ -1275,9 +1266,8 @@ public class SalesforcePropsalTemplateExtension {
             }
 
 
-
         }
-        System.debug('monthList'+monthList);
+        System.debug('monthList' + monthList);
         System.debug('..........groupMapOptionalCheck.................' + groupMapOptionalCheck);
 
         return groupMap;
@@ -1309,7 +1299,7 @@ public class SalesforcePropsalTemplateExtension {
                 customers = term.Term_Description__c;
             }
 
-            if(term.Sub_Type__c == 'Graphics Workstation Anywhere'){
+            if (term.Sub_Type__c == 'Graphics Workstation Anywhere') {
                 System.debug('familySghjet' + familySet);
                 System.debug('familySetcghjk' + familySet.contains(term.Sub_Type__c));
             }
@@ -1329,8 +1319,8 @@ public class SalesforcePropsalTemplateExtension {
         }
     }
 
-    public  Map<String, List<String>> TermsAndCondition() {
-        Map<String, List<String>> termCondMap = new  Map<String, List<String>>();
+    public Map<String, List<String>> TermsAndCondition() {
+        Map<String, List<String>> termCondMap = new Map<String, List<String>>();
         List<String> LstValues = new List<String>();
         List<Terms_and_Condition__c> termList = new List<Terms_and_Condition__c>();
 
@@ -1353,7 +1343,7 @@ public class SalesforcePropsalTemplateExtension {
 
     @AuraEnabled
     public static Boolean IsApproved(Id recordId) {
-        SBQQ__Quote__c quote = [SELECT Id, Name, SBQQ__Status__c FROM SBQQ__Quote__c WHERE Id = : recordId];
+        SBQQ__Quote__c quote = [SELECT Id, Name, SBQQ__Status__c FROM SBQQ__Quote__c WHERE Id = :recordId];
         Boolean approved = false;
         if (quote.SBQQ__Status__c == 'Approved') {
             approved = true;
@@ -1365,11 +1355,12 @@ public class SalesforcePropsalTemplateExtension {
     @AuraEnabled
     public static String SavePDFAsFile(Id RecordId) {
 
-        SBQQ__Quote__c quote = [SELECT Id, Name, Version__c, SBQQ__Account__c, Customer_Contact__r.Email FROM SBQQ__Quote__c WHERE Id = : RecordId];
+        SBQQ__Quote__c quote = [SELECT Id, Name, Version__c, SBQQ__Account__c, Customer_Contact__r.Email FROM SBQQ__Quote__c WHERE Id = :RecordId];
 
         if (quote.Version__c == null) {
             quote.Version__c = 0;
         }
+        quote.Is_PDF_Generated__c = true;
         quote.Version__c = quote.Version__c + 1;
         toEmail = quote.Customer_Contact__r.Email;
 
@@ -1413,7 +1404,7 @@ public class SalesforcePropsalTemplateExtension {
         file = new ContentVersion();
         file.VersionData = pdfbody;
         file.title = quote.Name + 'Proposal' + 'V.' + quote.Version__c + '-' + currentDate + '.pdf';
-        file.pathOnClient =  quote.Name + 'Proposal' + 'V.' + quote.Version__c + '-' + currentDate + '.pdf';
+        file.pathOnClient = quote.Name + 'Proposal' + 'V.' + quote.Version__c + '-' + currentDate + '.pdf';
         file.FirstPublishLocationId = doc.Id;
         insert file;
 
@@ -1423,7 +1414,7 @@ public class SalesforcePropsalTemplateExtension {
         //Update quote version
         update quote;
 
-        SaveQuotationWrapper  response = new SaveQuotationWrapper(FileId , toEmail);
+        SaveQuotationWrapper response = new SaveQuotationWrapper(FileId, toEmail);
         return JSON.serialize(response);
     }
 
@@ -1431,9 +1422,11 @@ public class SalesforcePropsalTemplateExtension {
     public static void sendEmail(Id RecordId) {
         SavePDFAsFile(RecordId);
         System.debug('here inside sendEmail');
-        SBQQ__Quote__c quote = [SELECT Id, Customer_Contact__c, Additional_CC_s_Email__c, Customer_Contact__r.Email, Customer_Contact__r.Name FROM SBQQ__Quote__c WHERE Id = : RecordId];
+        SBQQ__Quote__c quote = [SELECT Id, Customer_Contact__c, Additional_CC_s_Email__c, Customer_Contact__r.Email, Customer_Contact__r.Name FROM SBQQ__Quote__c WHERE Id = :RecordId];
 
-        String[] toRecipients = new List<String> {quote.Customer_Contact__r.Email};
+        String[] toRecipients = new List<String>{
+                quote.Customer_Contact__r.Email
+        };
         String[] ccRecipients = new List<String>();
         if (quote.Additional_CC_s_Email__c != NULL) {
             ccRecipients = quote.Additional_CC_s_Email__c.split(';');
@@ -1501,19 +1494,21 @@ public class SalesforcePropsalTemplateExtension {
         email.setSaveAsActivity(true);
 
         try {
-            Messaging.SendEmailResult[] results = Messaging.sendEmail(new Messaging.SingleEmailMessage[] {email});
+            Messaging.SendEmailResult[] results = Messaging.sendEmail(new Messaging.SingleEmailMessage[]{
+                    email
+            });
 
             if (results.get(0).isSuccess()) {
                 system.debug('Email has been send :  ' + results);
             } else {
-                system.debug('Some error in sending email :  ' + results );
+                system.debug('Some error in sending email :  ' + results);
             }
         } catch (EmailException e) {
             System.debug('sendTemplatedEmail related errors in Quotation PDF :  ' + e.getMessage());
         }
     }
 
-    public class  SaveQuotationWrapper {
+    public class SaveQuotationWrapper {
         Id fileId;
         String emailRecipient;
         public SaveQuotationWrapper(Id fileId, String emailRecipient) {

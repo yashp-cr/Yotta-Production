@@ -12,7 +12,7 @@ public without sharing class GenerateContract {
 
     @AuraEnabled
     public static void createContract(Id quoteId) {
-        SBQQ__Quote__c quote = [SELECT Id, SBQQ__Account__c, POC__c,Contracted__c,Validate_Commission_Model__c,SBQQ__Opportunity2__r.Partner_Commision_Model__c,Partner_Commision_Model__c, SBQQ__Status__c, SBQQ__Type__c, SCF_Type__c FROM SBQQ__Quote__c WHERE Id =: quoteId];
+        SBQQ__Quote__c quote = [SELECT Id, SBQQ__Account__c, POC__c,Contracted__c,Validate_Commission_Model__c,SBQQ__Opportunity2__r.Partner_Commision_Model__c,Partner_Commision_Model__c, SBQQ__Status__c, SBQQ__Type__c, SCF_Type__c,SBQQ__Opportunity2__r.POC_Stage__c,SBQQ__Opportunity2__r.Approx_Order_Value__c,SBQQ__Opportunity2__r.POC__c,SBQQ__Opportunity2__r.StageName FROM SBQQ__Quote__c WHERE Id =: quoteId];
         if(quote != NULL){
             String query;
 
@@ -30,6 +30,10 @@ public without sharing class GenerateContract {
 
             if(docuList.size() == 0 && quote.SBQQ__Type__c != 'Amendment' && quote.SBQQ__Type__c != 'Renewal'){
                 throw new AuraHandledException('Please generate and send Quote PDF before generating the Contract');
+            }
+            if(quote.POC__c == 'Yes' && quote.SBQQ__Opportunity2__r.POC__c == 'Yes' && (quote.SBQQ__Opportunity2__r.POC_Stage__c == null || quote.SBQQ__Opportunity2__r.Approx_Order_Value__c == null))
+            {
+                throw new AuraHandledException('Please Select POC Stage and Approx Order Value in Opportunity');
             }
         }
 

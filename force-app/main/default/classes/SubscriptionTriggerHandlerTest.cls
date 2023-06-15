@@ -99,7 +99,7 @@ public class SubscriptionTriggerHandlerTest {
         List<Sbqq__QuoteLine__c> parentQuoteLineList = new List<Sbqq__QuoteLine__c>();
         Sbqq__QuoteLine__c parent1 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',SBQQ__Description__c ='test',
                                                              SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,Business_Unit__c='IN10',
-                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,SBQQ__NetPrice__c =100,
+                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,SBQQ__NetPrice__c =100,Bill_From__c = 'IN12',
                                                              SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,Sale_Type__c = 'ZTAD',SBQQ__SegmentIndex__c=1,
                                                              SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id,
                                                              StartMonth__c=1
@@ -108,7 +108,7 @@ public class SubscriptionTriggerHandlerTest {
         
         Sbqq__QuoteLine__c parent2 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',SBQQ__Description__c ='test',
                                                              SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,
-                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Business_Unit__c='IN10',
+                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Business_Unit__c='IN10',Bill_From__c = 'IN12',
                                                              SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__NetPrice__c =100,Sale_Type__c = 'ZTAD',
                                                              SBQQ__Dimension__c=priceDimension1.Id,SBQQ__Group__c = quoteLineGroupList[0].id,
                                                              StartMonth__c=2
@@ -118,7 +118,7 @@ public class SubscriptionTriggerHandlerTest {
         Sbqq__QuoteLine__c parent3 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',SBQQ__Description__c ='test',
                                                              SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,
                                                              SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Business_Unit__c='IN10',SBQQ__NetPrice__c =100,
-                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__Optional__c=true,Sale_Type__c = 'ZTAD',
+                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__Optional__c=true,Sale_Type__c = 'ZTAD',Bill_From__c = 'IN12',
                                                              SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id,
                                                              StartMonth__c=2
                                                             );
@@ -130,7 +130,7 @@ public class SubscriptionTriggerHandlerTest {
         Sbqq__QuoteLine__c child1 = new Sbqq__QuoteLine__c (SBQQ__Quote__c = lstQuotes[0].Id , SBQQ__RequiredBy__c = parentQuoteLineList[0].id,SBQQ__SegmentIndex__c=1,
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Final_Unit_Price__c=1,SBQQ__NetPrice__c =100,
                                                             Component_Quantity__c=2,Final_Net_Price__c =100,Location__c = 'IN12',Business_Unit__c='IN10',
-                                                            SBQQ__Dimension__c=priceDimension.Id,SBQQ__StartDate__c= System.today().addMonths(1),
+                                                            SBQQ__Dimension__c=priceDimension.Id,SBQQ__StartDate__c= System.today().addMonths(1),Bill_From__c = 'IN12',
                                                             SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD',SBQQ__Description__c ='test'
                                                            );
         childQuoteLineList.add(child1);
@@ -138,7 +138,7 @@ public class SubscriptionTriggerHandlerTest {
                                                             SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,SBQQ__NetPrice__c =100,
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Final_Net_Price__c=100,Business_Unit__c='IN10',
                                                             SBQQ__RequiredBy__c=parentQuoteLineList[1].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,
-                                                            SBQQ__Dimension__c=priceDimension1.Id,Sale_Type__c = 'ZTAD',SBQQ__Description__c ='test',
+                                                            SBQQ__Dimension__c=priceDimension1.Id,Sale_Type__c = 'ZTAD',SBQQ__Description__c ='test',Bill_From__c = 'IN12',
                                                              SBQQ__Group__c = quoteLineGroupList[0].id
                                                            );
         childQuoteLineList.add(child2);
@@ -146,7 +146,7 @@ public class SubscriptionTriggerHandlerTest {
         Sbqq__QuoteLine__c child3 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',
                                                             SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,Business_Unit__c='IN10',
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Final_Net_Price__c=100,SBQQ__NetPrice__c =100,
-                                                            SBQQ__RequiredBy__c=parentQuoteLineList[2].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,
+                                                            SBQQ__RequiredBy__c=parentQuoteLineList[2].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,Bill_From__c = 'IN12',
                                                             SBQQ__Optional__c = true,SBQQ__Dimension__c=priceDimension1.Id,SBQQ__Description__c ='test',
                                                              SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD'
                                                            );
@@ -174,10 +174,7 @@ public class SubscriptionTriggerHandlerTest {
         
        
         //Test.startTest();
-        insert contractList; 
-        quote.SBQQ__Type__c = 'Renewal';
-        update quote;
-         
+        insert contractList;       
         
    
          //creates bundles
@@ -439,7 +436,7 @@ public class SubscriptionTriggerHandlerTest {
         List<Sbqq__QuoteLine__c> parentQuoteLineList = new List<Sbqq__QuoteLine__c>();
         Sbqq__QuoteLine__c parent1 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',
                                                              SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,Business_Unit__c='IN20',
-                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,SBQQ__NetPrice__c =100,
+                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,SBQQ__NetPrice__c =100,Bill_From__c = 'IN21',
                                                              SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,Sale_Type__c = 'ZTAD',SBQQ__SegmentIndex__c=1,
                                                              SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id,
                                                              StartMonth__c=1
@@ -448,7 +445,7 @@ public class SubscriptionTriggerHandlerTest {
         
         Sbqq__QuoteLine__c parent2 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',
                                                              SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,
-                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Business_Unit__c='IN20',
+                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Business_Unit__c='IN20',Bill_From__c = 'IN21',
                                                              SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__NetPrice__c =100,Sale_Type__c = 'ZTAD',
                                                              SBQQ__Dimension__c=priceDimension1.Id,SBQQ__Group__c = quoteLineGroupList[0].id,
                                                              StartMonth__c=2,SBQQ__Description__c ='test'
@@ -456,7 +453,7 @@ public class SubscriptionTriggerHandlerTest {
         parentQuoteLineList.add(parent2);
         
         Sbqq__QuoteLine__c parent3 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',SBQQ__Description__c ='test',
-                                                             SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,
+                                                             SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,Bill_From__c = 'IN21',
                                                              SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Business_Unit__c='IN20',SBQQ__NetPrice__c =100,
                                                              SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__Optional__c=true,Sale_Type__c = 'ZTAD',
                                                              SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id,
@@ -470,14 +467,14 @@ public class SubscriptionTriggerHandlerTest {
         Sbqq__QuoteLine__c child1 = new Sbqq__QuoteLine__c (SBQQ__Quote__c = lstQuotes[0].Id , SBQQ__RequiredBy__c = parentQuoteLineList[0].id,SBQQ__SegmentIndex__c=1,
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Final_Unit_Price__c=1,SBQQ__NetPrice__c =100,
                                                             Component_Quantity__c=2,Final_Net_Price__c =100,Location__c = 'IN12',Business_Unit__c='IN20',
-                                                            SBQQ__Dimension__c=priceDimension.Id,SBQQ__StartDate__c= System.today().addMonths(1),
+                                                            SBQQ__Dimension__c=priceDimension.Id,SBQQ__StartDate__c= System.today().addMonths(1),Bill_From__c = 'IN21',
                                                             SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD',SBQQ__Description__c ='test'
                                                            );
         childQuoteLineList.add(child1);
         Sbqq__QuoteLine__c child2 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',
                                                             SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,SBQQ__NetPrice__c =100,
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Final_Net_Price__c=100,Business_Unit__c='IN20',
-                                                            SBQQ__RequiredBy__c=parentQuoteLineList[1].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,
+                                                            SBQQ__RequiredBy__c=parentQuoteLineList[1].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,Bill_From__c = 'IN21',
                                                             SBQQ__Dimension__c=priceDimension1.Id,Sale_Type__c = 'ZTAD',
                                                              SBQQ__Group__c = quoteLineGroupList[0].id,SBQQ__Description__c ='test'
                                                            );
@@ -487,7 +484,7 @@ public class SubscriptionTriggerHandlerTest {
                                                             SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,Business_Unit__c='IN20',
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Final_Net_Price__c=100,SBQQ__NetPrice__c =100,
                                                             SBQQ__RequiredBy__c=parentQuoteLineList[2].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,
-                                                            SBQQ__Optional__c = true,SBQQ__Dimension__c=priceDimension1.Id,
+                                                            SBQQ__Optional__c = true,SBQQ__Dimension__c=priceDimension1.Id,Bill_From__c = 'IN21',
                                                              SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD',SBQQ__Description__c ='test'
                                                            );
         
@@ -515,8 +512,6 @@ public class SubscriptionTriggerHandlerTest {
        
         //Test.startTest();
         insert contractList; 
-        quote.SBQQ__Type__c = 'Renewal';
-        update quote;
          
         
    
@@ -779,7 +774,7 @@ public class SubscriptionTriggerHandlerTest {
         List<Sbqq__QuoteLine__c> parentQuoteLineList = new List<Sbqq__QuoteLine__c>();
         Sbqq__QuoteLine__c parent1 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',SBQQ__Description__c ='test',
                                                              SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,Business_Unit__c='IN10',
-                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,SBQQ__NetPrice__c =100,
+                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,SBQQ__NetPrice__c =100,Bill_From__c = 'IN12',
                                                              SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,Sale_Type__c = 'ZTAD',SBQQ__SegmentIndex__c=1,
                                                              SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id,
                                                              StartMonth__c=1
@@ -790,7 +785,7 @@ public class SubscriptionTriggerHandlerTest {
                                                              SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,
                                                              SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Business_Unit__c='IN10',
                                                              SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__NetPrice__c =100,Sale_Type__c = 'ZTAD',
-                                                             SBQQ__Dimension__c=priceDimension1.Id,SBQQ__Group__c = quoteLineGroupList[0].id,
+                                                             SBQQ__Dimension__c=priceDimension1.Id,SBQQ__Group__c = quoteLineGroupList[0].id,Bill_From__c = 'IN12',
                                                              StartMonth__c=2
                                                             );
         parentQuoteLineList.add(parent2);
@@ -799,7 +794,7 @@ public class SubscriptionTriggerHandlerTest {
                                                              SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,
                                                              SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Business_Unit__c='IN10',SBQQ__NetPrice__c =100,
                                                              SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__Optional__c=true,Sale_Type__c = 'ZTAD',
-                                                             SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id,
+                                                             SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id,Bill_From__c = 'IN12',
                                                              StartMonth__c=2
                                                             );
         parentQuoteLineList.add(parent3);
@@ -811,14 +806,14 @@ public class SubscriptionTriggerHandlerTest {
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Final_Unit_Price__c=1,SBQQ__NetPrice__c =100,
                                                             Component_Quantity__c=2,Final_Net_Price__c =100,Location__c = 'IN12',Business_Unit__c='IN10',
                                                             SBQQ__Dimension__c=priceDimension.Id,SBQQ__StartDate__c= System.today().addMonths(1),
-                                                            SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD',SBQQ__Description__c ='test'
+                                                            SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD',SBQQ__Description__c ='test',Bill_From__c = 'IN12'
                                                            );
         childQuoteLineList.add(child1);
         Sbqq__QuoteLine__c child2 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',
                                                             SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,SBQQ__NetPrice__c =100,
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Final_Net_Price__c=100,Business_Unit__c='IN10',
                                                             SBQQ__RequiredBy__c=parentQuoteLineList[1].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,
-                                                            SBQQ__Dimension__c=priceDimension1.Id,Sale_Type__c = 'ZTAD',SBQQ__Description__c ='test',
+                                                            SBQQ__Dimension__c=priceDimension1.Id,Sale_Type__c = 'ZTAD',SBQQ__Description__c ='test',Bill_From__c = 'IN12',
                                                              SBQQ__Group__c = quoteLineGroupList[0].id
                                                            );
         childQuoteLineList.add(child2);
@@ -827,7 +822,7 @@ public class SubscriptionTriggerHandlerTest {
                                                             SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,Business_Unit__c='IN10',
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Final_Net_Price__c=100,SBQQ__NetPrice__c =100,
                                                             SBQQ__RequiredBy__c=parentQuoteLineList[2].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,
-                                                            SBQQ__Optional__c = true,SBQQ__Dimension__c=priceDimension1.Id,SBQQ__Description__c ='test',
+                                                            SBQQ__Optional__c = true,SBQQ__Dimension__c=priceDimension1.Id,SBQQ__Description__c ='test',Bill_From__c = 'IN12',
                                                              SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD'
                                                            );
         
@@ -1120,7 +1115,7 @@ public class SubscriptionTriggerHandlerTest {
         List<Sbqq__QuoteLine__c> parentQuoteLineList = new List<Sbqq__QuoteLine__c>();
         Sbqq__QuoteLine__c parent1 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',SBQQ__Description__c ='test',
                                                              SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,Business_Unit__c='IN10',
-                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,SBQQ__NetPrice__c =100,
+                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,SBQQ__NetPrice__c =100,Bill_From__c = 'IN12',
                                                              SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,Sale_Type__c = 'ZTAD',SBQQ__SegmentIndex__c=1,
                                                              SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id,
                                                              StartMonth__c=1
@@ -1129,7 +1124,7 @@ public class SubscriptionTriggerHandlerTest {
         
         Sbqq__QuoteLine__c parent2 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',SBQQ__Description__c ='test',
                                                              SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,
-                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Business_Unit__c='IN20',
+                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Business_Unit__c='IN20',Bill_From__c = 'IN21',
                                                              SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__NetPrice__c =100,Sale_Type__c = 'ZTAD',
                                                              SBQQ__Dimension__c=priceDimension1.Id,SBQQ__Group__c = quoteLineGroupList[0].id,
                                                              StartMonth__c=2
@@ -1139,7 +1134,7 @@ public class SubscriptionTriggerHandlerTest {
         Sbqq__QuoteLine__c parent3 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',SBQQ__Description__c ='test',
                                                              SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,
                                                              SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Business_Unit__c='IN10',SBQQ__NetPrice__c =100,
-                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__Optional__c=true,Sale_Type__c = 'ZTAD',
+                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__Optional__c=true,Sale_Type__c = 'ZTAD',Bill_From__c = 'IN12',
                                                              SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id,
                                                              StartMonth__c=2
                                                             );
@@ -1151,14 +1146,14 @@ public class SubscriptionTriggerHandlerTest {
         Sbqq__QuoteLine__c child1 = new Sbqq__QuoteLine__c (SBQQ__Quote__c = lstQuotes[0].Id , SBQQ__RequiredBy__c = parentQuoteLineList[0].id,SBQQ__SegmentIndex__c=1,
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Final_Unit_Price__c=1,SBQQ__NetPrice__c =100,
                                                             Component_Quantity__c=2,Final_Net_Price__c =100,Location__c = 'IN12',Business_Unit__c='IN10',
-                                                            SBQQ__Dimension__c=priceDimension.Id,SBQQ__StartDate__c= System.today().addMonths(1),
+                                                            SBQQ__Dimension__c=priceDimension.Id,SBQQ__StartDate__c= System.today().addMonths(1),Bill_From__c = 'IN12',
                                                             SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD',SBQQ__Description__c ='test'
                                                            );
         childQuoteLineList.add(child1);
         Sbqq__QuoteLine__c child2 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',
                                                             SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,SBQQ__NetPrice__c =100,
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Final_Net_Price__c=100,Business_Unit__c='IN20',
-                                                            SBQQ__RequiredBy__c=parentQuoteLineList[1].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,
+                                                            SBQQ__RequiredBy__c=parentQuoteLineList[1].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,Bill_From__c = 'IN21',
                                                             SBQQ__Dimension__c=priceDimension1.Id,Sale_Type__c = 'ZTAD',SBQQ__Description__c ='test',
                                                              SBQQ__Group__c = quoteLineGroupList[0].id
                                                            );
@@ -1167,7 +1162,7 @@ public class SubscriptionTriggerHandlerTest {
         Sbqq__QuoteLine__c child3 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',
                                                             SBQQ__Quote__c = lstQuotes[0].Id , Location__c = 'IN12',Component_Quantity__c=1,Business_Unit__c='IN10',
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=productList[0].Id,Final_Net_Price__c=100,SBQQ__NetPrice__c =100,
-                                                            SBQQ__RequiredBy__c=parentQuoteLineList[2].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,
+                                                            SBQQ__RequiredBy__c=parentQuoteLineList[2].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,Bill_From__c = 'IN12',
                                                             SBQQ__Optional__c = true,SBQQ__Dimension__c=priceDimension1.Id,SBQQ__Description__c ='test',
                                                              SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD'
                                                            );
@@ -1336,9 +1331,7 @@ public class SubscriptionTriggerHandlerTest {
         
         //activate the contract
         bundleMap.get(b1).IR_Number__c = '11232123';
-        Update bundleMap.get(b1);
         bundleMap.get(b1).Technical_Start_Date__c = Date.newInstance(2020, 1, 1);
-        Update bundleMap.get(b1);
         bundleMap.get(b1).Bill_Start_Date__c = Date.newInstance(2020, 1, 1);
         Update bundleMap.get(b1);
         

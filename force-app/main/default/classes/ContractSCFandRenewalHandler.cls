@@ -196,7 +196,7 @@ public class ContractSCFandRenewalHandler {
         }
         
         if(subList.size() > 0){
-            update subList;
+            Database.update(subList, false);
         }
     }
     
@@ -244,5 +244,80 @@ public class ContractSCFandRenewalHandler {
         if(subList.size() > 0){
             update subList;
         }
+    }
+    
+     public static void RenewAssetandCreateQT(String QuoteIds) {
+
+        Map<String, List<Asset>> AssetMap = new Map<String, List<Asset>>();
+        List<Id> OldQuoteLineId = new List<Id>();
+        SBQQ__Quote__c quote = [SELECT Id, SBQQ__Opportunity2__r.SBQQ__RenewedContract__c FROM SBQQ__Quote__c where Id = :QuoteIds];
+        /*for (SBQQ__Subscription__c sub : [SELECT Id,Status__c,Bill_Start_Date__c,Bill_End_Date__c,
+                                        (SELECT Id, SBQQ__LatestQuoteLine__c,SBQQ__QuoteLine__c,SBQQ__RequiredBySubscription__c, SBQQ__RequiredBySubscription__r.Status__c FROM SBQQ__ChildAssets__r)
+                                            FROM SBQQ__Subscription__c where SBQQ__Contract__c = :quote.SBQQ__Opportunity2__r.SBQQ__RenewedContract__c and SBQQ__Bundle__c =  true]) {
+            AssetMap.put(sub.Id, sub.SBQQ__ChildAssets__r);
+
+        }*/
+
+        for (Asset assetline : [SELECT Id, SBQQ__LatestQuoteLine__c,SBQQ__QuoteLine__c,SBQQ__QuoteLine__r.SBQQ__SegmentKey__c,SBQQ__RequiredBySubscription__c, SBQQ__RequiredBySubscription__r.Status__c, SBQQ__RequiredBySubscription__r.Bill_End_Date__c, SBQQ__RequiredBySubscription__r.Bill_Start_Date__c FROM Asset WHERE SBQQ__RequiredBySubscription__r.SBQQ__Contract__c = :quote.SBQQ__Opportunity2__r.SBQQ__RenewedContract__c and SBQQ__RequiredBySubscription__r.SBQQ__Bundle__c = true and SBQQ__RequiredBySubscription__r.Bill_Start_Date__c = NULL]) {
+            if (AssetMap.containsKey(assetline.SBQQ__RequiredBySubscription__c)) {
+                List<Asset> tempList = AssetMap.get(assetline.SBQQ__RequiredBySubscription__c);
+                tempList.add(assetline);
+                AssetMap.put(assetline.SBQQ__RequiredBySubscription__c, tempList);
+            } else {
+                AssetMap.put(assetline.SBQQ__RequiredBySubscription__c, new List<Asset>{
+                        assetline
+                });
+            }
+            System.debug('Segment Index - 1'+assetline.SBQQ__QuoteLine__r.SBQQ__SegmentKey__c);
+            System.debug('QuoteLine'+assetline.SBQQ__QuoteLine__c);
+            OldQuoteLineId.add(assetline.SBQQ__QuoteLine__c);
+        }
+
+        Map<String, String> SegmentKeyMap = new Map<String, String>();
+        Map<String, SBQQ__QuoteLine__c> QuotelineMap = new Map<String, SBQQ__QuoteLine__c>();
+        for (SBQQ__QuoteLine__c quoteLine : [
+                SELECT Id, SBQQ__RenewedSubscription__c, Business_Unit__c,Bundle_Description__c,SBQQ__Quote__c,Sale_Type__c,Quantity_Based_Discount__c,SBQQ__ProductSubscriptionType__c,
+                        SBQQ__SubscriptionType__c, Model_Name__c, Price_Dimension_Type__c, SBQQ__SegmentLabel__c, SBQQ__ChargeType__c, Billing_to_be_done_Online__c,SBQQ__PricingMethod__c, SBQQ__SubscriptionBase__c,
+                        Bill_From__c, Location__c, Product_Type__c, SBQQ__TaxCode__c, Disable_Quantity_Multiplication__c, SBQQ__SpecialPriceType__c, SBQQ__OptionType__c, Information_Note__c,SBQQ__Description__c,
+                        SBQQ__ProductCode__c, SBQQ__ProductName__c, SBQQ__RequiredBy__c, SBQQ__ProductOption__c, SBQQ__DynamicOptionId__c, SBQQ__Dimension__c, HSN_SAC_Code__c, Final_Net_Price__c, Final_Unit_Price__c,
+                        SBQQ__CustomerPrice__c, SBQQ__ListPrice__c, SBQQ__NetPrice__c, SBQQ__ProratedListPrice__c, SBQQ__ProratedPrice__c, SBQQ__RegularPrice__c, SBQQ__SpecialPrice__c, Approved_Unit_Price__c, SBQQ__Quantity__c,
+                        SBQQ__SegmentKey__c, Monthly_Price__c, Product_Line__c, SBQQ__ProductFamily__c, S_No__c, Component_Quantity__c, SBQQ__Number__c, SBQQ__ProrateMultiplier__c, StartMonth__c, SBQQ__PricebookEntryId__c, SBQQ__Product__c,
+                        Approval_level__c, SBQQ__Discount__c, Discount_Amt__c,SBQQ__DistributorDiscount__c, Location_Discount__c, SBQQ__SegmentIndex__c
+                FROM SBQQ__QuoteLine__c
+                where (SBQQ__Quote__c = :QuoteIds) OR Id In :OldQuoteLineId
+        ]) {
+            if (quoteLine.SBQQ__RenewedSubscription__c != null) {
+                QuotelineMap.put(quoteLine.SBQQ__RenewedSubscription__c, quoteLine);
+            } else {
+                QuotelineMap.put(quoteLine.Id, quoteLine);
+            }
+            System.debug('Segment Index -2'+ quoteLine.SBQQ__SegmentKey__c);
+            SegmentKeyMap.put(quoteLine.SBQQ__RequiredBy__c, quoteLine.SBQQ__SegmentKey__c);
+        }
+        Map<String,SBQQ__QuoteLine__c> insertQuoteLines = new Map<String,SBQQ__QuoteLine__c>();
+        for (String subId : AssetMap.keySet()) {
+            if (AssetMap.get(subId).size() > 0) {
+                Integer Count = 0;
+                for (Asset assetrc : AssetMap.get(subId)) {
+                    SBQQ__QuoteLine__c cloneline = QuotelineMap.get(assetrc.SBQQ__QuoteLine__c).clone(false, true, false, false);
+                    cloneline.SBQQ__Quote__c = QuoteIds;
+                    cloneline.SBQQ__RequiredBy__c = QuotelineMap.get(assetrc.SBQQ__RequiredBySubscription__c).Id;
+                    cloneline.SBQQ__SegmentIndex__c = 0;
+                    cloneline.SBQQ__Quantity__c = 1;
+                    cloneline.SBQQ__SegmentKey__c = SegmentKeyMap.get(QuotelineMap.get(assetrc.SBQQ__RequiredBySubscription__c).Id);
+                    cloneline.S_No__c = QuotelineMap.get(assetrc.SBQQ__RequiredBySubscription__c).S_No__c + '.1';
+                    insertQuoteLines.put(cloneline.SBQQ__SegmentKey__c,cloneline);
+                    Count = Count+ 1;
+
+                }
+            }
+        }
+        System.debug('Insert List' + insertQuoteLines);
+        if (insertQuoteLines.values().size() > 0) {
+            Database.SaveResult[] updateResult = Database.insert(insertQuoteLines.values());
+            System.debug('Result'+updateResult);
+        }
+
+
     }
 }

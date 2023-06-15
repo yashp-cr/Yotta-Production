@@ -35,7 +35,7 @@ public class GenerateContractTest {
                                                     About_Yotta_Summary_Type__c = 'Detailed',Yotta_s_Products_and_Services_Required__c ='Yes',
                                                     Yotta_s_Certifications_Required__c = 'Yes',Yotta_s_Customers_Required__c = 'Yes',
                                                     SBQQ__Opportunity2__c= Id.valueOf(opportunityList[0].Id),
-                                                    Scope_of_Work__c ='scope od work');
+                                                    Scope_of_Work__c ='scope od work',SBQQ__Type__c = 'Renewal');
         quotelist.add(quote1);
         insert quotelist;
         system.debug('Status --'+quote.SBQQ__Status__c);

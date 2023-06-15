@@ -23,14 +23,15 @@ public class AccountTriggerHandler extends TriggerHandler {
         if( !lstAccountsToSend.isEmpty() ) {
             sendAccountDetailsToSAP( lstAccountsToSend );
         }
+         partnerManagerIsChangedAccountShare((List<Account>)trigger.new, null);
     }
     
     public override void afterUpdate() {
         if( !lstAccountsToSend.isEmpty() ) {
             sendAccountDetailsToSAP( lstAccountsToSend );
         }
+        partnerManagerIsChangedAccountShare((List<Account>)trigger.new, (Map<Id, Account>)trigger.oldMap);
     }
-
     /* Commented
     //marks a flag on aacount if it contains related address and contact records (used n LPB)
     private void containsContactsAndAddresses(){
@@ -62,7 +63,6 @@ public class AccountTriggerHandler extends TriggerHandler {
             checkifFieldsChanged(iter, listOfFields);
         }
     }
-
     //this function marks send to kafka
     private void checkifFieldsChanged(Account record, List<String>listOfFields){
         for(String fieldName : listOfFields){
@@ -169,5 +169,74 @@ public class AccountTriggerHandler extends TriggerHandler {
                 database.executeBatch( batchJob, 1 );
             }
         }
+    }
+
+
+    private void partnerManagerIsChangedAccountShare( List<Account> lstOfNewAccounts, Map<Id, Account> oldMap)
+    {
+        List<AccountShare> accountSharesToInsert = new List<AccountShare>();
+        List<AccountShare> accountSharesToDelete = new List<AccountShare>();
+        List<Account> lstAccountToShare = new List<Account>();
+        if(oldMap == null){
+            for (Account newAccount : lstOfNewAccounts)
+            {
+                if(newAccount.Partner_Manager__c != null) {
+                    accountSharesToInsert.add(new AccountShare( AccountAccessLevel='Edit', OpportunityAccessLevel = 'Read', CaseAccessLevel = 'Read',AccountId=newAccount.Id,UserOrGroupId=newAccount.Partner_Manager__c));
+                }
+                if(newAccount.BD_Manager__c != null) {
+                    accountSharesToInsert.add(new AccountShare( AccountAccessLevel='Edit', OpportunityAccessLevel = 'Read', CaseAccessLevel = 'Read',AccountId=newAccount.Id,UserOrGroupId=newAccount.BD_Manager__c));
+                }
+            }
+            createShareForPM(JSON.serialize(accountSharesToInsert));
+        }else {
+            for (Account newAccount : lstOfNewAccounts) {
+                if(newAccount.Partner_Manager__c != oldMap.get(newAccount.Id).Partner_Manager__c){
+                    // Delete existing shares for old partner manager
+                    List<AccountShare> oldPartnerShares = [SELECT Id FROM AccountShare WHERE AccountId = :newAccount.Id AND UserOrGroupId = :oldMap.get(newAccount.Id).Partner_Manager__c];
+                    for (AccountShare oldPartnerShare : oldPartnerShares) {
+                        accountSharesToDelete.add(oldPartnerShare);
+                    }
+                    // Insert new share for new partner manager
+                    if(newAccount.Partner_Manager__c != null)
+                    {
+                        accountSharesToInsert.add(new AccountShare( AccountAccessLevel='Edit', OpportunityAccessLevel = 'Read', CaseAccessLevel = 'Read', AccountId=newAccount.Id,UserOrGroupId=newAccount.Partner_Manager__c));
+                    }
+                    lstAccountToShare.add( newAccount );
+                }
+               
+                if(newAccount.BD_Manager__c != oldMap.get(newAccount.Id).BD_Manager__c){
+                    // Delete existing shares for old BD manager
+                    List<AccountShare> oldBDManagerShares = [SELECT Id FROM AccountShare WHERE AccountId = :newAccount.Id AND UserOrGroupId = :oldMap.get(newAccount.Id).BD_Manager__c];
+                    for(AccountShare oldBDManagerShare : oldBDManagerShares){
+                        accountSharesToDelete.add(oldBDManagerShare);
+                    }
+                    // Insert new share for new BD manager
+                    if(newAccount.BD_Manager__c != null)
+                    {
+                        accountSharesToInsert.add(new AccountShare( AccountAccessLevel='Edit', OpportunityAccessLevel = 'Read', CaseAccessLevel = 'Read', AccountId=newAccount.Id,UserOrGroupId=newAccount.BD_Manager__c));
+                    }
+                    lstAccountToShare.add(newAccount);
+                }
+            }
+            if (!accountSharesToDelete.isEmpty()) {
+                deleteShareForPM(JSON.serialize(accountSharesToDelete));
+            }
+            if (!accountSharesToInsert.isEmpty()) {
+                createShareForPM(JSON.serialize(accountSharesToInsert));
+            }
+        }
+
+    }
+
+    @future
+    public static void createShareForPM( String strShareRecords ) {
+        List<AccountShare> lstAccountShareToInsert = (List<AccountShare>)JSON.deserialize(strShareRecords, List<AccountShare>.class);
+        Database.insert( lstAccountShareToInsert, false );
+    }
+
+    @future
+    public static void deleteShareForPM( String strShareRecords ) {
+        List<AccountShare> accountSharesToDelete = (List<AccountShare>)JSON.deserialize(strShareRecords, List<AccountShare>.class);
+        Database.delete( accountSharesToDelete, false );
     }
 }

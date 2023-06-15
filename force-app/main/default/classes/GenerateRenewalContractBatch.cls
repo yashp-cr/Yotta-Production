@@ -29,7 +29,16 @@ global class GenerateRenewalContractBatch implements Database.Batchable<sObject>
             renewalQuote.Contracted__c = TRUE;
         }
 
-        update scope;
+        if(scope.size() > 0){
+            //update scope;
+            Database.SaveResult[] updateResult = Database.update(scope, false);
+            for(Database.SaveResult svRes: updateResult)
+            {
+                if(!svRes.isSuccess()){
+                    insert new Error_Log__c(Message__c = svRes.getErrors()[0].getMessage(),Type__c = 'Renewal');
+                }
+            }
+        }
     }
 
     global void finish(Database.BatchableContext BC){

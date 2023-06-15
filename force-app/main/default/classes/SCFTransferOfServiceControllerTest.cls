@@ -80,16 +80,16 @@ public class SCFTransferOfServiceControllerTest {
           List<Sbqq__QuoteLine__c> parentQuoteLineList = new List<Sbqq__QuoteLine__c>();
         Sbqq__QuoteLine__c parent1 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription', SCF_Type__c ='Tranfer Of Service',
                                                              SBQQ__Quote__c = quote.Id , Location__c = 'IN12',Component_Quantity__c=1,Business_Unit__c='IN10',
-                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=product1.Id,SBQQ__NetPrice__c =100,
-                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,
+                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=product1.Id,SBQQ__NetPrice__c =100,Sale_Type__c='ZTAD',
+                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,Bill_From__c='	IN14',
                                                              SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id
                                                             );
         parentQuoteLineList.add(parent1);
         
         Sbqq__QuoteLine__c parent3 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription', SCF_Type__c ='Transfer of Service',
-                                                             SBQQ__Quote__c = quote.Id , Location__c = 'IN12',Component_Quantity__c=1,
+                                                             SBQQ__Quote__c = quote.Id , Location__c = 'IN12',Component_Quantity__c=1,Sale_Type__c='ZTAD',
                                                              SBQQ__Quantity__c=2,SBQQ__Product__c=product1.Id,Business_Unit__c='IN10',SBQQ__NetPrice__c =100,
-                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__Optional__c=true,
+                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__Optional__c=true,Bill_From__c='IN14',
                                                              SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id
                                                             );
         parentQuoteLineList.add(parent3);

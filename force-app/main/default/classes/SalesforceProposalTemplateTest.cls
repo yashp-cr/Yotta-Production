@@ -39,6 +39,7 @@ public class SalesforceProposalTemplateTest {
         
         Product2 product1 = new Product2 (Name = 'Test' ,   CurrencyIsoCode = 'INR',Family='Yotta Cloud',Business_Unit__c='IN10',
                                           Product_Description__c ='product Description', Description ='description',Location_Availability__c='  IN12',Sale_Type__c='ZTAN' );
+        
         Product2 product2 = new Product2 (Name = 'Test Compo' ,   CurrencyIsoCode = 'INR',Family='Yotta Cloud',Business_Unit__c='IN10',
                                           Product_Description__c ='product Description', Description ='description',Location_Availability__c='  IN12',Sale_Type__c='ZTAN' );
         
@@ -64,25 +65,25 @@ public class SalesforceProposalTemplateTest {
         List<Sbqq__QuoteLine__c> parentQuoteLineList = new List<Sbqq__QuoteLine__c>();
         Sbqq__QuoteLine__c parent1 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription', 
                                                              SBQQ__Quote__c = quote.Id , Location__c = 'IN12',Component_Quantity__c=1,Business_Unit__c='IN10',
-                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=product1.Id,SBQQ__NetPrice__c =100,
-                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,StartMonth__c=1,
+                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=product1.Id,SBQQ__NetPrice__c =100,Bill_From__c = 'IN14',
+                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,StartMonth__c=1,Sale_Type__c = 'ZTAD',
                                                              SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id
                                                             );
         parentQuoteLineList.add(parent1);
         
         Sbqq__QuoteLine__c parent2 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription', 
                                                              SBQQ__Quote__c = quote.Id , Location__c = 'IN12',Component_Quantity__c=1,
-                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=product1.Id,Business_Unit__c='IN10',
-                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__NetPrice__c =100,StartMonth__c=1,
+                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=product1.Id,Business_Unit__c='IN10',Bill_From__c = 'IN14',
+                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__NetPrice__c =100,StartMonth__c=1,Sale_Type__c = 'ZTAD',
                                                              SBQQ__Dimension__c=priceDimension1.Id,SBQQ__Group__c = quoteLineGroupList[0].id
                                                             );
         parentQuoteLineList.add(parent2);
         
         Sbqq__QuoteLine__c parent3 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription', 
                                                              SBQQ__Quote__c = quote.Id , Location__c = 'IN12',Component_Quantity__c=1,
-                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=product1.Id,Business_Unit__c='IN10',SBQQ__NetPrice__c =100,
-                                                             SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__Optional__c=true,StartMonth__c=1,
-                                                             SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id
+                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=product1.Id,Bill_From__c = 'IN14',Business_Unit__c='IN10',
+                                                             SBQQ__NetPrice__c =100,SBQQ__RequiredBy__c=null,SBQQ__Number__c=1,SBQQ__Optional__c=true,StartMonth__c=1,
+                                                             SBQQ__Dimension__c=priceDimension.Id,SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD'
                                                             );
         parentQuoteLineList.add(parent3);
         
@@ -93,7 +94,7 @@ public class SalesforceProposalTemplateTest {
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=product2.Id,Final_Unit_Price__c=1,SBQQ__NetPrice__c =100,
                                                             Component_Quantity__c=2,Final_Net_Price__c =100,Location__c = 'IN12',Business_Unit__c='IN10',
                                                             SBQQ__Dimension__c=priceDimension.Id,SBQQ__StartDate__c= System.today().addMonths(1),SBQQ__SegmentLabel__c = 'OTC',
-                                                            SBQQ__Group__c = quoteLineGroupList[0].id
+                                                            SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD',Bill_From__c = 'IN14'
                                                            );
         childQuoteLineList.add(child1);
         Sbqq__QuoteLine__c child2 = new Sbqq__QuoteLine__c (Bundle_Description__c='bundleDescription',
@@ -101,7 +102,7 @@ public class SalesforceProposalTemplateTest {
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=product2.Id,Final_Net_Price__c=100,Business_Unit__c='IN10',
                                                             SBQQ__RequiredBy__c=parentQuoteLineList[1].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,
                                                             SBQQ__Dimension__c=priceDimension1.Id,SBQQ__SegmentLabel__c = 'Year  1',
-                                                             SBQQ__Group__c = quoteLineGroupList[0].id
+                                                             SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD',Bill_From__c = 'IN14'
                                                            );
         childQuoteLineList.add(child2);
         
@@ -110,7 +111,7 @@ public class SalesforceProposalTemplateTest {
                                                             SBQQ__Quantity__c=2,SBQQ__Product__c=product2.Id,Final_Net_Price__c=100,SBQQ__NetPrice__c =100,
                                                             SBQQ__RequiredBy__c=parentQuoteLineList[2].id,SBQQ__Number__c=1,Final_Unit_Price__c=1,
                                                             SBQQ__Optional__c = true,SBQQ__Dimension__c=priceDimension1.Id,SBQQ__SegmentLabel__c = 'Year  1',
-                                                             SBQQ__Group__c = quoteLineGroupList[0].id
+                                                             SBQQ__Group__c = quoteLineGroupList[0].id,Sale_Type__c = 'ZTAD',Bill_From__c = 'IN14'
                                                            );
         
         childQuoteLineList.add(child3);

@@ -749,6 +749,7 @@ public class SubscriptionTriggerHandler extends TriggerHandler {
         Map<Id, SBQQ__Subscription__c> BEDChangedSubMap = new Map<Id, SBQQ__Subscription__c>();
         Map<Id, SBQQ__Subscription__c> BEDChangedSubMap2;
         List<SBQQ__Subscription__c> newSubList = new List<SBQQ__Subscription__c>();
+        Map<Id, SBQQ__Subscription__c> updateSubMap = new Map<Id, SBQQ__Subscription__c>();
         List<SBQQ__Subscription__c> updateSubList = new List<SBQQ__Subscription__c>();
         Set<String> serviceIdSet = new Set<String>();
         
@@ -771,6 +772,7 @@ public class SubscriptionTriggerHandler extends TriggerHandler {
                     if(sub.SBQQ__SubscriptionStartDate__c == sub.SBQQ__TerminatedDate__c.addDays(1))
                         sub.SBQQ__SubscriptionStartDate__c = sub.Bill_End_Date__c.addDays(1);
                     sub.SBQQ__TerminatedDate__c = sub.Bill_End_Date__c;
+                    updateSubMap.put(sub.Id, sub);
                     updateSubList.add(sub);
                     //}
                 }
@@ -781,6 +783,7 @@ public class SubscriptionTriggerHandler extends TriggerHandler {
                     if(sub.SBQQ__SubscriptionStartDate__c == sub.SBQQ__TerminatedDate__c.addDays(1))
                         sub.SBQQ__SubscriptionStartDate__c = sub.Bill_End_Date__c.addDays(1);
                     sub.SBQQ__TerminatedDate__c = sub.Bill_End_Date__c;
+                    updateSubMap.put(sub.Id, sub);
                     updateSubList.add(sub);
                     //}
                 }
@@ -791,12 +794,14 @@ public class SubscriptionTriggerHandler extends TriggerHandler {
                             if(sub.SBQQ__SubscriptionStartDate__c == sub.SBQQ__TerminatedDate__c.addDays(1))
                                 sub.SBQQ__SubscriptionStartDate__c = sub.Bill_End_Date__c.addDays(1);
                             sub.SBQQ__TerminatedDate__c = sub.Bill_End_Date__c;
+                            updateSubMap.put(sub.Id, sub);
                             updateSubList.add(sub);
                         }
                     }
                 }
             }
-            update updateSubList;
+            update updateSubMap.values();
+            //update updateSubList;
         }
     }
     

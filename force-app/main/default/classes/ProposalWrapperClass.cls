@@ -287,11 +287,13 @@ public class ProposalWrapperClass {
         public Decimal qty {get; set;}
         public String uom {get; set;}
         public Decimal famWrapYearOtc {get; set;}
+        public Decimal famWrapYearVRC {get; set;}
         public Set<String> ComponentName {get; set;}
         public Map<Integer, ProposalWrapperClass.ProdfamYearWrapper> famYearMap {get; set;}
 
         public ProductOptionalWrapper() {
             this.famWrapYearOtc = 0;
+            this.famWrapYearVRC = 0;
             this.description = '';
             famYearMap = new Map<Integer, ProposalWrapperClass.ProdfamYearWrapper>();
             ComponentName = new Set<String>();
